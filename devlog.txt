@@ -330,3 +330,8 @@ kiranS -- 2026-05-20 17:40
 - added gold meter and inventory to shop
 - small fixes to inventory/item rendering
 - implemented selling items -- shift click for 5, ctrl-click for 25
+
+sarahZ -- 2026-05-20 19:30
+- added transparent background overlay when shop menu opens
+- filled in background when maps are too small, tried to center map but messed up the camera so removed edits, but might try again next time
+- added forest map

@@ -1,61 +1,61 @@
 [
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -63,7 +63,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -87,37 +87,37 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -125,7 +125,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -179,7 +179,7 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -187,7 +187,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -211,7 +211,25 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -223,25 +241,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -249,7 +249,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -273,7 +273,13 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -297,13 +303,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -311,7 +311,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -335,13 +335,13 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -377,7 +377,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -401,7 +401,13 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -425,13 +431,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -439,7 +439,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -457,7 +457,31 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -469,31 +493,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -501,7 +501,31 @@
   ],
   [
     {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
       "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -531,31 +555,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -563,7 +563,31 @@
   ],
   [
     {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
       "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -593,31 +617,7 @@
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -625,7 +625,7 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -643,7 +643,13 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -655,31 +661,25 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
@@ -687,61 +687,61 @@
   ],
   [
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null

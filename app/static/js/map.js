@@ -72,6 +72,8 @@ export default class Map {
   }
 
   render(ctx, player) {
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(this.image, this.x, this.y,
       X_RES * TILE_SIZE, Y_RES * TILE_SIZE, 0, 0,
       CANVAS_WIDTH, CANVAS_HEIGHT);

@@ -238,6 +238,13 @@ class StardewValley {
         this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
         break;
       case "shop":
+        this.map.follow(this.player);
+        let NPCs = this.map.render(this.ctx, this.player);
+        this.player.render(this.ctx, this.map);
+        NPCs.forEach((npc) => npc.render(this.ctx, this.map));
+        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
         this.player.currentShop.render(this.overlayCtx, this.player);
         if (this.mouse.isDown && !this.mouseToggled) {
           // console.log("down")
