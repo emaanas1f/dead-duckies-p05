@@ -48,13 +48,13 @@ class InputHandler {
         }
         else if (e.key == "Shift") {
           // console.log("shift")
-          game.player.buyQuantity = 5;
+          game.player.quantity = 5;
         }
         else if (e.key == "Control") {
-          game.player.buyQuantity = 25;
+          game.player.quantity = 25;
         }
         else {
-          game.player.buyQuantity = 1;
+          game.player.quantity = 1;
         }
       }
       if (e.key == "Escape") {
@@ -65,7 +65,7 @@ class InputHandler {
 
     window.addEventListener('keyup', e => {
       this.keys[e.key] = false;
-      game.player.buyQuantity = 1;
+      game.player.quantity = 1;
     });
   }
 }

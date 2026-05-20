@@ -324,3 +324,9 @@ kiranS -- 2026-05-19 21:00
 
 emaanA -- 2026-05-19 23:30 
 - renderInventory using scalar
+
+kiranS -- 2026-05-20 17:40
+- mouse click now closes dialogue box
+- added gold meter and inventory to shop
+- small fixes to inventory/item rendering
+- implemented selling items -- shift click for 5, ctrl-click for 25

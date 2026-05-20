@@ -35,7 +35,7 @@ export default class Player {
     this.sprite.src = '/static/images/player.png';
 
     this.currentShop;
-    this.buyQuantity = 1;
+    this.quantity = 1;
   }
 
   move(keys, map, stamina) {

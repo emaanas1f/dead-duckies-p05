@@ -33,7 +33,7 @@ export default class Shop {
     }
 
     buy(itemID, player) {
-      let quantity = player.buyQuantity;
+      let quantity = player.quantity;
       if (!(itemID in ITEMS)) {
         return false;
       }
@@ -52,14 +52,21 @@ export default class Shop {
     }
 
     sell(itemID, player) {
+      // console.log(itemID)
+      // console.log(ITEMS)
+      let quantity = player.quantity;
       if (!(itemID in ITEMS)) {
         return false;
       }
-      if (player.inventory.removeItem(itemID, 1)) {
-        player.gold.amount += item.sellPrice;
-        return true;
-        }
-      return false;
+      if (ITEMS[itemID].sellPrice == null) {
+        return false;
+      }
+      // console.log("aaa")
+      
+      player.inventory.removeItem(itemID, quantity)
+      player.gold.amount += ITEMS[itemID].sellPrice * quantity;
+
+      return true;
     }
 
     moveUp() {
@@ -91,6 +98,13 @@ export default class Shop {
       }
       else if (x > xStart + 364 * overlayScale && x <= xStart + 375 * overlayScale && y > yStart + 25 * overlayScale && y <= yStart + 38 * overlayScale) {
         this.moveDown();
+      }
+      else {
+        let inventory = game.player.inventory;
+        let slot = inventory.getSlotAtPosition(x, y, 12, 3, overlayScale);
+        if (slot != null && inventory.getSlot(slot)["count"] >= game.player.quantity) {
+          this.sell(game.player.inventory.getSlot(slot)["itemID"], game.player);
+        }
       }
     }
 
