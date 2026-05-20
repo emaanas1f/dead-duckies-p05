@@ -37,23 +37,19 @@ const WILLY = await getJson("npcs/willy.json")
 export const NPC_INFO = {"pierre": PIERRE, "willy": WILLY}
 
 export const SHOPS = await getJson("shops.json");
-const ENTITY_NAMES = {
-  "back": ["tilled", "watered"],
-  "middle": ["stone", "twig", "weed"],
-  "front": ["tree"]
-}
 
-export const TILE_IMAGES = {
+const TILE_IMAGES = {
   "back": {},
   "middle": {},
   "front": {}
 };
 
-for (const [key, value] of Object.entries(ENTITY_NAMES)) {
-  value.forEach((entity) => {
-    TILE_IMAGES[key][entity] = new Image();
-    TILE_IMAGES[key][entity].src = `/static/images/${key}-layer/${entity}.png`;
-  })
+export function getTileImage(layer, name) {
+  if (!Object.hasOwn(TILE_IMAGES[layer], name)) {
+    TILE_IMAGES[layer][name] = new Image();
+    TILE_IMAGES[layer][name].src = `/static/images/${layer}-layer/${name}.png`;
+  }
+  return TILE_IMAGES[layer][name];
 }
 
 // Base Tile in Image File
