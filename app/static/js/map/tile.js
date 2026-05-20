@@ -1,6 +1,6 @@
-import { TILE_SIZE, SCALE_FACTOR, getTileImage, ENTITIES } from "./constants.js";
+import { TILE_SIZE, SCALE_FACTOR, getTileImage, ENTITIES } from "../constants.js";
 import BigEntity from "./big-entity.js"
-import NPC from "./npc.js"
+import NPC from "../npc.js"
 import Crop from "./crop.js"
 
 export default class Tile {
@@ -23,13 +23,16 @@ export default class Tile {
 
   add(entity, layer) {
     this.layers[layer] = entity;
+    
     if (layer == "front" && entity instanceof BigEntity) {
       this.passable = false;
     }
-    if (entity instanceof NPC) {
+    else if (entity instanceof NPC) {
       this.passable = false;
     }
-    if (layer == "middle" && !ENTITIES[entity]["passable"]) this.passable = false;
+    else if (layer == "middle" && !ENTITIES[entity]["passable"]) {
+      this.passable = false;
+    }
   }
 
   remove(layer) {

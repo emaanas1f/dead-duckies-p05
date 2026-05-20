@@ -1,4 +1,4 @@
-import {TILE_SIZE, ITEMS, HOTBAR_HEIGHT, HOTBAR_WIDTH, UI_FACTOR, HOTBAR_SIZE, INVENTORY_HEIGHT, INVENTORY_WIDTH} from "./constants.js";
+import {TILE_SIZE, ITEMS, HOTBAR_HEIGHT, HOTBAR_WIDTH, UI_FACTOR, HOTBAR_SIZE, INVENTORY_HEIGHT, INVENTORY_WIDTH} from "../constants.js";
 
 let loadedItems = {};
 const INVENTORY_SCALE = 3;
@@ -21,14 +21,6 @@ export class Inventory {
     this.select = new Image();
     this.select.src = '/static/images/ui/select.png';
 
-    let itemNames = ["axe", "fish","hoe", "mixed_seeds", "pickaxe", "scythe", "parsnip_seeds", "stone", "watering_can", "wood"];
-
-    for (let i = 0; i < itemNames.length; i += 1) {
-      let name = itemNames[i];
-      let asset = new Image();
-      asset.src = `/static/images/items/${name}.png`;
-      loadedItems[name] = asset;
-    }
     for (let i = 0; i < size; i += 1) {
       this.slots[i] = {itemID: null, count: 0};
     }
@@ -53,9 +45,9 @@ export class Inventory {
   }
 
   addItem(itemID, amount) {
-    if (!(itemID in loadedItems)) {
+    if (!Object.hasOwn(loadedItems, itemID)) {
       let asset = new Image();
-      asset.src = `/static/images/items/${itemID}.png`;
+      asset.src = `/static/images/items/${ITEMS[itemID]["category"]}/${itemID}.png`;
       loadedItems[itemID] = asset;
     }
 

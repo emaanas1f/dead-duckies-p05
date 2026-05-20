@@ -1,7 +1,7 @@
 import BigEntity from './big-entity.js';
-import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, getJson } from './constants.js'
+import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, getJson } from '../constants.js'
 import Tile from './tile.js';
-import NPC from './npc.js';
+import NPC from '../npc.js';
 
 export default class Map {
   constructor(name) {
@@ -95,7 +95,6 @@ export default class Map {
     })
 
     let npcsToDraw = [];
-
     this.npcList.forEach((npc) => {
       if (npc.x > leftBound - 5 && npc.x < rightBound + 5
         && npc.y > topBound - 5 && npc.y < bottomBound + 5

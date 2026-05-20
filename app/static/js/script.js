@@ -1,15 +1,15 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE,
          UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH } from './constants.js'
-import { initializeFarm, initializeMine } from './map.js';
+import { initializeFarm, initializeMine } from './map/map.js';
 
-import Map from './map.js'
+import Map from './map/map.js'
 import Player from './player.js';
-import Time from './time.js';
+import Time from './ui/time.js';
 import NPC from './npc.js';
-import Shop from './shop.js';
-import MouseHandler from './mouse.js';
-import Stamina from './stamina.js';
-import Gold from "./gold.js";
+import Shop from './menus/shop.js';
+import MouseHandler from './menus/mouse.js';
+import Stamina from './ui/stamina.js';
+import Gold from "./ui/gold.js";
 
 class InputHandler {
   constructor(game) {

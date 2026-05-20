@@ -1,6 +1,6 @@
 import { NPC_INFO, ITEMS, CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE, SCALE_FACTOR } from "./constants.js"
-import Shop from "./shop.js"
-import { renderWrappedText, getItemTitle } from "./text.js";
+import Shop from "./menus/shop.js"
+import { renderWrappedText, getItemTitle } from "./ui/text.js";
 
 const giftPoints = {"hate": -40, "dislike": -20, "neutral": 20, "like": 45, "love": 80}
 

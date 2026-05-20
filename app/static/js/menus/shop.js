@@ -1,7 +1,7 @@
-import { ITEMS, UI_FACTOR, CANVAS_HEIGHT, CANVAS_WIDTH, SHOPS } from './constants.js';
-import { renderWrappedText, getItemTitle } from './text.js';
+import { ITEMS, UI_FACTOR, CANVAS_HEIGHT, CANVAS_WIDTH, SHOPS } from '../constants.js';
+import { renderWrappedText, getItemTitle } from '../ui/text.js';
 import { Inventory } from './inventory.js';
-import Gold from './gold.js';
+import Gold from '../ui/gold.js';
 
 const overlayScale = 2;
 const xStart = (CANVAS_WIDTH / 2) - 375;
@@ -24,7 +24,7 @@ export default class Shop {
       this.itemTitles = []; // to prevent running getItemTitle method on each render
       Object.keys(this.shopInventory).forEach((item, i) => {
         this.sprites.push(new Image());
-        this.sprites[i].src = `/static/images/items/${item}.png`;
+        this.sprites[i].src = `/static/images/items/${ITEMS[item]["category"]}/${item}.png`;
         this.itemTitles.push(getItemTitle(Object.keys(this.shopInventory)[i]))
       });
 

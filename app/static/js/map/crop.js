@@ -1,4 +1,4 @@
-import { TILE_SIZE, CROPS, SCALE_FACTOR } from './constants.js'
+import { TILE_SIZE, CROPS, SCALE_FACTOR } from '../constants.js'
 
 let loadedCrops = {};
 

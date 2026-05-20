@@ -1,9 +1,9 @@
-import BigEntity from "./big-entity.js";
+import BigEntity from "./map/big-entity.js";
 import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT, FRAME_RATE, ITEMS } from "./constants.js";
-import { Inventory } from './inventory.js';
+import { Inventory } from './menus/inventory.js';
 import NPC from "./npc.js"
-import Crop from "./crop.js"
-import Gold from "./gold.js"
+import Crop from "./map/crop.js"
+import Gold from "./ui/gold.js"
 
 // Correspond with rows in player.png
 const DOWN = 0;
@@ -114,7 +114,6 @@ export default class Player {
     }
 
     else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) {
-      console.log("HERE");
       this.game.clearMenus();
       this.game.menu = "shop";
       this.currentShop = this.game.pierreShop;

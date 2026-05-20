@@ -1,4 +1,4 @@
-import { TILE_SIZE, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT, FRAME_RATE, X_RES, Y_RES, TIME_CONVERSION } from "./constants.js";
+import { TILE_SIZE, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT, FRAME_RATE, X_RES, Y_RES, TIME_CONVERSION } from "../constants.js";
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 

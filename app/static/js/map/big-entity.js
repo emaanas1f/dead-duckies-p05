@@ -1,5 +1,5 @@
 // Multi-tile objects; e.g. trees
-import { OBJECT_PLACEMENT, TILE_SIZE, getTileImage, SCALE_FACTOR } from "./constants.js";
+import { OBJECT_PLACEMENT, TILE_SIZE, getTileImage, SCALE_FACTOR } from "../constants.js";
 
 export default class BigEntity {
   constructor(x, y, type, map, breakable=true) {
