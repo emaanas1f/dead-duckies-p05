@@ -1,34 +1,60 @@
 {
   "twig": {
-    "tools": [
-      "axe"
-    ],
+    "tools": ["axe"],
     "drops": {
       "wood": 1
-    }
+    },
+    "passable": false
   },
   "stone": {
-    "tools": [
-      "pickaxe"
-    ],
+    "tools": ["pickaxe"],
     "drops": {
       "stone": 1
-    }
+    },
+    "passable": false
   },
   "weed": {
-    "tools": [
-      "scythe"
-    ],
+    "tools": ["scythe", "axe"],
     "drops": {
-      "mixed seeds": 1
-    }
+      "mixed_seeds": 1
+    },
+    "passable": false
   },
   "tree": {
-    "tools": [
-      "axe"
-    ],
+    "tools": ["axe"],
     "drops": {
       "wood": 10
-    }
+    },
+    "passable": false
+  },
+
+  
+  "ore/coal": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/gold": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/copper": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/stone": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
   }
 }

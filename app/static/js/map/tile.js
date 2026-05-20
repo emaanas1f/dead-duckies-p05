@@ -1,13 +1,7 @@
-import { TILE_SIZE, SCALE_FACTOR, TILE_IMAGES } from "./constants.js";
+import { TILE_SIZE, SCALE_FACTOR, getTileImage, ENTITIES } from "../constants.js";
 import BigEntity from "./big-entity.js"
-import NPC from "./npc.js"
+import NPC from "../npc.js"
 import Crop from "./crop.js"
-
-const IMPASSABLE_ENTITIES = new Set([
-  "twig",
-  "weed",
-  "stone"
-])
 
 export default class Tile {
   constructor(x, y, data) {
@@ -29,20 +23,23 @@ export default class Tile {
 
   add(entity, layer) {
     this.layers[layer] = entity;
+    
     if (layer == "front" && entity instanceof BigEntity) {
       this.passable = false;
     }
-    if (entity instanceof NPC) {
+    else if (entity instanceof NPC) {
       this.passable = false;
     }
-    if (layer == "middle" && IMPASSABLE_ENTITIES.has(entity)) this.passable = false;
+    else if (layer == "middle" && !ENTITIES[entity]["passable"]) {
+      this.passable = false;
+    }
   }
 
   remove(layer) {
     this.layers[layer] = null;
     this.passable = this.basePassable;
     if (this.layers["front"] instanceof BigEntity ||
-        IMPASSABLE_ENTITIES.has(this.layers["middle"])) {
+        (this.layers["middle"] && !ENTITIES[this.layers["middle"]]["passable"])) {
       this.passable = false;
     }
   }
@@ -72,7 +69,8 @@ export default class Tile {
       if (value instanceof Crop) {
         value.render(ctx, map);
       } else {
-        ctx.drawImage(TILE_IMAGES[key][value], 0, 0, TILE_SIZE, TILE_SIZE,
+        let image = getTileImage(key, value);
+        ctx.drawImage(image, 0, 0, TILE_SIZE, TILE_SIZE,
           (this.x * TILE_SIZE - map.x) * SCALE_FACTOR,
           (this.y * TILE_SIZE - map.y) * SCALE_FACTOR,
           TILE_SIZE * SCALE_FACTOR, TILE_SIZE * SCALE_FACTOR

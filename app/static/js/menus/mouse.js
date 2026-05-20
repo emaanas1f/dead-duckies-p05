@@ -1,4 +1,4 @@
-import { INVENTORY_WIDTH, INVENTORY_HEIGHT, UI_FACTOR } from "./constants.js";
+import { INVENTORY_WIDTH, INVENTORY_HEIGHT, UI_FACTOR } from "../constants.js";
 
 //mouse.js exists for inventory click and drag
 export default class MouseHandler {

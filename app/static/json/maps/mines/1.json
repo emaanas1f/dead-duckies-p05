@@ -2160,9 +2160,13 @@
     },
     {
       "passable": true,
-      "destination": null,
+      "destination": {
+        "map": "farm",
+        "x": 34,
+        "y": 8
+      },
       "tillable": false,
-      "teleporter": false,
+      "teleporter": true,
       "spawnable": false
     },
     {

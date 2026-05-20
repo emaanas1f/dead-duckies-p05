@@ -8,7 +8,7 @@ const TILE_SIZE = 16;
 const propertySelect = document.getElementById('property-select');
 const mapSelect = document.getElementById('map-select');
 
-const DEBUG = false;
+const DEBUG = true;
 const TILLABLE_HELPER = false;
 const UNTILLABLE_HELPER = false;
 const PROPERTIES = {
@@ -66,6 +66,7 @@ function render() {
   ctx.drawImage(map, 0, 0, map.width, map.height, 0, 0, map.width, map.height);
 
   let key = currentProperty;
+  if (currentProperty == "setwarp") key = "teleporter";
   let def = PROPERTIES[key];
   // for (const [key, def] of Object.entries(PROPERTIES)) {
     ctx.fillStyle = def.color;

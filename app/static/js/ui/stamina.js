@@ -1,4 +1,4 @@
-import { CANVAS_WIDTH, CANVAS_HEIGHT } from "./constants.js";
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from "../constants.js";
 
 export default class Stamina {
     constructor(max) { //in game it is 270 but doubt we need that much

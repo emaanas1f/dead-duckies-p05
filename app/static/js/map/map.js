@@ -1,7 +1,7 @@
 import BigEntity from './big-entity.js';
-import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, getJson } from './constants.js'
+import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, getJson } from '../constants.js'
 import Tile from './tile.js';
-import NPC from './npc.js';
+import NPC from '../npc.js';
 
 export default class Map {
   constructor(name) {
@@ -97,7 +97,6 @@ export default class Map {
     })
 
     let npcsToDraw = [];
-
     this.npcList.forEach((npc) => {
       if (npc.x > leftBound - 5 && npc.x < rightBound + 5
         && npc.y > topBound - 5 && npc.y < bottomBound + 5
@@ -107,22 +106,50 @@ export default class Map {
         } else {
           npc.render(ctx, this);
         }
-        // console.log(`${npc.y * TILE_SIZE}, ${player.y + TILE_SIZE * 2}`)
-        // console.log(`${npc.x * TILE_SIZE}, ${player.x}`)
-        // console.log(player.y + TILE_SIZE * 2 > npc.y * TILE_SIZE)
       }
     });
 
     return npcsToDraw;
-
-
-    // this.npcList.forEach((npc) => {
-    //   if (npc.x > leftBound - 5 && npc.x < rightBound + 5
-    //     && npc.y > topBound - 5 && npc.y < bottomBound + 5
-    //     && npc.map == this
-    //   ) {
-    //     npc.render(ctx);
-    //   }
-    // })
   }
+}
+
+export function initializeFarm(map, player) {
+  for (let x = 0; x < map.tiles.length; x++) {
+    for (let y = 0; y < map.tiles[x].length; y++) {
+      if (!map.tiles[x][y].tillable) continue;
+      const randomNum = Math.floor(Math.random() * 100);
+      if (randomNum < 2) {
+        map.addBigEntity(x, y, "tree");
+      } else if (randomNum < 7) {
+        map.tiles[x][y].add("stone", "middle");
+      } else if (randomNum < 12) {
+        map.tiles[x][y].add("twig", "middle");
+      } else if (randomNum < 17) {
+        map.tiles[x][y].add("weed", "middle");
+      }
+    }
+  }
+  let playerTile = map.getTile(player.x, player.y + 23);
+  playerTile.remove("middle");
+  map.removeBigEntity(playerTile.x, playerTile.y);
+}
+
+export function initializeMine(map, player) {
+  for (let x = 0; x < map.tiles.length; x++) {
+    for (let y = 0; y < map.tiles[x].length; y++) {
+      if (!map.tiles[x][y].spawnable) continue;
+      const randomNum = Math.floor(Math.random() * 100);
+      if (randomNum < 7) {
+        map.tiles[x][y].add("ore/coal", "middle");
+      } else if (randomNum < 12) {
+        map.tiles[x][y].add("ore/copper", "middle");
+      } else if (randomNum < 17) {
+        map.tiles[x][y].add("ore/gold", "middle");
+      } else if (randomNum < 50) {
+        map.tiles[x][y].add("ore/stone", "middle");
+      }
+    }
+  }
+  let playerTile = map.getTile(player.x, player.y + 23);
+  playerTile.remove("middle");
 }

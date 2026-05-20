@@ -3,49 +3,56 @@
     "maxStack": 99,
     "buyPrice": 10,
     "sellPrice": 5,
-    "reaction": "dislike"
+    "reaction": "dislike",
+    "category": "resources"
   },
   "stone": {
     "maxStack": 99,
     "buyPrice": 8,
     "sellPrice": 4,
-    "reaction": "dislike"
+    "reaction": "dislike",
+    "category": "resources"
   },
+
   "mixed_seeds": {
     "maxStack": 99,
     "sellPrice": 5,
-    "reaction": "neutral"
+    "reaction": "neutral",
+    "category": "seeds"
   },
-  "fish": {
-    "maxStack": 10,
-    "reaction": "neutral"
-  },
-
   "parsnip_seeds": {
     "maxStack": 99,
     "buyPrice": 20,
     "sellPrice": 10,
-    "reaction": "dislike"
+    "reaction": "dislike",
+    "category": "seeds"
   },
+
   "parsnip": {
     "maxStack": 99,
     "sellPrice": 35,
-    "reaction": "like"
+    "reaction": "like",
+    "category": "crops"
   },
 
   "axe": {
-    "maxStack": 1
+    "maxStack": 1,
+    "category": "tools"
   },
   "pickaxe": {
-    "maxStack": 1
+    "maxStack": 1,
+    "category": "tools"
   },
   "hoe": {
-    "maxStack": 1
+    "maxStack": 1,
+    "category": "tools"
   },
   "scythe": {
-    "maxStack": 1
+    "maxStack": 1,
+    "category": "tools"
   },
   "watering_can": {
-    "maxStack": 1
+    "maxStack": 1,
+    "category": "tools"
   }
 }
