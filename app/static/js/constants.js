@@ -2,6 +2,9 @@ export async function getJson(file_name) {
   let raw = await fetch(`/static/json/${file_name}`, {
     cache: 'no-store'
   })
+  if (!raw.ok) {
+    throw new Error('File not found (404)');
+  }
   let parsed = await raw.json()
   return parsed;
 }

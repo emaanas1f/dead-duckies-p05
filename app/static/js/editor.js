@@ -3,89 +3,71 @@
 // s - download JSON
 // p - print tile to console
 
-async function getJson(file_name) {
-  let raw = await fetch(`/static/json/${file_name}`, {
-    cache: 'no-store'
-  })
-  let parsed = await raw.json()
-  return parsed;
-}
-
 const TILE_SIZE = 16;
-// const MAP_WIDTH = 1280;
-// const MAP_HEIGHT = 1040;
-// const MODIFYING_ATTRIBUTE = "passable";
-// const DEFAULT_VALUE = true;
-const PROPERTIES = {
-  passable: {defaultValue: true, color: 'rgba(255, 0, 0, 0.35)'},
-  tillable: {defaultValue: true, color: 'rgba(0, 255, 0, 0.35)'},
-  teleporter: {defaultValue: false, color: 'rgba(0, 0, 255, 0.35)'}
-};
 
 const propertySelect = document.getElementById('property-select');
 const mapSelect = document.getElementById('map-select');
 
-let currentProperty = 'passable';
-let currentMap = 'farm';
+const DEBUG = false;
+const TILLABLE_HELPER = false;
+const UNTILLABLE_HELPER = false;
+const PROPERTIES = {
+  passable: {defaultValue: false, color: 'rgba(255, 0, 0, 0.35)'},
+  tillable: {defaultValue: false, color: 'rgba(0, 255, 0, 0.35)'},
+  teleporter: {defaultValue: false, color: 'rgba(0, 0, 255, 0.35)'},
+  spawnable: {defaultValue: false,  color: 'rgba(255, 255, 0, 0.35)'}
+};
 
-let map = new Image();
-map.src = '/static/images/maps/farm.png'
-
-const canvas = document.getElementById('main-canvas');
-const ctx = canvas.getContext('2d');
-ctx.imageSmoothingEnabled = false;
-
-//this initializes initial json for a map
-// let tiles = [];
-// for (let x = 0; x < map.width / TILE_SIZE; x++) {
-//   tiles.push([]);
-//   for (let y = 0; y < map.height / TILE_SIZE; y++) {
-//     tiles.at(-1).push({
-//       "passable": true,
-//       "tillable": true, // Only for farm map
-//       "teleporter": false,
-//       "destination": null // Otherwise {"map": <mapName>, "tile": [<x>, <y>]}
-//     })
-//   }
-// }
-// console.log(tiles);
-
-let tiles = await getJson('maps/farm.json');
-
-//this converts every impassable tile into an untillable one
-// async function tillableHelper() {
-//   for (const col of tiles) {
-//     for (const tile of col) {
-//       if (!tile.passable) {
-//         tile.tillable = false;
-//       }
-//     }
-//   }
-//   render();
-// }
-
-// tillableHelper();
-
-//this converts every tile to untillable
-async function untillableHelper() {
-  for (const col of tiles) {
-    for (const tile of col) {
-      tile.tillable = false;
-    }
+for (const [key, value] of Object.entries(PROPERTIES)) {
+  if (value["defaultValue"]) {
+    value["color"] = 'rgba(255, 0, 0, 0.35)';
+  } else {
+    value["color"] = 'rgba(0, 255, 0, 0.35)';
   }
-  render();
+  propertySelect.innerHTML += `<option value=${key}>${key.toLocaleUpperCase()}</option>`;
+}
+propertySelect.innerHTML += `<option value="setwarp">Set Warp Destination</option>`
+
+async function getJson(file_name) {
+  let raw = await fetch(`/static/json/${file_name}`, {
+    cache: 'no-store'
+  })
+  if (!raw.ok) {
+    throw new Error('File not found (404)');
+  }
+  let parsed = await raw.json()
+  return parsed;
 }
 
-untillableHelper();
+let currentProperty = 'passable';
+let currentMap = 'mines/1';
 
-let paint = true;
-let held = false;
+let map = new Image();
+map.src = `/static/images/maps/${currentMap}.png`
+
+async function initializeTiles() {
+  let tiles = [];
+  for (let x = 0; x < map.width / TILE_SIZE; x++) {
+    tiles.push([]);
+    for (let y = 0; y < map.height / TILE_SIZE; y++) {
+      let newTile = {};
+      for (const [key, val] of Object.entries(PROPERTIES)) {
+        newTile[key] = PROPERTIES[key]["defaultValue"];
+        newTile["destination"] = null; // Otherwise {"map": <mapName>, "tile": [<x>, <y>]}
+      }
+      tiles.at(-1).push(newTile);
+    }
+  }
+  return tiles;
+}
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(map, 0, 0, map.width, map.height, 0, 0, map.width, map.height);
 
-  for (const [key, def] of Object.entries(PROPERTIES)) {
+  let key = currentProperty;
+  let def = PROPERTIES[key];
+  // for (const [key, def] of Object.entries(PROPERTIES)) {
     ctx.fillStyle = def.color;
     for (let x = 0; x < map.width / TILE_SIZE; x++) {
       for (let y = 0; y < map.height / TILE_SIZE; y++) {
@@ -94,21 +76,39 @@ function render() {
         }
       }
     }
-  // ctx.fillStyle = 'rgba(255, 0, 0, 0.35)';
-  // for (let x = 0; x < MAP_WIDTH / TILE_SIZE; x++) {
-  //   for (let y = 0; y < MAP_HEIGHT / TILE_SIZE; y++) {
-  //     if (tiles[x][y][MODIFYING_ATTRIBUTE] != DEFAULT_VALUE) {
-  //       ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-  //     }
-  //   }
   // }
-  }
 }
+
+// MAIN LOGIC
+
+const canvas = document.getElementById("main-canvas");
+const ctx = canvas.getContext("2d");
+
+let tiles;
+
+map.onload = async () => {
+  canvas.width = map.width;
+  canvas.height = map.height;
+  tiles = [];
+  try {
+    tiles = await getJson(`maps/${currentMap}.json`);
+  } catch (error) {
+    tiles = await initializeTiles();
+  }
+  if (TILLABLE_HELPER) await tillableHelper();
+  if (UNTILLABLE_HELPER) await untillableHelper();
+  render();
+}
+
+// DRAWING
+
+let paint = true;
+let held = false;
 
 function draw(e) {
   const x = Math.floor((e.offsetX) / TILE_SIZE);
   const y = Math.floor((e.offsetY) / TILE_SIZE);
-  console.log(`${x}, ${y}`);
+  if (DEBUG) console.log(`${x}, ${y}`);
   if (currentProperty === 'setwarp') {
     if (!tiles[x][y].teleporter) {
       return;
@@ -121,7 +121,6 @@ function draw(e) {
     const destY = parseInt(prompt("destination y?"));
     if (isNaN(destY)) return;
     tiles[x][y].destination = { map: destination, x: destX, y: destY};
-    console.log('yay dis worked');
     render();
     return;
   }
@@ -133,16 +132,7 @@ function draw(e) {
   render();
 }
 
-
-window.addEventListener('load', function() {
-  map.onload = () => {
-    canvas.width = map.width;
-    canvas.height = map.height;
-    ctx.imageSmoothingEnabled = false;
-    render();
-  }
-  map.src = '/static/images/maps/farm.png'
-});
+// EVENT LISTENERS
 
 window.addEventListener('keydown', e => {
   if (e.key === 'p') {
@@ -161,6 +151,7 @@ window.addEventListener('keydown', e => {
 
 propertySelect.addEventListener('change', () => {
   currentProperty = propertySelect.value;
+  render();
 });
 
 mapSelect.addEventListener('change', async () => {
@@ -188,3 +179,27 @@ canvas.addEventListener('mousemove', e => {
 canvas.addEventListener('mouseup', e => {
   held = false;
 });
+
+// HELPER MODIFICATIONS
+
+//this converts every impassable tile into an untillable one
+async function tillableHelper() {
+  for (const col of tiles) {
+    for (const tile of col) {
+      if (!tile.passable) {
+        tile.tillable = false;
+      }
+    }
+  }
+  render();
+}
+
+//this converts every tile to untillable
+async function untillableHelper() {
+  for (const col of tiles) {
+    for (const tile of col) {
+      tile.tillable = false;
+    }
+  }
+  render();
+}

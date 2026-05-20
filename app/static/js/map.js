@@ -22,11 +22,13 @@ export default class Map {
         this.tiles.at(-1).push(new Tile(x, y, data[x][y]));
       }
     }
-    const metadata = await getJson(`metadata/${name}.json`);
-    metadata["npcs"].forEach((data) => {
-      let npc = new NPC(data["name"], data["x"], data["y"], this);
-      this.npcList.push(npc);
-    });
+    try {
+      const metadata = await getJson(`metadata/${name}.json`);
+      metadata["npcs"].forEach((data) => {
+        let npc = new NPC(data["name"], data["x"], data["y"], this);
+        this.npcList.push(npc);
+      });
+    } catch (error) {} // OK if no NPC
   }
 
   // Physical coordinate in unscaled map

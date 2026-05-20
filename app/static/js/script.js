@@ -90,11 +90,11 @@ class StardewValley {
     this.mouseToggled = false; // for one-time mouse inputs to prevent them from firing every frame
     this.maps = {
       farm: new Map('farm'),
-      town: new Map('town'),
-      seedshop: new Map('seedshop'),
-      farmhouse: new Map('farmhouse'),
-      beach: new Map('beach'),
-      fishshop: new Map('fishshop')
+      // town: new Map('town'),
+      // seedshop: new Map('seedshop'),
+      // farmhouse: new Map('farmhouse'),
+      // beach: new Map('beach'),
+      // fishshop: new Map('fishshop')
     };
     this.currentMap = 'farm';
     this.map = this.maps['farm'];
@@ -172,12 +172,18 @@ class StardewValley {
           this.player.y = tile.destination.y * TILE_SIZE;
         }
 
-        if (this.maps[tile.destination.map].tiles) {
+        if (!Object.hasOwn(this.maps, tile.destination.map)) {
+          this.maps[tile.destination.map] = new Map(tile.destination.map);
+          this.maps[tile.destination.map].loadTiles(tile.destination.map).then(teleport);
+        } else {
           teleport();
         }
-        else {
-          this.maps[tile.destination.map].loadTiles(tile.destination.map).then(teleport);
-        }
+
+        // if (this.maps[tile.destination.map].tiles) {
+        //   teleport();
+        // }
+        // else {
+          
       }
     } else {
       this.justTeleported = false;

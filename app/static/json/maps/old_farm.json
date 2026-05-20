@@ -13371,14 +13371,10 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": true,
-      "destination": {
-        "map": "mines/1",
-        "x": 15,
-        "y": 4
-      }
+      "destination": null
     },
     {
       "passable": true,
