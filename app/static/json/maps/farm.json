@@ -16047,8 +16047,12 @@
     {
       "passable": true,
       "tillable": true,
-      "teleporter": false,
-      "destination": null
+      "teleporter": true,
+      "destination": {
+        "map": "forest",
+        "x": 69,
+        "y": 0
+      }
     },
     {
       "passable": false,
@@ -16439,8 +16443,12 @@
     {
       "passable": true,
       "tillable": true,
-      "teleporter": false,
-      "destination": null
+      "teleporter": true,
+      "destination": {
+        "map": "forest",
+        "x": 69,
+        "y": 0
+      }
     },
     {
       "passable": false,
@@ -24779,7 +24787,7 @@
       "destination": null
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null
