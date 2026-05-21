@@ -338,3 +338,15 @@ sarahZ -- 2026-05-20 19:30
 
 emaanA -- 2026-05-20 23:00
 - working on crafting menu
+
+kiranS -- 2026-05-21 11:00
+- working on relationships menu
+
+jamesL -- 2026-05-21 11:00
+- working on menu assets / menu.js
+
+sarahZ -- 2026-05-21 11:00
+- setting up forest teleports
+
+emaanA -- 2026-05-21 11:00
+- working on crafting, need assets

@@ -88,6 +88,13 @@ export default class NPC {
     this.dialogue = this.dialogue.replace("@", player)
   }
 
+  addPlayer(player){
+    this.points[player] = 0
+    this.giftNumber[player] = 0
+    this.talked[player] = false
+    this.status[player] = 0
+  }
+
   renderDialogue(ctx, player) {
     // console.log(this.dialogue)
     let overlayScale = 2;
@@ -108,8 +115,8 @@ export default class NPC {
     ctx.font = `${fontSize}px bold`
     ctx.fillStyle = "#56160c";
     ctx.letterSpacing = "2px";
-    renderWrappedText(ctx, this.dialogue, 
-      xStart + 14 * overlayScale, yStart + (11 + 3) * overlayScale + fontSize / 2, 
+    renderWrappedText(ctx, this.dialogue,
+      xStart + 14 * overlayScale, yStart + (11 + 3) * overlayScale + fontSize / 2,
       174 * overlayScale, fontSize + 2 * overlayScale
     );
 
@@ -122,14 +129,7 @@ export default class NPC {
     // document.getElementById("dialogue").innerHTML = dialogue.replaceAll("@", player)
     // document.getElementById("portrait").src = `/static/images/portraits/${this.name}.png`
   }
-
-  addPlayer(player){
-    this.points[player] = 0
-    this.giftNumber[player] = 0
-    this.talked[player] = false
-    this.status[player] = 0
-  }
-
+  
   render(ctx, map) {
     ctx.drawImage(this.sprite, 0, 0, TILE_SIZE, TILE_SIZE * 2,
       ((this.x * TILE_SIZE) - map.x) * SCALE_FACTOR, ((this.y - 1) * TILE_SIZE - map.y) * SCALE_FACTOR,
