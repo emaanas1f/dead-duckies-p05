@@ -100,6 +100,17 @@ export class Inventory {
     return remaining === 0;
   }
 
+  countItem(item) {
+  let total = 0;
+  for (let slot of this.inventory) {
+    if (!slot) continue;
+    if (slot.item === item) {
+      total += slot.amount;
+    }
+  }
+  return total;
+}
+
   getSlotAtPosition(mouseX, mouseY, columns, rows, overlayScale) {
     let scaledTile = TILE_SIZE * overlayScale;
 

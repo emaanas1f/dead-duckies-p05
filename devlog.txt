@@ -335,3 +335,6 @@ sarahZ -- 2026-05-20 19:30
 - added transparent background overlay when shop menu opens
 - filled in background when maps are too small, tried to center map but messed up the camera so removed edits, but might try again next time
 - added forest map
+
+emaanA -- 2026-05-20 23:00
+- working on crafting menu

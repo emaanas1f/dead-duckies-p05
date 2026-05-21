@@ -8,6 +8,7 @@ import Time from './ui/time.js';
 import NPC from './npc.js';
 import Shop from './menus/shop.js';
 import MouseHandler from './menus/mouse.js';
+import CraftingMenu from './menus/crafting.js';
 import Stamina from './ui/stamina.js';
 import Gold from "./ui/gold.js";
 
@@ -38,6 +39,10 @@ class InputHandler {
           game.clearMenus();
           game.player.inventory.open = true;
           game.menu = "inventory";
+        } else if (e.key == "k" || e.key == "K") {
+          game.clearMenus();
+          game.craftingMenu.open = true;
+          game.menu = "crafting";
         }
       }
       if (game.menu == "shop") {
@@ -110,6 +115,8 @@ class StardewValley {
 
     this.pierreShop = new Shop("pierre");
 
+    this.craftingMenu = new CraftingMenu(this);
+
     this.player.inventory.addItem("axe", 1);
     this.player.inventory.addItem("hoe", 1);
     this.player.inventory.addItem("pickaxe", 1);
@@ -157,7 +164,8 @@ class StardewValley {
     this.hotbarCtx.clearRect(0, 0, HOTBAR_WIDTH * UI_FACTOR, HOTBAR_HEIGHT * UI_FACTOR);
     this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     this.player.inventory.open = false;
-    this.menu = "map";
+    this.craftingMenu.open = false;
+    //this.menu = "map";
   }
 
   loop() {
@@ -192,6 +200,18 @@ class StardewValley {
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         this.player.inventory.renderInventory(this.overlayCtx, 150, 150, UI_FACTOR);
         this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
+        break;
+      case "crafting":
+        this.overlayCtx.clearRect( 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT );
+        this.craftingMenu.update( this.mouse.mouseX, this.mouse.mouseY);
+        this.craftingMenu.render(this.overlayCtx);
+        if (this.mouse.isDown && !this.mouseToggled) {
+          this.craftingMenu.click( this.mouse.mouseX, this.mouse.mouseY);
+          this.mouseToggled = true;
+        }
+        if (!this.mouse.isDown && this.mouseToggled) {
+          this.mouseToggled = false;
+        }
         break;
       case "shop":
         this.map.follow(this.player);

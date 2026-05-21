@@ -1,0 +1,23 @@
+{
+  "woodFence": {
+    "name": "Wood Fence",
+    "ingredients": [
+      { "item": "wood", "amount": 5 }
+    ],
+    "output": {
+      "item": "woodFence",
+      "amount": 1
+    }
+  },
+
+  "chest": {
+    "name": "Chest",
+    "ingredients": [
+      { "item": "wood", "amount": 20 }
+    ],
+    "output": {
+      "item": "chest",
+      "amount": 1
+    }
+  }
+}
