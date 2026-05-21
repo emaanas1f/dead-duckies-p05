@@ -165,7 +165,7 @@ class StardewValley {
     this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     this.player.inventory.open = false;
     this.craftingMenu.open = false;
-    //this.menu = "map";
+    this.menu = "map";
   }
 
   loop() {
