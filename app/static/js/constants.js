@@ -18,7 +18,7 @@ export const HOTBAR_SIZE = 12;
 export const UI_FACTOR = 3
 export const HOTBAR_WIDTH = 198;
 export const HOTBAR_HEIGHT = 22;
-export const INVENTORY_WIDTH = 211;
+export const INVENTORY_WIDTH = 208;
 export const INVENTORY_HEIGHT = 64;
 
 export const CANVAS_WIDTH = TILE_SIZE * SCALE_FACTOR * X_RES;
