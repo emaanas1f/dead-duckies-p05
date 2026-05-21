@@ -54,11 +54,9 @@ export default class CraftingMenu {
     let unlockedRecipes = this.game.player.unlockedRecipes;
 
 //need assets :(
-    ctx.fillStyle = "rgba(0,0,0,0.7)";
-    ctx.fillRect(150, 70, 500, 500);
-    ctx.fillStyle = "white";
-    ctx.font = "30px Arial";
-    ctx.fillText("Crafting", 320, 100); 
+   // ctx.fillStyle = "rgba(0,0,0,0.7)";
+   // ctx.fillRect(150, 70, 500, 500);
+    //ctx.fillStyle = "white";
 
     for (let i = 0; i < unlockedRecipes.length; i++) {
       let recipeId = unlockedRecipes[i];
@@ -85,10 +83,10 @@ export default class CraftingMenu {
         ctx.drawImage(outputImage, x + 10, y + 10, 48, 48);
       }
 
-      ctx.globalAlpha = 1;
-      ctx.fillStyle = "white";
-      ctx.font = "20px Arial";
-      ctx.fillText(recipe.name, x + 70, y + 28);
+      //ctx.globalAlpha = 1;
+      //ctx.fillStyle = "white";
+      //ctx.font = "20px Arial";
+      //ctx.fillText(recipe.name, x + 70, y + 28);
 
       for (let j = 0; j < recipe.ingredients.length; j++) {
         let ingredient = recipe.ingredients[j];
@@ -109,8 +107,8 @@ export default class CraftingMenu {
           ctx.fillStyle = "red";
         }
 
-        ctx.font = "14px Arial";
-        ctx.fillText( amountOwned + "/" + ingredient.amount, ingredientX + 28, ingredientY + 16);
+        //ctx.font = "14px Arial";
+       // ctx.fillText( amountOwned + "/" + ingredient.amount, ingredientX + 28, ingredientY + 16);
       }
     }
   }
