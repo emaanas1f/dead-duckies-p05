@@ -200,6 +200,7 @@ class StardewValley {
     this.menu = 'sleeping';
     this.sleepState = 'fadein';
     this.sleepAlpha = 0;
+    this.player.sleep();
   }
 }
 

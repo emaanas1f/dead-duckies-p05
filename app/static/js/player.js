@@ -115,6 +115,10 @@ export default class Player {
       this.game.currentNpc = entity;
     }
 
+    else if (tile && tile.interactable) {
+      this.game.startSleep();
+    }
+
     else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) {
       this.game.clearMenus();
       this.game.menu = "shop";
@@ -230,6 +234,10 @@ export default class Player {
       recipe.output.amount
     );
     return true;
+  }
+
+  sleep() {
+    this.game.time.nextDay(this.game);
   }
 
   getTile(map) {
