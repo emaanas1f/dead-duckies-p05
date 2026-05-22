@@ -1,10 +1,12 @@
-import {} from '../constants.js';
+import { UI_FACTOR, NPC_INFO } from '../constants.js';
 import NPC from '../ui/npc.js';
 
 export default class Relationships {
   constructor(npcs) {
     this.npcs = npcs;
     this.currentNpc = 0;
+    this.display = new Image();
+    this.display.src = "/static/images/ui/relatinships.png";
   }
 
   menuUp() {
@@ -14,13 +16,21 @@ export default class Relationships {
   }
 
   menuDown() {
-    if (this.currentNpc < this.npc.length) {
+    if (this.currentNpc < this.npcs.length) {
       this.currentNpc--;
     }
   }
 
-  renderMenu(ctx, player) {
-    
+  renderMenu(ctx, player, xStart, yStart) {
+    ctx.drawImage(this.display,
+      xStart, yStart,
+      208 * UI_FACTOR, 128 * UI_FACTOR
+    );
+
+    this.npcs.forEach((npc, i) => {
+
+    });
+
   }
 
 }
