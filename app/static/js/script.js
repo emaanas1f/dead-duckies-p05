@@ -4,86 +4,24 @@ import { initializeFarm, initializeMine } from './map/map.js';
 
 import Map from './map/map.js'
 import Player from './player.js';
-import Time from './ui/time.js';
 import NPC from './npc.js';
-import Shop from './menus/shop.js';
-import MouseHandler from './menus/mouse.js';
-import CraftingMenu from './menus/crafting.js';
+
+import Time from './ui/time.js';
 import Stamina from './ui/stamina.js';
 import Gold from "./ui/gold.js";
 
-class InputHandler {
-  constructor(game) {
-    this.keys = {};
-    window.addEventListener('keydown', e => {
-      if (game.menu == "map") {
-        if (['W', 'w', 'A', 'a', 'S', 's', 'D', 'd'].includes(e.key)) {
-          this.keys[e.key] = true;
-          e.preventDefault();
-        } else if (Number.isInteger(parseInt(e.key))) {
-          if (parseInt(e.key) == 0) {
-            game.player.inventory.selectSlot(9);
-          } else {
-            game.player.inventory.selectSlot(e.key - 1);
-          }
-          game.player.inventory.renderHotbar(game.hotbarCtx, game.hotbarCanvas);
-        } else if (e.key == "-") {
-          game.player.inventory.selectSlot(10);
-          game.player.inventory.renderHotbar(game.hotbarCtx, game.hotbarCanvas);
-        } else if (e.key == "=") {
-          game.player.inventory.selectSlot(11);
-          game.player.inventory.renderHotbar(game.hotbarCtx, game.hotbarCanvas);
-        } else if (e.key == "c" || e.key == "C") {
-          game.player.interact(game.map, game.stamina);
-        } else if (e.key == "e" || e.key == "E") {
-          game.clearMenus();
-          game.player.inventory.open = true;
-          game.menu = "inventory";
-        } else if (e.key == "k" || e.key == "K") {
-          game.clearMenus();
-          game.craftingMenu.open = true;
-          game.menu = "crafting";
-        }
-      }
-      if (game.menu == "shop") {
-        if (e.key == "ArrowUp") {
-          game.player.currentShop.moveUp();
-        }
-        else if (e.key == "ArrowDown") {
-          game.player.currentShop.moveDown();
-        }
-        else if (e.key == "Shift") {
-          // console.log("shift")
-          game.player.quantity = 5;
-        }
-        else if (e.key == "Control") {
-          game.player.quantity = 25;
-        }
-        else {
-          game.player.quantity = 1;
-        }
-      }
-      if (e.key == "Escape") {
-        game.clearMenus();
-        game.mouseToggled = false;
-      }
-    });
+import Shop from './menus/shop.js';
+import PlayerMenu from './menus/player-menu.js';
 
-    window.addEventListener('keyup', e => {
-      this.keys[e.key] = false;
-      game.player.quantity = 1;
-    });
-  }
-}
+import MouseHandler from './handlers/mouse.js';
+import InputHandler from './handlers/keyboard.js';
 
-//doesn't need to be a class, but doing it for organizasation
 class StardewValley {
   constructor(canvas, hotbarCanvas, overlayCanvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.ctx.imageSmoothingEnabled = false;
 
-    //ui canvas to stop redrawing
     this.hotbarCanvas = hotbarCanvas;
     this.hotbarCtx = this.hotbarCanvas.getContext('2d');
     this.hotbarCtx.imageSmoothingEnabled = false;
@@ -91,31 +29,22 @@ class StardewValley {
     this.overlayCanvas = overlayCanvas;
     this.overlayCtx = this.overlayCanvas.getContext('2d');
     this.overlayCtx.imageSmoothingEnabled = false;
-
-    this.mouse = new MouseHandler(this);
-    this.mouseToggled = false; // for one-time mouse inputs to prevent them from firing every frame
+    
     this.maps = {
       farm: new Map('farm'),
     };
-    this.currentMap = 'farm';
     this.map = this.maps['farm'];
-    //so player isnt js teleported back and forth on a warp tile
     this.justTeleported = false;
-
-    this.input = new InputHandler(this);
+    
     this.player = new Player("Kiran", this);
     this.time = new Time();
     this.stamina = new Stamina(100); //in game it is 270, but doubt we need that much
 
-    this.menu = "map";
+    this.playerMenu = new PlayerMenu(this);
+    this.menu = null;
+
     this.currentNpc;
-
-    //npcs and shops
-    // let pierre = this.map.addNPC(5, 5, "Pierre")
-
     this.pierreShop = new Shop("pierre");
-
-    this.craftingMenu = new CraftingMenu(this);
 
     this.player.inventory.addItem("axe", 1);
     this.player.inventory.addItem("hoe", 1);
@@ -123,7 +52,8 @@ class StardewValley {
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
 
-    this.player.inventory.renderHotbar(this.hotbarCtx, this.hotbarCanvas);
+    this.mouse = new MouseHandler(this);  
+    this.input = new InputHandler(this);
 
     this.maps['farm'].loadTiles('farm').then(() => {
       initializeFarm(this.map, this.player);
@@ -137,7 +67,6 @@ class StardewValley {
       if (!this.justTeleported) {
         const teleport = () => {
           this.justTeleported = true;
-          this.currentMap = tile.destination.map;
           this.map = this.maps[tile.destination.map];
           this.player.x = tile.destination.x * TILE_SIZE;
           this.player.y = tile.destination.y * TILE_SIZE;
@@ -163,14 +92,13 @@ class StardewValley {
   clearMenus() {
     this.hotbarCtx.clearRect(0, 0, HOTBAR_WIDTH * UI_FACTOR, HOTBAR_HEIGHT * UI_FACTOR);
     this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
-    this.player.inventory.open = false;
-    this.craftingMenu.open = false;
-    this.menu = "map";
+    this.playerMenu.close();
+    this.menu = null;
   }
 
   loop() {
     switch (this.menu) {
-      case "map":
+      case null:
         this.checkTeleport();
 
         this.map.follow(this.player);
@@ -179,39 +107,25 @@ class StardewValley {
 
         let npcsToDraw = this.map.render(this.ctx, this.player);
         this.player.render(this.ctx, this.map);
-
         npcsToDraw.forEach((npc) => {
           npc.render(this.ctx, this.map)
         });
 
-        this.time.update(this);
-        // let scaleFactor = .19 * CANVAS_WIDTH / 72;
         let scaleFactor = 2.5;
+
+        this.time.update(this);
         this.time.render(this.ctx, scaleFactor);
 
         this.player.gold.render(this.ctx,
-          .8 * CANVAS_WIDTH + 8 * scaleFactor, .01 * CANVAS_HEIGHT + 40 * scaleFactor,
-          scaleFactor
-        );
+          .8 * CANVAS_WIDTH + 8 * scaleFactor,
+          .01 * CANVAS_HEIGHT + 40 * scaleFactor,
+          scaleFactor);
 
         this.stamina.render(this.ctx);
         break;
-      case "inventory":
+      case "playerMenu":
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        this.player.inventory.renderInventory(this.overlayCtx, 150, 150, UI_FACTOR);
-        this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
-        break;
-      case "crafting":
-        this.overlayCtx.clearRect( 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT );
-        this.craftingMenu.update( this.mouse.mouseX, this.mouse.mouseY);
-        this.craftingMenu.render(this.overlayCtx);
-        if (this.mouse.isDown && !this.mouseToggled) {
-          this.craftingMenu.click( this.mouse.mouseX, this.mouse.mouseY);
-          this.mouseToggled = true;
-        }
-        if (!this.mouse.isDown && this.mouseToggled) {
-          this.mouseToggled = false;
-        }
+        this.playerMenu.render(this.overlayCtx, this.mouse);
         break;
       case "shop":
         this.map.follow(this.player);
@@ -223,7 +137,6 @@ class StardewValley {
 
         this.player.currentShop.render(this.overlayCtx, this.player);
         if (this.mouse.isDown && !this.mouseToggled) {
-          // console.log("down")
           this.player.currentShop.mouseInput(this, this.mouse.mouseX, this.mouse.mouseY);
           this.mouseToggled = true;
         }
@@ -237,8 +150,9 @@ class StardewValley {
         if (this.mouse.isDown) {
           this.clearMenus();
         }
-
+        break;
     }
+
     this.player.inventory.renderHotbar(this.hotbarCtx);
     this.player.move(this.input.keys, this.map, this.stamina);
     this.checkTeleport();

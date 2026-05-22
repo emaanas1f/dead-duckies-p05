@@ -101,15 +101,15 @@ export class Inventory {
   }
 
   countItem(item) {
-  let total = 0;
-  for (let slot of this.inventory) {
-    if (!slot) continue;
-    if (slot.item === item) {
-      total += slot.amount;
+    let total = 0;
+    for (let slot of this.inventory) {
+      if (!slot) continue;
+      if (slot.item === item) {
+        total += slot.amount;
+      }
     }
+    return total;
   }
-  return total;
-}
 
   getSlotAtPosition(mouseX, mouseY, columns, rows, overlayScale) {
     let scaledTile = TILE_SIZE * overlayScale;
@@ -243,7 +243,8 @@ export class Inventory {
     let width = INVENTORY_WIDTH * INVENTORY_SCALE;
     let height = INVENTORY_HEIGHT * INVENTORY_SCALE;
 
-    if (mouseX < this.inventoryX || mouseY < this.inventoryY || mouseX > this.inventoryX + width ||  mouseY > this.inventoryY + height) {
+    if (mouseX < this.inventoryX || mouseY < this.inventoryY ||
+        mouseX > this.inventoryX + width ||  mouseY > this.inventoryY + height) {
       return;
     }
 
