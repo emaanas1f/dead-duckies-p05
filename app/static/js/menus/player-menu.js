@@ -1,6 +1,7 @@
 import { CANVAS_HEIGHT, CANVAS_WIDTH, SCALE_FACTOR, TILE_SIZE, UI_FACTOR } from "../constants.js";
 import CraftingMenu from "./crafting.js";
 import RelationshipsMenu from "./relationships.js"
+import Player from "../player.js"
 
 const UI_TILE_SIZE = TILE_SIZE * UI_FACTOR
 const MENU_WIDTH = UI_TILE_SIZE * 13;
@@ -22,6 +23,7 @@ export default class PlayerMenu {
 
     this.relationshipsMenu = new RelationshipsMenu(game.npcList);
     this.ctx = game.overlayCtx;
+    this.player = game.player;
   }
 
   close() {
@@ -79,7 +81,7 @@ export default class PlayerMenu {
         this.inventoryMenu.renderDraggedItem(this.ctx, mouse.mouseX, mouse.mouseY);
         break;
       case "relationships":
-        // to be Implemented;
+        this.relationshipsMenu.render(overlayCtx, this.player, left, top, UI_FACTOR)
         break;
       case "crafting":
         // to be Implemented;
