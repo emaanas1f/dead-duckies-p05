@@ -1,7 +1,7 @@
 import {} from '../constants.js';
-import NPC from '../ui/npc.js';
+import NPC from '../npc.js';
 
-export default class Relationships {
+export default class RelationshipsMenu {
   constructor(npcs) {
     this.npcs = npcs;
     this.currentNpc = 0;
@@ -14,13 +14,13 @@ export default class Relationships {
   }
 
   menuDown() {
-    if (this.currentNpc < this.npc.length) {
+    if (this.currentNpc < this.npcs.length) {
       this.currentNpc--;
     }
   }
 
   renderMenu(ctx, player) {
-    
+
   }
 
 }
