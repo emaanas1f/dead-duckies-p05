@@ -1,7 +1,7 @@
 import { UI_FACTOR, NPC_INFO } from '../constants.js';
-import NPC from '../ui/npc.js';
+import NPC from '../npc.js';
 
-export default class Relationships {
+export default class RelationshipsMenu {
   constructor(npcs) {
     this.npcs = npcs;
     this.currentNpc = 0;

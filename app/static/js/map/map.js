@@ -13,7 +13,7 @@ export default class Map {
     this.crops = [];
   }
 
-  async loadTiles(name) {
+  async loadTiles(name, game) {
     this.tiles = [];
     const data = await getJson(`maps/${name}.json`);
     for (let x = 0; x < data.length; x++) {
@@ -27,6 +27,7 @@ export default class Map {
       metadata["npcs"].forEach((data) => {
         let npc = new NPC(data["name"], data["x"], data["y"], this);
         this.npcList.push(npc);
+        game.npcList.push(npc);
       });
     } catch (error) {} // OK if no NPC
   }
