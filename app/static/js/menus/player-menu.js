@@ -1,4 +1,4 @@
-import { CANVAS_HEIGHT, CANVAS_WIDTH, SCALE_FACTOR, TILE_SIZE, UI_FACTOR } from "../constants.js";
+import { CANVAS_HEIGHT, CANVAS_WIDTH, SCALE_FACTOR, TILE_SIZE, UI_FACTOR} from "../constants.js";
 import CraftingMenu from "./crafting.js";
 
 const UI_TILE_SIZE = TILE_SIZE * UI_FACTOR
@@ -68,7 +68,8 @@ export default class PlayerMenu {
         // to be Implemented;
         break;
       case "crafting":
-        // to be Implemented;
+        this.craftingMenu.open = true;
+        this.craftingMenu.render(overlayCtx);
         break;
     }
     this.renderTabs(overlayCtx);
