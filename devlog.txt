@@ -350,3 +350,7 @@ sarahZ -- 2026-05-21 11:00
 
 emaanA -- 2026-05-21 11:00
 - working on crafting, need assets
+
+kiranS -- 2026-05-21 20:20
+- create sprite for relationship menu and hearts/x marks
+- start on relationship.js for menu rendering
