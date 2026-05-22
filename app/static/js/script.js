@@ -45,10 +45,12 @@ class StardewValley {
     this.time = new Time();
     this.stamina = new Stamina(100); //in game it is 270, but doubt we need that much
 
+    this.currentNpc;
+    this.npcList = [];
+
     this.playerMenu = new PlayerMenu(this);
     this.menu = null;
 
-    this.currentNpc;
     this.pierreShop = new Shop("pierre");
 
     this.player.inventory.addItem("axe", 1);
@@ -60,7 +62,7 @@ class StardewValley {
     this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
 
-    this.maps['farm'].loadTiles('farm').then(() => {
+    this.maps['farm'].loadTiles('farm', this).then(() => {
       initializeFarm(this.map, this.player);
       this.loop();
     });
@@ -79,7 +81,7 @@ class StardewValley {
 
         if (!Object.hasOwn(this.maps, tile.destination.map)) {
           this.maps[tile.destination.map] = new Map(tile.destination.map);
-          this.maps[tile.destination.map].loadTiles(tile.destination.map).then(() => {
+          this.maps[tile.destination.map].loadTiles(tile.destination.map, this).then(() => {
             if (tile.destination.map.substring(0, 5) == "mines") {
               initializeMine(this.maps[tile.destination.map], this.player);
             }

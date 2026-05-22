@@ -1,5 +1,7 @@
-import { CANVAS_HEIGHT, CANVAS_WIDTH, SCALE_FACTOR, TILE_SIZE, UI_FACTOR } from "../constants.js";
+import { CANVAS_HEIGHT, CANVAS_WIDTH, SCALE_FACTOR, TILE_SIZE, UI_FACTOR} from "../constants.js";
 import CraftingMenu from "./crafting.js";
+import RelationshipsMenu from "./relationships.js"
+import Player from "../player.js"
 
 const UI_TILE_SIZE = TILE_SIZE * UI_FACTOR
 const MENU_WIDTH = UI_TILE_SIZE * 13;
@@ -18,7 +20,10 @@ export default class PlayerMenu {
 
     this.inventoryMenu = game.player.inventory;
     this.craftingMenu = new CraftingMenu(game);
+
+    this.relationshipsMenu = new RelationshipsMenu(game.npcList);
     this.ctx = game.overlayCtx;
+    this.player = game.player;
   }
 
   close() {
@@ -38,6 +43,17 @@ export default class PlayerMenu {
     } else {
       if (this.currTab == "crafting") {
         this.craftingMenu.click(x, y);
+      }
+    }
+  }
+
+  keyPress(e) {
+    if (this.currTab == "relationships") {
+      if (e.key == "ArrowUp") {
+        this.relationshipsMenu.menuUp();
+      }
+      else if (e.key == "ArrowDown") {
+        this.relationshipsMenu.menuDown();
       }
     }
   }
@@ -65,10 +81,11 @@ export default class PlayerMenu {
         this.inventoryMenu.renderDraggedItem(this.ctx, mouse.mouseX, mouse.mouseY);
         break;
       case "relationships":
-        // to be Implemented;
+        this.relationshipsMenu.render(overlayCtx, this.player, left, top, UI_FACTOR)
         break;
       case "crafting":
-        // to be Implemented;
+        this.craftingMenu.open = true;
+        this.craftingMenu.render(overlayCtx);
         break;
     }
     this.renderTabs(overlayCtx);

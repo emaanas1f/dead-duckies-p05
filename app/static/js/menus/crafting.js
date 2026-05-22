@@ -1,4 +1,6 @@
+import {TILE_SIZE, ITEMS, UI_FACTOR, INVENTORY_HEIGHT, INVENTORY_WIDTH, CANVAS_WIDTH, CRAFTING_MENU_HEIGHT } from "../constants.js";
 import RECIPES from "../../json/recipes.json" with { type: "json" };
+
 
 export default class CraftingMenu {
   constructor(game) {
@@ -6,8 +8,11 @@ export default class CraftingMenu {
     this.open = false;
     this.slotSize = 64;
 
-    this.startX = 200;
-    this.startY = 120;
+    this.startX = (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2;
+    this.startY = TILE_SIZE * UI_FACTOR * 2;
+    
+    this.craftingMenu = new Image();
+    this.craftingMenu.src = 'static/images/ui/menu.png'
 
     this.hoveredRecipe = null;
   }
@@ -58,7 +63,9 @@ export default class CraftingMenu {
    // ctx.fillRect(150, 70, 500, 500);
     //ctx.fillStyle = "white";
 
-    for (let i = 0; i < unlockedRecipes.length; i++) {
+    ctx.drawImage(this.craftingMenu, this.startX, this.startY, INVENTORY_WIDTH * UI_FACTOR, CRAFTING_MENU_HEIGHT  * UI_FACTOR);
+
+   /* for (let i = 0; i < unlockedRecipes.length; i++) {
       let recipeId = unlockedRecipes[i];
       let recipe = RECIPES[recipeId];
       let x = this.startX;
@@ -80,7 +87,7 @@ export default class CraftingMenu {
       let outputImage = this.game.itemImages[recipe.output.item];
 
       if (outputImage) {
-        ctx.drawImage(outputImage, x + 10, y + 10, 48, 48);
+        //ctx.drawImage(outputImage, x + 10, y + 10, 48, 48);
       }
 
       //ctx.globalAlpha = 1;
@@ -92,7 +99,7 @@ export default class CraftingMenu {
         let ingredient = recipe.ingredients[j];
         let ingredientX = x + 70 + j * 90;
         let ingredientY = y + 40;
-        let ingredientImage = this.game.itemImages[ingredient.item];
+       let ingredientImage = this.game.itemImages[ingredient.item];
 
         if (ingredientImage) {
            ctx.drawImage(ingredientImage, ingredientX, ingredientY, 24, 24);
@@ -108,8 +115,8 @@ export default class CraftingMenu {
         }
 
         //ctx.font = "14px Arial";
-       // ctx.fillText( amountOwned + "/" + ingredient.amount, ingredientX + 28, ingredientY + 16);
-      }
-    }
+       // ctx.fillText( amountOwned + "/" + ingredient.amount, ingredientX + 28, ingredientY + 16); 
+      } 
+    } */
   }
 }

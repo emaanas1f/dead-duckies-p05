@@ -359,3 +359,15 @@ sarahZ -- 2026-05-22 00:36
 - pulled sleeping screen, working on sleeping screen fadein/fadeout animation
 - updated farmhouse.json with interactable element
 - updated map json files to fix warp issues and setting up passable tiles
+
+emaanA -- 2026-05-22 11:00
+- working on crafting menu using menu asset
+
+jamesL -- 2026-05-22 11:00
+- able to go into mine and obtain ores
+
+kiranS -- 2026-05-22 11:00
+- working on rendering relationships menu
+
+sarahZ -- 2026-05-22 11:00
+- sleeping, json for forest and beach
