@@ -354,3 +354,8 @@ emaanA -- 2026-05-21 11:00
 kiranS -- 2026-05-21 20:20
 - create sprite for relationship menu and hearts/x marks
 - start on relationship.js for menu rendering
+
+sarahZ -- 2026-05-22 00:36
+- pulled sleeping screen, working on sleeping screen fadein/fadeout animation
+- updated farmhouse.json with interactable element
+- updated map json files to fix warp issues and setting up passable tiles

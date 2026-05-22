@@ -1740,7 +1740,8 @@
       "passable": true,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": true
     },
     {
       "passable": false,
@@ -1832,19 +1833,22 @@
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,
@@ -1930,19 +1934,22 @@
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
-      "destination": null
+      "destination": null,
+      "interactable": false
     },
     {
       "passable": false,

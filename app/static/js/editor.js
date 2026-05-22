@@ -12,10 +12,11 @@ const DEBUG = true;
 const TILLABLE_HELPER = false;
 const UNTILLABLE_HELPER = false;
 const PROPERTIES = {
-  passable: {defaultValue: false, color: 'rgba(255, 0, 0, 0.35)'},
-  tillable: {defaultValue: false, color: 'rgba(0, 255, 0, 0.35)'},
-  teleporter: {defaultValue: false, color: 'rgba(0, 0, 255, 0.35)'},
-  spawnable: {defaultValue: false,  color: 'rgba(255, 255, 0, 0.35)'}
+  passable: {defaultValue: false},
+  tillable: {defaultValue: false},
+  teleporter: {defaultValue: false},
+  spawnable: {defaultValue: false},
+  interactable: {defaultValue: false}
 };
 
 for (const [key, value] of Object.entries(PROPERTIES)) {
