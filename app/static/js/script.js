@@ -29,7 +29,7 @@ class StardewValley {
     this.overlayCanvas = overlayCanvas;
     this.overlayCtx = this.overlayCanvas.getContext('2d');
     this.overlayCtx.imageSmoothingEnabled = false;
-    
+
     this.nightImage = new Image();
     this.nightImage.src = '/static/images/night.png'
     this.sleepAlpha = 0;
@@ -40,7 +40,7 @@ class StardewValley {
     };
     this.map = this.maps['farm'];
     this.justTeleported = false;
-    
+
     this.player = new Player("Kiran", this);
     this.time = new Time();
     this.stamina = new Stamina(100); //in game it is 270, but doubt we need that much
@@ -57,7 +57,7 @@ class StardewValley {
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
 
-    this.mouse = new MouseHandler(this);  
+    this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
 
     this.maps['farm'].loadTiles('farm').then(() => {
@@ -198,6 +198,7 @@ class StardewValley {
     this.menu = 'sleeping';
     this.sleepState = 'fadein';
     this.sleepAlpha = 0;
+    this.player.sleep();
   }
 }
 

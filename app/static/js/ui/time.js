@@ -27,8 +27,20 @@ export default class Time {
     game.maps["farm"].crops.forEach(crop => {
       crop.update();
     })
-    game.stamina.restoreFull();
+
+    //handling sleep/knockout
+    if (!game.stamina.isEmpty()) {
+      if (this.currTime < 1080) {
+        game.stamina.restoreFull();
+      }
+      else {
+        let timePastMidnight = Math.min(1, (this.currTime - 1080) / (1200 - 1080));
+        let restorePercent = 1 - timePastMidnight * 0.8;
+        game.stamina.restoreEnergy(Math.floor(game.stamina.max * restorePercent));
+      }
+    }
   }
+  
   // Overlay on top of upper right of canvas (Only update when time changes)
   render(ctx, scaleFactor) {
     let hour = Math.floor(this.currTime / 60 + 6) % 12;
@@ -61,7 +73,7 @@ export default class Time {
       this.currTime += 10;
     }
     // this block is just for testing -- remove when fainting mechanic added
-    if (this.currTime >= 1080) {
+    if (this.currTime >= 1200) {
       this.currTime = 0;
       this.nextDay(game);
     }
