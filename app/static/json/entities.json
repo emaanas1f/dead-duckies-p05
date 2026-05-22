@@ -28,25 +28,25 @@
     "passable": false
   },
 
-  
+
   "ore/coal": {
     "tools": ["pickaxe"],
     "drops": {
-      "stone": 1
+      "coal": 1
     },
     "passable": false
   },
   "ore/gold": {
     "tools": ["pickaxe"],
     "drops": {
-      "stone": 1
+      "gold_ore": 1
     },
     "passable": false
   },
   "ore/copper": {
     "tools": ["pickaxe"],
     "drops": {
-      "stone": 1
+      "copper_ore": 1
     },
     "passable": false
   },

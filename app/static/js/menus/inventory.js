@@ -55,7 +55,10 @@ export class Inventory {
     for (let i = 0; i < this.slots.length; i += 1) {
       let slot = this.slots[i];
       if (slot.itemID === itemID) {
-        let max = ITEMS[itemID].maxStack;
+        let max = 99;
+        if (ITEMS[itemID].hasOwnProperty("maxStack")) {
+          max = ITEMS[itemID].maxStack;
+        }
         let space = max - slot.count;
         if (space > 0) {
           let add = Math.min(space, remaining);
@@ -68,7 +71,10 @@ export class Inventory {
     for (let i = 0; i < this.slots.length; i += 1) {
       let slot = this.slots[i];
       if (slot.itemID === null) {
-        let max = ITEMS[itemID].maxStack;
+        let max = 99;
+        if (ITEMS[itemID].hasOwnProperty("maxStack")) {
+          max = ITEMS[itemID].maxStack;
+        }
         let add = Math.min(max, remaining);
         slot.itemID = itemID;
         slot.count = add;
@@ -151,7 +157,10 @@ export class Inventory {
       target.count = this.draggingItem.count;
     }
     else if (target.itemID === this.draggingItem.itemID) {
-      let max = ITEMS[target.itemID].maxStack;
+      let max = 99;
+      if (ITEMS[target.itemID].hasOwnProperty("maxStack")) {
+        max = ITEMS[target.itemID].maxStack;
+      }
       let space = max - target.count;
       let add = Math.min(space, this.draggingItem.count);
       target.count += add;

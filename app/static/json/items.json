@@ -1,13 +1,11 @@
 {
   "wood": {
-    "maxStack": 99,
     "buyPrice": 10,
     "sellPrice": 5,
     "reaction": "dislike",
     "category": "resources"
   },
   "stone": {
-    "maxStack": 99,
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
@@ -15,13 +13,11 @@
   },
 
   "mixed_seeds": {
-    "maxStack": 99,
     "sellPrice": 5,
     "reaction": "neutral",
     "category": "seeds"
   },
   "parsnip_seeds": {
-    "maxStack": 99,
     "buyPrice": 20,
     "sellPrice": 10,
     "reaction": "dislike",
@@ -29,10 +25,26 @@
   },
 
   "parsnip": {
-    "maxStack": 99,
     "sellPrice": 35,
     "reaction": "like",
     "category": "crops"
+  },
+
+  "gold_ore": {
+    "sellPrice": 100,
+    "category": "ore"
+  },
+  "coal": {
+    "sellPrice": 15,
+    "category": "ore"
+  },
+  "copper_ore": {
+    "sellPrice": 2,
+    "category": "ore"
+  },
+  "iron_ore": {
+    "sellPrice": 5,
+    "category": "ore"
   },
 
   "axe": {
