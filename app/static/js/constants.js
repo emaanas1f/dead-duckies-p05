@@ -20,6 +20,7 @@ export const HOTBAR_WIDTH = 198;
 export const HOTBAR_HEIGHT = 22;
 export const INVENTORY_WIDTH = 208;
 export const INVENTORY_HEIGHT = 64;
+export const CRAFTING_MENU_HEIGHT = 112;
 
 export const CANVAS_WIDTH = TILE_SIZE * SCALE_FACTOR * X_RES;
 export const CANVAS_HEIGHT = TILE_SIZE * SCALE_FACTOR * Y_RES;
