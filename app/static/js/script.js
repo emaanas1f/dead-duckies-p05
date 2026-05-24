@@ -1,5 +1,5 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE,
-         UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH } from './constants.js'
+         UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH, STARTING_STAMINA } from './constants.js'
 import { initializeFarm, initializeMine } from './map/map.js';
 
 import Map from './map/map.js'
@@ -43,7 +43,7 @@ class StardewValley {
 
     this.player = new Player("Kiran", this);
     this.time = new Time();
-    this.stamina = new Stamina(100); //in game it is 270, but doubt we need that much
+    this.stamina = new Stamina(STARTING_STAMINA); //in game it is 270, but doubt we need that much
 
     this.currentNpc;
     this.npcList = [];

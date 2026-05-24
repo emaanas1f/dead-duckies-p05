@@ -22,16 +22,19 @@ export const INVENTORY_WIDTH = 208;
 export const INVENTORY_HEIGHT = 64;
 export const CRAFTING_MENU_HEIGHT = 112;
 
+export const STARTING_STAMINA = 400;
+
 export const CANVAS_WIDTH = TILE_SIZE * SCALE_FACTOR * X_RES;
 export const CANVAS_HEIGHT = TILE_SIZE * SCALE_FACTOR * Y_RES;
 
-// export const MOVEMENT_SPEED = 2;
+export const DEFAULT_MOVEMENT_SPEED = 2;
 export const FRAME_RATE = 16;
 export const TIME_CONVERSION = 450; // HIGHER = Slower Time
 
 export const ITEMS = await getJson("items.json");
 export const ENTITIES = await getJson("entities.json")
 export const CROPS = await getJson("crops.json")
+export const MINES = await getJson("mines.json")
 
 const PIERRE = await getJson("npcs/pierre.json")
 const WILLY = await getJson("npcs/willy.json")

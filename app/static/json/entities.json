@@ -36,13 +36,6 @@
     },
     "passable": false
   },
-  "ore/gold": {
-    "tools": ["pickaxe"],
-    "drops": {
-      "gold_ore": 1
-    },
-    "passable": false
-  },
   "ore/copper": {
     "tools": ["pickaxe"],
     "drops": {
@@ -50,7 +43,65 @@
     },
     "passable": false
   },
-  "ore/stone": {
+  "ore/gold": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "gold_ore": 1
+    },
+    "passable": false
+  },
+  
+  "ore/emerald": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "emerald": 1
+    },
+    "passable": false
+  },
+  "ore/ruby": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "ruby": 1
+    },
+    "passable": false
+  },
+  "ore/topaz": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "topaz": 1
+    },
+    "passable": false
+  },
+  "ore/amethyst": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "amethyst": 1
+    },
+    "passable": false
+  },
+
+  "ore/stone1": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/stone2": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/stone3": {
+    "tools": ["pickaxe"],
+    "drops": {
+      "stone": 1
+    },
+    "passable": false
+  },
+  "ore/stone4": {
     "tools": ["pickaxe"],
     "drops": {
       "stone": 1

@@ -30,20 +30,45 @@
     "category": "crops"
   },
 
-  "gold_ore": {
-    "sellPrice": 100,
-    "category": "ore"
-  },
   "coal": {
     "sellPrice": 15,
+    "reaction": "dislike",
     "category": "ore"
   },
   "copper_ore": {
     "sellPrice": 2,
+    "reaction": "hate",
     "category": "ore"
   },
   "iron_ore": {
     "sellPrice": 5,
+    "reaction": "hate",
+    "category": "ore"
+  },
+  "gold_ore": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+
+  "emerald": {
+    "sellPrice": 250,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "topaz": {
+    "sellPrice": 80,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "ruby": {
+    "sellPrice": 250,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "amethyst": {
+    "sellPrice": 100,
+    "reaction": "like",
     "category": "ore"
   },
 

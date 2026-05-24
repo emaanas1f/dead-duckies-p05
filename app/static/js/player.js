@@ -1,16 +1,19 @@
 import BigEntity from "./map/big-entity.js";
-import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT, FRAME_RATE, ITEMS } from "./constants.js";
+import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT,
+         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED } from "./constants.js";
 import { Inventory } from './menus/inventory.js';
 import NPC from "./npc.js"
 import Crop from "./map/crop.js"
 import Gold from "./ui/gold.js"
+import Map from "./map/map.js";
+import { initializeMine } from "./map/map.js";
 
 // Correspond with rows in player.png
 const DOWN = 0;
 const RIGHT = 1;
 const UP = 2;
 const LEFT = 3;
-var MOVEMENT_SPEED = 2;
+var MOVEMENT_SPEED = DEFAULT_MOVEMENT_SPEED;
 
 function passable(tile) {
   return tile != null && tile.passable;
@@ -145,6 +148,24 @@ export default class Player {
     else if (item == null) {
       if (entity instanceof Crop && entity.matured) {
         entity.harvest(this.inventory);
+      }
+    }
+
+    else if (back == "ladder" && entity == null) {
+      let nextIndex = parseInt(this.game.map.name.split("/")[1]) + 1;
+      let nextMap = "mines/" + nextIndex;
+      if (!Object.hasOwn(this.game.maps, nextMap)) {
+        this.game.maps[nextMap] = new Map(nextMap);
+        this.game.maps[nextMap].loadTiles(nextMap, this.game).then(() => {
+          initializeMine(this.game.maps[nextMap]);
+          this.game.map = this.game.maps[nextMap];
+          this.x = MINES[nextIndex - 1]["spawnX"] * TILE_SIZE;
+          this.y = MINES[nextIndex - 1]["spawnY"] * TILE_SIZE;
+        })
+      } else {
+        this.game.map = this.game.maps[nextMap];
+        this.x = MINES[nextIndex - 1]["spawnX"] * TILE_SIZE;
+        this.y = MINES[nextIndex - 1]["spawnY"] * TILE_SIZE;
       }
     }
 

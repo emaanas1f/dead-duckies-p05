@@ -41,7 +41,7 @@ async function getJson(file_name) {
 }
 
 let currentProperty = 'passable';
-let currentMap = 'farm';
+let currentMap = 'mines/4';
 
 let map = new Image();
 map.src = `/static/images/maps/${currentMap}.png`
