@@ -11,6 +11,7 @@ export default class Map {
     this.bigEntities = [];
     this.npcList = [];
     this.crops = [];
+    this.dayCount = 0;
   }
 
   async loadTiles(name, game) {
@@ -112,6 +113,24 @@ export default class Map {
 
     return npcsToDraw;
   }
+
+  respawnForageables() {
+    const FORAGEABLE = [
+      "spring_foragables/daffodils",
+      "spring_forageables/dandelion",
+      "spring_forageables/leek",
+      "spring_foragables/horse_radish"
+    ]
+
+    for (let x = 0; x < this.tiles.length; x++) {
+      for (let y = 0; y < this.tiles.length[x]; y++) {
+        let middle-layer = this.tiles[x][y].layers["middle"]
+        if (middle-layer && typeof middle-layer === "string" && middle-layer.startsWith("spring_forageables/")) {
+          this.tiles[x][y].remove("middle");
+        }
+      }
+    }
+  }
 }
 
 export function initializeFarm(map, player) {
@@ -176,4 +195,8 @@ export function initializeMine(map) {
   let mine = MINES[parseInt(map.name.split("/")[1]) - 1]
   let playerTile = map.getTile(mine["spawnX"], mine["spawnY"]);
   playerTile.remove("middle");
+}
+
+export function initializeForest(map) {
+  map.respawnForageables();
 }

@@ -1740,6 +1740,112 @@
       "passable": true,
       "tillable": false,
       "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    }
+  ],
+  [
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "interactable": true
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "interactable": true
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
       "destination": null,
       "interactable": true
     },
@@ -1760,113 +1866,6 @@
       "tillable": false,
       "teleporter": false,
       "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    }
-  ],
-  [
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "interactable": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "interactable": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "interactable": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null
     }
   ],
   [
@@ -1935,21 +1934,21 @@
       "tillable": false,
       "teleporter": false,
       "destination": null,
-      "interactable": false
+      "interactable": true
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
-      "interactable": false
+      "interactable": true
     },
     {
       "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
-      "interactable": false
+      "interactable": true
     },
     {
       "passable": false,

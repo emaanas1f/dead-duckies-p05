@@ -167,19 +167,19 @@ class StardewValley {
         this.map.render(this.ctx, this.player);
         this.player.render(this.ctx, this.map);
 
-        this.overlayCtx.clearReact(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         this.overlayCtx.globalAlpha = this.sleepAlpha;
         this.overlayCtx.drawImage(this.nightImage, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         this.overlayCtx.globalAlpha = 1;
 
         if (this.sleepState === 'fadein') {
-          this.sleepAlpha = Math.min(1, this.sleepAlpha + 0.02);
+          this.sleepAlpha = Math.min(1, this.sleepAlpha + 0.005);
           if (this.sleepAlpha >= 1) {
             this.player.sleep(this.time, this.stamina); //need to implement
             this.sleepState = 'fadeout';
           }
         } else if (this.sleepState === 'fadeout') {
-          this.sleepAlpha = Math.max(0, this.sleepAlpha - 0.02);
+          this.sleepAlpha = Math.max(0, this.sleepAlpha - 0.005);
           if (this.sleepAlpha <= 0) {
             this.sleepState = null;
             this.menu = null;
@@ -200,7 +200,6 @@ class StardewValley {
     this.menu = 'sleeping';
     this.sleepState = 'fadein';
     this.sleepAlpha = 0;
-    this.player.sleep();
   }
 }
 

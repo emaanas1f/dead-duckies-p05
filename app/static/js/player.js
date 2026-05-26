@@ -256,11 +256,7 @@ export default class Player {
     );
     return true;
   }
-
-  sleep() {
-    this.game.time.nextDay(this.game);
-  }
-
+  
   getTile(map) {
     let tile;
     switch (this.facing) {
