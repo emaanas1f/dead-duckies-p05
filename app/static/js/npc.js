@@ -20,7 +20,7 @@ export default class NPC {
     tile.add(this, "middle");
 
     // placeholders
-    this.points = {"Kiran": 0};
+    this.points = {"Kiran": 470};
     this.giftNumber = {"Kiran": 0};
     this.talked = {"Kiran": false};
     this.gifted = {"Kiran": false};
@@ -129,7 +129,7 @@ export default class NPC {
     // document.getElementById("dialogue").innerHTML = dialogue.replaceAll("@", player)
     // document.getElementById("portrait").src = `/static/images/portraits/${this.name}.png`
   }
-  
+
   render(ctx, map) {
     ctx.drawImage(this.sprite, 0, 0, TILE_SIZE, TILE_SIZE * 2,
       ((this.x * TILE_SIZE) - map.x) * SCALE_FACTOR, ((this.y - 1) * TILE_SIZE - map.y) * SCALE_FACTOR,
