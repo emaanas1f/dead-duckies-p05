@@ -251,6 +251,11 @@ export default class Player {
     return tile;
   }
 
+  sleep(time, stamina) {
+    this.game.time.currTime = 0;
+    this.game.time.nextDay(this.game);
+  }
+  
   render(ctx, map) {
     ctx.drawImage(this.sprite,
       Math.trunc(this.frame / FRAME_RATE) * TILE_SIZE, this.facing * TILE_SIZE * 2, // Original Image
