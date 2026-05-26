@@ -40,7 +40,7 @@ export default class Player {
     this.currentShop;
     this.quantity = 1;
 
-    this.unlockedRecipes = ["woodFence", "chest"];
+    this.unlockedRecipes = ["furnace", "chest", "perserved jar"];
   }
 
   move(keys, map, stamina) {

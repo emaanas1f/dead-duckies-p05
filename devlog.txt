@@ -322,7 +322,7 @@ kiranS -- 2026-05-19 21:00
 - batch buy options -- shift-click for 5, ctrl-click for 25
 - prices fade when unable to afford
 
-emaanA -- 2026-05-19 23:30 
+emaanA -- 2026-05-19 23:30
 - renderInventory using scalar
 
 kiranS -- 2026-05-20 17:40
@@ -371,3 +371,16 @@ kiranS -- 2026-05-22 11:00
 
 sarahZ -- 2026-05-22 11:00
 - sleeping, json for forest and beach
+
+emaanA -- 2026-05-22 11:00
+- working on crafting, added assets
+
+jamesL -- 2026-05-22 11:00
+- getting more assets
+
+kiranS -- 2026-05-22 11:00
+- working on relationships
+
+sarahZ -- 2026-05-22 11:00
+- fixed sleeping
+- working on forest foragables
