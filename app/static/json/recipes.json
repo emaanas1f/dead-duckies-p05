@@ -1,11 +1,11 @@
 {
-  "woodFence": {
-    "name": "Wood Fence",
+  "furnace": {
+    "name": "furnace",
     "ingredients": [
-      { "item": "wood", "amount": 5 }
+      { "item": "copper", "amount": 5 }
     ],
     "output": {
-      "item": "woodFence",
+      "item": "furnace",
       "amount": 1
     }
   },
@@ -13,11 +13,23 @@
   "chest": {
     "name": "Chest",
     "ingredients": [
-      { "item": "wood", "amount": 20 }
+      { "item": "wood", "amount": 10 }
     ],
     "output": {
       "item": "chest",
       "amount": 1
     }
   }
+}
+
+"perserved jar": {
+  "name": "perserved jar",
+  "ingredients": [
+    { "item": "parnsip seeds", "amount": 5 }
+  ],
+  "output": {
+    "item": "perserved jar",
+    "amount": 1
+  }
+}
 }
