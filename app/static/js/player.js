@@ -21,8 +21,8 @@ function passable(tile) {
 
 export default class Player {
   constructor(name, game) {
-    this.x = TILE_SIZE * 9;
-    this.y = TILE_SIZE * 10;
+    this.x = TILE_SIZE * 64;
+    this.y = TILE_SIZE * 15;
 
     this.game = game;
 
@@ -108,14 +108,15 @@ export default class Player {
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
         if (entity.gift(this.name, item)) {
           this.inventory.removeItem(item, 1);
+          this.game.menu = "dialogue";
+          this.game.currentNpc = entity;
         }
       }
-      else {
-        // console.log("A")
+      else if (!entity.talked[this.name]) {
         entity.talk(this.name);
+        this.game.menu = "dialogue";
+        this.game.currentNpc = entity;
       }
-      this.game.menu = "dialogue";
-      this.game.currentNpc = entity;
     }
 
     else if (tile && tile.interactable) {

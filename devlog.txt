@@ -384,3 +384,8 @@ kiranS -- 2026-05-22 11:00
 sarahZ -- 2026-05-22 11:00
 - fixed sleeping
 - working on forest foragables
+
+kiranS -- 2026-05-26 17:30
+- finished relationship menu
+- npc gift/talk status updates when day ticks over
+- fixed dialogue retriggering when talk/gift already happened 

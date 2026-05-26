@@ -11,17 +11,20 @@ export default class RelationshipsMenu {
 
     this.heartSprite = new Image();
     this.heartSprite.src = "/static/images/ui/heart.png";
+
+    this.checkSprite = new Image();
+    this.checkSprite.src = "/static/images/ui/check.png";
   }
 
   menuUp() {
     if (this.currentNpc > 0) {
-      this.currentNpc++;
+      this.currentNpc--;
     }
   }
 
   menuDown() {
-    if (this.currentNpc < this.npcs.length) {
-      this.currentNpc--;
+    if (this.currentNpc < this.npcs.length - 4) {
+      this.currentNpc++;
     }
   }
 
@@ -40,26 +43,57 @@ export default class RelationshipsMenu {
     for (let i = 0; i < 4; i++) {
       let xRow = xStart + 5 * overlayScale;
       let yRow = yStart + 5 * overlayScale + 30 * overlayScale * i;
+
       if (this.currentNpc + i >= this.npcs.length) {
         ctx.fillText("???",
-          xRow + 30 * overlayScale, yRow + 17 * overlayScale
+          xRow + 39 * overlayScale, yRow + 17 * overlayScale
+        )
+        continue;
+      }
+      
+      let npc = this.npcs[this.currentNpc + i];
+      ctx.drawImage(npc.sprite,
+        0, 0,
+        16, 24,
+        xRow + 3 * overlayScale, yRow + 4 * overlayScale,
+        16 * overlayScale, 24 * overlayScale
+      )
+
+      ctx.fillText(getItemTitle(npc.name),
+        xRow + 39 * overlayScale, yRow + 17 * overlayScale
+      );
+
+      let hearts = Math.floor(npc.points[player.name] / 250);
+      // console.log(hearts);
+      // console.log(npc.points[player.name]);
+      for (let heart = 0; heart < hearts; heart++) {
+        ctx.drawImage(this.heartSprite,
+          xRow + 64 * overlayScale + heart * 8 * overlayScale, yRow + 11 * overlayScale,
+          7 * overlayScale, 6 * overlayScale
+        );
+      }
+
+      // console.log([npc.talked[player.name], npc.giftNumber[player.name]])
+      if (npc.giftNumber[player.name] >= 1) {
+        ctx.drawImage(this.checkSprite,
+          xRow + 165 * overlayScale, yRow + 17 * overlayScale,
+          7 * overlayScale, 7 * overlayScale
         )
       }
-      else {
-        let npc = this.npcs[this.currentNpc + i];
-        ctx.fillText(getItemTitle(npc.name),
-          xRow + 30 * overlayScale, yRow + 17 * overlayScale
+      if (npc.giftNumber[player.name] >= 2) {
+        ctx.drawImage(this.checkSprite,
+          xRow + 155 * overlayScale, yRow + 17 * overlayScale,
+          7 * overlayScale, 7 * overlayScale
         )
-        let hearts = Math.floor(npc.points[player.name] / 250);
-        console.log(hearts)
-        console.log(npc.points[player.name])
-        for (let heart = 0; heart < hearts; heart++) {
-          ctx.drawImage(this.heartSprite,
-            xRow + 64 * overlayScale + heart * 8 * overlayScale, yRow + 11 * overlayScale,
-            7 * overlayScale, 6 * overlayScale
-          );
-        }
       }
+
+      if (npc.talked[player.name]) {
+        ctx.drawImage(this.checkSprite,
+          xRow + 185 * overlayScale, yRow + 17 * overlayScale,
+          7 * overlayScale, 7 * overlayScale
+        )
+      }
+      
     }
 
   }

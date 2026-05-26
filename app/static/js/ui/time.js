@@ -27,7 +27,20 @@ export default class Time {
     game.maps["farm"].crops.forEach(crop => {
       crop.update();
     })
-
+    
+    game.npcList.forEach(npc => {
+      npc.talked.forEach(player => {
+        npc.talked[player] = false;
+      });
+      npc.gifted.forEach(player => {
+        npc.gifted[player] = false;
+      });
+      if (currDay % 7 == 1) {
+        npc.giftNumber.forEach(player => {
+          npc.giftNumber[player] = 0;
+        });
+      }
+    });
     //handling sleep/knockout
     if (!game.stamina.isEmpty()) {
       if (this.currTime < 1080) {

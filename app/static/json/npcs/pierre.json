@@ -27,7 +27,7 @@
     },
     "reactions": {
         "love": [],
-        "like": ["seeds"],
+        "like": ["parsnip_seeds", "cauliflower_seeds"],
         "neutral": [],
         "dislike": [],
         "hate": []

@@ -40,20 +40,13 @@ export default class NPC {
     // console.log(this.normalDialogue)
   }
 
-  getGiftNumber() {
-    return this.giftNumber;
-  }
-
-  getTalked() {
-    return this.talked;
-  }
-
   // possibly implement birthdays
   gift(player, item) {
     if (!(player in this.points)) {
       this.addPlayer(player);
+      // console.log("add player")
     }
-    if (this.giftNumber[player] == 2) {
+    if (this.giftNumber[player] == 2 || this.gifted[player]) {
       // possibly display msg
       return false;
     }
@@ -84,11 +77,11 @@ export default class NPC {
       this.points[player] += 20;
       this.dialogue = this.normalDialogue[Math.ceil(Math.random() * (this.normalDialogue.length - 1))] //random dialogue option (excluding intro dialogue stored at index 0 of array)
     }
-    this.talked = true;
+    this.talked[player] = true;
     this.dialogue = this.dialogue.replace("@", player)
   }
 
-  addPlayer(player){
+  addPlayer(player){ 
     this.points[player] = 0
     this.giftNumber[player] = 0
     this.talked[player] = false
