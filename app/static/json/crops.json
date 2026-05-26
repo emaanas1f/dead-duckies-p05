@@ -1,8 +1,16 @@
 {
   "parsnip": {
-    "growthTime": 1,
+    "growthTime": [1, 1, 1, 1],
     "yield": {
       "parsnip": 2
-    }
+    },
+    "recurring": false
+  },
+  "cauliflower": {
+    "growthTime": [1, 2, 4, 4, 1],
+    "yield": {
+      "cauliflower": 1
+    },
+    "recurring": false
   }
 }

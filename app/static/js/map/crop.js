@@ -6,7 +6,7 @@ export default class Crop {
   constructor(x, y, map) {
     this.type = null;
     this.tile = map.tiles[x][y];
-    
+
     this.tile.add("tilled", "back");
     this.tile.add(this, "middle");
     this.x = x;
@@ -36,22 +36,29 @@ export default class Crop {
       this.image = asset;
     }
     this.growthTime = CROPS[type]["growthTime"];
+    this.growthStage = 0;
     this.progress = 0;
   }
 
   update() {
     if (this.type == null && !this.watered) {
-      // this.remove();
+      if (Math.floor(Math.random() * 100) < 20) {
+        this.remove();
+      }
     } if (!this.matured && !this.watered) {
       this.wilt();
-    } else if (this.progress < this.growthTime) {
+    } else if (this.progress < this.growthTime[growthStage]) {
       this.progress++;
     }
 
     this.dry();
-    
-    if (this.progress == this.growthTime) {
-      this.matured = true;
+
+    if (!this.matured && this.progress == this.growthTime[growthStage]) {
+      this.progress = 0;
+      this.growthStage += 1;
+      if (this.growthStage == this.growthTime.length) {
+        this.matured = true;
+      }
     }
   }
 
@@ -63,6 +70,7 @@ export default class Crop {
   wilt() {
     delete this.type;
     delete this.growthTime;
+    delete this.growthStage;
     delete this.progress;
     delete this.image;
     this.dry();
@@ -77,7 +85,7 @@ export default class Crop {
 
   render(ctx, map) {
     if (this.type != null) {
-      ctx.drawImage(this.image, this.progress * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE,
+      ctx.drawImage(this.image, this.growthStage * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE,
         (this.x * TILE_SIZE - map.x) * SCALE_FACTOR,
         (this.y * TILE_SIZE - map.y) * SCALE_FACTOR,
         TILE_SIZE * SCALE_FACTOR, TILE_SIZE * SCALE_FACTOR)
