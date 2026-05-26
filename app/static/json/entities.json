@@ -28,7 +28,6 @@
     "passable": false
   },
 
-
   "ore/coal": {
     "tools": ["pickaxe"],
     "drops": {
@@ -50,7 +49,7 @@
     },
     "passable": false
   },
-  
+
   "ore/emerald": {
     "tools": ["pickaxe"],
     "drops": {
@@ -105,6 +104,38 @@
     "tools": ["pickaxe"],
     "drops": {
       "stone": 1
+    },
+    "passable": false
+  },
+
+  "spring_forageables/daffodil": {
+    "tools": [],
+    "drops": {
+      "daffodil": 1
+    },
+    "passable": false
+  },
+
+  "spring_forageables/dandelion": {
+    "tools": [],
+    "drops": {
+      "dandelion": 1
+    },
+    "passable": false
+  },
+
+  "spring_forageables/horse_radish": {
+    "tools": [],
+    "drops": {
+      "horse_radish": 1
+    },
+    "passable": false
+  },
+
+  "spring_forageables/leek": {
+    "tools": [],
+    "drops": {
+      "leek": 1
     },
     "passable": false
   }
