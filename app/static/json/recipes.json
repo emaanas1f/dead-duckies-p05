@@ -19,17 +19,16 @@
       "item": "chest",
       "amount": 1
     }
-  }
-}
+  },
 
-"perserved jar": {
-  "name": "perserved jar",
-  "ingredients": [
-    { "item": "parnsip seeds", "amount": 5 }
-  ],
-  "output": {
-    "item": "perserved jar",
-    "amount": 1
+  "perserved jar": {
+    "name": "perserved jar",
+    "ingredients": [
+      { "item": "parnsip seeds", "amount": 5 }
+    ],
+    "output": {
+      "item": "perserved jar",
+      "amount": 1
+    }
   }
-}
 }

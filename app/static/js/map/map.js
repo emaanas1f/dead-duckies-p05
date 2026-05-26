@@ -124,8 +124,8 @@ export default class Map {
 
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles.length[x]; y++) {
-        let middle-layer = this.tiles[x][y].layers["middle"]
-        if (middle-layer && typeof middle-layer === "string" && middle-layer.startsWith("spring_forageables/")) {
+        let middlelayer = this.tiles[x][y].layers["middle"]
+        if (middleLayer && typeof middleLayer === "string" && middleLayer.startsWith("spring_forageables/")) {
           this.tiles[x][y].remove("middle");
         }
       }

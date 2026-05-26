@@ -23,6 +23,9 @@
     "reaction": "dislike",
     "category": "seeds"
   },
+  "cauliflower_seeds": {
+    "category": "seeds"
+  },
 
   "parsnip": {
     "sellPrice": 35,

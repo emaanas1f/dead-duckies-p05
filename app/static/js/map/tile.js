@@ -23,8 +23,10 @@ export default class Tile {
 
   add(entity, layer) {
     this.layers[layer] = entity;
-    
-    if (layer == "front" && entity instanceof BigEntity) {
+
+    if (entity instanceof Crop) {
+      this.passable = true;
+    } else if (layer == "front" && entity instanceof BigEntity) {
       this.passable = false;
     }
     else if (entity instanceof NPC) {
@@ -39,7 +41,8 @@ export default class Tile {
     this.layers[layer] = null;
     this.passable = this.basePassable;
     if (this.layers["front"] instanceof BigEntity ||
-        (this.layers["middle"] && !ENTITIES[this.layers["middle"]]["passable"])) {
+        (this.layers["middle"] && !this.layers["middle"] instanceof Crop &&
+        !ENTITIES[this.layers["middle"]]["passable"])) {
       this.passable = false;
     }
   }

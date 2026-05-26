@@ -45,15 +45,15 @@ export default class Crop {
       if (Math.floor(Math.random() * 100) < 20) {
         this.remove();
       }
-    } if (!this.matured && !this.watered) {
+    } else if (!this.matured && !this.watered) {
       this.wilt();
-    } else if (this.progress < this.growthTime[growthStage]) {
+    } else if (this.type && this.progress < this.growthTime[this.growthStage]) {
       this.progress++;
     }
 
     this.dry();
 
-    if (!this.matured && this.progress == this.growthTime[growthStage]) {
+    if (this.type && !this.matured && this.progress == this.growthTime[this.growthStage]) {
       this.progress = 0;
       this.growthStage += 1;
       if (this.growthStage == this.growthTime.length) {
@@ -68,7 +68,7 @@ export default class Crop {
   }
 
   wilt() {
-    delete this.type;
+    this.type = null;
     delete this.growthTime;
     delete this.growthStage;
     delete this.progress;
@@ -85,10 +85,10 @@ export default class Crop {
 
   render(ctx, map) {
     if (this.type != null) {
-      ctx.drawImage(this.image, this.growthStage * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE,
+      ctx.drawImage(this.image, (this.growthStage + 1) * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE * 2,
         (this.x * TILE_SIZE - map.x) * SCALE_FACTOR,
-        (this.y * TILE_SIZE - map.y) * SCALE_FACTOR,
-        TILE_SIZE * SCALE_FACTOR, TILE_SIZE * SCALE_FACTOR)
+        ((this.y - 1) * TILE_SIZE - map.y) * SCALE_FACTOR,
+        TILE_SIZE * SCALE_FACTOR, TILE_SIZE * 2 * SCALE_FACTOR)
     }
   }
 }

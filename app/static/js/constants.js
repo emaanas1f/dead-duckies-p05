@@ -29,7 +29,7 @@ export const CANVAS_HEIGHT = TILE_SIZE * SCALE_FACTOR * Y_RES;
 
 export const DEFAULT_MOVEMENT_SPEED = 2;
 export const FRAME_RATE = 16;
-export const TIME_CONVERSION = 450; // HIGHER = Slower Time
+export const TIME_CONVERSION = 30; // HIGHER = Slower Time
 
 export const ITEMS = await getJson("items.json");
 export const RECIPES = await getJson("recipes.json")

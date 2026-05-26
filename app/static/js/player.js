@@ -256,7 +256,7 @@ export default class Player {
     );
     return true;
   }
-  
+
   getTile(map) {
     let tile;
     switch (this.facing) {
