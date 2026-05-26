@@ -1,5 +1,5 @@
-import {TILE_SIZE, ITEMS, UI_FACTOR, INVENTORY_HEIGHT, INVENTORY_WIDTH, CANVAS_WIDTH, CRAFTING_MENU_HEIGHT } from "../constants.js";
-import RECIPES from "../../json/recipes.json" with { type: "json" };
+import {TILE_SIZE, ITEMS, RECIPES, UI_FACTOR, INVENTORY_HEIGHT, INVENTORY_WIDTH, CANVAS_WIDTH, CRAFTING_MENU_HEIGHT } from "../constants.js";
+//import RECIPES from "../../json/recipes.json" with { type: "json" };
 
 
 export default class CraftingMenu {
@@ -10,7 +10,7 @@ export default class CraftingMenu {
 
     this.startX = (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2;
     this.startY = TILE_SIZE * UI_FACTOR * 2;
-    
+
     this.craftingMenu = new Image();
     this.craftingMenu.src = 'static/images/ui/menu.png'
 
@@ -31,7 +31,7 @@ export default class CraftingMenu {
       let x = this.startX;
       let y = this.startY + i * 80;
 
-      if ( mouseX > x && mouseX < x + 300 && mouseY > y && mouseY < y + 70) {
+      if (mouseX > x && mouseX < x + 300 && mouseY > y && mouseY < y + 70) {
         this.hoveredRecipe = recipeId;
       }
     }
@@ -57,49 +57,39 @@ export default class CraftingMenu {
   render(ctx) {
     if (!this.open) return;
     let unlockedRecipes = this.game.player.unlockedRecipes;
-
-//need assets :(
-   // ctx.fillStyle = "rgba(0,0,0,0.7)";
-   // ctx.fillRect(150, 70, 500, 500);
-    //ctx.fillStyle = "white";
-
     ctx.drawImage(this.craftingMenu, this.startX, this.startY, INVENTORY_WIDTH * UI_FACTOR, CRAFTING_MENU_HEIGHT  * UI_FACTOR);
 
-   /* for (let i = 0; i < unlockedRecipes.length; i++) {
+    for (let i = 0; i < unlockedRecipes.length; i++) {
       let recipeId = unlockedRecipes[i];
       let recipe = RECIPES[recipeId];
       let x = this.startX;
       let y = this.startY + i * 80;
+
+      this.game.player.craft(recipe);
+
       let canCraft = this.game.player.hasItems(recipe.ingredients);
 
       if (recipeId === this.hoveredRecipe) {
         ctx.fillStyle = "#777";
-      }
-      else {
+      } else {
         ctx.fillStyle = "#555";
       }
-      ctx.fillRect(x, y, 300, 70);
 
       if (!canCraft) {
         ctx.globalAlpha = 0.5;
       }
 
-      let outputImage = this.game.itemImages[recipe.output.item];
+     let outputImage = this.game.itemImages[recipe.output.item];
 
       if (outputImage) {
-        //ctx.drawImage(outputImage, x + 10, y + 10, 48, 48);
+        ctx.drawImage(outputImage, x + 10, y + 10, 48, 48);
       }
-
-      //ctx.globalAlpha = 1;
-      //ctx.fillStyle = "white";
-      //ctx.font = "20px Arial";
-      //ctx.fillText(recipe.name, x + 70, y + 28);
 
       for (let j = 0; j < recipe.ingredients.length; j++) {
         let ingredient = recipe.ingredients[j];
         let ingredientX = x + 70 + j * 90;
         let ingredientY = y + 40;
-       let ingredientImage = this.game.itemImages[ingredient.item];
+        let ingredientImage = this.game.itemImages[ingredient.item];
 
         if (ingredientImage) {
            ctx.drawImage(ingredientImage, ingredientX, ingredientY, 24, 24);
@@ -114,9 +104,7 @@ export default class CraftingMenu {
           ctx.fillStyle = "red";
         }
 
-        //ctx.font = "14px Arial";
-       // ctx.fillText( amountOwned + "/" + ingredient.amount, ingredientX + 28, ingredientY + 16); 
-      } 
-    } */
+      }
+    }
   }
 }

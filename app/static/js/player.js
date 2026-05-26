@@ -40,7 +40,7 @@ export default class Player {
     this.currentShop;
     this.quantity = 1;
 
-    this.unlockedRecipes = ["woodFence", "chest"];
+    this.unlockedRecipes = ["furnace", "chest", "perserved jar"];
   }
 
   move(keys, map, stamina) {
@@ -284,7 +284,7 @@ export default class Player {
     this.game.time.currTime = 0;
     this.game.time.nextDay(this.game);
   }
-  
+
   render(ctx, map) {
     ctx.drawImage(this.sprite,
       Math.trunc(this.frame / FRAME_RATE) * TILE_SIZE, this.facing * TILE_SIZE * 2, // Original Image
