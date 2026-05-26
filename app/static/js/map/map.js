@@ -1,5 +1,5 @@
 import BigEntity from './big-entity.js';
-import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, getJson } from '../constants.js'
+import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, MINES, getJson } from '../constants.js'
 import Tile from './tile.js';
 import NPC from '../npc.js';
 
@@ -13,7 +13,7 @@ export default class Map {
     this.crops = [];
   }
 
-  async loadTiles(name) {
+  async loadTiles(name, game) {
     this.tiles = [];
     const data = await getJson(`maps/${name}.json`);
     for (let x = 0; x < data.length; x++) {
@@ -27,6 +27,7 @@ export default class Map {
       metadata["npcs"].forEach((data) => {
         let npc = new NPC(data["name"], data["x"], data["y"], this);
         this.npcList.push(npc);
+        game.npcList.push(npc);
       });
     } catch (error) {} // OK if no NPC
   }
@@ -134,22 +135,45 @@ export function initializeFarm(map, player) {
   map.removeBigEntity(playerTile.x, playerTile.y);
 }
 
-export function initializeMine(map, player) {
+export function initializeMine(map) {
+  let spawnedLadder = false;
+  let tile;
+  let level = parseInt(map.name.split("/")[1]);
+  if (level == 5) spawnedLadder = true;
   for (let x = 0; x < map.tiles.length; x++) {
     for (let y = 0; y < map.tiles[x].length; y++) {
       if (!map.tiles[x][y].spawnable) continue;
-      const randomNum = Math.floor(Math.random() * 100);
-      if (randomNum < 7) {
-        map.tiles[x][y].add("ore/coal", "middle");
-      } else if (randomNum < 12) {
-        map.tiles[x][y].add("ore/copper", "middle");
-      } else if (randomNum < 17) {
-        map.tiles[x][y].add("ore/gold", "middle");
-      } else if (randomNum < 50) {
-        map.tiles[x][y].add("ore/stone", "middle");
+      let randomNum = Math.floor(Math.random() * 100);
+      tile = map.tiles[x][y];
+      if (randomNum < 5) {
+        tile.add("ore/coal", "middle");
+      } else if (randomNum < 10) {
+        tile.add("ore/copper", "middle");
+      } else if (randomNum < 15) {
+        tile.add("ore/gold", "middle");
+      } else if (randomNum < 30) {
+        let stone = "stone" + (Math.floor(Math.random() * 4) + 1);
+        tile.add(`ore/${stone}`, "middle");
+      } else if (randomNum < 35 && level > 3) {
+        tile.add('ore/topaz', "middle");
+      } else if (randomNum < 40 && level > 3) {
+        tile.add('ore/ruby', "middle");
+      } else if (randomNum < 45 && level > 4) {
+        tile.add('ore/emerald', "middle");
+      } else if (randomNum < 50 && level > 4) {
+        tile.add('ore/amethyst', "middle");
+      }
+      randomNum = Math.floor(Math.random() * 100);
+      if (!spawnedLadder && randomNum < 1) {
+        tile.add("ladder", "back");
+        spawnedLadder = true;
       }
     }
   }
-  let playerTile = map.getTile(player.x, player.y + 23);
+  if (!spawnedLadder) {
+    tile.add("ladder", "back");
+  }
+  let mine = MINES[parseInt(map.name.split("/")[1]) - 1]
+  let playerTile = map.getTile(mine["spawnX"], mine["spawnY"]);
   playerTile.remove("middle");
 }

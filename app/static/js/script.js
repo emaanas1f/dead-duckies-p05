@@ -1,5 +1,5 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE,
-         UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH } from './constants.js'
+         UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH, STARTING_STAMINA } from './constants.js'
 import { initializeFarm, initializeMine } from './map/map.js';
 
 import Map from './map/map.js'
@@ -29,7 +29,7 @@ class StardewValley {
     this.overlayCanvas = overlayCanvas;
     this.overlayCtx = this.overlayCanvas.getContext('2d');
     this.overlayCtx.imageSmoothingEnabled = false;
-    
+
     this.nightImage = new Image();
     this.nightImage.src = '/static/images/night.png'
     this.sleepAlpha = 0;
@@ -40,15 +40,17 @@ class StardewValley {
     };
     this.map = this.maps['farm'];
     this.justTeleported = false;
-    
+
     this.player = new Player("Kiran", this);
     this.time = new Time();
-    this.stamina = new Stamina(100); //in game it is 270, but doubt we need that much
+    this.stamina = new Stamina(STARTING_STAMINA); //in game it is 270, but doubt we need that much
+
+    this.currentNpc;
+    this.npcList = [];
 
     this.playerMenu = new PlayerMenu(this);
     this.menu = null;
 
-    this.currentNpc;
     this.pierreShop = new Shop("pierre");
 
     this.player.inventory.addItem("axe", 1);
@@ -57,10 +59,10 @@ class StardewValley {
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
 
-    this.mouse = new MouseHandler(this);  
+    this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
 
-    this.maps['farm'].loadTiles('farm').then(() => {
+    this.maps['farm'].loadTiles('farm', this).then(() => {
       initializeFarm(this.map, this.player);
       this.loop();
     });
@@ -79,7 +81,7 @@ class StardewValley {
 
         if (!Object.hasOwn(this.maps, tile.destination.map)) {
           this.maps[tile.destination.map] = new Map(tile.destination.map);
-          this.maps[tile.destination.map].loadTiles(tile.destination.map).then(() => {
+          this.maps[tile.destination.map].loadTiles(tile.destination.map, this).then(() => {
             if (tile.destination.map.substring(0, 5) == "mines") {
               initializeMine(this.maps[tile.destination.map], this.player);
             }
@@ -198,6 +200,7 @@ class StardewValley {
     this.menu = 'sleeping';
     this.sleepState = 'fadein';
     this.sleepAlpha = 0;
+    this.player.sleep();
   }
 }
 

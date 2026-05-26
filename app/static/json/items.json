@@ -1,13 +1,11 @@
 {
   "wood": {
-    "maxStack": 99,
     "buyPrice": 10,
     "sellPrice": 5,
     "reaction": "dislike",
     "category": "resources"
   },
   "stone": {
-    "maxStack": 99,
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
@@ -15,13 +13,11 @@
   },
 
   "mixed_seeds": {
-    "maxStack": 99,
     "sellPrice": 5,
     "reaction": "neutral",
     "category": "seeds"
   },
   "parsnip_seeds": {
-    "maxStack": 99,
     "buyPrice": 20,
     "sellPrice": 10,
     "reaction": "dislike",
@@ -29,10 +25,51 @@
   },
 
   "parsnip": {
-    "maxStack": 99,
     "sellPrice": 35,
     "reaction": "like",
     "category": "crops"
+  },
+
+  "coal": {
+    "sellPrice": 15,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+  "copper_ore": {
+    "sellPrice": 2,
+    "reaction": "hate",
+    "category": "ore"
+  },
+  "iron_ore": {
+    "sellPrice": 5,
+    "reaction": "hate",
+    "category": "ore"
+  },
+  "gold_ore": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+
+  "emerald": {
+    "sellPrice": 250,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "topaz": {
+    "sellPrice": 80,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "ruby": {
+    "sellPrice": 250,
+    "reaction": "like",
+    "category": "ore"
+  },
+  "amethyst": {
+    "sellPrice": 100,
+    "reaction": "like",
+    "category": "ore"
   },
 
   "axe": {

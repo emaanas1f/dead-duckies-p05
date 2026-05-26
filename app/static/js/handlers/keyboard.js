@@ -7,7 +7,7 @@ export default class InputHandler {
           this.keys[e.key] = true;
           e.preventDefault();
         }
-        
+
         else if (Number.isInteger(parseInt(e.key))) {
           if (parseInt(e.key) == 0) {
             game.player.inventory.selectSlot(9);
@@ -24,13 +24,13 @@ export default class InputHandler {
         } else if (e.key == "c" || e.key == "C") {
           game.player.interact(game.map, game.stamina);
         }
-        
+
         else if (e.key == "e" || e.key == "E") {
           game.clearMenus();
           game.menu = "playerMenu";
         }
       } // END NO MENUs
-      
+
       else if (game.menu == "shop") {
         if (e.key == "ArrowUp") {
           game.player.currentShop.moveUp();
@@ -48,7 +48,11 @@ export default class InputHandler {
           game.player.quantity = 1;
         }
       } // END SHOP
-      
+
+      else if (game.menu == "playerMenu") {
+        game.playerMenu.keyPress(e);
+      }
+
       if (e.key == "Escape") {
         game.clearMenus();
         game.mouseToggled = false;
