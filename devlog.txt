@@ -389,3 +389,7 @@ kiranS -- 2026-05-26 17:30
 - finished relationship menu
 - npc gift/talk status updates when day ticks over
 - fixed dialogue retriggering when talk/gift already happened 
+
+sarahZ -- 2026-05-27 14:50
+- added helper function in editor.js to turn all passable to spawnable
+- updated forest and beach json with passable and spawnable

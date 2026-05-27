@@ -11,6 +11,7 @@ const mapSelect = document.getElementById('map-select');
 const DEBUG = true;
 const TILLABLE_HELPER = false;
 const UNTILLABLE_HELPER = false;
+const SPAWNABLE_HELPER = false;
 const PROPERTIES = {
   passable: {defaultValue: false},
   tillable: {defaultValue: false},
@@ -41,7 +42,7 @@ async function getJson(file_name) {
 }
 
 let currentProperty = 'passable';
-let currentMap = 'mines/4';
+let currentMap = 'farm';
 
 let map = new Image();
 map.src = `/static/images/maps/${currentMap}.png`
@@ -99,6 +100,7 @@ map.onload = async () => {
   }
   if (TILLABLE_HELPER) await tillableHelper();
   if (UNTILLABLE_HELPER) await untillableHelper();
+  if (SPAWNABLE_HELPER) await spawnableHelper();
   render();
 }
 
@@ -204,4 +206,15 @@ async function untillableHelper() {
     }
   }
   render();
+}
+
+//this converts every passable to spawnable
+async function spawnableHelper() {
+  for (const col of tiles) {
+    for (const tile of col) {
+      if (tile.passable) {
+        tile.spawnable = true;
+      }
+    }
+  }
 }
