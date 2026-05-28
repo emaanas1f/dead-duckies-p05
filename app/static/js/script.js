@@ -1,6 +1,6 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE,
          UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH, STARTING_STAMINA } from './constants.js'
-import { initializeFarm, initializeMine } from './map/map.js';
+import { initializeFarm, initializeMine, initializeForest } from './map/map.js';
 
 import Map from './map/map.js'
 import Player from './player.js';
@@ -55,6 +55,7 @@ class StardewValley {
 
     this.player.inventory.addItem("axe", 1);
     this.player.inventory.addItem("hoe", 1);
+    this.player.inventory.addItem("scythe", 1);
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
@@ -85,6 +86,9 @@ class StardewValley {
           this.maps[tile.destination.map].loadTiles(tile.destination.map, this).then(() => {
             if (tile.destination.map.substring(0, 5) == "mines") {
               initializeMine(this.maps[tile.destination.map], this.player);
+            }
+            if (tile.destination.map === "forest") {
+              initializeForest(this.maps[tile.destination.map], this.player);
             }
             teleport();
           });

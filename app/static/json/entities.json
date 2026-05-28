@@ -14,7 +14,7 @@
     "passable": false
   },
   "weed": {
-    "tools": ["scythe", "axe"],
+    "tools": ["scythe"],
     "drops": {
       "mixed_seeds": 1
     },

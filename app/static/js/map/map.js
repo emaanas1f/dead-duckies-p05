@@ -198,5 +198,20 @@ export function initializeMine(map) {
 }
 
 export function initializeForest(map) {
-  map.respawnForageables();
+  for (let x = 0; x < map.tiles.length; x++) {
+    for (let y = 0; y < map.tiles[x].length; y++) {
+      if (!map.tiles[x][y].spawnable) continue;
+      const randomNum = Math.floor(Math.random() * 100);
+      if (randomNum < 1) {
+        map.addBigEntity(x, y, "tree");
+      } else if (randomNum < 7) {
+        map.tiles[x][y].add("stone", "middle");
+      } else if (randomNum < 12) {
+        map.tiles[x][y].add("twig", "middle");
+      } else if (randomNum < 17) {
+        map.tiles[x][y].add("weed", "middle");
+      }
+    }
+  }
+  // map.respawnForageables();
 }

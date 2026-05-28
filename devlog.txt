@@ -393,3 +393,5 @@ kiranS -- 2026-05-26 17:30
 sarahZ -- 2026-05-27 14:50
 - added helper function in editor.js to turn all passable to spawnable
 - updated forest and beach json with passable and spawnable
+- added scythe 
+- worked on initializeForest, added debris to forest map
