@@ -6,7 +6,7 @@ import Player from "../player.js"
 const UI_TILE_SIZE = TILE_SIZE * UI_FACTOR
 const MENU_WIDTH = UI_TILE_SIZE * 13;
 const LEFT_BOUND = (CANVAS_WIDTH - MENU_WIDTH) / 2;
-const TABS = ["inventory", "relationships", "crafting"];
+const TABS = ["inventory", "relationships" /*, "crafting" */];
 
 export default class PlayerMenu {
   constructor(game) {
@@ -83,10 +83,10 @@ export default class PlayerMenu {
       case "relationships":
         this.relationshipsMenu.render(overlayCtx, this.player, left, top, UI_FACTOR)
         break;
-      case "crafting":
-        this.craftingMenu.open = true;
-        this.craftingMenu.render(overlayCtx);
-        break;
+      //case "crafting":
+        //this.craftingMenu.open = true;
+       // this.craftingMenu.render(overlayCtx);
+       // break;
     }
     this.renderTabs(overlayCtx);
   }

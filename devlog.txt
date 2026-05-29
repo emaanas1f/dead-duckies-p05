@@ -399,3 +399,8 @@ sarahZ -- 2026-05-27 14:50
 sarahZ -- 2026-05-28 23:55
 - more work on forageables, having trouble getting them to respawn
 - implemented passing out
+kiranS -- 2026-05-28 21:00
+- cropped sprites for fishing UI
+
+jamesL -- 2026-05-28 21:00
+- added more assset images
