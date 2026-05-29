@@ -59,7 +59,7 @@ class StardewValley {
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
-    this.player.inventory.addItem("cauliflower_seeds", 5);
+    this.player.inventory.addItem("blueberry_seeds", 5);
 
     this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
@@ -211,7 +211,7 @@ class StardewValley {
     const teleportToFarmhouse = () => {
       this.map = this.maps["farmhouse"];
       this.player.x = 17 * TILE_SIZE;
-      this.player.y = 11 * TILE_SIZE;
+      this.player.y = 10 * TILE_SIZE;
     };
 
     if (!Object.hasOwn(this.maps, 'farmhouse')) {

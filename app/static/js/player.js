@@ -104,7 +104,7 @@ export default class Player {
 
     // console.log(`${tile.x}, ${tile.y}`)
 
-    if (entity instanceof NPC) {
+    if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
         if (entity.gift(this.name, item)) {
           this.inventory.removeItem(item, 1);
@@ -119,40 +119,17 @@ export default class Player {
       }
     }
 
-    else if (tile && tile.interactable) {
+    else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) { // PIERRE'S
+      this.game.clearMenus();
+      this.game.menu = "shop";
+      this.currentShop = this.game.pierreShop;
+    }
+
+    else if (tile && tile.interactable) { // SLEEP
       this.game.startSleep();
     }
 
-    else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) {
-      this.game.clearMenus();
-      this.game.menu = "shop";
-      this.currentShop = this.game.pierreShop;
-    }
-
-    else if (map.name == "farm" && tile.x == 9 && tile.y == 10) {
-      console.log("HERE");
-      this.game.clearMenus();
-      this.game.menu = "shop";
-      this.currentShop = this.game.pierreShop;
-    }
-
-    else if (front instanceof BigEntity) {
-      if (ENTITIES[front.type]["tools"].includes(item)) {
-        map.removeBigEntity(tile.x, tile.y);
-        for (const [key, value] of Object.entries(ENTITIES[front.type]["drops"])) {
-          this.inventory.addItem(key, value);
-        }
-        stamina.useEnergy(5);
-      }
-    }
-
-    else if (item == null) {
-      if (entity instanceof Crop && entity.matured) {
-        entity.harvest(this.inventory);
-      }
-    }
-
-    else if (back == "ladder" && entity == null) {
+    else if (back == "ladder" && entity == null) { // MINE LADDERS
       let nextIndex = parseInt(this.game.map.name.split("/")[1]) + 1;
       let nextMap = "mines/" + nextIndex;
       if (!Object.hasOwn(this.game.maps, nextMap)) {
@@ -170,40 +147,51 @@ export default class Player {
       }
     }
 
-    else {
-      if (item == "pickaxe" && entity instanceof Crop) {
-        entity.remove();
-        stamina.useEnergy(5);
-      }
+    if (item == "hoe" && entity == null && tile.tillable) { // TILLING TILES
+      map.crops.push(new Crop(tile.x, tile.y, map));
+      stamina.useEnergy(5);
+    }
 
-      else if (item == "hoe" && entity == null && tile.tillable) {
-        map.crops.push(new Crop(tile.x, tile.y, map));
-        stamina.useEnergy(5);
+    else if (entity instanceof Crop) { // CROP HANDLING
+      if (item && (item.includes("seeds") || item.includes("starter")) && entity.type == null) {
+        entity.plant(item.split("_")[0]);
+        this.inventory.removeItem(item, 1);
       }
-
-      else if (item == "watering_can" && entity instanceof Crop) {
+      if (item == "watering_can") {
         entity.water();
         stamina.useEnergy(2);
       }
-
-      else if (entity instanceof Crop && item && item.includes("seeds")) {
-        if (entity.type == null) {
-          entity.plant(item.split("_")[0]);
-          this.inventory.removeItem(item, 1);
-        }
+      if (item == "pickaxe") {
+        entity.remove();
+        stamina.useEnergy(5);
       }
-
-      else if (entity != null && ENTITIES[entity]["tools"].includes(item)) {
-          tile.remove("middle");
-          for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
-            this.inventory.addItem(key, value);
-          }
-          stamina.useEnergy(5);
+      if (entity.type == null) {
+        if (entity instanceof Crop && entity.matured) {
+          entity.harvest(this.inventory);
         }
       }
     }
 
-//adding crafting helpers in here
+    else if (front instanceof BigEntity) { // CHOPPING TREES
+      if (ENTITIES[front.type]["tools"].includes(item)) {
+        map.removeBigEntity(tile.x, tile.y);
+        for (const [key, value] of Object.entries(ENTITIES[front.type]["drops"])) {
+          this.inventory.addItem(key, value);
+        }
+        stamina.useEnergy(5);
+      }
+    }
+
+    else if (entity != null && ENTITIES[entity]["tools"].includes(item)) { // CHOPPING EVERYTHING ELSE
+      tile.remove("middle");
+      for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
+        this.inventory.addItem(key, value);
+      }
+      stamina.useEnergy(5);
+    }
+  }
+
+  //adding crafting helpers in here
   countItem(itemID) {
     let total = 0;
     for (let slot of this.inventory.slots) {
@@ -278,8 +266,7 @@ export default class Player {
   }
 
   sleep(time, stamina) {
-    this.game.time.currTime = 0;
-    this.game.time.nextDay(this.game);
+    // IMPLEMENT STAMINA RESTORATION
   }
 
   render(ctx, map) {

@@ -11,8 +11,8 @@ export default class Crop {
     this.tile.add(this, "middle");
     this.x = x;
     this.y = y;
+
     this.watered = false;
-    this.matured = false;
   }
 
   water() {
@@ -35,31 +35,49 @@ export default class Crop {
       loadedCrops[type] = asset;
       this.image = asset;
     }
+
     this.growthTime = CROPS[type]["growthTime"];
+    this.recurring = CROPS[type]["recurring"];
+
     this.growthStage = 0;
-    this.progress = 0;
+    this.remainingTime = this.growthTime[0];
+    
+    this.matured = false;
+    this.harvestable = false;
   }
 
   update() {
     if (this.type == null && !this.watered) {
-      if (Math.floor(Math.random() * 100) < 20) {
-        this.remove();
+      if (Math.floor(Math.random() * 100) < 20) this.remove();
+    }
+
+    if (this.type) {
+      if (!this.watered && !this.harvestable) {
+        this.wilt();
       }
-    } else if (!this.matured && !this.watered) {
-      this.wilt();
-    } else if (this.type && this.progress < this.growthTime[this.growthStage]) {
-      this.progress++;
+
+      if (this.remainingTime > 0) {
+        this.remainingTime--;
+        if (this.remainingTime == 0) {
+          if (!this.recurring || !this.matured) {
+            this.growthStage++;
+            this.remainingTime = this.growthTime[this.growthStage];
+          }
+
+          if (this.growthStage == this.growthTime.length) {
+            this.matured = true;
+            this.harvestable = true;
+          }
+
+          if (this.matured && this.recurring && !this.harvestable) {
+            this.harvestable = true;
+            this.growthStage--;
+          }
+        }
+      }
     }
 
     this.dry();
-
-    if (this.type && !this.matured && this.progress == this.growthTime[this.growthStage]) {
-      this.progress = 0;
-      this.growthStage += 1;
-      if (this.growthStage == this.growthTime.length) {
-        this.matured = true;
-      }
-    }
   }
 
   remove() {
@@ -71,16 +89,25 @@ export default class Crop {
     this.type = null;
     delete this.growthTime;
     delete this.growthStage;
-    delete this.progress;
+    delete this.remainingTime;
+    delete this.recurring;
+    delete this.harvestable
     delete this.image;
     this.dry();
   }
 
   harvest(inventory) {
+    if (!this.harvestable) return;
     for (const [key, value] of Object.entries(CROPS[this.type]["yield"])) {
       inventory.addItem(key, value);
     }
-    this.wilt();
+    if (this.recurring) {
+      this.growthStage++;
+      this.harvestable = false;
+      this.remainingTime = CROPS[this.type]["regrowth"];
+    } else {
+      this.wilt();
+    }
   }
 
   render(ctx, map) {

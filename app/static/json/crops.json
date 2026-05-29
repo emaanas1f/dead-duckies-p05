@@ -1,8 +1,24 @@
 {
-  "parsnip": {
+  "bean": {
+    "growthTime": [1, 1, 1, 3, 4],
+    "yield": {
+      "green_bean": 1
+    },
+    "recurring": true,
+    "regrowth": 3
+  },
+  "blueberry": {
+    "growthTime": [1, 3, 3, 4, 2],
+    "yield": {
+      "blueberry": 1
+    },
+    "recurring": true,
+    "regrowth": 4
+  },
+  "bok_choy": {
     "growthTime": [1, 1, 1, 1],
     "yield": {
-      "parsnip": 2
+      "bok_choy": 1
     },
     "recurring": false
   },
@@ -13,11 +29,85 @@
     },
     "recurring": false
   },
-  "blueberry": {
-    "growthTime": [1, 3, 3, 4, 2],
+  "corn": {
+    "growthTime": [2, 3, 3, 3, 3],
     "yield": {
-      "blueberry": 1
+      "corn": 1
     },
-    "recurring": true
+    "recurring": true,
+    "regrowth": 4
+  },
+  "eggplant": {
+    "growthTime": [1, 1, 1, 1, 1],
+    "yield": {
+      "eggplant": 1
+    },
+    "recurring": false,
+    "regrowth": 5
+  },
+  "pepper": {
+    "growthTime": [1, 1, 1, 1, 1],
+    "yield": {
+      "hot_pepper": 1
+    },
+    "recurring": true,
+    "regrowth": 3
+  },
+  "kale": {
+    "growthTime": [1, 2, 2, 1],
+    "yield": {
+      "kale": 1
+    },
+    "recurring": false
+  },
+  "melon": {
+    "growthTime": [1, 2, 3, 3, 3],
+    "yield": {
+      "melon": 1
+    },
+    "recurring": false
+  },
+  "parsnip": {
+    "growthTime": [1, 1, 1, 1],
+    "yield": {
+      "parsnip": 2
+    },
+    "recurring": false
+  },
+  "potato": {
+    "growthTime": [1, 1, 1, 2, 1],
+    "yield": {
+      "potato": 1
+    },
+    "recurring": false
+  },
+  "pumpkin": {
+    "growthTime": [1, 2, 3, 4, 3],
+    "yield": {
+      "pumpkin": 1
+    },
+    "recurring": false
+  },
+  "radish": {
+    "growthTime": [2, 1, 2, 1],
+    "yield": {
+      "radish": 1
+    },
+    "recurring": false
+  },
+  "tomato": {
+    "growthTime": [2, 2, 2, 2, 3],
+    "yield": {
+      "tomato": 1
+    },
+    "recurring": true,
+    "regrowth": 4
+  },
+  "yam": {
+    "growthTime": [1, 3, 3, 3],
+    "yield": {
+      "yam": 1
+    },
+    "recurring": false
   }
 }

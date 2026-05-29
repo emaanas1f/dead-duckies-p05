@@ -12,9 +12,56 @@
     "category": "resources"
   },
 
+  "bean_starter": {
+    "buyPrice": 60,
+    "sellPrice": 30,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "blueberry_seeds": {
+    "buyPrice": 80,
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "bok_choy_seeds": {
+    "buyPrice": 50,
+    "sellPrice": 25,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "cauliflower_seeds": {
+    "buyPrice": 80,
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "corn_seeds": {
+    "buyPrice": 150,
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "eggplant_seeds": {
+    "buyPrice": 20,
+    "sellPrice": 10,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "kale_seeds": {
+    "buyPrice": 70,
+    "sellPrice": 35,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "melon_seeds": {
+    "buyPrice": 80,
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
   "mixed_seeds": {
-    "sellPrice": 5,
-    "reaction": "neutral",
+    "reaction": "dislike",
     "category": "seeds"
   },
   "parsnip_seeds": {
@@ -23,25 +70,116 @@
     "reaction": "dislike",
     "category": "seeds"
   },
-  "cauliflower_seeds": {
-    "buyPrice": 100,
+  "pepper_seeds": {
+    "buyPrice": 40,
+    "sellPrice": 20,
+    "reaction": "dislike",
     "category": "seeds"
   },
-  "carrot_seeds": {
-    "buyPrice": 20,
+  "potato_seeds": {
+    "buyPrice": 50,
+    "sellPrice": 25,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "pumpkin_seeds": {
+    "buyPrice": 100,
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "radish_seeds": {
+    "buyPrice": 40,
+    "sellPrice": 20,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "tomato_seeds": {
+    "buyPrice": 50,
+    "sellPrice": 25,
+    "reaction": "dislike",
+    "category": "seeds"
+  },
+  "yam_seeds": {
+    "buyPrice": 60,
+    "sellPrice": 30,
+    "reaction": "dislike",
     "category": "seeds"
   },
 
-  "parsnip": {
-    "sellPrice": 35,
+  "green_bean": {
+    "sellPrice": 40,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "blueberry": {
+    "sellPrice": 50,
+    "reaction": "neutral",
+    "category": "crops"
+  },
+  "bok_choy": {
+    "sellPrice": 80,
+    "reaction": "like",
     "category": "crops"
   },
   "cauliflower": {
     "sellPrice": 175,
+    "reaction": "like",
     "category": "crops"
   },
-  "carrot": {
+  "corn": {
+    "sellPrice": 50,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "eggplant": {
+    "sellPrice": 60,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "kale": {
+    "sellPrice": 110,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "melon": {
+    "sellPrice": 250,
+    "reaction": "neutral",
+    "category": "crops"
+  },
+  "parsnip": {
     "sellPrice": 35,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "hot_pepper": {
+    "sellPrice": 40,
+    "reaction": "neutral",
+    "category": "crops"
+  },
+  "potato": {
+    "sellPrice": 80,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "pumpkin": {
+    "sellPrice": 320,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "radish": {
+    "sellPrice": 90,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "tomato": {
+    "sellPrice": 60,
+    "reaction": "like",
+    "category": "crops"
+  },
+  "yam": {
+    "sellPrice": 160,
+    "reaction": "like",
     "category": "crops"
   },
 
