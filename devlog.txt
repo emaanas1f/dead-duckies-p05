@@ -398,3 +398,6 @@ sarahZ -- 2026-05-27 14:50
 
 kiranS -- 2026-05-28 21:00
 - cropped sprites for fishing UI
+
+jamesL -- 2026-05-28 21:00
+- added more assset images

@@ -15,5 +15,5 @@ def split_tileset(sheetname, foldername, rows, cols):
 
 # split_tileset("paths.png", "test")
 # split_tileset("furniture.png", "furniture")
-split_tileset("unused/tilesheets/Objects_2.png", "assets", 20, 8)
+split_tileset("unused/tilesheets/springobjects.png", "springobjects", 39, 24)
 # split_tileset("portraits/Willy.png", "portraits")
