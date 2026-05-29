@@ -404,3 +404,12 @@ kiranS -- 2026-05-28 21:00
 
 jamesL -- 2026-05-28 21:00
 - added more assset images
+
+emaanA -- 2026-05-29 13:40
+DEVELOPER PREVIEWS: The Aftermath
+- can't plant mixed seeds
+- player should pass out with 0 stamina --> working on this
+- seeds may disappear after planting
+- issues with sleep animation locking 
+- game may freeze 
+- need to add control guide on startup 
