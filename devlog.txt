@@ -413,3 +413,6 @@ DEVELOPER PREVIEWS: The Aftermath
 - issues with sleep animation locking 
 - game may freeze 
 - need to add control guide on startup 
+
+jamesL -- 2026-05-29 19:45
+- added more crops, with some being harvestable multiple times
