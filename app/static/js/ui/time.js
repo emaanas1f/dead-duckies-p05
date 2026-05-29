@@ -85,10 +85,9 @@ export default class Time {
     if (this.numTicks % TIME_CONVERSION == 0) {
       this.currTime += 10;
     }
-    // this block is just for testing -- remove when fainting mechanic added
-    if (this.currTime >= 1200) {
-      this.currTime = 0;
-      this.nextDay(game);
+
+    if (this.currTime >= 1200 && game.menu !== "sleeping") {
+      game.startSleep();
     }
   }
 }

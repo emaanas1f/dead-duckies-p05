@@ -395,3 +395,7 @@ sarahZ -- 2026-05-27 14:50
 - updated forest and beach json with passable and spawnable
 - added scythe 
 - worked on initializeForest, added debris to forest map
+
+sarahZ -- 2026-05-28 23:55
+- more work on forageables, having trouble getting them to respawn
+- implemented passing out

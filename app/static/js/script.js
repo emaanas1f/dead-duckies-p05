@@ -188,6 +188,8 @@ class StardewValley {
           if (this.sleepAlpha <= 0) {
             this.sleepState = null;
             this.menu = null;
+            this.time.currTime = 0;
+            this.time.nextDay(this);
             this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
           }
         }
@@ -205,8 +207,22 @@ class StardewValley {
     this.menu = 'sleeping';
     this.sleepState = 'fadein';
     this.sleepAlpha = 0;
+
+    const teleportToFarmhouse = () => {
+      this.map = this.maps["farmhouse"];
+      this.player.x = 17 * TILE_SIZE;
+      this.player.y = 11 * TILE_SIZE;
+    };
+
+    if (!Object.hasOwn(this.maps, 'farmhouse')) {
+      this.maps['farmhouse'] = new Map('farmhouse');
+      this.maps['farmhouse'].loadTiles('farmhouse').then(teleportToFarmhouse);
+    } else {
+      teleportToFarmhouse();
+    }
   }
 }
+
 
 // window.addEventListener('load', function() {
   const canvas = document.getElementById('main-canvas');
