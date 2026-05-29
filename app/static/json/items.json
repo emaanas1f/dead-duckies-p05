@@ -24,12 +24,24 @@
     "category": "seeds"
   },
   "cauliflower_seeds": {
+    "buyPrice": 100,
+    "category": "seeds"
+  },
+  "carrot_seeds": {
+    "buyPrice": 20,
     "category": "seeds"
   },
 
   "parsnip": {
     "sellPrice": 35,
-    "reaction": "like",
+    "category": "crops"
+  },
+  "cauliflower": {
+    "sellPrice": 175,
+    "category": "crops"
+  },
+  "carrot": {
+    "sellPrice": 35,
     "category": "crops"
   },
 
