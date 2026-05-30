@@ -154,7 +154,8 @@ export default class Player {
 
     else if (entity instanceof Crop) { // CROP HANDLING
       if (item && (item.includes("seeds") || item.includes("starter")) && entity.type == null) {
-        entity.plant(item.split("_")[0]);
+        let lastIndex = item.lastIndexOf('_');
+        entity.plant(item.slice(0, lastIndex));
         this.inventory.removeItem(item, 1);
       }
       if (item == "watering_can") {
