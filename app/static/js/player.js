@@ -166,10 +166,8 @@ export default class Player {
         entity.remove();
         stamina.useEnergy(5);
       }
-      if (entity.type == null) {
-        if (entity instanceof Crop && entity.matured) {
-          entity.harvest(this.inventory);
-        }
+      if (entity.type != null) {
+        entity.harvest(this.inventory);
       }
     }
 

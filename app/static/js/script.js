@@ -59,7 +59,7 @@ class StardewValley {
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
-    this.player.inventory.addItem("bok_choy_seeds", 5);
+    this.player.inventory.addItem("blueberry_seeds", 5);
 
     this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
