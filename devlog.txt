@@ -7,9 +7,6 @@ sarahZ -- 2026-04-29 22:40
 emaanA -- 2026-04-29 23:40
 - droplet up with user accounts for all devos; pushing this from droplet to confirm access to repo
 
-kiranS -- 2026-04-30 19:00
-- searched through SDV game files to find relevant json files and tileset pngs, and added to repo
-
 jamesL --2026-04-30 11:00
 - added css; enlarged and centered
 
@@ -266,6 +263,7 @@ kiranS -- 2026-05-17 16:40
 
 sarahZ -- 2026-05-19 1:00
 - added assets for beach and willy's shop
+
 emaanA -- 2026-05-18 11:00
 - centered inventory; click and drag broken? need 2 fix
 
@@ -399,6 +397,7 @@ sarahZ -- 2026-05-27 14:50
 sarahZ -- 2026-05-28 23:55
 - more work on forageables, having trouble getting them to respawn
 - implemented passing out
+
 kiranS -- 2026-05-28 21:00
 - cropped sprites for fishing UI
 
@@ -416,3 +415,8 @@ DEVELOPER PREVIEWS: The Aftermath
 
 jamesL -- 2026-05-29 19:45
 - added more crops, with some being harvestable multiple times
+
+kiranS -- 2026-05-30 13:20
+- added seeds to pierre's stock
+- minor fixes to day rollover code
+- fixes to crop/item json values

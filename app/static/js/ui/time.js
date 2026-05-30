@@ -29,14 +29,14 @@ export default class Time {
     })
     
     game.npcList.forEach(npc => {
-      npc.talked.forEach(player => {
+      Object.keys(npc.talked).forEach(player => {
         npc.talked[player] = false;
       });
-      npc.gifted.forEach(player => {
+      Object.keys(npc.gifted).forEach(player => {
         npc.gifted[player] = false;
       });
-      if (currDay % 7 == 1) {
-        npc.giftNumber.forEach(player => {
+      if (this.currDay % 7 == 1) {
+        Object.keys(npc.giftNumber).forEach(player => {
           npc.giftNumber[player] = 0;
         });
       }
