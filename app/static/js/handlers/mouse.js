@@ -29,6 +29,9 @@ export default class MouseHandler {
         this.game.playerMenu.click(this.mouseX, this.mouseY);
       }
 
+      if (this.game.menu == null && !this.isDown) {
+        this.game.player.interact(this.game.map, this.game.stamina)
+      }
       this.isDown = true;
     });
 

@@ -420,3 +420,4 @@ kiranS -- 2026-05-30 13:20
 - added seeds to pierre's stock
 - minor fixes to day rollover code
 - fixes to crop/item json values
+- mouse click now triggers player actions
