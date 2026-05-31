@@ -17,7 +17,9 @@ const PROPERTIES = {
   tillable: {defaultValue: false},
   teleporter: {defaultValue: false},
   spawnable: {defaultValue: false},
-  interactable: {defaultValue: false}
+  interactable: {defaultValue: false},
+  water: {defaultValue: false},
+  forest_lake: {defaultValue: false}
 };
 
 for (const [key, value] of Object.entries(PROPERTIES)) {
@@ -95,6 +97,14 @@ map.onload = async () => {
   tiles = [];
   try {
     tiles = await getJson(`maps/${currentMap}.json`);
+
+    //add water and forest lake attributes to json files that don't already have them
+    for (const col of tiles) {
+      for (const tile of col) {
+        if (!Object.hasOwn(tile, 'water')) tile.water = false;
+        if (!Object.hasOwn(tile, 'forest_lake')) tile.forest_lake = false;
+      }
+    }
   } catch (error) {
     tiles = await initializeTiles();
   }

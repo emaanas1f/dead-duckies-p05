@@ -431,3 +431,7 @@ kiranS -- 2026-05-30 21:30
 
 kiranS -- 2026-05-31 12:40
 - started on fish.js
+
+sarahZ -- 2026-05-31 19:40
+- added water and fish_lake attributes to all relevant map json files
+- fixed issue with sleeping teleport 
