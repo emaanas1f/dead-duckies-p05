@@ -1,19 +1,10 @@
 {
-  "furnace": {
-    "name": "furnace",
-    "ingredients": [
-      { "item": "copper", "amount": 5 }
-    ],
-    "output": {
-      "item": "furnace",
-      "amount": 1
-    }
-  },
-
   "chest": {
-    "name": "Chest",
     "ingredients": [
-      { "item": "wood", "amount": 10 }
+      {
+        "item": "wood",
+        "amount": 50
+      }
     ],
     "output": {
       "item": "chest",
@@ -21,13 +12,40 @@
     }
   },
 
-  "perserved jar": {
-    "name": "perserved jar",
+  "furnace": {
     "ingredients": [
-      { "item": "parnsip seeds", "amount": 5 }
+      {
+        "item": "stone",
+        "amount": 25
+      },
+      {
+        "item": "copper",
+        "amount": 20
+      }
     ],
     "output": {
-      "item": "perserved jar",
+      "item": "furnace",
+      "amount": 1
+    }
+  },
+
+  "preserved_jar": {
+    "ingredients": [
+      {
+        "item": "wood",
+        "amount": 50
+      },
+      {
+        "item": "stone",
+        "amount": 40
+      },
+      {
+        "item": "coal",
+        "amount": 8
+      }
+    ],
+    "output": {
+      "item": "preserved_jar",
       "amount": 1
     }
   }

@@ -40,7 +40,7 @@ export default class Player {
     this.currentShop;
     this.quantity = 1;
 
-    this.unlockedRecipes = ["furnace", "chest", "perserved jar"];
+    this.unlockedRecipes = ["furnace", "chest", "preserved_jar"];
   }
 
   move(keys, map, stamina) {
@@ -188,61 +188,6 @@ export default class Player {
       }
       stamina.useEnergy(5);
     }
-  }
-
-  //adding crafting helpers in here
-  countItem(itemID) {
-    let total = 0;
-    for (let slot of this.inventory.slots) {
-      if (slot.itemID === itemID) {
-        total += slot.count;
-      }
-    }
-    return total;
-  }
-
-  hasItems(requirements) {
-    for (let ingredient of requirements) {
-      let owned =
-        this.countItem(ingredient.item);
-      if (owned < ingredient.amount) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  removeItems(requirements) {
-    for (let ingredient of requirements) {
-      let remaining = ingredient.amount;
-      for (let slot of this.inventory.slots) {
-        if (slot.itemID === ingredient.item) {
-          let removed =
-            Math.min(slot.count, remaining);
-          slot.count -= removed;
-          remaining -= removed;
-          if (slot.count <= 0) {
-            slot.itemID = null;
-            slot.count = 0;
-          }
-          if (remaining <= 0) {
-            break;
-          }
-        }
-      }
-    }
-  }
-
-  craft(recipe) {
-    if (!this.hasItems(recipe.ingredients)) {
-      return false;
-    }
-    this.removeItems(recipe.ingredients);
-    this.inventory.addItem(
-      recipe.output.item,
-      recipe.output.amount
-    );
-    return true;
   }
 
   getTile(map) {
