@@ -1,0 +1,331 @@
+{
+    "types": ["mixed", "smooth", "sinker", "floater", "dart"],
+    "pufferfish": {
+        "locations": ["ocean"],
+        "timeRanges": [[12,16]],
+        "sizeRange": [1,37],
+        "behavior": 3,
+        "difficulty": 80,
+        "rarity": 2
+    },
+    "anchovy": {
+        "locations": ["ocean"],
+        "timeRanges": [[]],
+        "sizeRange": [1,17],
+        "behavior": 4,
+        "difficulty": 30,
+        "rarity": 3
+    },
+    "tuna": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [12,61],
+        "behavior": 1,
+        "difficulty": 70,
+        "rarity": 3
+    },
+    "sardine": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [1,13],
+        "behavior": 4,
+        "difficulty": 30,
+        "rarity": 0.8
+    },
+    "bream": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[18,26]],
+        "sizeRange": [12,31],
+        "behavior": 1,
+        "difficulty": 35,
+        "rarity": 1
+    },
+    "largemouth_bass": {
+        "locations": ["forest lake"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [11,31],
+        "behavior": 0,
+        "difficulty": 50,
+        "rarity": 2
+    },
+    "smallmouth_bass": {
+        "locations": ["town", "forest lake"],
+        "timeRanges": [[]],
+        "sizeRange": [12,25],
+        "behavior": 0,
+        "difficulty": 28,
+        "rarity": 1
+    },
+    "rainbow_trout": {
+        "locations": ["town","forest river"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [10,26],
+        "behavior": 0,
+        "difficulty": 45,
+        "rarity": 2.5
+    },
+    "salmon": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [24,66],
+        "behavior": 0,
+        "difficulty": 50,
+        "rarity": 2
+    },
+    "walleye": {
+        "locations": ["town", "forest"],
+        "timeRanges": [[12,26]],
+        "sizeRange": [10,41],
+        "behavior": 1,
+        "difficulty": 45,
+        "rarity": 2
+    },
+    "perch": {
+        "locations": ["town", "forest"],
+        "timeRanges": [[]],
+        "sizeRange": [10,25],
+        "behavior": 4,
+        "difficulty": 35,
+        "rarity": 2.5
+    },
+    "carp": {
+        "locations": ["forest lake"],
+        "timeRanges": [[]],
+        "sizeRange": [15,51],
+        "behavior": 0,
+        "difficulty": 15,
+        "rarity": 2
+    },
+    "catfish": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[6,24]],
+        "sizeRange": [12,73],
+        "behavior": 0,
+        "difficulty": 75,
+        "rarity": 2
+    },
+    "pike": {
+        "locations": ["town", "forest"],
+        "timeRanges": [[]],
+        "sizeRange": [15,61],
+        "behavior": 4,
+        "difficulty": 60,
+        "rarity": 2.4
+    },
+    "sunfish": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[6, 19]],
+        "sizeRange": [5, 16],
+        "behavior": 0,
+        "difficulty": 30,
+        "rarity": 2.2
+    },
+    "red_mullet": {
+        "locations": ["ocean"],
+        "timeRanges": [[6, 19]],
+        "sizeRange": [8,23],
+        "behavior": 1,
+        "difficulty": 55,
+        "rarity": 2.1
+    },
+    "herring": {
+        "locations": ["ocean"],
+        "timeRanges": [[]],
+        "sizeRange": [8,21],
+        "behavior": 4,
+        "difficulty": 25,
+        "rarity": 1.8
+    },
+    "eel": {
+        "locations": ["ocean"],
+        "timeRanges": [[16,26]],
+        "sizeRange": [12,81],
+        "behavior": 1,
+        "difficulty": 70,
+        "rarity": 1.3
+    },
+    "octopus": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,13]],
+        "sizeRange": [12,49],
+        "behavior": 2,
+        "difficulty": 95,
+        "rarity": 4
+    },
+    "red_snapper": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [8,26],
+        "behavior": 0,
+        "difficulty": 40,
+        "rarity": 2
+    },
+    "squid": {
+        "locations": ["ocean"],
+        "timeRanges": [[18,26]],
+        "sizeRange": [12,49],
+        "behavior": 2,
+        "difficulty": 75,
+        "rarity": 2.3
+    },
+    "sea_cucumber": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,19]],
+        "sizeRange": [3,21],
+        "behavior": 2,
+        "difficulty": 40,
+        "rarity": 3
+    },
+    "super_cucumber": {
+        "locations": ["ocean"],
+        "timeRanges": [[18,26]],
+        "sizeRange": [12,37],
+        "behavior": 2,
+        "difficulty": 80,
+        "rarity": 4
+    },
+    "flounder": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,20]],
+        "sizeRange": [4,17],
+        "behavior": 2,
+        "difficulty": 50,
+        "rarity": 3.5
+    },
+    "midnight_carp": {
+        "locations": ["forest lake"],
+        "timeRanges": [[22,26]],
+        "sizeRange": [12,53],
+        "behavior": 0,
+        "difficulty": 55,
+        "rarity": 2
+    },
+    "sturgeon": {
+        "locations": ["forest lake"],
+        "timeRanges": [[6, 19]],
+        "sizeRange": [12,61],
+        "behavior": 0,
+        "difficulty": 78,
+        "rarity": 2.8
+    },
+    "tiger_trout": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[6, 19]],
+        "sizeRange": [10, 21],
+        "behavior": 4,
+        "difficulty": 60,
+        "rarity": 3.5
+    },
+    "bullhead": {
+        "locations": ["forest lake"],
+        "timeRanges": [[]],
+        "sizeRange": [12,31],
+        "behavior": 1,
+        "difficulty": 46,
+        "rarity": 2.7
+    },
+    "tilapia": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,14]],
+        "sizeRange": [11,31],
+        "behavior": 0,
+        "difficulty": 50,
+        "rarity": 2.1
+    },
+    "chub": {
+        "locations": ["forest river"],
+        "timeRanges": [[]],
+        "sizeRange": [12,25],
+        "behavior": 4,
+        "difficulty": 35,
+        "rarity": 2.2
+    },
+    "dorado": {
+        "locations": ["forest river"],
+        "timeRanges": [[6, 19]],
+        "sizeRange": [24,33],
+        "behavior": 0,
+        "difficulty": 78,
+        "rarity": 3.8
+    },
+    "albacore": {
+        "locations": ["ocean"],
+        "timeRanges": [[6,11], [18,26]],
+        "sizeRange": [20,41],
+        "behavior": 0,
+        "difficulty": 60,
+        "rarity": 2.8
+    },
+    "shad": {
+        "locations": ["town", "forest river"],
+        "timeRanges": [[9, 26]],
+        "sizeRange": [20, 49],
+        "behavior": 1,
+        "difficulty": 45,
+        "rarity": 2
+    },
+    "lingcod": {
+        "locations": ["town", "forest"],
+        "timeRanges": [[]],
+        "sizeRange": [30, 51],
+        "behavior": 0,
+        "difficulty": 85,
+        "rarity": 2.8
+    },
+    "halibut": {
+        "locations": ["ocean"],
+        "timeRanges": [[6, 11], [19, 26]],
+        "sizeRange": [10, 34],
+        "behavior": 2,
+        "difficulty": 50,
+        "rarity": 2
+    },
+    "midnight_squid": {
+        "locations": ["ocean"],
+        "timeRanges": [[21, 26]],
+        "sizeRange": [8, 26],
+        "behavior": 2,
+        "difficulty": 55,
+        "rarity": 7.5
+    },
+    "spook_fish": {
+        "locations": ["ocean"],
+        "timeRanges": [[20, 26]],
+        "sizeRange": [8, 26],
+        "behavior": 4,
+        "difficulty": 60,
+        "rarity": 8.5
+    },
+    "blobfish": {
+        "locations": ["ocean"],
+        "timeRanges": [[17, 26]],
+        "sizeRange": [8, 26],
+        "behavior": 3,
+        "difficulty": 75,
+        "rarity": 10
+    },
+    "crimsonfish": {
+        "locations": ["ocean"],
+        "timeRanges": [[]],
+        "sizeRange": [19, 21],
+        "behavior": 0,
+        "difficulty": 95,
+        "rarity": 30
+    },
+    "angler": {
+        "locations": ["ocean"],
+        "timeRanges": [[]],
+        "sizeRange": [17,19],
+        "behavior": 1,
+        "difficulty": 85,
+        "rarity": 20
+    },
+    "legend": {
+        "locations": ["forest lake"],
+        "timeRanges": [[]],
+        "sizeRange": [49,51],
+        "behavior": 0,
+        "difficulty": 110,
+        "rarity": 50
+    }
+}

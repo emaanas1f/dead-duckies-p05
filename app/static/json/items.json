@@ -226,6 +226,217 @@
     "category": "ore"
   },
 
+  "pufferfish": {
+    "sellPrice": 200,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "anchovy": {
+    "sellPrice": 30,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "tuna": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "sardine": {
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "bream": {
+    "sellPrice": 45,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "largemouth_bass": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "smallmouth_bass": {
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "rainbow_trout": {
+    "sellPrice": 65,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "salmon": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "walleye": {
+    "sellPrice": 105,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "perch": {
+    "sellPrice": 55,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "carp": {
+    "sellPrice": 30,
+    "reaction": "hate",
+    "category": "fish"
+  },
+  "catfish": {
+    "sellPrice": 200,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "pike": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "sunfish": {
+    "sellPrice": 30,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "red_mullet": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "herring": {
+    "sellPrice": 30,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "eel": {
+    "sellPrice": 85,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "octopus": {
+    "sellPrice": 150,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "red_snapper": {
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "squid": {
+    "sellPrice": 80,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "sea_cucumber": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "super_cucumber": {
+    "sellPrice": 250,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "flounder": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "midnight_carp": {
+    "sellPrice": 150,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "sturgeon": {
+    "sellPrice": 200,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "tiger_trout": {
+    "sellPrice": 150,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "bullhead": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "tilapia": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "chub": {
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "dorado": {
+    "sellPrice": 100,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "albacore": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "shad": {
+    "sellPrice": 60,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "lingcod": {
+    "sellPrice": 120,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "halibut": {
+    "sellPrice": 80,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "woodskip": {
+    "sellPrice": 75,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "midnight_squid": {
+    "sellPrice": 200,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "spook_fish": {
+    "sellPrice": 400,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "blobfish": {
+    "sellPrice": 600,
+    "reaction": "love",
+    "category": "fish"
+  },
+  "crimsonfish": {
+    "sellPrice": 1500,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "angler": {
+    "sellPrice": 1000,
+    "reaction": "dislike",
+    "category": "fish"
+  },
+  "legend": {
+    "sellPrice": 5000,
+    "reaction": "love",
+    "category": "fish"
+  },
+
   "axe": {
     "maxStack": 1,
     "category": "tools"
@@ -244,6 +455,32 @@
   },
   "watering_can": {
     "maxStack": 1,
+    "category": "tools"
+  },
+
+  "training_rod": {
+    "maxStack": 1,
+    "level": 1,
+    "category": "tools"
+  },
+  "bamboo_pole": {
+    "maxStack": 1,
+    "level": 2,
+    "category": "tools"
+  },
+  "fiberglass_rod": {
+    "maxStack": 1,
+    "level": 3,
+    "category": "tools"
+  },
+  "iridium_rod": {
+    "maxStack": 1,
+    "level": 4,
+    "category": "tools"
+  },
+  "advanced_iridium_rod": {
+    "maxStack": 1,
+    "level": 5,
     "category": "tools"
   }
 }

@@ -421,3 +421,10 @@ kiranS -- 2026-05-30 13:20
 - minor fixes to day rollover code
 - fixes to crop/item json values
 - mouse click now triggers player actions
+
+kiranS -- 2026-05-30 21:30
+- added sprites for 42 fish
+- created fish.json and filled out values for each fish:
+  - location, time, size, behavior (determines which pattern fish uses), difficulty, rarity
+- added all fish to items.json w/ sell prices
+- added 5 fishing rods to items.json + sprites
