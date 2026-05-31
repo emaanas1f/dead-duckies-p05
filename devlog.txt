@@ -428,3 +428,6 @@ kiranS -- 2026-05-30 21:30
   - location, time, size, behavior (determines which pattern fish uses), difficulty, rarity
 - added all fish to items.json w/ sell prices
 - added 5 fishing rods to items.json + sprites
+
+kiranS -- 2026-05-31 12:40
+- started on fish.js
