@@ -53,9 +53,17 @@ export default class Map {
     this.bigEntities.sort((a, b) => a.y - b.y); // For rendering
   }
 
-  removeBigEntity(x, y) {
-    if (this.tiles[x][y].layers["front"] instanceof BigEntity) {
+  hitBigEntity(x, y, player, remove=false) {
+    if (!this.tiles[x][y].layers["front"] instanceof BigEntity) {
+      throw new Error(`Tile ${x}, ${y} doesn't have a big entity!`);
+    }
+    let destroyed = remove;
+    if (false) {
       this.tiles[x][y].layers["front"].destroy(this);
+    } else {
+      destroyed = this.tiles[x][y].layers["front"].hit(this, player);
+    }
+    if (destroyed) {
       this.bigEntities = this.bigEntities.filter((ent) => {
         return ent.x != x || ent.y != y;
       })
@@ -138,8 +146,10 @@ export function initializeFarm(map, player) {
     for (let y = 0; y < map.tiles[x].length; y++) {
       if (!map.tiles[x][y].tillable) continue;
       const randomNum = Math.floor(Math.random() * 100);
-      if (randomNum < 2) {
-        map.addBigEntity(x, y, "tree");
+      if (randomNum < 1) {
+        map.addBigEntity(x, y, "oak_tree");
+      } else if (randomNum < 2) {
+        map.addBigEntity(x, y, "pine_tree");
       } else if (randomNum < 7) {
         map.tiles[x][y].add("stone", "middle");
       } else if (randomNum < 12) {
@@ -151,7 +161,7 @@ export function initializeFarm(map, player) {
   }
   let playerTile = map.getTile(player.x, player.y + 23);
   playerTile.remove("middle");
-  map.removeBigEntity(playerTile.x, playerTile.y);
+  map.hitBigEntity(playerTile.x, playerTile.y, true);
 }
 
 export function initializeMine(map) {
@@ -203,12 +213,14 @@ export function initializeForest(map) {
       if (!map.tiles[x][y].spawnable) continue;
       const randomNum = Math.floor(Math.random() * 100);
       if (randomNum < 1) {
-        map.addBigEntity(x, y, "tree");
-      } else if (randomNum < 7) {
+        map.addBigEntity(x, y, "oak_tree");
+      } else if (randomNum < 2) {
+        map.addBigEntity(x, y, "pine_tree");
+      } else if (randomNum < 8) {
         map.tiles[x][y].add("stone", "middle");
-      } else if (randomNum < 12) {
+      } else if (randomNum < 13) {
         map.tiles[x][y].add("twig", "middle");
-      } else if (randomNum < 17) {
+      } else if (randomNum < 18) {
         map.tiles[x][y].add("weed", "middle");
       }
     }

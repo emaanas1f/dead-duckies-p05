@@ -58,12 +58,7 @@ export function getTileImage(layer, name) {
 }
 
 // Base Tile in Image File
-export const OBJECT_PLACEMENT = {
-  "tree": {
-    "x": 1,
-    "y": 5
-  }
-}
+export const BIG_ENTITIES = await getJson("bigentities.json");
 
 // export const STAMINA_COSTS = {
 //   axe: 5,

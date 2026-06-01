@@ -1,0 +1,22 @@
+{
+  "pine_tree": {
+    "x": 1,
+    "y": 5,
+    "destructionTime": 2,
+    "tools": ["axe"],
+    "drops": {
+      "wood": 10
+    },
+    "passable": false
+  },
+  "oak_tree": {
+    "x": 1,
+    "y": 5,
+    "destructionTime": 2,
+    "tools": ["axe"],
+    "drops": {
+      "wood": 10
+    },
+    "passable": false
+  }
+}

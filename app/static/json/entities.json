@@ -20,13 +20,6 @@
     },
     "passable": false
   },
-  "tree": {
-    "tools": ["axe"],
-    "drops": {
-      "wood": 10
-    },
-    "passable": false
-  },
 
   "ore/coal": {
     "tools": ["pickaxe"],

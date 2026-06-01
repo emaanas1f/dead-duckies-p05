@@ -173,10 +173,7 @@ export default class Player {
 
     else if (front instanceof BigEntity) { // CHOPPING TREES
       if (ENTITIES[front.type]["tools"].includes(item)) {
-        map.removeBigEntity(tile.x, tile.y);
-        for (const [key, value] of Object.entries(ENTITIES[front.type]["drops"])) {
-          this.inventory.addItem(key, value);
-        }
+        map.hitBigEntity(tile.x, tile.y);
         stamina.useEnergy(5);
       }
     }

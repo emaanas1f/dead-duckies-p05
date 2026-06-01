@@ -1,23 +1,39 @@
 // Multi-tile objects; e.g. trees
-import { OBJECT_PLACEMENT, TILE_SIZE, getTileImage, SCALE_FACTOR } from "../constants.js";
+import { BIG_ENTITIES, TILE_SIZE, getTileImage, SCALE_FACTOR } from "../constants.js";
 
 export default class BigEntity {
-  constructor(x, y, type, map, breakable=true) {
+  constructor(x, y, type, map) {
     this.x = x;
     this.y = y;
     this.type = type;
     this.image = getTileImage("front", type);
-    this.image_x = OBJECT_PLACEMENT[type]["x"];
-    this.image_y = OBJECT_PLACEMENT[type]["y"];
-    
-    if (breakable) {
+    this.image_x = BIG_ENTITIES[type]["x"];
+    this.image_y = BIG_ENTITIES[type]["y"];
+    this.durability = BIG_ENTITIES[type]["destructionTime"];
+
+    if (BIG_ENTITIES[type]["breakable"]) {
       let tile = map.tiles[this.x][this.y];
       tile.add(this, "front");
     }
   }
 
+  hit(map, player) {
+    this.durability--;
+    if (this.durability == 0) {
+      for (const [key, value] of Object.entries(ENTITIES[front.type]["drops"])) {
+        this.inventory.addItem(key, value);
+      }
+      this.destroy(map);
+      return true;
+    }
+    return false;
+  }
+
   destroy(map) {
     map.tiles[this.x][this.y].remove("front");
+    for (const [key, value] of Object.entries(ENTITIES[front.type]["drops"])) {
+      this.inventory.addItem(key, value);
+    }
   }
 
   render(ctx, map, player) {

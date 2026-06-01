@@ -41,3 +41,27 @@ body {
   top: 50;
 }
 
+.navbar {
+  display: flex;
+  background-color: aquamarine;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 8px;
+  background-color: aquamarine;
+  align-content: center;
+}
+
+.navbar a:hover {
+  background-color: rgba(153, 196, 210, 0.5);
+}
+
+.navbar-brand {
+  font-size: x-large;
+  color: black;
+}
+
+#main-canvas {
+  border-radius: 10px;
+}
