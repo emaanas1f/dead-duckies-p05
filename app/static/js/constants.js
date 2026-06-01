@@ -36,6 +36,7 @@ export const RECIPES = await getJson("recipes.json")
 export const ENTITIES = await getJson("entities.json")
 export const CROPS = await getJson("crops.json")
 export const MINES = await getJson("mines.json")
+export const FISH = await getJson("fish.json")
 
 const PIERRE = await getJson("npcs/pierre.json")
 const WILLY = await getJson("npcs/willy.json")

@@ -89219,7 +89219,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -89227,7 +89227,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -89235,7 +89235,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -90101,158 +90101,6 @@
       "forest_lake": false
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
       "passable": false,
       "tillable": false,
       "teleporter": false,
@@ -90294,150 +90142,6 @@
     },
     {
       "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -90494,150 +90198,6 @@
     },
     {
       "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -90733,14 +90293,6 @@
       "forest_lake": false
     },
     {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
       "passable": true,
       "tillable": false,
       "teleporter": false,
@@ -90750,440 +90302,6 @@
     },
     {
       "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    }
-  ],
-  [
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -91833,6 +90951,888 @@
       "forest_lake": false
     },
     {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    }
+  ],
+  [
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
       "passable": false,
       "tillable": false,
       "teleporter": false,
@@ -93757,7 +93757,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -94639,7 +94639,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -95497,7 +95497,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -95505,7 +95505,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -95513,7 +95513,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -95521,7 +95521,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -96379,7 +96379,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -96387,7 +96387,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -96395,7 +96395,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -96403,7 +96403,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -97261,7 +97261,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -97269,7 +97269,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -97277,7 +97277,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -97285,7 +97285,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -98143,824 +98143,6 @@
       "forest_lake": false
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    }
-  ],
-  [
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": false,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
       "passable": false,
       "tillable": false,
       "teleporter": false,
@@ -99057,7 +98239,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -99065,71 +98247,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -99859,14 +98977,6 @@
       "forest_lake": false
     },
     {
-      "passable": true,
-      "tillable": false,
-      "teleporter": false,
-      "destination": null,
-      "water": false,
-      "forest_lake": false
-    },
-    {
       "passable": false,
       "tillable": false,
       "teleporter": false,
@@ -99932,6 +99042,14 @@
     },
     {
       "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -100805,6 +99923,22 @@
       "forest_lake": false
     },
     {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
       "passable": true,
       "tillable": false,
       "teleporter": false,
@@ -100814,6 +99948,872 @@
     },
     {
       "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    }
+  ],
+  [
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": true,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
+      "tillable": false,
+      "teleporter": false,
+      "destination": null,
+      "water": false,
+      "forest_lake": false
+    },
+    {
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -101687,7 +101687,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,
@@ -101695,7 +101695,7 @@
       "forest_lake": false
     },
     {
-      "passable": true,
+      "passable": false,
       "tillable": false,
       "teleporter": false,
       "destination": null,

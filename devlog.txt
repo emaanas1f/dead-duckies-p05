@@ -386,12 +386,12 @@ sarahZ -- 2026-05-22 11:00
 kiranS -- 2026-05-26 17:30
 - finished relationship menu
 - npc gift/talk status updates when day ticks over
-- fixed dialogue retriggering when talk/gift already happened 
+- fixed dialogue retriggering when talk/gift already happened
 
 sarahZ -- 2026-05-27 14:50
 - added helper function in editor.js to turn all passable to spawnable
 - updated forest and beach json with passable and spawnable
-- added scythe 
+- added scythe
 - worked on initializeForest, added debris to forest map
 
 sarahZ -- 2026-05-28 23:55
@@ -409,9 +409,9 @@ DEVELOPER PREVIEWS: The Aftermath
 - can't plant mixed seeds
 - player should pass out with 0 stamina --> working on this
 - seeds may disappear after planting
-- issues with sleep animation locking 
-- game may freeze 
-- need to add control guide on startup 
+- issues with sleep animation locking
+- game may freeze
+- need to add control guide on startup
 
 jamesL -- 2026-05-29 19:45
 - added more crops, with some being harvestable multiple times
@@ -434,4 +434,8 @@ kiranS -- 2026-05-31 12:40
 
 sarahZ -- 2026-05-31 19:40
 - added water and fish_lake attributes to all relevant map json files
-- fixed issue with sleeping teleport 
+- fixed issue with sleeping teleport
+
+sarahZ -- 2026-06-01 11:00
+- added respawnForageables
+- fixed some impassable tiles in town map
