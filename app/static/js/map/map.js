@@ -115,18 +115,22 @@ export default class Map {
   }
 
   respawnForageables() {
-    const FORAGEABLE = [
-      "spring_foragables/daffodils",
-      "spring_forageables/dandelion",
-      "spring_forageables/leek",
-      "spring_foragables/horse_radish"
-    ]
-
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles.length[x]; y++) {
         let middlelayer = this.tiles[x][y].layers["middle"]
         if (middleLayer && typeof middleLayer === "string" && middleLayer.startsWith("spring_forageables/")) {
           this.tiles[x][y].remove("middle");
+        }
+        if (!map.tiles[x][y].spawnable) continue;
+        const randomNum = Math.floor(Math.random() * 100);
+        if (randomNum < 2) {
+          map.tiles[x][y].add("spring_forageables/daffodil", "middle");
+        } else if (randomNum < 4) {
+          map.tiles[x][y].add("spring_forageables/dandelion", "middle");
+        } else if (randomNum < 6) {
+          map.tiles[x][y].add("spring_forageables/horse_radish", "middle");
+        } else if (randomNum < 8) {
+          map.tiles[x][y].add("spring_forageables/leek", "middle");
         }
       }
     }
@@ -213,5 +217,5 @@ export function initializeForest(map) {
       }
     }
   }
-  // map.respawnForageables();
+  map.respawnForageables();
 }
