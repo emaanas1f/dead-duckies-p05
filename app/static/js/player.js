@@ -7,6 +7,7 @@ import Crop from "./map/crop.js"
 import Gold from "./ui/gold.js"
 import Map from "./map/map.js";
 import { initializeMine } from "./map/map.js";
+import Fish from "./menus/fish.js"
 
 // Correspond with rows in player.png
 const DOWN = 0;
@@ -33,6 +34,7 @@ export default class Player {
 
     this.inventory = new Inventory();
     this.gold = new Gold(game, this);
+    this.fish = new Fish(game, this.inventory)
 
     this.sprite = new Image();
     this.sprite.src = '/static/images/player.png';
@@ -101,9 +103,31 @@ export default class Player {
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
-
+    console.log(map)
+    console.log(tile)
     // console.log(`${tile.x}, ${tile.y}`)
-
+    if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
+      let location = ""
+      if (tile.forest_lake) {
+        location = "forest_lake"
+      }
+      switch (map.name) {
+        case "forest":
+          location = "forest_river"
+          break;
+        case "beach":
+          location = "ocean"
+          break;
+        default:
+          location = "town"
+          break;
+      }
+      console.log(location, this.game.time.currTime)
+      let caught = this.fish.getFish(location, this.game.time.currTime)
+      console.log(caught)
+      this.inventory.addItem(caught, 1)
+      stamina.useEnergy(10)
+    }
     if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
         if (entity.gift(this.name, item)) {
