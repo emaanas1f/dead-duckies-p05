@@ -1,5 +1,4 @@
 {
-    "types": ["mixed", "smooth", "sinker", "floater", "dart"],
     "pufferfish": {
         "locations": ["ocean"],
         "timeRanges": [[12,16]],
