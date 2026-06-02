@@ -115,19 +115,19 @@ export default class Map {
 
   respawnForageables() {
     const FORAGEABLES = [
-      "spring-forageables/daffodil",
-      "spring-forageables/dandelion",
-      "spring-forageables/leek",
-      "spring-forageables/parsnip"
+      "spring_forageables/daffodil",
+      "spring_forageables/dandelion",
+      "spring_forageables/leek",
+      "spring_forageables/parsnip"
     ];
 
     for (let x = 0; x < this.tiles.length; x++) {
-      for (let y = 0; y < this.tiles.length[x]; y++) {
-        let middlelayer = this.tiles[x][y].layers["middle"]
+      for (let y = 0; y < this.tiles[x].length; y++) {
+        let middleLayer = this.tiles[x][y].layers["middle"]
         if (middleLayer && typeof middleLayer === "string" && middleLayer.startsWith("spring_forageables/")) {
           this.tiles[x][y].remove("middle");
         }
-        if (!map.tiles[x][y].spawnable) continue;
+        if (!this.tiles[x][y].spawnable) continue;
         if (this.tiles[x][y].layers["middle"] != null) continue;
         if (Math.random() < 0.03) {
           this.tiles[x][y].add(FORAGEABLES[Math.floor(Math.random() * FORAGEABLES.length)], "middle");

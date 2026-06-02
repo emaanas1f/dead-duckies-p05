@@ -107,6 +107,7 @@ export default class Player {
     
     // console.log(`${tile.x}, ${tile.y}`)
     if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
+      if (stamina.isEmpty()) return;
       let location = ""
       if (tile.forest_lake) {
         location = "forest_lake"
@@ -172,6 +173,7 @@ export default class Player {
     }
 
     if (item == "hoe" && entity == null && tile.tillable) { // TILLING TILES
+      if (stamina.isEmpty()) return;
       map.crops.push(new Crop(tile.x, tile.y, map));
       stamina.useEnergy(5);
     }
@@ -183,10 +185,12 @@ export default class Player {
         this.inventory.removeItem(item, 1);
       }
       if (item == "watering_can") {
+        if (stamina.isEmpty()) return;
         entity.water();
         stamina.useEnergy(2);
       }
       if (item == "pickaxe") {
+        if (stamina.isEmpty()) return;
         entity.remove();
         stamina.useEnergy(5);
       }
@@ -197,6 +201,7 @@ export default class Player {
 
     else if (front instanceof BigEntity) { // CHOPPING TREES
       if (BIG_ENTITIES[front.type]["tools"].includes(item)) {
+        if (stamina.isEmpty()) return;
         front.hit();
         stamina.useEnergy(5);
       }
@@ -209,6 +214,7 @@ export default class Player {
     }
 
     else if (entity != null && ENTITIES[entity]["tools"].includes(item)) { // CHOPPING EVERYTHING ELSE
+      if (stamina.isEmpty()) return;
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
         this.inventory.addItem(key, value);

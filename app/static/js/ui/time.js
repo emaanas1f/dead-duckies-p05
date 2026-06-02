@@ -41,7 +41,7 @@ export default class Time {
       Object.keys(npc.gifted).forEach(player => {
         npc.gifted[player] = false;
       });
-      if (this.currDay % 7 == 1) {
+      if (this.currDay == 1 || this.currDay % 7 == 1) {
         Object.keys(npc.giftNumber).forEach(player => {
           npc.giftNumber[player] = 0;
         });
@@ -57,6 +57,9 @@ export default class Time {
         let restorePercent = 1 - timePastMidnight * 0.8;
         game.stamina.restoreEnergy(Math.floor(game.stamina.max * restorePercent));
       }
+    }
+    else {
+      game.stamina.restoreEnergy(game.stamina.max * 0.5);
     }
   }
   
