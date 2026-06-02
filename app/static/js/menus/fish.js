@@ -1,13 +1,26 @@
-import { FISH } from '../constants.js'
+import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT} from '../constants.js'
 
 export default class Fish {
     constructor(game, inventory) {
-        this.game = game
-        this.player = game.player
-        this.inventory = inventory
-        this.fish = FISH
+        this.game = game;
+        this.player = game.player;
+        this.inventory = inventory;
+        this.fish = FISH;
 
-        this.types = ["mixed", "smooth", "sinker", "floater", "dart"]
+        this.types = ["mixed", "smooth", "sinker", "floater", "dart"];
+        this.currentFish = "";
+        this.currentRod = "";
+
+        this.background = new Image();
+        this.background.src = "/static/images/ui/fishing_background.png";
+        this.bar = new Image();
+        this.bar.src = "/static/images/ui/fishing_bar.png";
+        this.fishIcon = new Image();
+        this.fishIcon.src = "/static/images/ui/fishing_icon.png";
+        this.meter = new Image();
+        this.meter.src = "/static/images/ui/fishing_meter.png";
+        this.result = new Image();
+        this.result.src = "/static/images/ui/fishing_result.png";
 
     }
 
@@ -46,8 +59,23 @@ export default class Fish {
         return fishPool[0];
     }
 
-    renderMinigame(ctx, scaleFactor, rod) {
+    updateBar() {
 
+    }
+
+    updateFish() {
+
+    }
+
+    renderMinigame(ctx, scaleFactor) {
+      console.log("renderfish")
+      let xStart = scaleFactor * 10;
+      let yStart = CANVAS_HEIGHT / 2 - 78 * scaleFactor;
+
+      ctx.drawImage(this.background,
+        xStart, yStart,
+        46 * scaleFactor, 157 * scaleFactor
+      );
     }
 
     renderResult(ctx, scaleFactor) {

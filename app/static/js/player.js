@@ -1,6 +1,6 @@
 import BigEntity from "./map/big-entity.js";
 import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT,
-         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED, 
+         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED,
          BIG_ENTITIES} from "./constants.js";
 import { Inventory } from './menus/inventory.js';
 import NPC from "./npc.js"
@@ -104,7 +104,7 @@ export default class Player {
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
-    
+
     // console.log(`${tile.x}, ${tile.y}`)
     if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       if (stamina.isEmpty()) return;
@@ -123,11 +123,14 @@ export default class Player {
           location = "town"
           break;
       }
-      console.log(location, this.game.time.currTime)
-      let caught = this.fish.getFish(location, this.game.time.currTime)
-      console.log(caught)
-      this.inventory.addItem(caught, 1)
-      stamina.useEnergy(10)
+      console.log(location, this.game.time.currTime);
+      let caught = this.fish.getFish(location, this.game.time.currTime);
+      console.log(caught);
+      this.game.menu = "fishing";
+      this.fish.currentFish = caught;
+      this.fish.currentRod = item;
+      this.inventory.addItem(caught, 1);
+      stamina.useEnergy(10);
     }
     if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
