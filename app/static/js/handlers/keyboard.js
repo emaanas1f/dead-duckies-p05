@@ -3,7 +3,7 @@ export default class InputHandler {
     this.keys = {};
     window.addEventListener('keydown', e => {
       if (game.menu == null) {
-        if (['W', 'w', 'A', 'a', 'S', 's', 'D', 'd'].includes(e.key)) {
+        if (['w', 'a', 's', 'd'].includes(e.key)) {
           this.keys[e.key] = true;
           e.preventDefault();
         }
@@ -38,10 +38,10 @@ export default class InputHandler {
         else if (e.key == "ArrowDown") {
           game.player.currentShop.moveDown();
         }
-        else if (e.key == "Shift") {
+        else if (e.shiftKey) {
           game.player.quantity = 5;
         }
-        else if (e.key == "Control") {
+        else if (e.ctrlKey) {
           game.player.quantity = 25;
         }
         else {

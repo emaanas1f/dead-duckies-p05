@@ -149,14 +149,14 @@ class StardewValley {
         this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
         this.player.currentShop.render(this.overlayCtx, this.player);
-        if (this.mouse.isDown && !this.mouseToggled) {
-          this.player.currentShop.mouseInput(this, this.mouse.mouseX, this.mouse.mouseY);
-          this.mouseToggled = true;
-        }
-
-        if (!this.mouse.isDown && this.mouseToggled) {
-          this.mouseToggled = false;
-        }
+        // if (this.mouse.isDown && !this.mouseToggled) {
+        //   this.player.currentShop.mouseInput(this, this.mouse.mouseX, this.mouse.mouseY);
+        //   this.mouseToggled = true;
+        // }
+        //
+        // if (!this.mouse.isDown && this.mouseToggled) {
+        //   this.mouseToggled = false;
+        // }
         break;
       case "dialogue":
         this.currentNpc.renderDialogue(this.overlayCtx, this.player.name)

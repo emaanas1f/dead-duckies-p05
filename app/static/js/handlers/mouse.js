@@ -18,7 +18,7 @@ export default class MouseHandler {
       this.mouseY = (e.clientY - rect.top);
     });
 
-    canvas.addEventListener("mousedown", () => {
+    canvas.addEventListener("mousedown", (e) => {
       const inv = this.game.player.inventory;
       if (inv.open) {
         let index = inv.getSlotAtPosition(this.mouseX, this.mouseY, 12, 3, 3);
@@ -27,6 +27,11 @@ export default class MouseHandler {
 
       if (this.game.menu == "playerMenu" && !this.isDown) {
         this.game.playerMenu.click(this.mouseX, this.mouseY);
+      }
+
+      if (this.game.menu == "shop" && !this.isDown) {
+        console.log(e);
+        this.game.player.currentShop.mouseInput(this.game, this.mouseX, this.mouseY);
       }
 
       if (this.game.menu == null && !this.isDown) {
