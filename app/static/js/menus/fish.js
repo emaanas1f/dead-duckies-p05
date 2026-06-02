@@ -16,33 +16,34 @@ export default class Fish {
     }
 
     getFish(location, time) {
-        fishPool = []
-        hour = time / 60 + 6
+        console.log("run")
+        let fishPool = [];
+        let hour = time / 60 + 6;
         Object.keys(FISH).forEach((fish) => {
-          if (location in fish["locations"]) {
-            fish["timeRanges"].forEach((range) => {
-              if (range == [] || (time >= range[0] && time <= range[1]) {
-                fishPool.push(fish)
+          if (FISH[fish]["locations"].includes(location)) {
+            FISH[fish]["timeRanges"].forEach((range) => {
+              if (range.length == 0 || (hour >= range[0] && hour <= range[1])) {
+                fishPool.push(fish);
               }
             });
           }
         });
 
-        weightedSum = 0
-        weightArray = []
+        // console.log(fishPool)
+        let weightedSum = 0;
         fishPool.forEach((fish) => {
-          weightedSum += 1 / fish["rarity"]
-          weightArray.push(1 / fish["rarity"])
+          weightedSum += 1 / FISH[fish]["rarity"];
         });
 
-        randNum = Math.random() * weightedSum
-        weightArray.forEach((weight, i) => {
-          randNum -= weight
+        let randNum = Math.random() * weightedSum;
+        console.log(randNum);
+        for (const fish of fishPool) {
+          randNum -= 1 / FISH[fish]["rarity"];
           if (randNum <= 0) {
-            return Object.keys(FISH)[i]
+            return fish;
           }
-        });
-        return Object.keys(FISH)[-1]
+        }
+        return fishPool[0];
     }
 
     renderMinigame(ctx, scaleFactor, rod) {

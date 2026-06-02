@@ -60,7 +60,7 @@ export default class Map {
     if (false) {
       this.tiles[x][y].layers["front"].destroy(this);
     } else {
-      destroyed = this.tiles[x][y].layers["front"].hit(this, player);
+      // destroyed = this.tiles[x][y].layers["front"].hit(this, player);
     }
     if (destroyed) {
       this.bigEntities = this.bigEntities.filter((ent) => {

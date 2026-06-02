@@ -58,6 +58,7 @@ class StardewValley {
     this.player.inventory.addItem("scythe", 1);
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
+    this.player.inventory.addItem("training_rod", 1);
     this.player.inventory.addItem("parsnip_seeds", 5);
     this.player.inventory.addItem("blueberry_seeds", 5);
 
