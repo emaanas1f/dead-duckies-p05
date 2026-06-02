@@ -26,7 +26,8 @@ export default class Tile {
 
     if (entity instanceof Crop) {
       this.passable = true;
-    } else if (layer == "front" && entity instanceof BigEntity) {
+    }
+    else if (layer == "front" && entity instanceof BigEntity) {
       this.passable = false;
     }
     else if (entity instanceof NPC) {

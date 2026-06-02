@@ -1,6 +1,7 @@
 import BigEntity from "./map/big-entity.js";
 import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT,
-         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED } from "./constants.js";
+         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED, 
+         BIG_ENTITIES} from "./constants.js";
 import { Inventory } from './menus/inventory.js';
 import NPC from "./npc.js"
 import Crop from "./map/crop.js"
@@ -103,8 +104,7 @@ export default class Player {
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
-    console.log(map)
-    console.log(tile)
+    
     // console.log(`${tile.x}, ${tile.y}`)
     if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       let location = ""
@@ -196,13 +196,13 @@ export default class Player {
     }
 
     else if (front instanceof BigEntity) { // CHOPPING TREES
-      if (ENTITIES[front.type]["tools"].includes(item)) {
-        map.hitBigEntity(tile.x, tile.y);
+      if (BIG_ENTITIES[front.type]["tools"].includes(item)) {
+        front.hit();
         stamina.useEnergy(5);
       }
     }
 
-    else if (entity && typeOf entity === "string" && entity.startsWith("spring_forageables/")) {
+    else if (entity != null && entity.startsWith("spring_forageables/")) {
       let itemName = entity.split("/")[1];
       this.inventory.addItem(itemName, 1);
       this.remove("middle");

@@ -52,21 +52,13 @@ export default class Map {
     this.bigEntities.sort((a, b) => a.y - b.y); // For rendering
   }
 
-  hitBigEntity(x, y, player, remove=false) {
+  removeBigEntity(x, y) {
     if (!this.tiles[x][y].layers["front"] instanceof BigEntity) {
       throw new Error(`Tile ${x}, ${y} doesn't have a big entity!`);
     }
-    let destroyed = remove;
-    if (false) {
-      this.tiles[x][y].layers["front"].destroy(this);
-    } else {
-      // destroyed = this.tiles[x][y].layers["front"].hit(this, player);
-    }
-    if (destroyed) {
-      this.bigEntities = this.bigEntities.filter((ent) => {
-        return ent.x != x || ent.y != y;
-      })
-    }
+    this.bigEntities = this.bigEntities.filter((ent) => {
+      return ent.x != x || ent.y != y;
+    })
   }
 
   clampEdges() {
@@ -165,7 +157,7 @@ export function initializeFarm(map, player) {
   }
   let playerTile = map.getTile(player.x, player.y + 23);
   playerTile.remove("middle");
-  map.hitBigEntity(playerTile.x, playerTile.y, true);
+  map.removeBigEntity(playerTile.x, playerTile.y);
 }
 
 export function initializeMine(map) {
