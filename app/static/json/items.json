@@ -36,7 +36,21 @@
     "reaction": "dislike",
     "category": "forageables"
   },
-  
+  "cockle": {
+    "buyPrice": null,
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+  "mussel": {
+    "buyPrice": null,
+    "sellPrice": 30,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+
+
+
   "bean_starter": {
     "buyPrice": 60,
     "sellPrice": 30,

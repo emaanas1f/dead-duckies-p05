@@ -1,6 +1,6 @@
 import BigEntity from "./map/big-entity.js";
 import { TILE_SIZE, ENTITIES, SCALE_FACTOR, CANVAS_WIDTH, CANVAS_HEIGHT,
-         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED, 
+         FRAME_RATE, MINES, ITEMS, DEFAULT_MOVEMENT_SPEED,
          BIG_ENTITIES} from "./constants.js";
 import { Inventory } from './menus/inventory.js';
 import NPC from "./npc.js"
@@ -104,7 +104,7 @@ export default class Player {
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
-    
+
     // console.log(`${tile.x}, ${tile.y}`)
     if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       if (stamina.isEmpty()) return;
@@ -207,17 +207,16 @@ export default class Player {
       }
     }
 
-    else if (entity != null && entity.startsWith("spring_forageables/")) {
-      let itemName = entity.split("/")[1];
-      this.inventory.addItem(itemName, 1);
-      this.remove("middle");
-    }
-
-    else if (entity != null && ENTITIES[entity]["tools"].includes(item)) { // CHOPPING EVERYTHING ELSE
+    else if (entity != null && ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all")) { // CHOPPING EVERYTHING ELSE
       if (stamina.isEmpty()) return;
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
-        this.inventory.addItem(key, value);
+        if (ENTITIES[entity]["tools"].includes("all")) {
+          if (Math.random() < 0.2) this.inventory.addItem(key, value * 2);
+        }
+        else {
+          this.inventory.addItem(key, value);
+        }
       }
       stamina.useEnergy(5);
     }

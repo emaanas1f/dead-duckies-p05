@@ -102,7 +102,7 @@
   },
 
   "spring_forageables/daffodil": {
-    "tools": [],
+    "tools": ["all"],
     "drops": {
       "daffodil": 1
     },
@@ -110,7 +110,7 @@
   },
 
   "spring_forageables/dandelion": {
-    "tools": [],
+    "tools": ["all"],
     "drops": {
       "dandelion": 1
     },
@@ -118,7 +118,7 @@
   },
 
   "spring_forageables/horse_radish": {
-    "tools": [],
+    "tools": ["all"],
     "drops": {
       "horse_radish": 1
     },
@@ -126,9 +126,33 @@
   },
 
   "spring_forageables/leek": {
-    "tools": [],
+    "tools": ["all"],
     "drops": {
       "leek": 1
+    },
+    "passable": false
+  },
+
+  "beach_forageables/cockle": {
+    "tools": ["all"],
+    "drops": {
+      "cockle": 1
+    },
+    "passable": false
+  },
+
+  "beach_forageables/mussel": {
+    "tools": ["all"],
+    "drops": {
+      "mussel": 1
+    },
+    "passable": false
+  },
+
+  "beach_forageables/oyster": {
+    "tools": ["all"],
+    "drops": {
+      "oyster": 1
     },
     "passable": false
   }

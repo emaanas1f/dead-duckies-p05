@@ -17811,7 +17811,7 @@
       "destination": {
         "map": "mines/1",
         "x": 15,
-        "y": 4
+        "y": 3
       },
       "water": false,
       "forest_lake": false
