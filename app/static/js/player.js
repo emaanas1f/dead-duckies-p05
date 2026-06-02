@@ -123,11 +123,14 @@ export default class Player {
           location = "town"
           break;
       }
-      console.log(location, this.game.time.currTime)
-      let caught = this.fish.getFish(location, this.game.time.currTime)
-      console.log(caught)
-      this.inventory.addItem(caught, 1)
-      stamina.useEnergy(10)
+      console.log(location, this.game.time.currTime);
+      let caught = this.fish.getFish(location, this.game.time.currTime);
+      console.log(caught);
+      this.game.menu = "fishing";
+      this.fish.currentFish = caught;
+      this.fish.currentRod = item;
+      this.inventory.addItem(caught, 1);
+      stamina.useEnergy(10);
     }
     if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {

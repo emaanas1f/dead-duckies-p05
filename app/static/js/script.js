@@ -195,6 +195,10 @@ class StardewValley {
           }
         }
         break;
+      case "fishing":
+        // this.player.fish.updateBar();
+        // this.player.fish.updateFish();
+        this.player.fish.renderMinigame(this.overlayCtx, 2);
     }
 
     this.player.inventory.renderHotbar(this.hotbarCtx);
