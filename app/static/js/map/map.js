@@ -11,7 +11,6 @@ export default class Map {
     this.bigEntities = [];
     this.npcList = [];
     this.crops = [];
-    this.dayCount = 0;
   }
 
   async loadTiles(name, game) {
@@ -123,6 +122,13 @@ export default class Map {
   }
 
   respawnForageables() {
+    const FORAGEABLES = [
+      "spring-forageables/daffodil",
+      "spring-forageables/dandelion",
+      "spring-forageables/leek",
+      "spring-forageables/parsnip"
+    ];
+
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles.length[x]; y++) {
         let middlelayer = this.tiles[x][y].layers["middle"]
@@ -130,21 +136,15 @@ export default class Map {
           this.tiles[x][y].remove("middle");
         }
         if (!map.tiles[x][y].spawnable) continue;
-        const randomNum = Math.floor(Math.random() * 100);
-        if (randomNum < 2) {
-          map.tiles[x][y].add("spring_forageables/daffodil", "middle");
-        } else if (randomNum < 4) {
-          map.tiles[x][y].add("spring_forageables/dandelion", "middle");
-        } else if (randomNum < 6) {
-          map.tiles[x][y].add("spring_forageables/horse_radish", "middle");
-        } else if (randomNum < 8) {
-          map.tiles[x][y].add("spring_forageables/leek", "middle");
+        if (this.tiles[x][y].layers["middle"] != null) continue;
+        if (Math.random() < 0.03) {
+          this.tiles[x][y].add(FORAGEABLES[Math.floor(Math.random() * FORAGEABLES.length)], "middle");
         }
       }
     }
   }
 }
-
+       
 export function initializeFarm(map, player) {
   for (let x = 0; x < map.tiles.length; x++) {
     for (let y = 0; y < map.tiles[x].length; y++) {

@@ -28,6 +28,12 @@ export default class Time {
       crop.update();
     })
     
+    if (this.currDay % 7 == 0) {
+      if (game.maps["forest"]) {
+        game.maps["forest"].respawnForageables();
+      }
+    }
+
     game.npcList.forEach(npc => {
       Object.keys(npc.talked).forEach(player => {
         npc.talked[player] = false;

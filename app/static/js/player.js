@@ -178,6 +178,12 @@ export default class Player {
       }
     }
 
+    else if (entity && typeOf entity === "string" && entity.startsWith("spring_forageables/")) {
+      let itemName = entity.split("/")[1];
+      this.inventory.addItem(itemName, 1);
+      this.remove("middle");
+    }
+
     else if (entity != null && ENTITIES[entity]["tools"].includes(item)) { // CHOPPING EVERYTHING ELSE
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {

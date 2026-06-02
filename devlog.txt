@@ -439,3 +439,6 @@ sarahZ -- 2026-05-31 19:40
 sarahZ -- 2026-06-01 11:00
 - added respawnForageables
 - fixed some impassable tiles in town map
+
+sarahZ -- 2026-06-01 19:40
+- more work on forest forageables, debugging 

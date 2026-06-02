@@ -12,6 +12,31 @@
     "category": "resources"
   },
 
+  "daffodil": {
+    "buyPrice": null,
+    "sellPrice": 30,
+    "reaction": "like",
+    "category": "forageables"
+  },
+  "dandelion": {
+    "buyPrice": null,
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+  "horse_radish": {
+    "buyPrice": null,
+    "sellPrice": 50,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+  "leek": {
+    "buyPrice": null,
+    "sellPrice": 60,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+  
   "bean_starter": {
     "buyPrice": 60,
     "sellPrice": 30,
