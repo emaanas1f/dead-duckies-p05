@@ -1,0 +1,33 @@
+{
+    "normal_dialogue": [
+        "Ugh, I stepped in something gross earlier. And I just bought these shoes.",
+        "Hey, farmer.",
+        "My Dad is a soldier, fighting against the Gotoro Empire. That's why he's not here. He'll come back someday. I've heard some terrible things about the Gotoro Empire...",
+        "Hmm. I just remembered that I was supposed to do something... But I forgot. This happens to me all the time.",
+        "Hey, how's it going? Last night I practiced guitar for 4 hours straight. My fingers hurt like crazy. Bye, I've got something to do.",
+        "Oh, it's a nice day, isn't it?",
+        "Hey, how's it going? I'm hungry. See you later.",
+        "Oh! I just remembered I'm supposed to call my Grandma. Okay, I'm going to put this rubber band on my wrist so I don't forget. I have to make little reminders for myself or else I'll totally forget to do things.",
+        "Hey... something smells good, like pizza.",
+        "Did you watch the game last night? Or wait, do you even have a TV set...?" 
+    ],
+    "dating_dialogue": [
+        "I couldn't sleep last night. I was imagining all the things we're gonna do together.", 
+        "[Player]. Um... I just wanted to say... You look nice today.",
+        "I think I've grown to like the country more than the city. Although I could be biased... for a certain reason."
+    ],
+    "gift_dialogue": {
+        "love": "Aw, yea! This is my absolute favorite!",
+        "like": "Thanks! I really like this.",
+        "neutral": "You got that for me? Thanks!",
+        "dislike": "Hmm.. this is... interesting.",
+        "hate": "You really don't get it, huh?"
+    },
+    "reactions": {
+        "love": [],
+        "like": [],
+        "neutral": [],
+        "dislike": [],
+        "hate": []
+    }
+}
