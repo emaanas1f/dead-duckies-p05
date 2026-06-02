@@ -113,14 +113,14 @@ export default class Map {
     return npcsToDraw;
   }
 
-  respawnForageables() {
+  respawnForageables(name) {
     const FORAGEABLES = [
       "spring_forageables/daffodil",
       "spring_forageables/dandelion",
       "spring_forageables/leek",
-      "spring_forageables/parsnip"
+      "spring_forageables/horse_radish"
     ];
-
+    console.log(name)
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles[x].length; y++) {
         let middleLayer = this.tiles[x][y].layers["middle"]
@@ -136,7 +136,7 @@ export default class Map {
     }
   }
 }
-       
+
 export function initializeFarm(map, player) {
   for (let x = 0; x < map.tiles.length; x++) {
     for (let y = 0; y < map.tiles[x].length; y++) {
@@ -160,7 +160,7 @@ export function initializeFarm(map, player) {
   map.removeBigEntity(playerTile.x, playerTile.y);
 }
 
-export function initializeMine(map) {
+export function initializeMine(map, player) {
   let spawnedLadder = false;
   let tile;
   let level = parseInt(map.name.split("/")[1]);
@@ -203,7 +203,7 @@ export function initializeMine(map) {
   playerTile.remove("middle");
 }
 
-export function initializeForest(map) {
+export function initializeForest(map, player) {
   for (let x = 0; x < map.tiles.length; x++) {
     for (let y = 0; y < map.tiles[x].length; y++) {
       if (!map.tiles[x][y].spawnable) continue;
@@ -221,5 +221,8 @@ export function initializeForest(map) {
       }
     }
   }
-  map.respawnForageables();
+  map.respawnForageables(map.name);
+  let playerTile = map.getTile(player.x, player.y + 23);
+  playerTile.remove("middle");
+  map.removeBigEntity(playerTile.x, playerTile.y);
 }
