@@ -153,6 +153,11 @@ export default class Player {
       this.currentShop = this.game.shop["pierre"];
     }
 
+    else if (map.name === "fishshop" && tile.x >= 5 && tile.x <= 6 && tile.y == 5) {
+      this.game.clearMenus();
+      this.game.menu = "shop";
+      this.currentShop = this.game.willyShop
+    }
     else if (tile && tile.interactable) { // SLEEP
       this.game.startSleep();
     }
@@ -210,9 +215,7 @@ export default class Player {
       }
     }
 
-    else if (entity != null &&
-        (ENTITIES[entity]["tools"].includes(item) ||
-        ENTITIES[entity]["tools"].includes("all"))) { // CHOPPING EVERYTHING ELSE
+    else if (entity != null && ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all")) { // CHOPPING EVERYTHING ELSE
       if (stamina.isEmpty()) return;
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {

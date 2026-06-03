@@ -3,13 +3,25 @@
     "buyPrice": 10,
     "sellPrice": 5,
     "reaction": "dislike",
-    "category": "resources"
+    "category": "resources",
+    "consumable": false,
+    "effects": {
+      "stamina": 0,
+      "movement_speed": 0
+    },
+    "shops": ["pierre"]
   },
   "stone": {
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
     "category": "resources"
+    "consumable": false,
+    "effects": {
+      "stamina": 0,
+      "movement_speed": 0
+    },
+    "shops": ["pierre"]
   },
 
   "daffodil": {
@@ -17,12 +29,20 @@
     "sellPrice": 30,
     "reaction": "like",
     "category": "forageables"
+    "consumable": false,
+    "effects": {
+      "stamina": 0,
+      "movement_speed": 0
+    },
+    "shops": ["pierre"]
   },
   "dandelion": {
     "buyPrice": null,
     "sellPrice": 40,
     "reaction": "dislike",
     "category": "forageables"
+    "consumable": false,
+    "shops": ["pierre"]
   },
   "horse_radish": {
     "buyPrice": null,
@@ -54,7 +74,7 @@
     "reaction": "dislike",
     "category": "forageables"
   },
-  
+
 
   "bean_starter": {
     "buyPrice": 60,
