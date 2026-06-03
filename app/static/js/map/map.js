@@ -114,12 +114,20 @@ export default class Map {
   }
 
   respawnForageables(name) {
-    const FORAGEABLES = [
+    const SPRING_FORAGEABLES = [
       "spring_forageables/daffodil",
       "spring_forageables/dandelion",
       "spring_forageables/leek",
       "spring_forageables/horse_radish"
     ];
+
+    const BEACH_FORAGEABLES = [
+      "beach_forageables/cockle",
+      "beach_forageables/mussel",
+      "beach_forageables/oyster"
+    ];
+
+    
     console.log(name)
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles[x].length; y++) {
@@ -129,8 +137,9 @@ export default class Map {
         }
         if (!this.tiles[x][y].spawnable) continue;
         if (this.tiles[x][y].layers["middle"] != null) continue;
-        if (Math.random() < 0.03) {
-          this.tiles[x][y].add(FORAGEABLES[Math.floor(Math.random() * FORAGEABLES.length)], "middle");
+        if (Math.random() < 0.025) {
+          if (name === 'forest') this.tiles[x][y].add(SPRING_FORAGEABLES[Math.floor(Math.random() * SPRING_FORAGEABLES.length)], "middle");
+          else if (name === 'beach') this.tiles[x][y].add(BEACH_FORAGEABLES[Math.floor(Math.random() * BEACH_FORAGEABLES.length)], "middle");
         }
       }
     }
@@ -221,6 +230,13 @@ export function initializeForest(map, player) {
       }
     }
   }
+  map.respawnForageables(map.name);
+  let playerTile = map.getTile(player.x, player.y + 23);
+  playerTile.remove("middle");
+  map.removeBigEntity(playerTile.x, playerTile.y);
+}
+
+export function initializeBeach(map, player) {
   map.respawnForageables(map.name);
   let playerTile = map.getTile(player.x, player.y + 23);
   playerTile.remove("middle");

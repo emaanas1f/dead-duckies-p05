@@ -1,6 +1,6 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE,
          UI_FACTOR, HOTBAR_HEIGHT, HOTBAR_WIDTH, STARTING_STAMINA } from './constants.js'
-import { initializeFarm, initializeMine, initializeForest } from './map/map.js';
+import { initializeFarm, initializeMine, initializeForest, initializeBeach } from './map/map.js';
 
 import Map from './map/map.js'
 import Player from './player.js';
@@ -90,6 +90,9 @@ class StardewValley {
             }
             if (tile.destination.map === "forest") {
               initializeForest(this.maps[tile.destination.map]);
+            }
+            if (tile.destination.map === "beach") {
+              initializeBeach(this.maps[tile.destination.map]);
             }
             teleport();
           });

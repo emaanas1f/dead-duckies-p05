@@ -216,6 +216,7 @@ export default class Player {
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
         if (ENTITIES[entity]["tools"].includes("all")) {
           if (Math.random() < 0.2) this.inventory.addItem(key, value * 2);
+          else this.inventory.addItem(key, value);
         }
         else {
           this.inventory.addItem(key, value);

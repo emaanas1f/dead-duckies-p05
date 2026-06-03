@@ -12,6 +12,7 @@ const DEBUG = true;
 const TILLABLE_HELPER = false;
 const UNTILLABLE_HELPER = false;
 const SPAWNABLE_HELPER = false;
+const INVERSE_SPAWNABLE = true;
 const PROPERTIES = {
   passable: {defaultValue: false},
   tillable: {defaultValue: false},
@@ -111,6 +112,7 @@ map.onload = async () => {
   if (TILLABLE_HELPER) await tillableHelper();
   if (UNTILLABLE_HELPER) await untillableHelper();
   if (SPAWNABLE_HELPER) await spawnableHelper();
+  if (INVERSE_SPAWNABLE) await inverseSpawnable();
   render();
 }
 
@@ -225,6 +227,15 @@ async function spawnableHelper() {
       if (tile.passable) {
         tile.spawnable = true;
       }
+    }
+  }
+}
+
+//this turns every unspawnable tile to spawnable and vice versa
+async function inverseSpawnable() {
+  for (const col of tiles) {
+    for (const tile of col) {
+      tile.spawnable = !tile.spawnable;
     }
   }
 }

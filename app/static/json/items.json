@@ -48,8 +48,13 @@
     "reaction": "dislike",
     "category": "forageables"
   },
-
-
+  "oyster": {
+    "buyPrice": null,
+    "sellPrice": 40,
+    "reaction": "dislike",
+    "category": "forageables"
+  },
+  
 
   "bean_starter": {
     "buyPrice": 60,
