@@ -32,8 +32,7 @@ export default class Shop {
       // console.log(this.sprites);
     }
 
-    buy(itemID, player) {
-      let quantity = player.quantity;
+    buy(itemID, player, quantity) {
       if (!(itemID in ITEMS)) {
         return false;
       }
@@ -45,24 +44,20 @@ export default class Shop {
         return false;
       }
       if (player.inventory.addItem(itemID, quantity)) {
-          player.gold.amount -= cost * quantity;
-          return true;
-        }
+        player.gold.amount -= cost * quantity;
+        return true;
+      }
       return false;
     }
 
-    sell(itemID, player) {
-      // console.log(itemID)
-      // console.log(ITEMS)
-      let quantity = player.quantity;
+    sell(itemID, player, quantity) {
       if (!(itemID in ITEMS)) {
         return false;
       }
       if (ITEMS[itemID].sellPrice == null) {
         return false;
       }
-      // console.log("aaa")
-      
+
       player.inventory.removeItem(itemID, quantity)
       player.gold.amount += ITEMS[itemID].sellPrice * quantity;
 
@@ -81,17 +76,16 @@ export default class Shop {
       }
     }
 
-    mouseInput(game, x, y) {
+    mouseInput(game, x, y, ctrl, shift) {
+      let quantity = 1;
+      if (ctrl) quantity = 25;
+      if (shift) quantity = 5;
       if (x > xStart + 351 * overlayScale && x <= xStart + 362 * overlayScale && y >= yStart && y <= yStart + 11 * overlayScale) {
         game.clearMenus();
-        console.log("close");
       }
       else if (x >= xStart + 89 * overlayScale && x <= xStart + 354 * overlayScale && y > yStart + 7 * overlayScale && y <= yStart + 114 * overlayScale) {
         let selectionNumber = Math.floor((y - yStart - 7 * overlayScale) / (27 * overlayScale));
-        console.log(selectionNumber);
-        console.log(Object.keys(this.shopInventory)[selectionNumber + this.itemsStart]);
-        this.buy(Object.keys(this.shopInventory)[selectionNumber + this.itemsStart], game.player);
-        console.log("click");
+        this.buy(Object.keys(this.shopInventory)[selectionNumber + this.itemsStart], game.player, quantity);
       }
       else if (x > xStart + 364 * overlayScale && x <= xStart + 375 * overlayScale && y > yStart + 3 * overlayScale && y <= yStart + 15 * overlayScale) {
         this.moveUp();
@@ -103,7 +97,7 @@ export default class Shop {
         let inventory = game.player.inventory;
         let slot = inventory.getSlotAtPosition(x, y, 12, 3, overlayScale);
         if (slot != null && inventory.getSlot(slot)["count"] >= game.player.quantity) {
-          this.sell(game.player.inventory.getSlot(slot)["itemID"], game.player);
+          this.sell(game.player.inventory.getSlot(slot)["itemID"], game.player, quantity);
         }
       }
     }

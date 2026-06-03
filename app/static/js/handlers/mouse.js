@@ -30,8 +30,9 @@ export default class MouseHandler {
       }
 
       if (this.game.menu == "shop" && !this.isDown) {
-        console.log(e);
-        this.game.player.currentShop.mouseInput(this.game, this.mouseX, this.mouseY);
+        this.game.player.currentShop.mouseInput(
+          this.game, this.mouseX, this.mouseY,
+          e.ctrlKey, e.shiftKey);
       }
 
       if (this.game.menu == null && !this.isDown) {

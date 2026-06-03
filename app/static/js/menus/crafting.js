@@ -125,6 +125,6 @@ export default class CraftingMenu {
       if (this.hoveredRecipe === key) this.safeDraw(ctx, this.hoverImages[key], x + 330, y, 96, 96);
     }
 
-    if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h + 20, UI_FACTOR);
+    if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 2.5);
   }
 }

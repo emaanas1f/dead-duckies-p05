@@ -215,7 +215,9 @@ export default class Player {
       }
     }
 
-    else if (entity != null && ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all")) { // CHOPPING EVERYTHING ELSE
+    else if (entity != null &&
+        (ENTITIES[entity]["tools"].includes(item) ||
+        ENTITIES[entity]["tools"].includes("all"))) { // CHOPPING EVERYTHING ELSE
       if (stamina.isEmpty()) return;
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {
