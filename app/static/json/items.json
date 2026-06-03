@@ -15,7 +15,7 @@
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
-    "category": "resources"
+    "category": "resources",
     "consumable": false,
     "effects": {
       "stamina": 0,
@@ -28,7 +28,7 @@
     "buyPrice": null,
     "sellPrice": 30,
     "reaction": "like",
-    "category": "forageables"
+    "category": "forageables",
     "consumable": false,
     "effects": {
       "stamina": 0,
@@ -40,7 +40,7 @@
     "buyPrice": null,
     "sellPrice": 40,
     "reaction": "dislike",
-    "category": "forageables"
+    "category": "forageables",
     "consumable": false,
     "shops": ["pierre"]
   },
