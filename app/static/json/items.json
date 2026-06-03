@@ -54,7 +54,7 @@
     "reaction": "dislike",
     "category": "forageables"
   },
-  
+
 
   "bean_starter": {
     "buyPrice": 60,
@@ -527,4 +527,5 @@
     "level": 5,
     "category": "tools"
   }
+  ""
 }

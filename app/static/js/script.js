@@ -52,7 +52,8 @@ class StardewValley {
     this.menu = null;
 
     this.pierreShop = new Shop("pierre");
-
+    this.willyShop = new Shop("willy");
+    
     this.player.inventory.addItem("axe", 1);
     this.player.inventory.addItem("hoe", 1);
     this.player.inventory.addItem("scythe", 1);
