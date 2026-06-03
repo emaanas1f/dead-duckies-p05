@@ -150,7 +150,7 @@ export default class Player {
     else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) { // PIERRE'S
       this.game.clearMenus();
       this.game.menu = "shop";
-      this.currentShop = this.game.pierreShop;
+      this.currentShop = this.game.shop["pierre"];
     }
 
     else if (tile && tile.interactable) { // SLEEP

@@ -9,9 +9,11 @@ const yStart = (CANVAS_HEIGHT / 2) - 136;
 
 export default class Shop {
     constructor (npc) {
-      this.shopInventory = SHOPS[npc]["inventory"]; // {String item: INT cost}
+      this.shopInventory = {}; // {String item: INT cost}
       this.npc = npc;
       this.shopText = SHOPS[npc]["text"]
+
+      this.restock();
 
       this.display = new Image();
       this.display.src = "/static/images/ui/shop.png";
@@ -27,9 +29,18 @@ export default class Shop {
         this.sprites[i].src = `/static/images/items/${ITEMS[item]["category"]}/${item}.png`;
         this.itemTitles.push(getItemTitle(Object.keys(this.shopInventory)[i]))
       });
+    }
 
-
-      // console.log(this.sprites);
+    restock() {
+      this.shopInventory = {};
+      SHOPS[this.npc]["inventory"].forEach((item, i) => {
+        this.shopInventory[item] = ITEMS[item]["buyPrice"];
+      });
+      let shuffled = SHOPS[this.npc]["rotating_inventory"].sort(() => 0.5 - Math.random())
+      shuffled.slice(0,4).forEach((item, i) => {
+        this.shopInventory[item] = ITEMS[item]["buyPrice"];
+      });
+      console.log(this.shopInventory);
     }
 
     buy(itemID, player, quantity) {

@@ -24,10 +24,14 @@ export default class Time {
       this.currDay = 1;
     }
 
+    for (const [key, value] of Object.entries(game.shops)) {
+      value.restock();
+    }
+
     game.maps["farm"].crops.forEach(crop => {
       crop.update();
     })
-    
+
     if (this.currDay % 7 == 0) {
       if (game.maps["forest"]) {
         game.maps["forest"].respawnForageables();
@@ -62,7 +66,7 @@ export default class Time {
       game.stamina.restoreEnergy(game.stamina.max * 0.5);
     }
   }
-  
+
   // Overlay on top of upper right of canvas (Only update when time changes)
   render(ctx, scaleFactor) {
     let hour = Math.floor(this.currTime / 60 + 6) % 12;

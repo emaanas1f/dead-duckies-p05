@@ -1,23 +1,24 @@
 {
     "pierre": {
-        "inventory": {
-            "parsnip_seeds": 20,
-            "potato_seeds": 50,
-            "bean_starter": 60,
-            "cauliflower_seeds": 80,
-            "blueberry_seeds": 80,
-            "bok_choy_seeds": 50,
-            "corn_seeds": 150,
-            "eggplant_seeds": 20,
-            "kale_seeds": 70,
-            "melon_seeds": 80,
-            "pepper_seeds": 40,
-            "pumpkin_seeds": 100,
-            "radish_seeds": 40,
-            "tomato_seeds": 50,
-            "yam_seeds": 60
-
-        },
+        "inventory": [
+            "parsnip_seeds",
+            "potato_seeds",
+            "bean_starter",
+            "cauliflower_seeds",
+            "blueberry_seeds",
+            "bok_choy_seeds",
+            "corn_seeds",
+            "eggplant_seeds"
+        ],
+        "rotating_inventory": [
+            "kale_seeds",
+            "melon_seeds",
+            "pepper_seeds",
+            "pumpkin_seeds",
+            "radish_seeds",
+            "tomato_seeds",
+            "yam_seeds"
+        ],
         "text": "Welcome to Pierre's! I carry only the finest goods."
     },
     "willy": {
