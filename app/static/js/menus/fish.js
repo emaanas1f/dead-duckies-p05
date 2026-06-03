@@ -11,6 +11,11 @@ export default class Fish {
         this.currentFish = "";
         this.currentRod = "";
 
+        this.meterProgress = .001
+        this.fishPos = 0
+        this.barPos = 0
+        this.barSize = 0
+
         this.background = new Image();
         this.background.src = "/static/images/ui/fishing_background.png";
         this.bar = new Image();
@@ -76,6 +81,38 @@ export default class Fish {
         xStart, yStart,
         46 * scaleFactor, 157 * scaleFactor
       );
+
+      let xMeter = xStart + 4 * scaleFactor;
+      let yMeter = yStart + 4 * scaleFactor;
+
+      ctx.drawImage(this.meter,
+        xMeter, yMeter,
+        38 * scaleFactor, 150 * scaleFactor
+      );
+
+      if (this.fishPos >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
+        this.meterProgress += .001;
+      }
+      else {
+        this.meterProgress -= .002;
+      }
+
+      if (this.meterProgress > 0.5) {
+          ctx.fillStyle = `rgb(${Math.round(255 * (1 - this.meterProgress) * 2)}, 210, 50)`;
+      }
+      else {
+          ctx.fillStyle = `rgb(220, ${Math.round(180 * this.meterProgress * 2)}, 30`;
+      }
+
+      let meterHeight = 144 * this.meterProgress;
+
+      ctx.fillRect(xMeter + 32 * scaleFactor, yMeter + 146 * scaleFactor - meterHeight * scaleFactor, 4 * scaleFactor, meterHeight * scaleFactor);
+
+      if (this.meterProgress >= 1) {
+        renderResult(ctx, scaleFactor);
+        return true;
+      }
+      return false;
     }
 
     renderResult(ctx, scaleFactor) {
