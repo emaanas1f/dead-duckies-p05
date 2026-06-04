@@ -73,6 +73,7 @@ function render() {
   let key = currentProperty;
   if (currentProperty == "setwarp") key = "teleporter";
   let def = PROPERTIES[key];
+  console.log(def);
   // for (const [key, def] of Object.entries(PROPERTIES)) {
     ctx.fillStyle = def.color;
     for (let x = 0; x < map.width / TILE_SIZE; x++) {
@@ -172,7 +173,11 @@ propertySelect.addEventListener('change', () => {
 
 mapSelect.addEventListener('change', async () => {
   currentMap = mapSelect.value;
-  tiles = await getJson(`maps/${currentMap}.json`);
+  try {
+    tiles = await getJson(`maps/${currentMap}.json`);
+  } catch (error) {
+    tiles = await initializeTiles();
+  }
   map = new Image()
   map.onload = () => {
     canvas.width = map.width;

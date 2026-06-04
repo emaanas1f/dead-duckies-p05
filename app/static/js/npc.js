@@ -10,11 +10,11 @@ export default class NPC {
     this.x = x;
     this.y = y;
     this.sprite = new Image();
-    this.sprite.src = `/static/images/npcs/${name}.png`;
+    this.sprite.src = `/static/images/npcs/sprites/${name}.png`;
     this.box = new Image();
     this.box.src = `/static/images/ui/dialoguebox.png`
     this.portrait = new Image();
-    this.portrait.src = `/static/images/portraits/${this.name}.png`;
+    this.portrait.src = `/static/images/npcs/portraits/${this.name}.png`;
 
     let tile = map.tiles[x][y];
     tile.add(this, "middle");

@@ -38,9 +38,13 @@ export const CROPS = await getJson("crops.json")
 export const MINES = await getJson("mines.json")
 export const FISH = await getJson("fish.json")
 
-const PIERRE = await getJson("npcs/pierre.json")
-const WILLY = await getJson("npcs/willy.json")
-export const NPC_INFO = {"pierre": PIERRE, "willy": WILLY}
+const addedNpcs = ["pierre", "willy", "sam"];
+export const NPC_INFO = {};
+
+addedNpcs.forEach(async (npc) => {
+  let newNpc = await getJson(`npcs/${npc}.json`);
+  NPC_INFO[npc] = newNpc;
+})
 
 export const SHOPS = await getJson("shops.json");
 

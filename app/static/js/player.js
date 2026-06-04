@@ -132,6 +132,7 @@ export default class Player {
       this.inventory.addItem(caught, 1);
       stamina.useEnergy(10);
     }
+
     if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
         if (entity.gift(this.name, item)) {
@@ -150,7 +151,7 @@ export default class Player {
     else if (map.name == "seedshop" && tile.x >= 3 && tile.x <= 8 && tile.y == 18) { // PIERRE'S
       this.game.clearMenus();
       this.game.menu = "shop";
-      this.currentShop = this.game.shop["pierre"];
+      this.currentShop = this.game.shops["pierre"];
     }
 
     else if (map.name === "fishshop" && tile.x >= 5 && tile.x <= 6 && tile.y == 5) {
@@ -180,7 +181,7 @@ export default class Player {
       }
     }
 
-    if (item == "hoe" && entity == null && tile.tillable) { // TILLING TILES
+    else if (item == "hoe" && entity == null && tile.tillable) { // TILLING TILES
       if (stamina.isEmpty()) return;
       map.crops.push(new Crop(tile.x, tile.y, map));
       stamina.useEnergy(5);
@@ -215,7 +216,7 @@ export default class Player {
       }
     }
 
-    else if (entity != null && ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all")) { // CHOPPING EVERYTHING ELSE
+    else if (entity != null && (ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all"))) { // CHOPPING EVERYTHING ELSE
       if (stamina.isEmpty()) return;
       tile.remove("middle");
       for (const [key, value] of Object.entries(ENTITIES[entity]["drops"])) {

@@ -18,7 +18,7 @@ export default class Shop {
       this.display = new Image();
       this.display.src = "/static/images/ui/shop.png";
       this.portrait = new Image();
-      this.portrait.src = `/static/images/portraits/${npc}.png`;
+      this.portrait.src = `/static/images/npcs/portraits/${npc}.png`;
 
       this.itemsStart = 0; // starting index for 4 displayed items
 
@@ -40,7 +40,6 @@ export default class Shop {
       shuffled.slice(0,4).forEach((item, i) => {
         this.shopInventory[item] = ITEMS[item]["buyPrice"];
       });
-      console.log(this.shopInventory);
     }
 
     buy(itemID, player, quantity) {

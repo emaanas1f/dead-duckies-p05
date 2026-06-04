@@ -52,8 +52,8 @@ class StardewValley {
     this.menu = null;
 
     this.shops = {
-      "pierre": new Shop("pierre")
-      "willy": new Shop("willy");
+      "pierre": new Shop("pierre"),
+      "willy": new Shop("willy")
     }
 
     this.player.inventory.addItem("axe", 1);

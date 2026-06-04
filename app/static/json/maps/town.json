@@ -9547,8 +9547,12 @@
     {
       "passable": true,
       "tillable": false,
-      "teleporter": false,
-      "destination": null,
+      "teleporter": true,
+      "destination": {
+        "map": "samhouse",
+        "x": 7,
+        "y": 21
+      },
       "water": false,
       "forest_lake": false
     },

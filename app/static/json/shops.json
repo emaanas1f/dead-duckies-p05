@@ -22,8 +22,12 @@
         "text": "Welcome to Pierre's! I carry only the finest goods."
     },
     "willy": {
-        "inventory": {
-        },
-        "text":
+        "inventory": [
+
+        ],
+        "rotating_inventory": [
+
+        ],
+        "text": ""
     }
 }
