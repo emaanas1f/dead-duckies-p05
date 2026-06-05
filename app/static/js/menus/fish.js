@@ -9,13 +9,13 @@ export default class Fish {
 
         this.types = ["mixed", "smooth", "sinker", "floater", "dart"];
         this.currentFish = "";
-        this.currentRod = "";
+        // this.currentRod = "";
 
-        this.meterProgress = .001
-        this.fishPos = 0
-        this.barPos = 0
-        this.barSize = 0
-        this.gameSize = 141
+        // this.meterProgress = .001;
+        // this.fishPos = 130;
+        // this.barPos = 0;
+        // this.barSize = 0;
+        this.gameSize = 141;
 
         this.background = new Image();
         this.background.src = "/static/images/ui/fishing_background.png";
@@ -30,8 +30,19 @@ export default class Fish {
 
     }
 
-    startFish() {
+    startFish(location, level) {
+      this.meterProgress = .001;
 
+      this.fishPos = 0;
+      this.fishVelocity = 0;
+      this.fishAcceleration = 0;
+
+      this.barPos = 0;
+      this.barVelocity = 0;
+      this.barAcceleration = 0;
+      this.barSize = 14 + 10 * level
+
+      this.currentFish = this.fish.getFish(location, this.game.time.currTime)
     }
 
     getFish(location, time) {
@@ -66,7 +77,25 @@ export default class Fish {
     }
 
     updateBar() {
+      if (this.game.mouse.isDown) {
+        this.barAcceleration = .05;
+      }
+      else if (this.barPos > 0) {
+        this.barAcceleration = -.05;
+      }
 
+      this.barVelocity += this.barAcceleration;
+      this.barPos += this.barVelocity;
+
+      if (this.barPos < 0 && this.barVelocity < 0) {
+        this.barVelocity *= -1;
+      }
+
+      if (this.barPos + this.barSize >= this.meterHeight) {
+        this.barVelocity = 0;
+      }
+
+      console.log(this.barPos, this.barVelocity, this.barAcceleration);
     }
 
     updateFish() {
@@ -91,14 +120,31 @@ export default class Fish {
         38 * scaleFactor, 150 * scaleFactor
       );
 
-      ctx.drawImage(this.fishIcon,
-        xMeter + 17 * scaleFactor, yMeter + (144 - 9 + this.fishPos) * scaleFactor,
-        10 * scaleFactor, 10 * scaleFactor
+      ctx.drawImage(this.bar,
+        0, 0,
+        9, 2,
+        xMeter + 17 * scaleFactor, yMeter + (144 - this.barPos - this.barSize) * scaleFactor,
+        9 * scaleFactor, 2 * scaleFactor
       );
 
-      // ctx.drawImage(this.bar
+      ctx.drawImage(this.bar,
+        0, 2,
+        9, 5,
+        xMeter + 17 * scaleFactor, yMeter + (144 - this.barPos - this.barSize + 2) * scaleFactor,
+        9 * scaleFactor, (this.barSize - 4) * scaleFactor
+      );
 
-      // )
+      ctx.drawImage(this.bar,
+        0, 7,
+        9, 2,
+        xMeter + 17 * scaleFactor, yMeter + (144 - this.barPos - 2) * scaleFactor,
+        9 * scaleFactor, 2 * scaleFactor
+      );
+
+      ctx.drawImage(this.fishIcon,
+        xMeter + 17 * scaleFactor, yMeter + (144 - 9 - this.fishPos) * scaleFactor,
+        10 * scaleFactor, 10 * scaleFactor
+      );
 
       if (this.fishPos >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
         this.meterProgress += .001;
@@ -119,7 +165,11 @@ export default class Fish {
       ctx.fillRect(xMeter + 32 * scaleFactor, yMeter + 146 * scaleFactor - meterHeight * scaleFactor, 4 * scaleFactor, meterHeight * scaleFactor);
 
       if (this.meterProgress >= 1) {
-        renderResult(ctx, scaleFactor);
+        self.renderResult(ctx, scaleFactor);
+        // self.player.inventory.addItem(self.currentFish, 1)
+        return true;
+      }
+      if (this.meterProgress < 0) {
         return true;
       }
       return false;

@@ -7,7 +7,8 @@
     "consumable": false,
     "effects": {
       "stamina": 0,
-      "movement_speed": 0
+      "movement_speed": 0,
+      "speed_duration": 0
     },
     "shops": ["pierre"]
   },
@@ -19,7 +20,8 @@
     "consumable": false,
     "effects": {
       "stamina": 0,
-      "movement_speed": 0
+      "movement_speed": 0,
+      "speed_duration": 0
     },
     "shops": ["pierre"]
   },
@@ -32,7 +34,8 @@
     "consumable": false,
     "effects": {
       "stamina": 0,
-      "movement_speed": 0
+      "movement_speed": 0,
+      "speed_duration": 0
     },
     "shops": ["pierre"]
   },
@@ -41,14 +44,26 @@
     "sellPrice": 40,
     "reaction": "dislike",
     "category": "forageables",
-    "consumable": false,
+    "consumable": true,
+    "effects": {
+      "stamina": 15,
+      "movement_speed": 0,
+      "speed_duration": 0
+    },
     "shops": ["pierre"]
   },
   "horse_radish": {
     "buyPrice": null,
     "sellPrice": 50,
     "reaction": "dislike",
-    "category": "forageables"
+    "category": "forageables",
+    "consumable": true,
+    "effects": {
+      "stamina": 15,
+      "movement_speed": 0,
+      "speed_duration": 0
+    },
+    "shops": ["pierre"]
   },
   "leek": {
     "buyPrice": null,
