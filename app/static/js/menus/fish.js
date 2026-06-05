@@ -1,4 +1,4 @@
-import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT} from '../constants.js'
+import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT, ITEMS} from '../constants.js'
 
 export default class Fish {
     constructor(game, inventory) {
@@ -15,6 +15,7 @@ export default class Fish {
         this.fishPos = 0
         this.barPos = 0
         this.barSize = 0
+        this.gameSize = 141
 
         this.background = new Image();
         this.background.src = "/static/images/ui/fishing_background.png";
@@ -89,6 +90,15 @@ export default class Fish {
         xMeter, yMeter,
         38 * scaleFactor, 150 * scaleFactor
       );
+
+      ctx.drawImage(this.fishIcon,
+        xMeter + 17 * scaleFactor, yMeter + (144 - 9 + this.fishPos) * scaleFactor,
+        10 * scaleFactor, 10 * scaleFactor
+      );
+
+      // ctx.drawImage(this.bar
+
+      // )
 
       if (this.fishPos >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
         this.meterProgress += .001;

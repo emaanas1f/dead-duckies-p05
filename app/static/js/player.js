@@ -129,6 +129,7 @@ export default class Player {
       this.game.menu = "fishing";
       this.fish.currentFish = caught;
       this.fish.currentRod = item;
+      this.fish.barSize = 14 + 10 * ITEMS[item]["level"]
       this.inventory.addItem(caught, 1);
       stamina.useEnergy(10);
     }
