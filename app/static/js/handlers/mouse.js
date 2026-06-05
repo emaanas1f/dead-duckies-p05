@@ -59,5 +59,20 @@ export default class MouseHandler {
         }
       }
     });
+
+//trying to add mouse hover for crafting
+    canvas.addEventListener("mouseover", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      this.mouseX = (e.clientX - rect.left);
+      this.mouseY = (e.clientY - rect.top);
+
+      const inv = this.game.player.inventory;
+      this.game.player.inventory.CraftingMenu.hover(this.mouseX, this.mouseY);
+
+      //const crafting = this.game.player.inventory.CraftingMenu;
+    //  if (crafting.open) {
+    //    crafting.hover(this.mouseX, this.mouseY);
+    //  }
+    });
   }
 }

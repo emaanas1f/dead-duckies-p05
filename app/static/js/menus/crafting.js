@@ -17,6 +17,12 @@ export default class CraftingMenu {
       this.hoverImages[key].src = `/static/images/items/crafting/${key}_hover.png`;
     }
 
+    this.itemImages = {};
+    for (let key in RECIPES) {
+      this.itemImages[key] = new Image();
+      this.itemImages[key].src = `/static/images/items/crafting/${key}.png`;
+    }
+
     this.images = {};
     this.menuImg = new Image();
     this.menuImg.src = "/static/images/ui/menu.png";
@@ -71,7 +77,7 @@ export default class CraftingMenu {
   craft(recipe) {
     if (!recipe || !this.hasItems(recipe.ingredients)) return;
     this.removeItems(recipe.ingredients);
-    this.inventory.addItem(recipe.output.item, recipe.output.amount);
+    //this.inventory.addItem(recipe.output.item, recipe.output.amount);
   }
 
   update(mx, my) {
@@ -96,6 +102,11 @@ export default class CraftingMenu {
     }
   }
 
+  hover(mouseX, mouseY) {
+    if (this.hoveredRecipe === key)
+      this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
+  }
+
   render(ctx) {
     if (!this.open) return;
 
@@ -113,6 +124,7 @@ export default class CraftingMenu {
       let x = this.startX;
       let y = this.startY + i * 80;
 
+      this.safeDraw(ctx, this.itemImages[key], x, y, 48 * UI_FACTOR, 96 * UI_FACTOR);
       this.safeDraw(ctx, this.getImage(r.output.item), x + 10, y + 10, 48, 48);
 
       for (let j = 0; j < r.ingredients.length; j++) {
@@ -122,7 +134,7 @@ export default class CraftingMenu {
         this.safeDraw(ctx, this.getImage(ing.item), ix, iy, 24, 24);
       }
 
-      if (this.hoveredRecipe === key) this.safeDraw(ctx, this.hoverImages[key], x + 330, y, 96, 96);
+      //if (this.hoveredRecipe === key) this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
     }
 
     if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
