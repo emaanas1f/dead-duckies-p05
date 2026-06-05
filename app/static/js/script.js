@@ -92,10 +92,10 @@ class StardewValley {
               initializeMine(this.maps[tile.destination.map], this.player);
             }
             if (tile.destination.map === "forest") {
-              initializeForest(this.maps[tile.destination.map]);
+              initializeForest(this.maps[tile.destination.map], this.player);
             }
             if (tile.destination.map === "beach") {
-              initializeBeach(this.maps[tile.destination.map]);
+              initializeBeach(this.maps[tile.destination.map], this.player);
             }
             teleport();
           });

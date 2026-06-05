@@ -131,10 +131,7 @@ export class Inventory {
   }
 
   startDrag(index) {
-    console.log(this.slots)
-    console.log(index)
     let slot = this.slots[index];
-    console.log(slot)
     if (slot.itemID === null) {
       return;
     }

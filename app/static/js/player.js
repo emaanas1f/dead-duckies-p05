@@ -154,12 +154,12 @@ export default class Player {
       this.game.menu = "shop";
       this.currentShop = this.game.shops["pierre"];
     }
-
-    else if (map.name === "fishshop" && tile.x >= 5 && tile.x <= 6 && tile.y == 5) {
+    else if (map.name === "fishshop" && tile.x >= 13 && tile.x <= 15 && tile.y == 7) {
       this.game.clearMenus();
       this.game.menu = "shop";
-      this.currentShop = this.game.willyShop
+      this.currentShop = this.game.shops["willy"];
     }
+
     else if (tile && tile.interactable) { // SLEEP
       this.game.startSleep();
     }

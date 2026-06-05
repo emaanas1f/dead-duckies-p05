@@ -36,15 +36,12 @@ export default class NPC {
     })
     this.normalDialogue = NPC_INFO[this.name]["normal_dialogue"];
     this.giftDialogue = NPC_INFO[this.name]["gift_dialogue"];
-    // console.log(this.reactions)
-    // console.log(this.normalDialogue)
   }
 
   // possibly implement birthdays
   gift(player, item) {
     if (!(player in this.points)) {
       this.addPlayer(player);
-      // console.log("add player")
     }
     if (this.giftNumber[player] == 2 || this.gifted[player]) {
       // possibly display msg
@@ -81,7 +78,7 @@ export default class NPC {
     this.dialogue = this.dialogue.replace("@", player)
   }
 
-  addPlayer(player){ 
+  addPlayer(player){
     this.points[player] = 0
     this.giftNumber[player] = 0
     this.talked[player] = false
@@ -118,9 +115,6 @@ export default class NPC {
     ctx.fillText(getItemTitle(this.name),
       xStart + 255 * overlayScale, yStart + 97 * overlayScale
     );
-    // document.getElementById("npc").innerHTML = this.name
-    // document.getElementById("dialogue").innerHTML = dialogue.replaceAll("@", player)
-    // document.getElementById("portrait").src = `/static/images/portraits/${this.name}.png`
   }
 
   render(ctx, map) {
@@ -130,11 +124,3 @@ export default class NPC {
     )
   }
 }
-
-// let Willy = new NPC("Willy")
-// Willy.gift("Kiran", "fish")
-// console.log(Willy.points)
-//
-// const overlayCanvas = document.getElementById('overlay-canvas');
-// overlayCanvas.width = CANVAS_WIDTH;
-// overlayCanvas.height = CANVAS_HEIGHT;

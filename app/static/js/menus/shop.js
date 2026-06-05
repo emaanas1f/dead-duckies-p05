@@ -31,7 +31,13 @@ export default class Shop {
       });
     }
 
-    restock() {
+    restock(npcs, player) {
+      npcs.forEach((npc) => {
+        let hearts = Math.floor(npc.points[player.name] / 250);
+        if (hearts >= 8) {
+          // sell bouquet
+        }
+      })
       this.shopInventory = {};
       SHOPS[this.npc]["inventory"].forEach((item, i) => {
         this.shopInventory[item] = ITEMS[item]["buyPrice"];
@@ -139,7 +145,7 @@ export default class Shop {
       ctx.letterSpacing = "2px";
 
       player.gold.render(ctx, xStart + 81 * overlayScale, yStart + 119 * overlayScale, overlayScale);
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < Math.min(Object.keys(this.shopInventory).length, 4); i++) {
 
         ctx.textAlign = "left";
 

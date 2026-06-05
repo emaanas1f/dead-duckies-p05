@@ -1,4 +1,5 @@
 {
+    "dateable": true,
     "normal_dialogue": [
         "Ugh, I stepped in something gross earlier. And I just bought these shoes.",
         "Hey, farmer.",
@@ -9,10 +10,10 @@
         "Hey, how's it going? I'm hungry. See you later.",
         "Oh! I just remembered I'm supposed to call my Grandma. Okay, I'm going to put this rubber band on my wrist so I don't forget. I have to make little reminders for myself or else I'll totally forget to do things.",
         "Hey... something smells good, like pizza.",
-        "Did you watch the game last night? Or wait, do you even have a TV set...?" 
+        "Did you watch the game last night? Or wait, do you even have a TV set...?"
     ],
     "dating_dialogue": [
-        "I couldn't sleep last night. I was imagining all the things we're gonna do together.", 
+        "I couldn't sleep last night. I was imagining all the things we're gonna do together.",
         "[Player]. Um... I just wanted to say... You look nice today.",
         "I think I've grown to like the country more than the city. Although I could be biased... for a certain reason."
     ],

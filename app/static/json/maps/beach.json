@@ -13872,8 +13872,8 @@
       "teleporter": true,
       "destination": {
         "map": "fishshop",
-        "x": 5,
-        "y": 8
+        "x": 14,
+        "y": 10
       },
       "water": false,
       "forest_lake": false,

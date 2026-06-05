@@ -25,7 +25,7 @@ export default class Time {
     }
 
     for (const [key, value] of Object.entries(game.shops)) {
-      value.restock();
+      value.restock(game.npcList, game.player);
     }
 
     game.maps["farm"].crops.forEach(crop => {
