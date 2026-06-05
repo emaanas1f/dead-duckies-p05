@@ -134,6 +134,14 @@ export default class Player {
       stamina.useEnergy(10);
     }
 
+   if (ITEMS[item]["consumable"]) {
+     console.log(item.consumable);
+      stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
+       //need to add a check to see how many ticks before it's reversed 
+      MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
+      this.inventory.removeItem(item, 1);
+    }
+
     if (entity instanceof NPC) { // NPC INTERACTIONS
       if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
         if (entity.gift(this.name, item)) {
