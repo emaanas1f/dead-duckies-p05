@@ -67,7 +67,7 @@ export default class MouseHandler {
       this.mouseY = (e.clientY - rect.top);
 
       const inv = this.game.player.inventory;
-      this.game.player.inventory.CraftingMenu.hover(this.mouseX, this.mouseY);
+      this.game.playerMenu.craftingMenu.hover(this.mouseX, this.mouseY);
 
       //const crafting = this.game.player.inventory.CraftingMenu;
     //  if (crafting.open) {

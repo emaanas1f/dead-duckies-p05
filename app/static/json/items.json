@@ -1,4 +1,11 @@
 {
+  "bouquet": {
+    "buyPrice": 200,
+    "sellPrice": 5,
+    "category": "miscellaneous",
+    "shops": ["pierre"]
+  },
+
   "wood": {
     "buyPrice": 10,
     "sellPrice": 5,

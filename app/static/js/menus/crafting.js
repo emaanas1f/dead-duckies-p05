@@ -103,8 +103,10 @@ export default class CraftingMenu {
   }
 
   hover(mouseX, mouseY) {
-    if (this.hoveredRecipe === key)
-      this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
+    for (let key in RECIPES) {
+      if (this.hoveredRecipe === key)
+        this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
+    }
   }
 
   render(ctx) {
@@ -114,6 +116,7 @@ export default class CraftingMenu {
     let w = INVENTORY_WIDTH * UI_FACTOR;
     let h = INVENTORY_HEIGHT * UI_FACTOR;
 
+    if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
     this.safeDraw(ctx, this.menuImg, this.startX, this.startY, w, h);
 
     for (let i = 0; i < list.length; i++) {
@@ -137,6 +140,5 @@ export default class CraftingMenu {
       //if (this.hoveredRecipe === key) this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
     }
 
-    if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
   }
 }

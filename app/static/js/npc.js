@@ -5,7 +5,7 @@ import { renderWrappedText, getItemTitle } from "./ui/text.js";
 const giftPoints = {"hate": -40, "dislike": -20, "neutral": 20, "like": 45, "love": 80}
 
 export default class NPC {
-  constructor(name, x, y, map) {
+  constructor(name, x, y, map, playerName) {
     this.name = name;
     this.x = x;
     this.y = y;
@@ -19,12 +19,11 @@ export default class NPC {
     let tile = map.tiles[x][y];
     tile.add(this, "middle");
 
-    // placeholders
-    this.points = {"Kiran": 470};
-    this.giftNumber = {"Kiran": 0};
-    this.talked = {"Kiran": false};
-    this.gifted = {"Kiran": false};
-    this.status = {"Kiran": 0};
+    this.points = {};
+    this.giftNumber = {};
+    this.talked = {};
+    this.gifted = {};
+    this.status = {};
 
     this.dialogue = "";
 
@@ -64,13 +63,10 @@ export default class NPC {
 
   talk(player) {
     if (!(player in this.points)) {
-      // this.addPlayer(player)
-      this.points[player] += 20;
-      // console.log("a")
-      this.dialogue = this.normalDialogue[0] //default introduction dialogue
+      this.addPlayer(player)
+      this.dialogue = this.normalDialogue[0]
     }
     else if (this.talked[player] == false) {
-      // console.log("b")
       this.points[player] += 20;
       this.dialogue = this.normalDialogue[Math.ceil(Math.random() * (this.normalDialogue.length - 1))] //random dialogue option (excluding intro dialogue stored at index 0 of array)
     }
@@ -79,10 +75,11 @@ export default class NPC {
   }
 
   addPlayer(player){
-    this.points[player] = 0
+    this.points[player] = 2000
     this.giftNumber[player] = 0
-    this.talked[player] = false
-    this.status[player] = 0
+    this.talked[player] = true
+    this.status[player] = null
+    this.gifted[player] = false
   }
 
   renderDialogue(ctx, player) {

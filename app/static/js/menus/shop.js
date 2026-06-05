@@ -10,35 +10,36 @@ const yStart = (CANVAS_HEIGHT / 2) - 136;
 export default class Shop {
     constructor (npc) {
       this.shopInventory = {}; // {String item: INT cost}
+      this.itemNames = {};
       this.npc = npc;
       this.shopText = SHOPS[npc]["text"]
-
-      this.restock();
 
       this.display = new Image();
       this.display.src = "/static/images/ui/shop.png";
       this.portrait = new Image();
       this.portrait.src = `/static/images/npcs/portraits/${npc}.png`;
 
+      this.itemNames = [];
       this.itemsStart = 0; // starting index for 4 displayed items
+      this.sprites = {};
 
-      this.sprites = [];
-      this.itemTitles = []; // to prevent running getItemTitle method on each render
-      Object.keys(this.shopInventory).forEach((item, i) => {
-        this.sprites.push(new Image());
-        this.sprites[i].src = `/static/images/items/${ITEMS[item]["category"]}/${item}.png`;
-        this.itemTitles.push(getItemTitle(Object.keys(this.shopInventory)[i]))
-      });
+      this.restock();
     }
 
-    restock(npcs, player) {
-      npcs.forEach((npc) => {
-        let hearts = Math.floor(npc.points[player.name] / 250);
-        if (hearts >= 8) {
-          // sell bouquet
-        }
-      })
+    restock(npcs=[], player=null) {
       this.shopInventory = {};
+      console.log(this.npc);
+      if (this.npc == "pierre") {
+        npcs.forEach((npc) => {
+          console.log(npc.points);
+          let hearts = Math.floor(npc.points[player.name] / 250);
+          console.log(hearts);
+          if (hearts >= 8) {
+            console.log("HERE3")
+            this.shopInventory["bouquet"] = ITEMS["bouquet"]["buyPrice"];
+          }
+        })
+      }
       SHOPS[this.npc]["inventory"].forEach((item, i) => {
         this.shopInventory[item] = ITEMS[item]["buyPrice"];
       });
@@ -46,6 +47,18 @@ export default class Shop {
       shuffled.slice(0,4).forEach((item, i) => {
         this.shopInventory[item] = ITEMS[item]["buyPrice"];
       });
+      this.itemNames = [];
+      console.log(this.shopInventory);
+      for (const [item, value] in this.shopInventory) {
+        if (!item in this.sprites) {
+          let newSprite = new Image();
+          newSprite.src = `/static/images/items/${ITEMS[item]["category"]}/${item}.png`;
+          this.sprites[item] = newSprite
+        }
+        this.itemNames.push(item);
+      }
+
+      console.log(this.shopInventory)
     }
 
     buy(itemID, player, quantity) {
@@ -149,11 +162,13 @@ export default class Shop {
 
         ctx.textAlign = "left";
 
-        ctx.drawImage(this.sprites[this.itemsStart + i],
+        let itemName = this.itemNames[this.itemsStart + i];
+
+        ctx.drawImage(this.sprites[itemName],
           xStart + 94 * overlayScale, yStart + 12 * overlayScale + i * 27 * overlayScale,
           16 * overlayScale, 16 * overlayScale
         )
-        ctx.fillText(this.itemTitles[this.itemsStart + i],
+        ctx.fillText(getItemTitle(itemName),
           xStart + 114 * overlayScale, yStart + 23 * overlayScale + i * 27 * overlayScale
         )
 

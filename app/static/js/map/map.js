@@ -25,7 +25,7 @@ export default class Map {
     try {
       const metadata = await getJson(`metadata/${name}.json`);
       metadata["npcs"].forEach((data) => {
-        let npc = new NPC(data["name"], data["x"], data["y"], this);
+        let npc = new NPC(data["name"], data["x"], data["y"], this, game.player.name);
         this.npcList.push(npc);
         game.npcList.push(npc);
       });
@@ -127,7 +127,7 @@ export default class Map {
       "beach_forageables/oyster"
     ];
 
-    
+
     console.log(name)
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles[x].length; y++) {
