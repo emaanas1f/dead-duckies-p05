@@ -458,15 +458,15 @@ sarahZ -- 2026-06-02 19:25
 - forest and beach forageables up
 - got resized assets to fix centering and sizing of fishshop
 
-sarahZ -- 2026-06-03 11:00
-- worked on Willy's shops
+jamesL -- 2026-06-05 11:00
+- fixed willy shop
+- got assets for marriage
 
-jamesL -- 2026-06-03 11:00
-- fixed buying / selling multiple items
-- added rotating inventory
+sarahZ -- 2026-06-05 11:00
+- worked on eating
 
-emaanA -- 2026-06-01 11:00
-- fixed rendering for crafting menu
+kiranS -- 2026-06-05 11:00
+- worked on fishing
 
-kiranS -- 2026-06-01 11:00
-- worked on fishing minigame
+emaanA -- 2026-06-05 11:00
+- trying to get mousehover for crafting

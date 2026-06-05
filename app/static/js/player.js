@@ -124,14 +124,17 @@ export default class Player {
           break;
       }
       console.log(location, this.game.time.currTime);
-      let caught = this.fish.getFish(location, this.game.time.currTime);
-      console.log(caught);
       this.game.menu = "fishing";
-      this.fish.currentFish = caught;
-      this.fish.currentRod = item;
-      this.fish.barSize = 14 + 10 * ITEMS[item]["level"]
-      this.inventory.addItem(caught, 1);
+      this.fish.startFish(location, ITEMS[item]["level"])
       stamina.useEnergy(10);
+    }
+
+   if (ITEMS[item]["consumable"]) {
+     console.log(item.consumable);
+      stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
+       //need to add a check to see how many ticks before it's reversed 
+      MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
+      this.inventory.removeItem(item, 1);
     }
 
     if (entity instanceof NPC) { // NPC INTERACTIONS
