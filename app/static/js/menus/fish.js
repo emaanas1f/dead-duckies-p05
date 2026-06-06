@@ -31,13 +31,14 @@ export default class Fish {
     }
 
     startFish(location, level) {
-      this.meterProgress = .001;
+      this.meterProgress = .1;
 
       this.fishPos = 0;
       this.fishVelocity = 0;
       this.fishAcceleration = 0;
-      this.fishTarget = 0;
-      this.bufferTime = 0;
+      this.fishTarget = Math.random() * (this.gameSize - 40) + 20;
+      this.bufferCounter = 0;
+      this.bufferTime = Math.random() * 150;
 
       this.barPos = 0;
       this.barVelocity = 0;
@@ -83,10 +84,10 @@ export default class Fish {
 
     updateBar() {
       if (this.game.mouse.isDown) {
-        this.barAcceleration = .05;
+        this.barAcceleration = .04;
       }
       else if (this.barPos > 0) {
-        this.barAcceleration = -.05;
+        this.barAcceleration = -.06;
       }
       else {
         this.barAcceleration = 0
@@ -97,7 +98,7 @@ export default class Fish {
 
       // bouncing at bottom
       if (this.barPos < 0 && this.barVelocity < 0) {
-        this.barVelocity *= -.8;
+        this.barVelocity *= -.75;
       }
 
       // stops at top
@@ -109,15 +110,25 @@ export default class Fish {
       if (this.barPos <= 0.1) {
         this.barPos = 0
       }
-      console.log(this.barPos, this.barVelocity, this.barAcceleration);
+      // console.log(this.barPos, this.barVelocity, this.barAcceleration);
     }
 
     updateFish() {
-
+      this.bufferCounter += 1;
+      if (this.bufferCounter > this.bufferTime) {
+        this.fishTarget = Math.random() * (this.gameSize - 40) + 20;
+        this.bufferCounter = 0;
+        this.bufferTime = Math.random() * 150;
+      }
+      console.log(.02 * (this.fishTarget - this.fishPos)^2, this.fishVelocity * Math.abs(this.fishVelocity));
+      this.fishAcceleration = .0002 * (this.fishTarget - this.fishPos) * Math.abs(this.fishTarget - this.fishPos) - .04 * this.fishVelocity * Math.abs(this.fishVelocity);
+      this.fishVelocity += this.fishAcceleration;
+      this.fishPos += this.fishVelocity;
+      console.log(this.fishPos, this.fishVelocity, this.fishAcceleration);
     }
 
     renderMinigame(ctx, scaleFactor) {
-      console.log("renderfish")
+      // console.log("renderfish")
       let xStart = scaleFactor * 10;
       let yStart = CANVAS_HEIGHT / 2 - 78 * scaleFactor;
 
@@ -160,7 +171,7 @@ export default class Fish {
         10 * scaleFactor, 10 * scaleFactor
       );
 
-      console.log(this.barPos, this.barSize, this.fishPos)
+      // console.log(this.barPos, this.barSize, this.fishPos)
       if (this.fishPos + 10 >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
         this.meterProgress += .001;
       }

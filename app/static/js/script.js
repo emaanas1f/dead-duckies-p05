@@ -207,7 +207,7 @@ class StardewValley {
         break;
       case "fishing":
         this.player.fish.updateBar();
-        // this.player.fish.updateFish();
+        this.player.fish.updateFish();
         if (this.player.fish.renderMinigame(this.overlayCtx, 3)) {
           this.clearMenus()
         }
