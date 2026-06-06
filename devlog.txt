@@ -470,3 +470,6 @@ kiranS -- 2026-06-05 11:00
 
 emaanA -- 2026-06-05 11:00
 - trying to get mousehover for crafting
+
+kiranS -- 2026-06-05 22:15
+- finish bar rendering/physics for fishing minigame

@@ -1,4 +1,4 @@
-import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT, ITEMS} from '../constants.js'
+import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT, ITEMS } from '../constants.js'
 
 export default class Fish {
     constructor(game, inventory) {
@@ -36,13 +36,18 @@ export default class Fish {
       this.fishPos = 0;
       this.fishVelocity = 0;
       this.fishAcceleration = 0;
+      this.fishTarget = 0;
+      this.bufferTime = 0;
 
       this.barPos = 0;
       this.barVelocity = 0;
       this.barAcceleration = 0;
       this.barSize = 14 + 10 * level
 
-      this.currentFish = this.fish.getFish(location, this.game.time.currTime)
+      this.currentFish = this.getFish(location, this.game.time.currTime)
+      console.log(this.currentFish)
+      this.difficulty = FISH[this.currentFish]["difficulty"]
+      this.behavior = FISH[this.currentFish]["behavior"]
     }
 
     getFish(location, time) {
@@ -83,18 +88,27 @@ export default class Fish {
       else if (this.barPos > 0) {
         this.barAcceleration = -.05;
       }
+      else {
+        this.barAcceleration = 0
+      }
 
       this.barVelocity += this.barAcceleration;
       this.barPos += this.barVelocity;
 
+      // bouncing at bottom
       if (this.barPos < 0 && this.barVelocity < 0) {
-        this.barVelocity *= -1;
+        this.barVelocity *= -.8;
       }
 
-      if (this.barPos + this.barSize >= this.meterHeight) {
+      // stops at top
+      if (this.barPos + this.barSize >= this.gameSize) {
         this.barVelocity = 0;
+        this.barPos = this.gameSize - this.barSize
       }
 
+      if (this.barPos <= 0.1) {
+        this.barPos = 0
+      }
       console.log(this.barPos, this.barVelocity, this.barAcceleration);
     }
 
@@ -146,7 +160,8 @@ export default class Fish {
         10 * scaleFactor, 10 * scaleFactor
       );
 
-      if (this.fishPos >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
+      console.log(this.barPos, this.barSize, this.fishPos)
+      if (this.fishPos + 10 >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
         this.meterProgress += .001;
       }
       else {
@@ -165,11 +180,13 @@ export default class Fish {
       ctx.fillRect(xMeter + 32 * scaleFactor, yMeter + 146 * scaleFactor - meterHeight * scaleFactor, 4 * scaleFactor, meterHeight * scaleFactor);
 
       if (this.meterProgress >= 1) {
-        self.renderResult(ctx, scaleFactor);
-        // self.player.inventory.addItem(self.currentFish, 1)
+        this.renderResult(ctx, scaleFactor);
+        this.inventory.addItem(this.currentFish, 1)
+        console.log("true 1")
         return true;
       }
       if (this.meterProgress < 0) {
+        console.log("true 2")
         return true;
       }
       return false;
