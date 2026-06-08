@@ -35,6 +35,21 @@ export default class NPC {
     })
     this.normalDialogue = NPC_INFO[this.name]["normal_dialogue"];
     this.giftDialogue = NPC_INFO[this.name]["gift_dialogue"];
+    
+    if (NPC_INFO[this.name]["dateable"]) {
+      this.datingDialogue = NPC_INFO[this.name]["dating_dialogue"]
+    }
+  }
+
+  getHearts(player) {
+    return Math.floor(this.points[player.name] / 250);
+  }
+  
+  addPoints(player, amount) {
+    if (this.getHearts(player) < 8 ||
+        ["boyfriend", "girlfriend"].includes(this.status[player])) {
+      this.points[player] += amount;
+    }
   }
 
   // possibly implement birthdays
@@ -43,20 +58,37 @@ export default class NPC {
       this.addPlayer(player);
     }
     if (this.giftNumber[player] == 2 || this.gifted[player]) {
-      // possibly display msg
       return false;
     }
-    let reaction = 0;
-    if (item in this.reactions) { // checks npc-specific reactions
-      reaction = this.reactions[item];
+
+    if (item == "bouquet") {
+      if (!NPC_INFO[this.name]["dateable"]) {
+        this.dialogue = "Is this a joke?";
+      } else if (this.getHearts(player) < 4) {
+        this.dialogue = "...I don't really know you well enough...";
+      } else if (this.getHearts(player) < 8) {
+        this.dialogue = "Oh? ...Sorry... I'm not ready for that.";
+      } else {
+        this.dialogue = NPC_INFO[this.name]["bouquet_reaction"];
+        this.status[player] = NPC_INFO[this.name]["gender"] + "friend";
+      }
+    } else if (ITEMS[item]["reaction"] != null) {
+      this.giftNumber[player] += 1;
+      this.gifted[player] = true;
+
+      let reaction = 0;
+      if (item in this.reactions) { // npc-specific reactions
+        reaction = this.reactions[item];
+      } else { // universal reaction
+        reaction = ITEMS[item]["reaction"];
+      }
+
+      this.addPoints(player, giftPoints[reaction]);
+      this.dialogue = this.giftDialogue[reaction];
+    } else {
+      return false;
     }
-    else { // defaults to universal reaction
-      reaction = ITEMS[item]["reaction"];
-    }
-    this.points[player] += giftPoints[reaction];
-    this.giftNumber[player] += 1;
-    this.gifted[player] = true;
-    this.dialogue = this.giftDialogue[reaction];
+    
     this.dialogue = this.dialogue.replace("@", player)
     return true;
   }
@@ -66,24 +98,36 @@ export default class NPC {
       this.addPlayer(player)
       this.dialogue = this.normalDialogue[0]
     }
-    else if (this.talked[player] == false) {
-      this.points[player] += 20;
-      this.dialogue = this.normalDialogue[Math.ceil(Math.random() * (this.normalDialogue.length - 1))] //random dialogue option (excluding intro dialogue stored at index 0 of array)
+
+    else if (!this.talked[player]) {
+      this.addPoints(player, 20);
+
+      if (["boyfriend", "girlfriend"].includes(this.status[player])) {
+        this.dialogue = this.datingDialogue[Math.floor(Math.random() * this.datingDialogue.length)]
+      } else {
+        // random dialogue option (excluding intro dialogue)
+        this.dialogue = this.normalDialogue[Math.ceil(Math.random() * (this.normalDialogue.length - 1))]
+      }
     }
+
+    else {
+      return false
+    }
+
     this.talked[player] = true;
     this.dialogue = this.dialogue.replace("@", player)
+    return true
   }
 
   addPlayer(player){
     this.points[player] = 2000
     this.giftNumber[player] = 0
-    this.talked[player] = true
+    this.talked[player] = false
     this.status[player] = null
     this.gifted[player] = false
   }
 
   renderDialogue(ctx, player) {
-    // console.log(this.dialogue)
     let overlayScale = 2;
     let xStart = (CANVAS_WIDTH - 321 * overlayScale) / 2;
     let yStart = CANVAS_HEIGHT - (113 + 15) * overlayScale;

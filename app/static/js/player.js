@@ -123,14 +123,12 @@ export default class Player {
           location = "town"
           break;
       }
-      console.log(location, this.game.time.currTime);
       this.game.menu = "fishing";
       this.fish.startFish(location, ITEMS[item]["level"])
       stamina.useEnergy(10);
     }
 
-   if (ITEMS[item]["consumable"]) {
-     console.log(item.consumable);
+    if (ITEMS[item]["consumable"]) {
       stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
        //need to add a check to see how many ticks before it's reversed 
       MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
@@ -138,15 +136,11 @@ export default class Player {
     }
 
     if (entity instanceof NPC) { // NPC INTERACTIONS
-      if (ITEMS[item]["reaction"] != null && entity.giftNumber[this.name] < 2 && !entity.gifted[this.name]) {
-        if (entity.gift(this.name, item)) {
-          this.inventory.removeItem(item, 1);
-          this.game.menu = "dialogue";
-          this.game.currentNpc = entity;
-        }
-      }
-      else if (!entity.talked[this.name]) {
-        entity.talk(this.name);
+      if (entity.talk(this.name)) {
+        this.game.menu = "dialogue";
+        this.game.currentNpc = entity;
+      } else if (entity.gift(this.name, item)) {
+        this.inventory.removeItem(item, 1);
         this.game.menu = "dialogue";
         this.game.currentNpc = entity;
       }

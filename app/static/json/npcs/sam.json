@@ -1,5 +1,6 @@
 {
     "dateable": true,
+    "gender": "boy",
     "normal_dialogue": [
         "Ugh, I stepped in something gross earlier. And I just bought these shoes.",
         "Hey, farmer.",
@@ -12,9 +13,10 @@
         "Hey... something smells good, like pizza.",
         "Did you watch the game last night? Or wait, do you even have a TV set...?"
     ],
+    "bouquet_reaction": "Um... So, can I get a kiss now?",
     "dating_dialogue": [
         "I couldn't sleep last night. I was imagining all the things we're gonna do together.",
-        "[Player]. Um... I just wanted to say... You look nice today.",
+        "@. Um... I just wanted to say... You look nice today.",
         "I think I've grown to like the country more than the city. Although I could be biased... for a certain reason."
     ],
     "gift_dialogue": {

@@ -28,14 +28,10 @@ export default class Shop {
 
     restock(npcs=[], player=null) {
       this.shopInventory = {};
-      console.log(this.npc);
       if (this.npc == "pierre") {
         npcs.forEach((npc) => {
-          console.log(npc.points);
           let hearts = Math.floor(npc.points[player.name] / 250);
-          console.log(hearts);
           if (hearts >= 8) {
-            console.log("HERE3")
             this.shopInventory["bouquet"] = ITEMS["bouquet"]["buyPrice"];
           }
         })
@@ -48,17 +44,14 @@ export default class Shop {
         this.shopInventory[item] = ITEMS[item]["buyPrice"];
       });
       this.itemNames = [];
-      console.log(this.shopInventory);
-      for (const [item, value] in this.shopInventory) {
-        if (!item in this.sprites) {
+      for (const [item, value] of Object.entries(this.shopInventory)) {
+        if (!(item in this.sprites)) {
           let newSprite = new Image();
           newSprite.src = `/static/images/items/${ITEMS[item]["category"]}/${item}.png`;
           this.sprites[item] = newSprite
         }
         this.itemNames.push(item);
       }
-
-      console.log(this.shopInventory)
     }
 
     buy(itemID, player, quantity) {
@@ -100,7 +93,7 @@ export default class Shop {
     }
 
     moveDown() {
-      if (this.itemsStart < this.itemTitles.length - 4) {
+      if (this.itemsStart < this.itemNames.length - 4) {
         this.itemsStart++;
       }
     }

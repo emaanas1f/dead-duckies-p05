@@ -64,8 +64,6 @@ export default class RelationshipsMenu {
       );
 
       let hearts = Math.floor(npc.points[player.name] / 250);
-      // console.log(hearts);
-      // console.log(npc.points[player.name]);
       for (let heart = 0; heart < hearts; heart++) {
         ctx.drawImage(this.heartSprite,
           xRow + 64 * overlayScale + heart * 8 * overlayScale, yRow + 11 * overlayScale,
@@ -73,7 +71,6 @@ export default class RelationshipsMenu {
         );
       }
 
-      // console.log([npc.talked[player.name], npc.giftNumber[player.name]])
       if (npc.giftNumber[player.name] >= 1) {
         ctx.drawImage(this.checkSprite,
           xRow + 165 * overlayScale, yRow + 17 * overlayScale,
