@@ -1,0 +1,39 @@
+{
+    "dateable": true,
+    "gender": "girl",
+    "normal_dialogue": [
+        "Oh, hey. Taking a break from work?",
+        "Oh, hi! Do you ever hang out at the cemetery? It's a peaceful place to spend some time alone.",
+        "Ugh... I'm not in a good mood right now. I said I'm not in a good mood... what do you want?",
+        "...*sigh*... I know my parents mean well, but sometimes they just cannot understand my point of view. Weren't they ever young?",
+        "Hey. Sorry in advance if I say anything rude. I didn't get much sleep last night. What do you want?",
+        "Oh no, I think my Dad's going to cook dinner tonight... I don't feel like doing anything today...",
+        "The fresh mountain air is nice on a day like this. I wonder if the frogs will make an appearance soon.",
+        "Oh, hi @. Taking a break from your work? Me too. Oh! Nothing physical... just some online classes I'm taking.",
+        "Hi, I'm glad to see you. I want to take my mind off things for a while... how is your day going?"
+    ],
+    "bouquet_reaction": "(Abigail is blushing, but she looks happy.)",
+    "dating_dialogue": [
+        "Hi. Do you feel like everything seems unreal lately? Not in a bad way, though.",
+        "I usually feel lonely this time of year, but not anymore. @, what are your plans for the future?",
+        "@, there's something I want to tell you... It's just... um... well... your boots! They, uh...look really clean... *gulp* That's all... *sigh*",
+        "Another year is almost over... But this was a really good year, don't you think?",
+        "Wow, you look nice today. I mean, that summer air is really good for the complexion, isn't it?... heh...",
+        "Do you ever get lonely on your farm?",
+        "I had an interesting dream last night, with you in it. It was a good dream."
+    ],
+    "gift_dialogue": {
+        "love": "I seriously love this! You're the best, @!",
+        "like": "Hey, how'd you know I was hungry? This looks delicious.",
+        "neutral": "You brought me a present? Thanks!",
+        "dislike": "What am I supposed to do with this?",
+        "hate": "What were you thinking? This is awful!"
+    },
+    "reactions": {
+        "love": ["amethyst", "pumpkin", "pufferfish"],
+        "like": [],
+        "neutral": ["leek", "dandelion", "daffodil"],
+        "dislike": ["horse_radish"],
+        "hate": []
+    }
+}

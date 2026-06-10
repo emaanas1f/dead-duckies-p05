@@ -484,3 +484,6 @@ kiranS -- 2026-06-06 13:15
   - doesn't take into account fish individual difficulty leves/behavior models yet
   - coefficients are also arbitrary and will be changed with testing
   - nothing is preventing fish from exiting meter during drift phase (can rarely happen)
+
+jamesL -- 2026-06-10 12:15
+- added abigail and sam as dateable npcs
