@@ -1,0 +1,39 @@
+{
+  "field_snack": {
+    "ingredients": [
+      {
+        "item": "daffodil",
+        "amount": 1
+      },
+      {
+        "item": "dandelion",
+        "amount": 1
+      },
+      {
+        "item": "horse_radish",
+        "amount": 1
+      },
+      {
+        "item": "leek",
+        "amount": 1
+      }
+    ],
+    "output": {
+      "item": "field_snack",
+      "amount": 1
+    }
+  },
+  "sashimi": {
+    "ingredients": [
+      {
+        "category": "fish",
+        "amount": 1
+      }
+      },
+    "output": {
+      "item": "sashimi",
+      "amount": 1
+    }
+  }
+
+}

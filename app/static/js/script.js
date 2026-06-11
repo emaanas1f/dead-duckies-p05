@@ -165,6 +165,12 @@ class StardewValley {
         //   this.mouseToggled = false;
         // }
         break;
+      case "cooking":
+        this.map.follow(this.player);
+        this.player.render(this.ctx, this.map);
+        this.ctx.fillStyle 'rgba(0, 0, 0, 0.4)';
+        this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
       case "dialogue":
         this.currentNpc.renderDialogue(this.overlayCtx, this.player.name)
         if (this.mouse.isDown) {

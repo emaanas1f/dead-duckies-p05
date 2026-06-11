@@ -11,12 +11,6 @@
     "sellPrice": 5,
     "reaction": "dislike",
     "category": "resources",
-    "consumable": false,
-    "effects": {
-      "stamina": 0,
-      "movement_speed": 0,
-      "speed_duration": 0
-    },
     "shops": ["pierre"]
   },
   "stone": {
@@ -24,12 +18,6 @@
     "sellPrice": 4,
     "reaction": "dislike",
     "category": "resources",
-    "consumable": false,
-    "effects": {
-      "stamina": 0,
-      "movement_speed": 0,
-      "speed_duration": 0
-    },
     "shops": ["pierre"]
   },
 
@@ -38,12 +26,6 @@
     "sellPrice": 30,
     "reaction": "like",
     "category": "forageables",
-    "consumable": false,
-    "effects": {
-      "stamina": 0,
-      "movement_speed": 0,
-      "speed_duration": 0
-    },
     "shops": ["pierre"]
   },
   "dandelion": {
