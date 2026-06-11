@@ -44,12 +44,11 @@ export default class Map {
 
   // Indices
   addBigEntity(x, y, type) {
-    if (this.tiles[x][y].layers["front"] instanceof BigEntity) {
-      throw new Error(`Tile ${x}, ${y} already has a big entity!`);
-    }
+    if (this.tiles[x][y].layers["front"] != null) return;
+
     let bigEnt = new BigEntity(x, y, type, this);
     this.bigEntities.push(bigEnt);
-    this.bigEntities.sort((a, b) => a.y - b.y); // For rendering
+    this.bigEntities.sort((a, b) => a.y - b.y);
   }
 
   removeBigEntity(x, y) {

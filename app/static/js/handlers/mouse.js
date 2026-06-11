@@ -12,11 +12,15 @@ export default class MouseHandler {
 
     const canvas = game.overlayCanvas;
 
-    canvas.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      this.mouseX = (e.clientX - rect.left);
-      this.mouseY = (e.clientY - rect.top);
-    });
+  canvas.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    this.mouseX = (e.clientX - rect.left) * scaleX;
+    this.mouseY = (e.clientY - rect.top) * scaleY;
+  });
 
     canvas.addEventListener("mousedown", (e) => {
       const inv = this.game.player.inventory;
@@ -59,20 +63,19 @@ export default class MouseHandler {
         }
       }
     });
-
-//trying to add mouse hover for crafting
-    canvas.addEventListener("mouseover", (e) => {
+/*
+    canvas.addEventListener("mousemove", (e) => {
       const rect = canvas.getBoundingClientRect();
       this.mouseX = (e.clientX - rect.left);
       this.mouseY = (e.clientY - rect.top);
 
-      const inv = this.game.player.inventory;
-      this.game.playerMenu.craftingMenu.hover(this.mouseX, this.mouseY);
-
-      //const crafting = this.game.player.inventory.CraftingMenu;
-    //  if (crafting.open) {
-    //    crafting.hover(this.mouseX, this.mouseY);
-    //  }
-    });
+      if (this.game.menu == "playerMenu" &&
+          this.game.playerMenu.currTab == "crafting") {
+        this.game.playerMenu.craftingMenu.update(
+          this.mouseX,
+          this.mouseY
+        );
+      }
+    }); */
   }
 }

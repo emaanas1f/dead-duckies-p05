@@ -11,8 +11,6 @@ export default class CraftingMenu {
 
     this.hoveredRecipe = null;
 
-
-
     this.hoverImages = {};
     for (let key in RECIPES) {
       this.hoverImages[key] = new Image();
@@ -79,7 +77,7 @@ export default class CraftingMenu {
   craft(recipe) {
     if (!recipe || !this.hasItems(recipe.ingredients)) return;
     this.removeItems(recipe.ingredients);
-    //this.inventory.addItem(recipe.output.item, recipe.output.amount);
+    this.inventory.addItem(recipe.output.item, recipe.output.amount);
   }
 
   update(mx, my) {
@@ -104,46 +102,39 @@ export default class CraftingMenu {
     }
   }
 
-  hover(mouseX, mouseY) {
-    for (let key in RECIPES) {
-      if (this.hoveredRecipe === key)
-        this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
+render(ctx, mouse) {
+  if (!this.open) return;
+
+  let list = this.game.player?.unlockedRecipes || [];
+  let w = INVENTORY_WIDTH * UI_FACTOR;
+  let h = INVENTORY_HEIGHT * UI_FACTOR;
+
+  if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
+  if (this.inventory) this.inventory.renderDraggedItem(ctx, mouse.mouseX, mouse.mouseY);
+
+  this.safeDraw(ctx, this.menuImg, this.startX, this.startY, w, h);
+
+  for (let i = 0; i < list.length; i++) {
+    let key = list[i];
+    let r = RECIPES[key];
+    if (!r || !r.ingredients || !r.output) continue;
+
+    let x = this.startX;
+    let y = this.startY + i * 80;
+
+    this.safeDraw(ctx, this.getImage(r.output.item), x + 10, y + 10, 48, 48);
+
+    for (let j = 0; j < r.ingredients.length; j++) {
+      let ing = r.ingredients[j];
+      let ix = x + 70 + j * 90;
+      let iy = y + 22;
+      this.safeDraw(ctx, this.getImage(ing.item), ix, iy, 24, 24);
     }
   }
 
-  render(ctx, mouse) {
-    if (!this.open) return;
-
-    let list = this.game.player?.unlockedRecipes || [];
-    let w = INVENTORY_WIDTH * UI_FACTOR;
-    let h = INVENTORY_HEIGHT * UI_FACTOR;
-
-    if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
-    if (this.inventory) this.inventory.renderDraggedItem(ctx, mouse.mouseX, mouse.mouseY);
-
-    this.safeDraw(ctx, this.menuImg, this.startX, this.startY, w, h);
-
-    for (let i = 0; i < list.length; i++) {
-      let key = list[i];
-      let r = RECIPES[key];
-      if (!r || !r.ingredients || !r.output) continue;
-
-      let x = this.startX;
-      let y = this.startY + i * 80;
-
-    //  this.safeDraw(ctx, this.itemImages[key], x, y, 48 * UI_FACTOR, 96 * UI_FACTOR);
-      this.safeDraw(ctx, this.getImage(r.output.item), x + 10, y + 10, 48, 48);
-      this.safeDraw(ctx, )
-
-      for (let j = 0; j < r.ingredients.length; j++) {
-        let ing = r.ingredients[j];
-        let ix = x + 70 + j * 90;
-        let iy = y + 22;
-        this.safeDraw(ctx, this.getImage(ing.item), ix, iy, 24, 24);
-      }
-
-      //if (this.hoveredRecipe === key) this.safeDraw(ctx, this.hoverImages[key], x, y, 562 * UI_FACTOR , 402 * UI_FACTOR);
-    }
+  if (this.hoveredRecipe && this.hoverImages[this.hoveredRecipe]) {
+    this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], this.startX + w + 20, this.startY, 562 / 1.5 , 402 / 1.5);
+  }
 
   }
 }

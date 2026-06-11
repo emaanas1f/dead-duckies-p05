@@ -105,6 +105,17 @@ export default class Player {
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
+    if (item == "furnace") {
+      let placeTile = this.getTile(map);
+      if (placeTile &&
+          placeTile.layers["middle"] == null &&
+          placeTile.layers["front"] == null) {
+        map.addBigEntity(placeTile.x, placeTile.y, "furnace");
+        this.inventory.removeItem("furnace", 1);
+      }
+      return;
+    }
+
     // console.log(`${tile.x}, ${tile.y}`)
     if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       if (stamina.isEmpty()) return;

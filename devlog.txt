@@ -504,3 +504,7 @@ kiranS -- 2026-06-11 11:00
 
 emaanA -- 2026-06-11 11:00
 - working on crafting
+
+emaanA -- 2026-06-11 17:50 
+- working on multi-tile entities (furnaces)
+- added hover assets for crafting
