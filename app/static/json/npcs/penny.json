@@ -1,0 +1,34 @@
+{
+    "dateable": true,
+    "gender": "girl",
+    "normal_dialogue": [
+        "Oh... Hello! I'm Penny...",
+        "Hi... Oh, did you want something?",
+        "I'm tutoring Vincent and Jas today... They're a handful, but it's nice to make a difference in someone's life.",
+        "We don't have a school here but I'm doing my best to give Vincent and Jas a proper education. Every child deserves a chance to be successful. Jas is very good at math and reading. Vincent is good at... well, he has an active imagination.",
+        "We're very lucky to have a library in such a small town. When you're lost in a book, it's easy to forget the realities of your life. ...Maybe that's why I like reading so much. ...Sorry. I got carried away there.",
+        "If you dig in the dirt you can find some interesting things. One time I found a really old piece of pottery. I brought it to Gunther and he said it was over a thousand years old",
+        "This is such a small town. You can't avoid meeting everyone. I wonder what is like to live in the city",
+        "Hello. Ummm... The weather's interesting today, don't you think? Sorry..."
+    ],
+    "bouquet_reaction": "... You want to get more serious? I feel the same way.",
+    "dating_dialogue": [
+        "@.. I'm a little scared. This is such a big change! Don't worry, I'm really happy, too.",
+        "We're going to have a little farm family, soon. I'm so glad you feel this way about me.",
+        "Suddenly, the world looks a lot more beautiful, don't you think?"
+    ],
+    "gift_dialogue": {
+        "love": "Thank you! I really love this!",
+        "like": "Thank you! This looks special.",
+        "neutral": "Thanks, this looks nice!",
+        "dislike": "Uh, it's for me? ...Thanks.",
+        "hate": "Ugh...I'm sorry, but I absolutely hate this."
+    },
+    "reactions": {
+        "love": ["emerald", "melon"],
+        "like": ["dandelion", "leek"],
+        "neutral": ["daffodil", "horse_radish"],
+        "dislike": [],
+        "hate": []
+    }
+}
