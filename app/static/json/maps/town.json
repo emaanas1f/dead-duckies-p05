@@ -70623,8 +70623,12 @@
     {
       "passable": true,
       "tillable": false,
-      "teleporter": false,
-      "destination": null,
+      "teleporter": true,
+      "destination": {
+        "map": "mountain",
+        "x": 15,
+        "y": 38
+      },
       "water": false,
       "forest_lake": false
     },
@@ -71505,8 +71509,12 @@
     {
       "passable": true,
       "tillable": false,
-      "teleporter": false,
-      "destination": null,
+      "teleporter": true,
+      "destination": {
+        "map": "mountain",
+        "x": 15,
+        "y": 38
+      },
       "water": false,
       "forest_lake": false
     },
@@ -72387,8 +72395,12 @@
     {
       "passable": true,
       "tillable": false,
-      "teleporter": false,
-      "destination": null,
+      "teleporter": true,
+      "destination": {
+        "map": "mountain",
+        "x": 15,
+        "y": 38
+      },
       "water": false,
       "forest_lake": false
     },
