@@ -476,7 +476,7 @@ kiranS -- 2026-06-05 22:15
 
 kiranS -- 2026-06-06 13:15
 - created basic prototype for fish behavior
-  - random target on the meter is picked 
+  - random target on the meter is picked
   - fish treated as a damped spring (a = k(delta_pos)^2 - bv|v|), with the equilibrium being the target
     - this causes them to accelerate towards the target quickly when far away, but decelerate when close
     - also means that on reaching the target, they oscillate back and fourth (w/ decreasing amplitude) instead of coming to a complete stop --> acts as a drift phase
@@ -488,6 +488,19 @@ kiranS -- 2026-06-06 13:15
 jamesL -- 2026-06-10 12:15
 - added abigail and sam as dateable npcs
 
-sarahZ -- 2026-06-11 12:32
+sarahZ -- 2026-06-11 00:32
 - working on cooking
-- got asset for upgraded farmhouse 
+- got asset for upgraded farmhouse
+
+jamesL -- 2026-06-11 11:00
+- implemented pierres shops
+- working on getting pennys assets
+
+sarahZ -- 2026-06-11 11:00
+- worked on cooking
+
+kiranS -- 2026-06-05 11:00
+- worked on fishing
+
+emaanA -- 2026-06-11 11:00
+- working on crafting

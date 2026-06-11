@@ -11,6 +11,8 @@ export default class CraftingMenu {
 
     this.hoveredRecipe = null;
 
+
+
     this.hoverImages = {};
     for (let key in RECIPES) {
       this.hoverImages[key] = new Image();
@@ -32,7 +34,7 @@ export default class CraftingMenu {
     if (!id) return null;
     if (!this.images[id]) {
       let img = new Image();
-      img.src = `/static/images/items/${id}.png`;
+      img.src = `/static/images/items/crafting/${id}.png`;
       img.onerror = () => {};
       this.images[id] = img;
     }
@@ -109,7 +111,7 @@ export default class CraftingMenu {
     }
   }
 
-  render(ctx) {
+  render(ctx, mouse) {
     if (!this.open) return;
 
     let list = this.game.player?.unlockedRecipes || [];
@@ -117,6 +119,8 @@ export default class CraftingMenu {
     let h = INVENTORY_HEIGHT * UI_FACTOR;
 
     if (this.inventory) this.inventory.renderInventory(ctx, this.startX, this.startY + h, 3);
+    if (this.inventory) this.inventory.renderDraggedItem(ctx, mouse.mouseX, mouse.mouseY);
+
     this.safeDraw(ctx, this.menuImg, this.startX, this.startY, w, h);
 
     for (let i = 0; i < list.length; i++) {
@@ -127,8 +131,9 @@ export default class CraftingMenu {
       let x = this.startX;
       let y = this.startY + i * 80;
 
-      this.safeDraw(ctx, this.itemImages[key], x, y, 48 * UI_FACTOR, 96 * UI_FACTOR);
+    //  this.safeDraw(ctx, this.itemImages[key], x, y, 48 * UI_FACTOR, 96 * UI_FACTOR);
       this.safeDraw(ctx, this.getImage(r.output.item), x + 10, y + 10, 48, 48);
+      this.safeDraw(ctx, )
 
       for (let j = 0; j < r.ingredients.length; j++) {
         let ing = r.ingredients[j];
