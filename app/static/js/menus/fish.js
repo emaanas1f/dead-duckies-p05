@@ -49,10 +49,11 @@ export default class Fish {
       console.log(this.currentFish)
       this.difficulty = FISH[this.currentFish]["difficulty"]
       this.behavior = FISH[this.currentFish]["behavior"]
+      console.log(this.difficulty)
     }
 
     getFish(location, time) {
-        console.log("run")
+        // console.log("run")
         let fishPool = [];
         let hour = time / 60 + 6;
         Object.keys(FISH).forEach((fish) => {
@@ -72,7 +73,7 @@ export default class Fish {
         });
 
         let randNum = Math.random() * weightedSum;
-        console.log(randNum);
+        // console.log(randNum);
         for (const fish of fishPool) {
           randNum -= 1 / FISH[fish]["rarity"];
           if (randNum <= 0) {
@@ -116,15 +117,21 @@ export default class Fish {
     updateFish() {
       this.bufferCounter += 1;
       if (this.bufferCounter > this.bufferTime) {
-        this.fishTarget = Math.random() * (this.gameSize - 40) + 20;
+        this.fishTarget = Math.random() ** (80 / this.difficulty) * (this.difficulty / 110) * (this.gameSize - 40) + 20;
         this.bufferCounter = 0;
         this.bufferTime = Math.random() * 150;
       }
-      console.log(.02 * (this.fishTarget - this.fishPos)^2, this.fishVelocity * Math.abs(this.fishVelocity));
+      // console.log(.02 * (this.fishTarget - this.fishPos)^2, this.fishVelocity * Math.abs(this.fishVelocity));
       this.fishAcceleration = .0002 * (this.fishTarget - this.fishPos) * Math.abs(this.fishTarget - this.fishPos) - .04 * this.fishVelocity * Math.abs(this.fishVelocity);
+      this.fishAcceleration *= (this.difficulty / 100) ** 4 + .1;
       this.fishVelocity += this.fishAcceleration;
+
+      if ((this.fishPos >= 120 && this.fishVelocity > 0) || (this.fishPos <= 20 && this.fishVelocity < 0)) {
+        this.fishVelocity *= .8;
+      }
+
       this.fishPos += this.fishVelocity;
-      console.log(this.fishPos, this.fishVelocity, this.fishAcceleration);
+      // console.log(this.fishPos, this.fishVelocity, this.fishAcceleration);
     }
 
     renderMinigame(ctx, scaleFactor) {
@@ -173,10 +180,10 @@ export default class Fish {
 
       // console.log(this.barPos, this.barSize, this.fishPos)
       if (this.fishPos + 10 >= this.barPos && this.fishPos <= this.barPos + this.barSize) {
-        this.meterProgress += .001;
+        this.meterProgress += .002;
       }
       else {
-        this.meterProgress -= .002;
+        this.meterProgress -= .003;
       }
 
       if (this.meterProgress > 0.5) {
