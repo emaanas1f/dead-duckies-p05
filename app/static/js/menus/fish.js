@@ -36,7 +36,7 @@ export default class Fish {
       this.fishPos = 0;
       this.fishVelocity = 0;
       this.fishAcceleration = 0;
-      this.fishTarget = Math.random() * (this.gameSize - 40) + 20;
+      this.fishTarget = -1
       this.bufferCounter = 0;
       this.bufferTime = Math.random() * 150;
 
@@ -116,7 +116,7 @@ export default class Fish {
 
     updateFish() {
       this.bufferCounter += 1;
-      if (this.bufferCounter > this.bufferTime) {
+      if (this.bufferCounter > this.bufferTime || this.fishTarget == -1) {
         this.fishTarget = Math.random() ** (80 / this.difficulty) * (this.difficulty / 110) * (this.gameSize - 40) + 20;
         this.bufferCounter = 0;
         this.bufferTime = Math.random() * 150;
