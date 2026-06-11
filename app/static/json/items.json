@@ -526,29 +526,33 @@
     "category": "tools"
   },
 
-  "training_rod": {
+  "bamboo_pole": {
     "maxStack": 1,
     "level": 1,
     "category": "tools"
   },
-  "bamboo_pole": {
+  "training_rod": {
     "maxStack": 1,
     "level": 2,
+    "buyPrice": 25,
     "category": "tools"
   },
   "fiberglass_rod": {
     "maxStack": 1,
     "level": 3,
+    "buyPrice": 1800,
     "category": "tools"
   },
   "iridium_rod": {
     "maxStack": 1,
     "level": 4,
+    "buyPrice": 7500,
     "category": "tools"
   },
   "advanced_iridium_rod": {
     "maxStack": 1,
     "level": 5,
+    "buyPrice": 25000,
     "category": "tools"
   }
 }

@@ -39,7 +39,7 @@ export const CROPS = await getJson("crops.json");
 export const MINES = await getJson("mines.json");
 export const FISH = await getJson("fish.json");
 
-const addedNpcs = ["pierre", "willy", "sam", "abigail"];
+const addedNpcs = ["pierre", "willy", "sam", "abigail", "penny"];
 export const NPC_INFO = {};
 
 addedNpcs.forEach(async (npc) => {

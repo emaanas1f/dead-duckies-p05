@@ -85,8 +85,8 @@ export default class PlayerMenu {
         break;
       case "crafting":
         this.craftingMenu.open = true;
-        this.craftingMenu.render(overlayCtx);
-       // this.craftingMenu.update(mouse.mouseX, mouse.mouseY); 
+        this.craftingMenu.render(overlayCtx, mouse);
+       // this.craftingMenu.update(mouse.mouseX, mouse.mouseY);
         break;
     }
     this.renderTabs(overlayCtx);
