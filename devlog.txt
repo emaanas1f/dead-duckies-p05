@@ -487,3 +487,7 @@ kiranS -- 2026-06-06 13:15
 
 jamesL -- 2026-06-10 12:15
 - added abigail and sam as dateable npcs
+
+sarahZ -- 2026-06-11 12:32
+- working on cooking
+- got asset for upgraded farmhouse 
