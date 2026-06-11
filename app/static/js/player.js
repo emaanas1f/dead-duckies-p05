@@ -130,7 +130,7 @@ export default class Player {
 
     if (ITEMS[item]["consumable"]) {
       stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
-       //need to add a check to see how many ticks before it's reversed 
+       //need to add a check to see how many ticks before it's reversed
       MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
       this.inventory.removeItem(item, 1);
     }
@@ -157,8 +157,15 @@ export default class Player {
       this.currentShop = this.game.shops["willy"];
     }
 
-    else if (tile && tile.interactable) { // SLEEP
+    else if (tile && tile.interactable && tile.x >= 18 && tile.x <= 19 && tile.y >= 10 && tile.y <= 11) { // SLEEP
+      this.game.clearMenus();
       this.game.startSleep();
+    }
+
+    //edit coords for both sleeping and cooking when new farm map is up
+    else if (tile && tile.interactable) {
+      this.game.clearMenus();
+      this.game.menu = "cooking";
     }
 
     else if (back == "ladder" && entity == null) { // MINE LADDERS
