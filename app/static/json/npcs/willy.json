@@ -25,10 +25,10 @@
         "hate": "... *sniff*... Well I guess I can toss it into the chum bucket."
     },
     "reactions": {
-        "love": ["fish"],
+        "love": ["catfish", "pumpkin", "sturgeon", "sea_cucumber"],
         "like": [],
         "neutral": [],
         "dislike": [],
-        "hate": []
+        "hate": ["horse_radish"]
     }
 }
