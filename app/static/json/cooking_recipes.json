@@ -29,11 +29,10 @@
         "category": "fish",
         "amount": 1
       }
-      },
+    ],
     "output": {
       "item": "sashimi",
       "amount": 1
     }
   }
-
 }

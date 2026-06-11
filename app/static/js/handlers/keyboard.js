@@ -50,7 +50,11 @@ export default class InputHandler {
       } // END SHOP
 
       else if (game.menu == "playerMenu") {
-        game.playerMenu.keyPress(e);
+        if (e.key == "e" || e.key == "E") {
+          game.clearMenus();
+        } else {
+          game.playerMenu.keyPress(e);
+        }
       }
 
       if (e.key == "Escape") {
