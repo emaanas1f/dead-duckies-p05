@@ -73,7 +73,6 @@ function render() {
   let key = currentProperty;
   if (currentProperty == "setwarp") key = "teleporter";
   let def = PROPERTIES[key];
-  console.log(def);
   // for (const [key, def] of Object.entries(PROPERTIES)) {
     ctx.fillStyle = def.color;
     for (let x = 0; x < map.width / TILE_SIZE; x++) {
@@ -173,19 +172,22 @@ propertySelect.addEventListener('change', () => {
 
 mapSelect.addEventListener('change', async () => {
   currentMap = mapSelect.value;
-  try {
-    tiles = await getJson(`maps/${currentMap}.json`);
-  } catch (error) {
-    tiles = await initializeTiles();
-  }
   map = new Image()
-  map.onload = () => {
+  map.src = `/static/images/maps/${currentMap}.png`
+
+  map.onload = async () => {
+    try {
+      tiles = await getJson(`maps/${currentMap}.json`);
+    } catch (error) {
+      console.log("Error");
+      tiles = await initializeTiles();
+    }
+
     canvas.width = map.width;
     canvas.height = map.height;
     ctx.imageSmoothingEnabled = false;
     render();
   };
-  map.src = `/static/images/maps/${currentMap}.png`
 });
 
 canvas.addEventListener('mousedown', e => {
