@@ -12,15 +12,15 @@ export default class MouseHandler {
 
     const canvas = game.overlayCanvas;
 
-  canvas.addEventListener("mousemove", (e) => {
-    const rect = canvas.getBoundingClientRect();
+    canvas.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
 
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
 
-    this.mouseX = (e.clientX - rect.left) * scaleX;
-    this.mouseY = (e.clientY - rect.top) * scaleY;
-  });
+      this.mouseX = (e.clientX - rect.left) * scaleX;
+      this.mouseY = (e.clientY - rect.top) * scaleY;
+    });
 
     canvas.addEventListener("mousedown", (e) => {
       const inv = this.game.player.inventory;

@@ -105,7 +105,7 @@ export default class Player {
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
-    if (item == "furnace") {
+    if (item == "furnace") { // Placing Furnaces
       let placeTile = this.getTile(map);
       if (placeTile &&
           placeTile.layers["middle"] == null &&
@@ -113,11 +113,9 @@ export default class Player {
         map.addBigEntity(placeTile.x, placeTile.y, "furnace");
         this.inventory.removeItem("furnace", 1);
       }
-      return;
     }
 
-    // console.log(`${tile.x}, ${tile.y}`)
-    if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
+    else if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       if (stamina.isEmpty()) return;
       let location = ""
       if (tile.forest_lake) {
@@ -139,7 +137,7 @@ export default class Player {
       stamina.useEnergy(10);
     }
 
-    if (ITEMS[item]["consumable"]) {
+    else if (ITEMS[item]["consumable"]) {
       stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
        //need to add a check to see how many ticks before it's reversed
       MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
@@ -229,6 +227,8 @@ export default class Player {
         if (stamina.isEmpty()) return;
         front.hit();
         stamina.useEnergy(5);
+      } else {
+        front.interact(this, item);
       }
     }
 
