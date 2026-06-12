@@ -1,4 +1,5 @@
 import BigEntity from './big-entity.js';
+import { Furnace } from './big-entity.js';
 import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, MINES, getJson } from '../constants.js'
 import Tile from './tile.js';
 import NPC from '../npc.js';
