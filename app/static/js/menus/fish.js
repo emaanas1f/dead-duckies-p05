@@ -50,10 +50,12 @@ export default class Fish {
       this.difficulty = FISH[this.currentFish]["difficulty"]
       this.behavior = FISH[this.currentFish]["behavior"]
       console.log(this.difficulty)
+      console.log(this.behavior)
     }
 
     getFish(location, time) {
         // console.log("run")
+        console.log(location)
         let fishPool = [];
         let hour = time / 60 + 6;
         Object.keys(FISH).forEach((fish) => {
@@ -120,9 +122,25 @@ export default class Fish {
         this.fishTarget = Math.random() ** (80 / this.difficulty) * (this.difficulty / 110) * (this.gameSize - 40) + 20;
         this.bufferCounter = 0;
         this.bufferTime = Math.random() * 150;
+        if (this.behavior == 4) {
+          this.bufferTime *= .1
+          console.log(this.bufferTime)
+        }
+        if (this.behavior == 1) {
+          this.bufferTime *= 1.5
+        }
       }
       // console.log(.02 * (this.fishTarget - this.fishPos)^2, this.fishVelocity * Math.abs(this.fishVelocity));
       this.fishAcceleration = .0002 * (this.fishTarget - this.fishPos) * Math.abs(this.fishTarget - this.fishPos) - .04 * this.fishVelocity * Math.abs(this.fishVelocity);
+      if ((this.behavior == 2 || this.behavior == 4) && this.fishAcceleration < 0) {
+        this.fishAcceleration *= 4;
+      }
+      if ((this.behavior == 3 || this.behavior == 4) && this.fishAcceleration > 0) {
+        this.fishAcceleration *= 4;
+      }
+      if (this.behavior == 1) {
+        this.fishAcceleration *= .5
+      }
       this.fishAcceleration *= (this.difficulty / 100) ** 4 + .1;
       this.fishVelocity += this.fishAcceleration;
 

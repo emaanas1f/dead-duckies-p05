@@ -121,18 +121,20 @@ export default class Player {
       if (stamina.isEmpty()) return;
       let location = ""
       if (tile.forest_lake) {
-        location = "forest_lake"
+        location = "forest lake"
       }
-      switch (map.name) {
-        case "forest":
-          location = "forest_river"
-          break;
-        case "beach":
-          location = "ocean"
-          break;
-        default:
-          location = "town"
-          break;
+      else {
+        switch (map.name) {
+          case "forest":
+            location = "forest river"
+            break;
+          case "beach":
+            location = "ocean"
+            break;
+          default:
+            location = "town"
+            break;
+        }
       }
       this.game.menu = "fishing";
       this.fish.startFish(location, ITEMS[item]["level"])
