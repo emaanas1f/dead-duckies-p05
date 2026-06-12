@@ -21,6 +21,10 @@ export default class BigEntity {
     this.frame++;
   }
 
+  interact(player, item) {
+    return;
+  }
+
   destroy(map) {
     map.tiles[this.x][this.y].remove("front");
     map.removeBigEntity(this.x, this.y);
@@ -71,5 +75,15 @@ export default class BigEntity {
         this.image.width * SCALE_FACTOR, this.image.height * SCALE_FACTOR)
     }
     ctx.globalAlpha = 1.0;
+  }
+}
+
+export class Furnace extends BigEntity {
+  constructor(x, y, type, map) {
+    super(x, y, type, map);
+    this.heldItem = null;
+  }
+  interact(player, item) {
+    
   }
 }
