@@ -134,11 +134,13 @@ export default class CraftingMenu {
       let r = RECIPES[key];
       if (!r || !r.output) continue;
       let slot = this.getSlot(i);
-      this.safeDraw(ctx, this.getImage(r.output.item), slot.x, slot.y, this.SLOT_W, this.SLOT_H);
+      this.safeDraw(ctx, this.getImage(r.output.item), slot.x + 20, slot.y + 10, this.SLOT_W * 0.8, this.SLOT_H * 0.8);
     }
 
     if (this.hoveredRecipe && this.hoverImages[this.hoveredRecipe]) {
-      this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], this.startX + 20, this.startY, 562 / 1.5, 402 / 1.5);
+      let i = list.indexOf(this.hoveredRecipe);
+      let slot = this.getSlot(i);
+      this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], slot.x + 25, slot.y + 40, 562 / 2.5, 402 / 2.5);
     }
   }
 }

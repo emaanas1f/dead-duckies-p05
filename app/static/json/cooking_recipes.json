@@ -34,5 +34,21 @@
       "item": "sashimi",
       "amount": 1
     }
+  },
+  "smoked_fish": {
+    "ingredients": [
+      {
+        "category": "fish",
+        "amount": 1
+      },
+      {
+        "item": "coal",
+        "amount": 1
+      }
+    ],
+    "output": {
+      "item": "sashimi",
+      "amount": 1
+    }
   }
 }
