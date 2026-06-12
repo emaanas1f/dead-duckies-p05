@@ -140,7 +140,7 @@ export default class CraftingMenu {
     if (this.hoveredRecipe && this.hoverImages[this.hoveredRecipe]) {
       let i = list.indexOf(this.hoveredRecipe);
       let slot = this.getSlot(i);
-      this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], slot.x + 25, slot.y + 40, , );
+      // this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], slot.x + 25, slot.y + 40, , );
     }
   }
 }
