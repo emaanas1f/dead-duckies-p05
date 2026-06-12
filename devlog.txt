@@ -508,3 +508,17 @@ emaanA -- 2026-06-11 11:00
 emaanA -- 2026-06-11 17:50 
 - working on multi-tile entities (furnaces)
 - added hover assets for crafting
+
+jamesL -- 2026-06-12 11:00
+- fixed issues with big entity
+- debugging map editor
+
+sarahZ -- 2026-06-12 11:00
+- working on bugs in crafting
+- working on crafting
+
+kiranS -- 2026-06-12 11:00
+- visual fixes for fishing
+
+emaanA -- 2026-06-12 11:00
+- working on crafting / big entity

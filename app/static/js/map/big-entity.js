@@ -83,7 +83,8 @@ export class Furnace extends BigEntity {
     super(x, y, type, map);
     this.heldItem = null;
   }
+
   interact(player, item) {
-    
+    return;
   }
 }
