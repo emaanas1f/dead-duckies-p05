@@ -1,5 +1,5 @@
 import { FISH, CANVAS_WIDTH, CANVAS_HEIGHT, ITEMS } from '../constants.js'
-
+import { getItemTitle } from '../ui/text.js' 
 export default class Fish {
     constructor(game, inventory) {
         this.game = game;
@@ -43,12 +43,15 @@ export default class Fish {
       this.barPos = 0;
       this.barVelocity = 0;
       this.barAcceleration = 0;
-      this.barSize = 14 + 10 * level
+      this.barSize = 14 + 10 * level;
 
-      this.currentFish = this.getFish(location, this.game.time.currTime)
+      this.currentFish = this.getFish(location, this.game.time.currTime);
       console.log(this.currentFish)
-      this.difficulty = FISH[this.currentFish]["difficulty"]
-      this.behavior = FISH[this.currentFish]["behavior"]
+      this.difficulty = FISH[this.currentFish]["difficulty"];
+      this.behavior = FISH[this.currentFish]["behavior"];
+      this.fishSize = Math.round(FISH[this.currentFish]["sizeRange"][0] + Math.random() * (FISH[this.currentFish]["sizeRange"][1] - FISH[this.currentFish]["sizeRange"][0]));
+      this.fishSprite = new Image();
+      this.fishSprite.src = `/static/images/items/fish/${this.currentFish}.png`;
       console.log(this.difficulty)
       console.log(this.behavior)
     }
@@ -93,7 +96,7 @@ export default class Fish {
         this.barAcceleration = -.06;
       }
       else {
-        this.barAcceleration = 0
+        this.barAcceleration = 0;
       }
 
       this.barVelocity += this.barAcceleration;
@@ -106,12 +109,12 @@ export default class Fish {
 
       // stops at top
       if (this.barPos + this.barSize >= this.gameSize) {
-        this.barVelocity = 0;
-        this.barPos = this.gameSize - this.barSize
+        this.barVelocity = 0;;
+        this.barPos = this.gameSize - this.barSize;
       }
 
       if (this.barPos <= 0.1) {
-        this.barPos = 0
+        this.barPos = 0;
       }
       // console.log(this.barPos, this.barVelocity, this.barAcceleration);
     }
@@ -123,11 +126,11 @@ export default class Fish {
         this.bufferCounter = 0;
         this.bufferTime = Math.random() * 150;
         if (this.behavior == 4) {
-          this.bufferTime *= .1
+          this.bufferTime *= .1;
           console.log(this.bufferTime)
         }
         if (this.behavior == 1) {
-          this.bufferTime *= 1.5
+          this.bufferTime *= 1.5;
         }
       }
       // console.log(.02 * (this.fishTarget - this.fishPos)^2, this.fishVelocity * Math.abs(this.fishVelocity));
@@ -139,7 +142,7 @@ export default class Fish {
         this.fishAcceleration *= 4;
       }
       if (this.behavior == 1) {
-        this.fishAcceleration *= .5
+        this.fishAcceleration *= .5;
       }
       this.fishAcceleration *= (this.difficulty / 100) ** 4 + .1;
       this.fishVelocity += this.fishAcceleration;
@@ -216,19 +219,45 @@ export default class Fish {
       ctx.fillRect(xMeter + 32 * scaleFactor, yMeter + 146 * scaleFactor - meterHeight * scaleFactor, 4 * scaleFactor, meterHeight * scaleFactor);
 
       if (this.meterProgress >= 1) {
-        this.renderResult(ctx, scaleFactor);
-        this.inventory.addItem(this.currentFish, 1)
-        console.log("true 1")
-        return true;
+        // this.renderResult(ctx, scaleFactor);
+        this.inventory.addItem(this.currentFish, 1);
+        this.game.clearMenus();
+        this.game.menu = "fishingResult";
       }
       if (this.meterProgress < 0) {
-        console.log("true 2")
+        console.log("true 2");
         return true;
       }
       return false;
     }
 
     renderResult(ctx, scaleFactor) {
+      let xStart = CANVAS_WIDTH / 2 - (73 / 2) * scaleFactor;
+      let yStart = CANVAS_HEIGHT / 2 - (45 / 2) * scaleFactor;
+      ctx.drawImage(this.result,
+        xStart, yStart,
+        73 * scaleFactor, 45 * scaleFactor
+      );
+      ctx.drawImage(this.fishSprite,
+        xStart + 10 * scaleFactor, yStart + 18 * scaleFactor,
+        16 * scaleFactor, 16 * scaleFactor
+      );
 
+      const fontSize = 8 * scaleFactor;
+      ctx.textAlign = "center";
+      ctx.letterSpacing = "1px";
+      ctx.font = `${fontSize}px thin`;
+      ctx.fillStyle = "black";
+      ctx.fillText(getItemTitle(this.currentFish),
+        xStart + 36 * scaleFactor, yStart + 9 * scaleFactor
+      );
+
+      ctx.textAlign = "left";
+      ctx.fillText("Length:",
+        xStart + 36 * scaleFactor, yStart + 24 * scaleFactor
+      );
+      ctx.fillText(String(this.fishSize) + " in.",
+        xStart + 44 * scaleFactor, yStart + 32 * scaleFactor
+      )
     }
 }

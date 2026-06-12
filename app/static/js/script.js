@@ -213,8 +213,11 @@ class StardewValley {
         this.player.fish.updateBar();
         this.player.fish.updateFish();
         if (this.player.fish.renderMinigame(this.overlayCtx, 3)) {
-          this.clearMenus()
+          this.clearMenus();
         }
+        break;
+      case "fishingResult":
+        this.player.fish.renderResult(this.overlayCtx, 4);
         break;
     }
 

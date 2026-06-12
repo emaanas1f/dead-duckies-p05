@@ -522,3 +522,14 @@ kiranS -- 2026-06-12 11:00
 
 emaanA -- 2026-06-12 11:00
 - working on crafting / big entity
+
+kiranS -- 2026-06-12 17:45
+- finish difficulty scaling and behavior types for fish minigame
+  - difficulty affects possible range on meter of fish targets, and weights further locations higher the larger the difficulty is
+  - acceleration also increases as difficulty goes up
+  - 5 behavior types: normal, smooth, sinker, floater, dart 
+    - smooth has longer cooldown between targets and less acceleration
+    - sinker has higher downwards acceleration
+    - floater has higher upwards acceleration
+    - dart has higher acceleration and shorter cooldown 
+- added fishing result screen showing name and sprite of fish caught along w/ size
