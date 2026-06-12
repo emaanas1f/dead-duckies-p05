@@ -1,4 +1,5 @@
 import BigEntity from './big-entity.js';
+import { Furnace } from './big-entity.js';
 import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, MINES, getJson } from '../constants.js'
 import Tile from './tile.js';
 import NPC from '../npc.js';
@@ -46,7 +47,12 @@ export default class Map {
   addBigEntity(x, y, type) {
     if (this.tiles[x][y].layers["front"] != null) return;
 
-    let bigEnt = new BigEntity(x, y, type, this);
+    let bigEnt;
+    if (type == "furnace") {
+      bigEnt = new Furnace(x, y, type, this);
+    } else {
+      bigEnt = new BigEntity(x, y, type, this);
+    }
     this.bigEntities.push(bigEnt);
     this.bigEntities.sort((a, b) => a.y - b.y);
   }

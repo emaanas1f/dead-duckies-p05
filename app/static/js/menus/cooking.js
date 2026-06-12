@@ -1,6 +1,6 @@
-import { RECIPES, ITEMS, TILE_SIZE, UI_FACTOR, INVENTORY_WIDTH, INVENTORY_HEIGHT, CANVAS_WIDTH } from "../constants.js";
+import { COOKING_RECIPES, ITEMS, TILE_SIZE, UI_FACTOR, INVENTORY_WIDTH, INVENTORY_HEIGHT, CANVAS_WIDTH } from "../constants.js";
 
-export default class CraftingMenu {
+export default class CookingMenu {
   constructor(game, inventory) {
     this.game = game;
     this.inventory = inventory;
