@@ -21,8 +21,7 @@ export default class MouseHandler {
       this.mouseX = (e.clientX - rect.left) * scaleX;
       this.mouseY = (e.clientY - rect.top) * scaleY;
 
-      if (this.game.menu == "playerMenu" &&
-          this.game.playerMenu.currTab == "crafting") {
+      if (this.game.menu == "playerMenu" && this.game.playerMenu.currTab == "crafting") {
         this.game.playerMenu.craftingMenu.update(
           this.mouseX,
           this.mouseY

@@ -20,14 +20,35 @@
     "passable": false
   },
   "furnace": {
-    "width": 2,
-    "height": 3,
     "x": 0,
-    "y": 2,
-    "destructionTime": 1,
+    "y": 0,
+    "destructionTime": 50,
     "tools": ["pickaxe"],
     "drops": {
       "furnace": 1
+    },
+    "processing": {
+      "copper_ore": {
+        "input": "copper_ore",
+        "inputAmount": 5,
+        "output": "copper_bar",
+        "outputAmount": 1,
+        "days": 1
+      },
+      "iron_ore": {
+        "input": "iron_ore",
+        "inputAmount": 5,
+        "output": "iron_bar",
+        "outputAmount": 1,
+        "days": 2
+      },
+      "gold_ore": {
+        "input": "gold_ore",
+        "inputAmount": 5,
+        "output": "gold_bar",
+        "outputAmount": 1,
+        "days": 3
+      }
     }
   }
 }

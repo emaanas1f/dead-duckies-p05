@@ -65,6 +65,16 @@ export default class Time {
     else {
       game.stamina.restoreEnergy(game.stamina.max * 0.5);
     }
+    
+    for (const map of Object.values(game.maps)) {
+      if (!map.bigEntities) continue;
+
+      for (const entity of map.bigEntities) {
+        if (entity && entity.nextDay) {
+          entity.nextDay();
+        }
+      }
+    }
   }
 
   // Overlay on top of upper right of canvas (Only update when time changes)

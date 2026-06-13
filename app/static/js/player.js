@@ -174,7 +174,7 @@ export default class Player {
     }
 
     //edit coords for both sleeping and cooking when new farm map is up
-    else if (tile && tile.interactable) {
+   else if (tile && tile.interactable) {
       this.game.clearMenus();
       this.game.menu = "cooking";
     }
