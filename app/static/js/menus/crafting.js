@@ -79,9 +79,22 @@ export default class CraftingMenu {
   }
 
   craft(recipe) {
+    let list = this.game.player?.unlockedRecipes || [];
+
     if (!recipe || !this.hasItems(recipe.ingredients)) return;
     this.removeItems(recipe.ingredients);
     this.inventory.addItem(recipe.output.item, recipe.output.amount);
+    for (let i = 0; i < list.length; i++) {
+      let key = list[i];
+      let r = RECIPES[key];
+      if (!r || !r.output) continue;
+      let slot = this.getSlot(i);
+
+      if (!this.game.player.craftedRecipes.includes(key)) {
+        this.game.player.craftedRecipes.push(key);
+      }
+      return;
+    }
   }
 
   getSlot(i) {
@@ -136,11 +149,13 @@ export default class CraftingMenu {
       if (!r || !r.output) continue;
       let slot = this.getSlot(i);
 
-      let canCraft = this.hasItems(r.ingredients);
+      let crafted = this.game.player.craftedRecipes.includes(key);
+      //console.log("craftedRecipes:", this.game.player.craftedRecipes);
       ctx.save();
 
-      if (!canCraft) {
-        ctx.globalAlpha = 0.35;
+      if (!crafted) {
+        ctx.filter = "grayscale(100%)";
+        ctx.globalAlpha = 0.5;
       }
 
       this.safeDraw(ctx, this.getImage(r.output.item), slot.x + 20, slot.y + 10, this.SLOT_W * 0.8, this.SLOT_H * 0.8);

@@ -82,7 +82,7 @@ export default class Map {
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(this.image, this.x, this.y,
       X_RES * TILE_SIZE, Y_RES * TILE_SIZE, 0, 0,
-      CANVAS_WIDTH, CANVAS_HEIGHT);
+      CANVAS_WIDTH, CANVAS_HEIGHT)
     let leftBound = Math.trunc(this.x / TILE_SIZE);
     let rightBound = Math.ceil((this.x + CANVAS_WIDTH / SCALE_FACTOR) / TILE_SIZE);
     let topBound = Math.trunc(this.y / TILE_SIZE);

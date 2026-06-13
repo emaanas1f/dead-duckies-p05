@@ -45,6 +45,7 @@ export default class Player {
     this.quantity = 1;
 
     this.unlockedRecipes = ["furnace", "chest", "preserved_jar"];
+    this.craftedRecipes = [];
 
     this.tooltip = new Tooltip(game, this);
   }
