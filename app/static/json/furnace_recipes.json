@@ -1,0 +1,43 @@
+{
+  "copper_ore": {
+    "ingredients": [
+      {
+        "item": "copper_ore",
+        "amount": 5
+      }
+    ],
+    "days": 1,
+    "output": {
+      "item": "copper_bar",
+      "amount": 1
+    }
+  },
+
+  "iron_ore": {
+    "ingredients": [
+      {
+        "item": "iron_ore",
+        "amount": 5
+      }
+    ],
+    "days": 2,
+    "output": {
+      "item": "iron_bar",
+      "amount": 1
+    }
+  },
+
+  "gold_ore": {
+    "ingredients": [
+      {
+        "item": "gold_ore",
+        "amount": 5
+      }
+    ],
+    "days": 3,
+    "output": {
+      "item": "gold_bar",
+      "amount": 1
+    }
+  }
+}

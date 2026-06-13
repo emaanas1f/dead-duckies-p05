@@ -34,6 +34,7 @@ export const TIME_CONVERSION = 120; // HIGHER = Slower Time
 export const ITEMS = await getJson("items.json");
 export const RECIPES = await getJson("recipes.json");
 export const COOKING_RECIPES = await getJson("cooking_recipes.json");
+//export const FURNACE_RECIPES = await getJson("furnace_recipes.json"); 
 export const ENTITIES = await getJson("entities.json");
 export const CROPS = await getJson("crops.json");
 export const MINES = await getJson("mines.json");

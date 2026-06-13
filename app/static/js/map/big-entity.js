@@ -1,5 +1,5 @@
 // Multi-tile objects; e.g. trees
-import { BIG_ENTITIES, TILE_SIZE, getTileImage, SCALE_FACTOR, FRAME_RATE } from "../constants.js";
+import { BIG_ENTITIES, TILE_SIZE, getTileImage, SCALE_FACTOR, FRAME_RATE, /*FURNACE_RECIPES*/ } from "../constants.js";
 
 export default class BigEntity {
   constructor(x, y, type, map) {
@@ -11,6 +11,7 @@ export default class BigEntity {
     this.image_y = BIG_ENTITIES[type]["y"];
     this.durability = BIG_ENTITIES[type]["destructionTime"];
     this.frame = 0;
+    this.data = BIG_ENTITIES[type]; 
 
     let tile = map.tiles[this.x][this.y];
     tile.add(this, "front");
@@ -81,10 +82,55 @@ export default class BigEntity {
 export class Furnace extends BigEntity {
   constructor(x, y, type, map) {
     super(x, y, type, map);
-    this.heldItem = null;
+
+    this.processing = false;
+    this.daysRemaining = 0;
+
+    this.outputItem = null;
+    this.outputAmount = 0;
+
   }
 
   interact(player, item) {
-    return;
+    if (!this.processing) { 
+      let recipe = this.data.processing[item];
+
+      if (!recipe) return;
+
+      if (player.inventory.countItem(item) < recipe.inputAmount) return;
+
+      player.inventory.removeItem(item, recipe.inputAmount);
+
+      this.processing = true;
+      this.daysRemaining = recipe.days;
+
+      this.outputItem = recipe.output;
+      this.outputAmount = recipe.outputAmount;
+
+      return;
+    }
+
+    /*if (this.processing && this.daysRemaining <= 0) {
+      player.inventory.addItem(this.outputItem, this.outputAmount);
+
+      this.processing = false;
+      this.daysRemaining = 0;
+      this.outputItem = null;
+      this.outputAmount = 0;
+    }*/
+  }
+
+  nextDay() {
+    if (!this.processing) return;
+
+    this.daysRemaining--;
+
+    if (this.daysRemaining <= 0) {
+      player.inventory.addItem(this.outputItem, this.outputAmount);
+
+      this.processing = false;
+      this.outputItem = null;
+      this.outputAmount = 0;
+    }
   }
 }

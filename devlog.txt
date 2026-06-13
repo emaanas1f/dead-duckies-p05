@@ -533,3 +533,7 @@ kiranS -- 2026-06-12 17:45
     - floater has higher upwards acceleration
     - dart has higher acceleration and shorter cooldown 
 - added fishing result screen showing name and sprite of fish caught along w/ size
+
+emaanA -- 2026-06-13 1:30 
+- added furnace class
+- working on crafting
