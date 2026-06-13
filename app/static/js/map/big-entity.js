@@ -58,7 +58,7 @@ export default class BigEntity {
                     -(this.image_y * TILE_SIZE + TILE_SIZE / 2) * SCALE_FACTOR);
 
       ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height,
-        0, 0, TILE_SIZE * SCALE_FACTOR, TILE_SIZE * SCALE_FACTOR);
+        0, 0, this.image.width * SCALE_FACTOR, this.image.height * SCALE_FACTOR);
       ctx.restore();
 
       this.frame++;
