@@ -222,6 +222,7 @@ class StardewValley {
     }
 
     this.player.inventory.renderHotbar(this.hotbarCtx);
+    this.player.tooltip.render(this.overlayCtx, 3);
     this.player.move(this.input.keys, this.map, this.stamina);
     this.checkTeleport();
 

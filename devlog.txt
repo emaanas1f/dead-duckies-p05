@@ -537,3 +537,7 @@ kiranS -- 2026-06-12 17:45
 emaanA -- 2026-06-13 1:30 
 - added furnace class
 - working on crafting
+
+kiranS -- 2026-06-13 17:50
+- json for item descriptions
+- added item hover tooltips displaying name and description (no crafting/food tooltips yet)

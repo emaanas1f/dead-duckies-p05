@@ -9,6 +9,7 @@ import Gold from "./ui/gold.js"
 import Map from "./map/map.js";
 import { initializeMine } from "./map/map.js";
 import Fish from "./menus/fish.js"
+import Tooltip from './ui/tooltip.js';
 
 // Correspond with rows in player.png
 const DOWN = 0;
@@ -44,6 +45,8 @@ export default class Player {
     this.quantity = 1;
 
     this.unlockedRecipes = ["furnace", "chest", "preserved_jar"];
+
+    this.tooltip = new Tooltip(game, this);
   }
 
   move(keys, map, stamina) {

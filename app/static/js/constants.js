@@ -1,3 +1,5 @@
+import { getItemTitle } from "./ui/text.js";
+
 export async function getJson(file_name) {
   let raw = await fetch(`/static/json/${file_name}`, {
     cache: 'no-store'
@@ -39,6 +41,14 @@ export const ENTITIES = await getJson("entities.json");
 export const CROPS = await getJson("crops.json");
 export const MINES = await getJson("mines.json");
 export const FISH = await getJson("fish.json");
+export const DESCRIPTIONS = await getJson("descriptions.json");
+
+// indicates that the item has no description
+Object.keys(ITEMS).forEach(item => {
+  if (!Object.keys(DESCRIPTIONS).includes(getItemTitle(item).replaceAll(" ", "") + "_Description")) {
+    console.log(item);
+  }
+});
 
 const addedNpcs = ["pierre", "willy", "sam", "abigail", "penny"];
 export const NPC_INFO = {};

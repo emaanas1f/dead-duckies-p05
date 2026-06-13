@@ -19,6 +19,22 @@ export function renderWrappedText(ctx, text, xStart, yStart, width, lineHeight) 
   });
 }
 
+export function getNumLines(ctx, text, width) {
+  let words = text.split(" ");
+  let currentLine = "";
+  let counter = 0;
+  words.forEach((word, index) => {
+    if (ctx.measureText((currentLine + " " + word).trim()).width > width) {
+      counter++;
+      currentLine = word;
+    }
+    else {
+      currentLine += " " + word;
+    }
+  });
+  return counter + 1;
+}
+
 export function getItemTitle(item) {
   let title = "";
   item.split("_").forEach(word => {
