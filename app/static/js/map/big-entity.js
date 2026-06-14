@@ -91,12 +91,12 @@ export class Furnace extends BigEntity {
 
   }
 
-  renderFurnace(ctx, map, player) {
+  render(ctx, map, player) {
     const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
     const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
 
     const w = TILE_SIZE * SCALE_FACTOR;
-    const h = TILE_SIZE * SCALE_FACTOR; 
+    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
 
     ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
   }

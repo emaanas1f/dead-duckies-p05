@@ -217,10 +217,6 @@ export class Inventory {
   }
 
   renderInventory(overlayCtx, startX, startY, overlayScale) {
-    // if (!this.open) {
-    //   return;
-    // }
-
     this.inventoryX = startX;
     this.inventoryY = startY;
 

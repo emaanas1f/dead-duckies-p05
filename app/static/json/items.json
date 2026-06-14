@@ -557,6 +557,7 @@
   },
   "furnace": {
   "name": "Furnace",
+  "icon": "furnace_hotbar",
   "category": "crafting",
   "maxStack": 1
 }

@@ -158,7 +158,16 @@ export default class CraftingMenu {
         ctx.globalAlpha = 0.5;
       }
 
-      this.safeDraw(ctx, this.getImage(r.output.item), slot.x + 20, slot.y + 10, this.SLOT_W * 0.8, this.SLOT_H * 0.8);
+      let itemID = r.output.item;
+      let img = this.getImage(itemID);
+
+      if (itemID === "furnace") {
+        img = this.getImage("furnace");
+        
+      }
+
+      this.safeDraw(ctx, img, slot.x + 20, slot.y + 10, this.SLOT_W * 0.8, this.SLOT_H * 0.8);
+
       ctx.restore();
     }
 

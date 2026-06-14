@@ -16,11 +16,11 @@
     "ingredients": [
       {
         "item": "stone",
-        "amount": 25
+        "amount": 0
       },
       {
         "item": "copper",
-        "amount": 20
+        "amount": 0
       }
     ],
     "output": {
