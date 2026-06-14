@@ -544,3 +544,6 @@ kiranS -- 2026-06-13 17:50
 
 emaanA -- 2026-06-14 00:26 
 - crafting working 
+
+kiranS -- 2026-06-14 01:40
+- crafting hover tooltips, also displaying recipe
