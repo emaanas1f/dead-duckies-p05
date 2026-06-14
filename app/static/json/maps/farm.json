@@ -33546,8 +33546,8 @@
       "teleporter": true,
       "destination": {
         "map": "farmhouse",
-        "x": 12,
-        "y": 11
+        "x": 9,
+        "y": 10
       },
       "water": false,
       "forest_lake": false

@@ -172,7 +172,7 @@ export default class Player {
       this.currentShop = this.game.shops["willy"];
     }
 
-    else if (tile && tile.interactable && tile.x >= 18 && tile.x <= 19 && tile.y >= 10 && tile.y <= 11) { // SLEEP
+    else if (map.name == "farmhouse" && tile.x >= 27 && tile.x <= 28 && tile.y >= 9 && tile.y <= 10) { // SLEEP
       this.game.clearMenus();
       this.game.startSleep();
     }

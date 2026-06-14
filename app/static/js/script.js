@@ -240,8 +240,8 @@ class StardewValley {
 
     const teleportToFarmhouse = () => {
       this.map = this.maps["farmhouse"];
-      this.player.x = 17 * TILE_SIZE;
-      this.player.y = 10 * TILE_SIZE;
+      this.player.x = 26 * TILE_SIZE;
+      this.player.y = 9 * TILE_SIZE;
     };
 
     if (!Object.hasOwn(this.maps, 'farmhouse')) {
