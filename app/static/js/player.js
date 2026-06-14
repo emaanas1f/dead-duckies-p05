@@ -177,10 +177,10 @@ export default class Player {
       this.game.startSleep();
     }
 
-    //edit coords for both sleeping and cooking when new farm map is up
-    else if (tile && tile.interactable) {
+    else if (map.name == "farmhouse" && tile.x >= 2 && tile.x <= 6 && tile.y >= 5 && tile.y <= 6) { //COOKING
       this.game.clearMenus();
       this.game.menu = "cooking";
+      this.game.cookingMenu.open = false;
     }
 
     else if (back == "ladder" && entity == null) { // MINE LADDERS

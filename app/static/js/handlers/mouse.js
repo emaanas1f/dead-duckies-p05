@@ -46,6 +46,10 @@ export default class MouseHandler {
           e.ctrlKey, e.shiftKey);
       }
 
+      if (this.game.menu == "cooking" && !this.isDown) {
+        this.game.cookingMenu.click(this.mouseX, this.mouseY);
+      }
+
       if (this.game.menu == null && !this.isDown) {
         this.game.player.interact(this.game.map, this.game.stamina)
       }
