@@ -52,5 +52,7 @@ $ pip install -r requirements.txt
 In terminal, access directory where project is stored and run the command:
 
 ```
-$ 
+$ cd dead-duckies-p05
+$ cd app 
+$ python3 __init__.py
 ```
