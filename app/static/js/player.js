@@ -109,39 +109,20 @@ export default class Player {
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
-    if (item == "furnace") { // Placing Furnaces
+    // PLACING ITEMS
+    if (item != null && ITEMS[item]["placeable"] && map.name == "farm") {
       let placeTile = this.getTile(map);
       if (placeTile &&
           placeTile.layers["middle"] == null &&
           placeTile.layers["front"] == null) {
-        map.addBigEntity(placeTile.x, placeTile.y, "furnace");
-        this.inventory.removeItem("furnace", 1);
-      }
-    }
-
-    if (item == "chest") {
-      console.log("placing chest"); 
-      let placeTile = this.getTile(map);
-      if (placeTile &&
-          placeTile.layers["middle"] == null &&
-          placeTile.layers["front"] == null) {
-        map.addBigEntity(placeTile.x, placeTile.y, "chest");
-        this.inventory.removeItem("chest", 1);
-      }
-    }
-
-    if (item == "preserved_jar") { 
-      console.log("placing preserved jar");
-      let placeTile = this.getTile(map);
-      if (placeTile &&
-          placeTile.layers["middle"] == null &&
-          placeTile.layers["front"] == null) {
-        map.addBigEntity(placeTile.x, placeTile.y, "preserved_jar");
-        this.inventory.removeItem("preserved_jar", 1);
+        map.addBigEntity(placeTile.x, placeTile.y, item);
+        this.inventory.removeItem(item, 1);
       }
     }
     
-    else if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
+    // FISHING
+    else if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item)
+              && tile.water) {
       if (stamina.isEmpty()) return;
       let location = ""
       if (tile.forest_lake) {
@@ -165,9 +146,9 @@ export default class Player {
       stamina.useEnergy(10);
     }
 
-    else if (ITEMS[item]["consumable"]) {
+    else if (item != null && ITEMS[item]["consumable"]) {
       stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
-       //need to add a check to see how many ticks before it's reversed
+      // need to add a check to see how many ticks before it's reversed
       MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
       this.inventory.removeItem(item, 1);
     }

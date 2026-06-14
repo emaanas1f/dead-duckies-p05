@@ -29,6 +29,7 @@ export default class PlayerMenu {
   close() {
     this.inventoryMenu.open = false;
     this.craftingMenu.open = false;
+    this.craftingMenu.hoveredRecipe = null;
   }
 
   // In terms of canvas coordinates

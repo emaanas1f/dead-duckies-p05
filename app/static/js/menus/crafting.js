@@ -149,7 +149,7 @@ export default class CraftingMenu {
       //console.log("craftedRecipes:", this.game.player.craftedRecipes);
       ctx.save();
 
-      if (!crafted) {
+      if (!this.hasItems(r.ingredients)) {
         ctx.filter = "grayscale(100%)";
         ctx.globalAlpha = 0.5;
       }

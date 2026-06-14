@@ -91,16 +91,6 @@ export class Furnace extends BigEntity {
 
   }
 
-  render(ctx, map, player) {
-    const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
-    const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
-
-    const w = TILE_SIZE * SCALE_FACTOR;
-    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
-
-    ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
-  }
-
   interact(player, item) {
     if (!this.processing) { 
       let recipe = this.data.processing[item];
@@ -151,16 +141,6 @@ export class Chest extends BigEntity {
 
     this.inventory = [];
     this.size = 24;
-  }
-
-  render(ctx, map, player) {
-    const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
-    const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
-
-    const w = TILE_SIZE * SCALE_FACTOR;
-    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
-
-    ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
   }
 
   interact(player, item) {
@@ -222,16 +202,6 @@ export class PreservedJar extends BigEntity {
     this.inputItem = null;
     this.outputItem = null;
     this.outputAmount = 0;
-  }
-
-  render(ctx, map, player) {
-    const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
-    const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
-
-    const w = TILE_SIZE * SCALE_FACTOR;
-    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
-
-    ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
   }
 
   interact(player, item) {

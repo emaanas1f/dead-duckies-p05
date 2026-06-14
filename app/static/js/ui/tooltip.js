@@ -36,7 +36,8 @@ export default class Tooltip {
             }
             return true;
         }
-        else if (this.game.menu == "playerMenu" && (this.game.playerMenu.currTab == "inventory" || this.game.playerMenu.currTab == "crafting")) {
+        else if (this.game.menu == "playerMenu" &&
+            (this.game.playerMenu.currTab == "inventory" || this.game.playerMenu.currTab == "crafting")) {
             let slot = this.inventory.getSlotAtPosition(this.game.mouse.mouseX, this.game.mouse.mouseY, 12, 3, 3);
             if (slot == null) {
                 return false;
@@ -70,9 +71,9 @@ export default class Tooltip {
             this.components["recipe"].forEach(ingredient => {
                 let category = ITEMS[ingredient["item"]]["category"]
                 let sprite = new Image();
-                console.log(category, ingredient["item"])
+                // console.log(category, ingredient["item"])
                 sprite.src = `/static/images/items/${category}/${ingredient["item"]}.png`
-                console.log(sprite)
+                // console.log(sprite)
                 this.spriteArray.push(sprite)
             });
         }

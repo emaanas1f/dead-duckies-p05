@@ -143,8 +143,6 @@ export default class Map {
       "beach_forageables/oyster"
     ];
 
-
-    console.log(name)
     for (let x = 0; x < this.tiles.length; x++) {
       for (let y = 0; y < this.tiles[x].length; y++) {
         let middleLayer = this.tiles[x][y].layers["middle"]

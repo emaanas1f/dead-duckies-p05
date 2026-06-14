@@ -555,23 +555,25 @@
     "buyPrice": 25000,
     "category": "tools"
   },
+
   "furnace": {
     "name": "Furnace",
     "icon": "furnace_hotbar",
     "category": "crafting",
+    "placeable" : true,
     "maxStack": 1
   },
   "chest": {
     "name": "chest",
     "category": "crafting",
     "maxStack": 1,
-    "placable" : true
+    "placeable" : true
   },
   "preserved_jar": {
     "name": "preserved_jar",
     "category": "crafting",
     "maxStack": 1,
-    "placable" : true,
+    "placeable" : true,
     "consumable": false
   }
 }
