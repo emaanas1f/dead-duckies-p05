@@ -34,7 +34,7 @@ export default class Time {
 
     if (this.currDay % 7 == 0) {
       if (game.maps["forest"]) {
-        game.maps["forest"].respawnForageables();
+        game.maps["forest"].respawnForageables('forest');
       }
     }
 
@@ -55,9 +55,9 @@ export default class Time {
     if (game.stamina.isEmpty()) {  
       game.stamina.restoreEnergy(game.stamina.max * 0.5);  
     }
-    else {                           
+    else {             
       if (this.currTime < 1080) {
-        game.stamina.restoreFull();  
+        game.stamina.restoreFull();
       } else {
         let timePastMidnight = Math.max(1, (this.currTime - 1080) / (1200 - 1080));
         let restorePercent = 1 - timePastMidnight * 0.8;

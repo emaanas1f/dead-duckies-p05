@@ -30,6 +30,7 @@ export default class Tooltip {
     }
 
     checkTriggers(ctx) {
+        this.components = {}
         if (this.game.playerMenu.craftingMenu.hoveredRecipe != null) {
             this.title = getItemTitle(this.game.playerMenu.craftingMenu.hoveredRecipe);
             this.description = DESCRIPTIONS[this.title.replaceAll(" ", "") + "_Description"];
@@ -49,7 +50,6 @@ export default class Tooltip {
             if (item == null || item["itemID"] == null) {
                 return false;
             }
-            this.components = {}
             if (this.title != getItemTitle(item["itemID"])) {
                 this.boxMade = false;
             }

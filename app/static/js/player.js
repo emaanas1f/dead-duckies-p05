@@ -214,7 +214,7 @@ export default class Player {
       if (item == "pickaxe") {
         if (stamina.isEmpty()) return;
         entity.remove();
-        stamina.useEnergy(5);
+        stamina.useEnergy(2);
       }
       if (entity.type != null) {
         entity.harvest(this.inventory);
