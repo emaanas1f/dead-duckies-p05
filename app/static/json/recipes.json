@@ -19,7 +19,7 @@
         "amount": 25
       },
       {
-        "item": "copper",
+        "item": "copper_ore",
         "amount": 20
       }
     ],
@@ -29,7 +29,7 @@
     }
   },
 
-  "preserved_jar": {
+  "preserves_jar": {
     "ingredients": [
       {
         "item": "wood",
@@ -45,7 +45,7 @@
       }
     ],
     "output": {
-      "item": "preserved_jar",
+      "item": "preserves_jar",
       "amount": 1
     }
   }
