@@ -221,8 +221,8 @@ class StardewValley {
           if (this.sleepAlpha <= 0) {
             this.sleepState = null;
             this.menu = null;
-            this.time.currTime = 0;
             this.time.nextDay(this);
+            this.time.currTime = 0;
             this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
           }
         }
