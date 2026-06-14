@@ -224,7 +224,6 @@ export class Chest extends BigEntity {
   }
 }
 
-
 export class PreservedJar extends BigEntity {
   constructor(x, y, type, map) {
     super(x, y, type, map);
@@ -232,7 +231,6 @@ export class PreservedJar extends BigEntity {
     this.processing = false;
     this.daysRemaining = 0;
 
-    this.inputItem = null;
     this.outputItem = null;
     this.outputAmount = 0;
   }
@@ -249,24 +247,27 @@ export class PreservedJar extends BigEntity {
       this.processing = true;
       this.daysRemaining = recipe.days;
 
-      this.inputItem = item;
       this.outputItem = recipe.output;
       this.outputAmount = recipe.outputAmount;
+
+      return;
     }
-  }
 
-  nextDay(player) {
-    if (!this.processing) return;
-
-    this.daysRemaining--;
-
-    if (this.daysRemaining <= 0) {
+    else if (this.daysRemaining <= 0) {
       player.inventory.addItem(this.outputItem, this.outputAmount);
 
       this.processing = false;
-      this.inputItem = null;
+      this.daysRemaining = 0;
       this.outputItem = null;
       this.outputAmount = 0;
+    }
+  }
+
+  nextDay() {
+    if (!this.processing) return;
+    this.daysRemaining--;
+    if (this.daysRemaining <= 0) {
+      this.daysRemaining = 0;
     }
   }
 }
