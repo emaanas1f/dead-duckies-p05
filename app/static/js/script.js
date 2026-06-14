@@ -72,6 +72,7 @@ class StardewValley {
     this.player.inventory.addItem("copper_ore", 50);
     this.player.inventory.addItem("wood", 50);
     this.player.inventory.addItem("coal", 50);
+    this.player.inventory.addItem("eggplant", 3);
 
     this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
@@ -258,8 +259,8 @@ class StardewValley {
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         let chest = this.player.openChest;
         if (chest) {
-          this.player.inventory.renderChest(this.overlayCtx, chest, TILE_SIZE * UI_FACTOR * 2 + 64  , (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
-          this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64 , ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
+          this.player.inventory.renderChest(this.overlayCtx, chest, TILE_SIZE * UI_FACTOR * 2 + 64, (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
+          this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
         }
         this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
       }
