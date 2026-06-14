@@ -150,11 +150,21 @@ export class Chest extends BigEntity {
 
     this.inventory = [];
     this.size = 24;
+
+    for (let i = 0; i < this.size; i++) {
+      this.inventory.push({
+        itemID: null,
+        count: 0
+      });
+    }
   }
 
   interact(player, item) {
-    player.openChest = this;
-  }
+  player.openChest = this;
+  player.inventory.open = true;
+
+  player.game.menu = "chest";
+}
 
   addItem(itemID, amount) {
     let remaining = amount;
@@ -163,16 +173,29 @@ export class Chest extends BigEntity {
       if (slot.itemID === itemID) {
         let space = 99 - slot.count;
         let add = Math.min(space, remaining);
+
         slot.count += add;
         remaining -= add;
-        if (remaining <= 0) return 0;
+
+        if (remaining <= 0) {
+          return 0;
+        }
       }
     }
 
-    while (remaining > 0 && this.inventory.length < this.size) {
-      let add = Math.min(99, remaining);
-      this.inventory.push({ itemID, count: add });
-      remaining -= add;
+    for (let slot of this.inventory) {
+      if (slot.itemID === null) {
+        let add = Math.min(99, remaining);
+
+        slot.itemID = itemID;
+        slot.count = add;
+
+        remaining -= add;
+
+        if (remaining <= 0) {
+          return 0;
+        }
+      }
     }
 
     return remaining;
@@ -189,10 +212,10 @@ export class Chest extends BigEntity {
       slot.count -= remove;
       remaining -= remove;
 
-      if (slot.count <= 0) {
-        this.inventory.splice(i, 1);
-        i--;
-      }
+          if (slot.count <= 0) {
+      slot.itemID = null;
+      slot.count = 0;
+    }
 
       if (remaining <= 0) break;
     }
@@ -200,6 +223,7 @@ export class Chest extends BigEntity {
     return remaining === 0;
   }
 }
+
 
 export class PreservedJar extends BigEntity {
   constructor(x, y, type, map) {

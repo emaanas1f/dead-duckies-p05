@@ -1,6 +1,6 @@
 import {TILE_SIZE, ITEMS, HOTBAR_HEIGHT, HOTBAR_WIDTH, UI_FACTOR, HOTBAR_SIZE, INVENTORY_HEIGHT, INVENTORY_WIDTH} from "../constants.js";
 
-let loadedItems = {};
+export const loadedItems = {};
 const INVENTORY_SCALE = 3;
 
 export class Inventory {
@@ -130,32 +130,30 @@ export class Inventory {
     return y * columns + x;
   }
 
-  startDrag(index) {
-    let slot = this.slots[index];
-    if (slot.itemID === null) {
-      return;
-    }
+  startDrag(index, sourceSlots = this.slots) {
+    let slot = sourceSlots[index];
+    if (!slot || slot.itemID === null) return;
     this.draggingSlot = index;
     this.draggingItem = {
       itemID: slot.itemID,
       count: slot.count
     };
+    this.dragSource = sourceSlots;
     slot.itemID = null;
     slot.count = 0;
   }
 
-  endDrag(index) {
-    if (this.draggingItem === null) {
-      return;
-    }
-    let target = this.slots[index];
+  endDrag(index, targetSlots = this.slots) {
+    if (this.draggingItem === null) return;
+    let target = targetSlots[index];
+    if (!target) return;
     if (target.itemID === null) {
       target.itemID = this.draggingItem.itemID;
       target.count = this.draggingItem.count;
     }
     else if (target.itemID === this.draggingItem.itemID) {
       let max = 99;
-      if (ITEMS[target.itemID].hasOwnProperty("maxStack")) {
+      if (ITEMS[target.itemID] && ITEMS[target.itemID].hasOwnProperty("maxStack")) {
         max = ITEMS[target.itemID].maxStack;
       }
       let space = max - target.count;
@@ -163,25 +161,28 @@ export class Inventory {
       target.count += add;
       this.draggingItem.count -= add;
       if (this.draggingItem.count > 0) {
-        this.slots[this.draggingSlot] = {
-          itemID: this.draggingItem.itemID,
-          count: this.draggingItem.count
-        };
+        this.dragSource[this.draggingSlot] = {itemID: this.draggingItem.itemID,count: this.draggingItem.count };
       }
     }
     else {
-      let temp = {itemID: target.itemID, count: target.count};
+      let temp = {itemID: target.itemID,count: target.count};
       target.itemID = this.draggingItem.itemID;
       target.count = this.draggingItem.count;
-      this.slots[this.draggingSlot] = temp;
+      this.dragSource[this.draggingSlot] = temp;
     }
     this.draggingItem = null;
     this.draggingSlot = null;
+    this.dragSource = null;
   }
 
-  render(ctx, startX, startY, columns, rows, scale, selected = true) {
+  renderSlots(ctx, slots, startX, startY, columns, rows, scale, selected = false) {
     for (let i = 0; i < columns * rows; i += 1) {
-      let slot = this.getSlot(i);
+      let slot = slots[i];
+
+      if (!slot) {
+        continue;
+      }
+
       let col = i % columns;
       let row = Math.floor(i / columns);
 
@@ -203,11 +204,14 @@ export class Inventory {
       if (loadedItems[imageName]) {
         ctx.drawImage(loadedItems[imageName], x + 8 * scale / UI_FACTOR, y + 8 * scale / UI_FACTOR, 32 * scale / UI_FACTOR, 32 * scale / UI_FACTOR);
       }
-
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = "white";
       ctx.font = `${14 * scale / UI_FACTOR}px Arial`;
       ctx.fillText(slot.count, x + 10 * scale, y + 14 * scale);
     }
+  }
+
+  render(ctx, startX, startY, columns, rows, scale, selected = true) {
+    this.renderSlots(ctx, this.slots, startX, startY, columns, rows, scale, selected);
   }
 
   renderHotbar(hotbarCtx) {
@@ -257,4 +261,19 @@ export class Inventory {
     ctx.font = `${14 * INVENTORY_SCALE / UI_FACTOR}px Arial`;
     ctx.fillText(this.draggingItem.count, mouseX - TILE_SIZE + 22, mouseY - TILE_SIZE + 34);
   }
+
+  renderChest(overlayCtx, chest, startX, startY, overlayScale) {
+    let width = INVENTORY_WIDTH * overlayScale;
+    let height = INVENTORY_HEIGHT * overlayScale;
+
+    overlayCtx.drawImage(this.inventoryMenu, startX, startY, width, height);
+
+    let slotAreaWidth = 12 * TILE_SIZE * overlayScale;
+    let slotAreaHeight = 2 * TILE_SIZE * overlayScale;
+
+    let slotStartX = startX + (width - slotAreaWidth) / 2;
+    let slotStartY = startY + (height - slotAreaHeight) / 2;
+
+    this.renderSlots(overlayCtx, chest.inventory, slotStartX, slotStartY,  12,  2, overlayScale, false);
+    }
 }

@@ -12,6 +12,7 @@ export default class Map {
     this.bigEntities = [];
     this.npcList = [];
     this.crops = [];
+    this.openChest = null;
   }
 
   async loadTiles(name, game) {

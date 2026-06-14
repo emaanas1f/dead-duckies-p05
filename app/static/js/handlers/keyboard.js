@@ -57,7 +57,18 @@ export default class InputHandler {
         }
       }
 
-      if (e.key == "Escape") {
+      else if (game.menu == "chest") {
+        if (e.key === "e" || e.key === "E") {
+          game.player.openChest = null;
+          game.clearMenus();
+        }
+      }
+
+      if (e.key === "Escape") {
+        if (game.menu === "chest") {
+          game.player.openChest = null;
+        }
+
         game.clearMenus();
         game.mouseToggled = false;
       }

@@ -247,6 +247,23 @@ class StardewValley {
       case "fishingResult":
         this.player.fish.renderResult(this.overlayCtx, 4);
         break;
+      case "chest":
+      {
+        this.map.follow(this.player);
+        this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        this.map.render(this.ctx, this.player);
+        this.player.render(this.ctx, this.map);
+        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        let chest = this.player.openChest;
+        if (chest) {
+          this.player.inventory.renderChest(this.overlayCtx, chest, TILE_SIZE * UI_FACTOR * 2 + 64  , (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
+          this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64 , ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
+        }
+        this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
+      }
+      break;
     }
     
     this.player.inventory.renderHotbar(this.hotbarCtx);
