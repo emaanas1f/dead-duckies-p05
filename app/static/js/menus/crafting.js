@@ -113,7 +113,6 @@ export default class CraftingMenu {
 
   click(mx, my) {
     if (!this.open) return;
-    console.log("craft click detected");
     let list = this.game.player?.unlockedRecipes || [];
     for (let i = 0; i < list.length; i++) {
       let key = list[i];
@@ -146,7 +145,6 @@ export default class CraftingMenu {
       let slot = this.getSlot(i);
 
       let crafted = this.game.player.craftedRecipes.includes(key);
-      //console.log("craftedRecipes:", this.game.player.craftedRecipes);
       ctx.save();
 
       if (!this.hasItems(r.ingredients)) {
@@ -160,13 +158,6 @@ export default class CraftingMenu {
       this.safeDraw(ctx, img, slot.x - 16, slot.y + 10, this.SLOT_W * 1.6, this.SLOT_H * 0.8);
 
       ctx.restore();
-    }
-
-    if (this.hoveredRecipe && this.hoverImages[this.hoveredRecipe]) {
-      let i = list.indexOf(this.hoveredRecipe);
-      let slot = this.getSlot(i);
-      // this.safeDraw(ctx, this.hoverImages[this.hoveredRecipe], slot.x + 35, slot.y + 40, 562 / 2.5 , 402 / 2.5);
-      // console.log(this.hoveredRecipe)
     }
   }
 }

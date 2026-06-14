@@ -10,20 +10,6 @@
 
 We are creating a Stardew Valley emulator with our initial phase focused on the standard farm map. Games can be joined by players through the lobby. Players start with a farm with randomized trees and debris. Players will have inventories, be able to sell and buy goods, fish, mine, craft, and establish relationships along with a time and gold system.
 
-Map / Tiles / Movement: The world consists of a scrolling, tile-based map divided into regions (farm, town, forest, mines). Tiles represent terrain like water and trees. Players will be able to move across the map tile to tile. 
-
-Inventory: Players will have an inventory that stores all collected / bought items, including crops, materials, tools, and crafted goods. Items can be consumed, sold, or used for crafting and upgrades.
-
-Farming: Crops and materials are produced through player actions and time progression on the farm. 
-
-Time / Stamina: The game runs on a daily cycle: time will affect NPCs and activities. Through actions, players will lose stamina.
-
-NPCs / Relationships: NPCs function as static sprites for buying and selling goods. Relationships can also be established with these NPCs.
-
-Mining / Fishing / Foraging Systems: These activities allow players to collect resources, and are specific to their maps.
-
-Crafting / Tool upgrades: Players can convert materials into functional items (e.g., chests, furnaces) through crafting. Tools can be upgraded to improve efficiency with mining / fishing / foraging. 
-
 ## Install Guide
 Prerequisites
 - python3 installed
@@ -52,5 +38,7 @@ $ pip install -r requirements.txt
 In terminal, access directory where project is stored and run the command:
 
 ```
-$ 
+$ cd dead-duckies-p05
+$ cd app 
+$ python3 __init__.py
 ```

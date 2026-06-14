@@ -44,13 +44,13 @@ export class Inventory {
     return this.slots[index];
   }
 
-  addItem(itemID, amount) {
+  addItem(itemID, amount, location=null) {
     if (!Object.hasOwn(loadedItems, itemID)) {
       let asset = new Image();
       asset.src = `/static/images/items/${ITEMS[itemID]["category"]}/${itemID}.png`;
       loadedItems[itemID] = asset;
     }
-
+    
     let remaining = amount;
     for (let i = 0; i < this.slots.length; i += 1) {
       let slot = this.slots[i];
@@ -165,7 +165,7 @@ export class Inventory {
       }
     }
     else {
-      let temp = {itemID: target.itemID,count: target.count};
+      let temp = {itemID: target.itemID, count: target.count};
       target.itemID = this.draggingItem.itemID;
       target.count = this.draggingItem.count;
       this.dragSource[this.draggingSlot] = temp;
@@ -249,11 +249,6 @@ export class Inventory {
     let width = INVENTORY_WIDTH * INVENTORY_SCALE;
     let height = INVENTORY_HEIGHT * INVENTORY_SCALE;
 
-    if (mouseX < this.inventoryX || mouseY < this.inventoryY ||
-        mouseX > this.inventoryX + width ||  mouseY > this.inventoryY + height) {
-      return;
-    }
-
     let imageName = this.draggingItem.itemID.replaceAll(" ", "_");
 
     ctx.drawImage(loadedItems[imageName], mouseX - TILE_SIZE, mouseY - TILE_SIZE, 32 * INVENTORY_SCALE / UI_FACTOR, 32 * INVENTORY_SCALE / UI_FACTOR);
@@ -261,19 +256,4 @@ export class Inventory {
     ctx.font = `${14 * INVENTORY_SCALE / UI_FACTOR}px Arial`;
     ctx.fillText(this.draggingItem.count, mouseX - TILE_SIZE + 22, mouseY - TILE_SIZE + 34);
   }
-
-  renderChest(overlayCtx, chest, startX, startY, overlayScale) {
-    let width = INVENTORY_WIDTH * overlayScale;
-    let height = INVENTORY_HEIGHT * overlayScale;
-
-    overlayCtx.drawImage(this.inventoryMenu, startX, startY, width, height);
-
-    let slotAreaWidth = 12 * TILE_SIZE * overlayScale;
-    let slotAreaHeight = 2 * TILE_SIZE * overlayScale;
-
-    let slotStartX = startX + (width - slotAreaWidth) / 2;
-    let slotStartY = startY + (height - slotAreaHeight) / 2;
-
-    this.renderSlots(overlayCtx, chest.inventory, slotStartX, slotStartY,  12,  2, overlayScale, false);
-    }
 }

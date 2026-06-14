@@ -1,5 +1,5 @@
 import BigEntity from './big-entity.js';
-import { Furnace, Chest, PreservedJar } from './big-entity.js';
+import { Furnace, Chest, PreservesJar } from './big-entity.js';
 import { TILE_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT, X_RES, Y_RES, SCALE_FACTOR, NPC_INFO, MINES, getJson } from '../constants.js'
 import Tile from './tile.js';
 import NPC from '../npc.js';
@@ -53,15 +53,12 @@ export default class Map {
 
     if (type === "furnace") {
       bigEnt = new Furnace(x, y, type, this);
-      console.log(type);
     }
     else if (type === "chest") {
       bigEnt = new Chest(x, y, type, this);
-      console.log(type);
     }
-    else if (type === "preserved_jar") {
-      bigEnt = new PreservedJar(x, y, type, this);
-      console.log(type);
+    else if (type === "preserves_jar") {
+      bigEnt = new PreservesJar(x, y, type, this);
     }
     else {
       bigEnt = new BigEntity(x, y, type, this);

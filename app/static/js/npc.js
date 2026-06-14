@@ -2,7 +2,7 @@ import { NPC_INFO, ITEMS, CANVAS_WIDTH, CANVAS_HEIGHT, TILE_SIZE, SCALE_FACTOR }
 import Shop from "./menus/shop.js"
 import { renderWrappedText, getItemTitle } from "./ui/text.js";
 
-const giftPoints = {"hate": -40, "dislike": -20, "neutral": 20, "like": 45, "love": 80}
+const giftPoints = {"hate": -40, "dislike": -250, "neutral": 20, "like": 45, "love": 80}
 
 export default class NPC {
   constructor(name, x, y, map, playerName) {
@@ -42,7 +42,7 @@ export default class NPC {
   }
 
   getHearts(player) {
-    return Math.floor(this.points[player.name] / 250);
+    return Math.floor(this.points[player] / 250);
   }
   
   addPoints(player, amount) {
@@ -52,7 +52,6 @@ export default class NPC {
     }
   }
 
-  // possibly implement birthdays
   gift(player, item) {
     if (!(player in this.points)) {
       this.addPlayer(player);
@@ -120,7 +119,12 @@ export default class NPC {
   }
 
   addPlayer(player){
-    this.points[player] = 2000
+    if (this.name == "sam") {
+      this.points[player] = 2000
+    } else {
+      this.points[player] = 500
+    }
+    
     this.giftNumber[player] = 0
     this.talked[player] = false
     this.status[player] = null

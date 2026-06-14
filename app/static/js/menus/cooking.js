@@ -15,12 +15,6 @@ export default class CookingMenu {
     this.SLOT_H = 96; 
     this.GAP = 75;
 
-    this.hoverImages = {};
-    for (let key in COOKING_RECIPES) {
-      this.hoverImages[key] = new Image();
-      this.hoverImages[key].src = `/static/images/items/cooking/${key}_hover.png`;
-    }
-
     this.images = {};
     this.menuImg = new Image();
     this.menuImg.src = "/static/images/ui/menu.png";
@@ -62,7 +56,7 @@ export default class CookingMenu {
   hasItems(req) {
     for (let ing of req) {
       if (ing.category) {
-        if (this.countCategory(ing.cateory) < ing.amount) return false;
+        if (this.countCategory(ing.category) < ing.amount) return false;
       } else {
         if (this.countItem(ing.item) < ing.amount) return false;
       }
@@ -116,7 +110,6 @@ export default class CookingMenu {
   }
 
   update(mx, my) {
-    if (!this.open) return;
     this.hoveredRecipe = null;
     let list = Object.keys(COOKING_RECIPES);
     for (let i = 0; i < list.length; i++) {
@@ -173,5 +166,7 @@ export default class CookingMenu {
 
       ctx.restore();
     }
+
+    this.game.player.inventory.renderInventory(ctx, CANVAS_WIDTH / 2 - 208 * 3 / 2, this.startY + 96 * 2, 3);
   }
 }

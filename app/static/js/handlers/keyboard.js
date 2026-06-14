@@ -22,10 +22,7 @@ export default class InputHandler {
           game.player.inventory.selectSlot(11);
           game.player.inventory.renderHotbar(game.hotbarCtx, game.hotbarCanvas);
         } else if (e.key == "c" || e.key == "C") {
-          console.log("C PRESSED");
-          let item = game.player.inventory.getSelectedItemID();
-          console.log("ITEM:", item);
-          game.player.interact(game.map, item, game.stamina);
+          game.player.interact(game.map, game.stamina);
         }
 
         else if (e.key == "e" || e.key == "E") {

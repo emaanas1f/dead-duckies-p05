@@ -78,12 +78,4 @@ export function getTileImage(layer, name) {
   return TILE_IMAGES[layer][name];
 }
 
-// Base Tile in Image File
 export const BIG_ENTITIES = await getJson("big_entities.json");
-
-// export const STAMINA_COSTS = {
-//   axe: 5,
-//   hoe: 5,
-//   pickaxe: 5,
-//   fishing: 10
-// }

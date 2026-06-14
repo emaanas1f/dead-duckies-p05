@@ -50,7 +50,7 @@ class StardewValley {
     this.npcList = [];
 
     this.playerMenu = new PlayerMenu(this);
-    this.cookingMenu = new CookingMenu(this);
+    this.cookingMenu = new CookingMenu(this, this.player.inventory);
     this.menu = null;
 
     this.shops = {
@@ -64,15 +64,11 @@ class StardewValley {
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("bamboo_pole", 1);
+    this.player.inventory.addItem("advanced_iridium_rod", 1);
     this.player.inventory.addItem("bouquet", 2);
     this.player.inventory.addItem("parsnip_seeds", 5);
     this.player.inventory.addItem("blueberry_seeds", 5);
-    this.player.inventory.addItem("advanced_iridium_rod", 1);
     this.player.inventory.addItem("stone", 50);
-    this.player.inventory.addItem("copper_ore", 50);
-    this.player.inventory.addItem("wood", 50);
-    this.player.inventory.addItem("coal", 50);
-    this.player.inventory.addItem("eggplant", 3);
 
     this.mouse = new MouseHandler(this);
     this.input = new InputHandler(this);
@@ -130,6 +126,7 @@ class StardewValley {
     this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     this.playerMenu.close();
     this.cookingMenu.open = false;
+    this.cookingMenu.hoveredRecipe = null;
     this.menu = null;
   }
 
@@ -182,14 +179,6 @@ class StardewValley {
         this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
         this.player.currentShop.render(this.overlayCtx, this.player);
-        // if (this.mouse.isDown && !this.mouseToggled) {
-        //   this.player.currentShop.mouseInput(this, this.mouse.mouseX, this.mouse.mouseY);
-        //   this.mouseToggled = true;
-        // }
-        //
-        // if (!this.mouse.isDown && this.mouseToggled) {
-        //   this.mouseToggled = false;
-        // }
         break;
       case "cooking":
         this.map.follow(this.player);
@@ -249,22 +238,19 @@ class StardewValley {
         this.player.fish.renderResult(this.overlayCtx, 4);
         break;
       case "chest":
-      {
-        this.map.follow(this.player);
-        this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        this.map.render(this.ctx, this.player);
-        this.player.render(this.ctx, this.map);
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-        this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        
         let chest = this.player.openChest;
-        if (chest) {
-          this.player.inventory.renderChest(this.overlayCtx, chest, TILE_SIZE * UI_FACTOR * 2 + 64, (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
-          this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
-        }
+        let cinv = chest.inventory;
+
+        cinv.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, 
+          (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
+        this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, 
+          ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
+          
+        cinv.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
         this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
-      }
-      break;
+        break;
     }
     
     this.player.inventory.renderHotbar(this.hotbarCtx);

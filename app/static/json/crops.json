@@ -8,12 +8,12 @@
     "regrowth": 3
   },
   "blueberry": {
-    "growthTime": [1, 3, 3, 4, 2],
+    "growthTime": [1, 1, 1, 1, 1],
     "yield": {
       "blueberry": 3
     },
     "recurring": true,
-    "regrowth": 4
+    "regrowth": 1
   },
   "bok_choy": {
     "growthTime": [1, 1, 1, 1],
