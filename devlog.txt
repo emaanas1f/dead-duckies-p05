@@ -552,10 +552,27 @@ sarahZ -- 2026-06-14 12:51
 - finished cooking and eating menu and mechanics
 - finished turning nighttime animation
 
-kiranS -- 2026-06-14 13:00
+emaanA -- 2026-06-14 17:00
+- chest UI up + start/drag
+- work on preserved jar 
+- added jelly to json
+- updates to timeline in design.md / readme / added API keys folder
+
+jamesL -- 2026-06-14 17:00
+- general bug fixes
+- implemented mixed seeds
+- fixes to big entity / chest 
+- added bigger farm house
+- fixing spawning on top of player
+
+sarahZ -- 2026-06-14 17:00
+- json for consumables and cooking
+- finished cooking, eating, turning nighttime
+- fixed sleep
+
+kiranS -- 2026-06-14 17:00
 - added sebastian dialogue/entity
 - added warp from top of farm to mountain
-- added energy to tooltips for food items
-
-kiranS -- 2026-06-14 14:50
+- added energy to tooltips for food items / fixes to hover tooltips
 - added relationship status display in relationship menu
+- crafting sprites update
