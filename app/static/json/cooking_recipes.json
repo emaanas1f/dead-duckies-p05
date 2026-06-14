@@ -38,7 +38,7 @@
   "jam": {
     "ingredients": [
       {
-        "category": "fruit",
+        "category": "crops",
         "amount": 3
       },
       {
@@ -48,7 +48,7 @@
       }
     ],
     "output": {
-      "item": "jam",
+      "item": "jelly",
       "amount": 1
     }
   }

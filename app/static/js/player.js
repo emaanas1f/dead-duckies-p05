@@ -101,16 +101,17 @@ export default class Player {
     // }
   }
 
-  interact(map, stamina) {
-    let item = this.inventory.getSelectedItemID();
-    let tile = this.getTile(map);
+  interact(map, item, stamina) {
+    item = item ?? this.inventory.getSelectedItemID();
+    let tile = this.getTile(map) || map.getTile(this.x, this.y);
 
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
-    console.log(tile.x, tile.y)
-    console.log(this.x / TILE_SIZE, this.y / TILE_SIZE)
+    console.log("FRONT:", front);
+    console.log("IS BIG ENTITY?", front instanceof BigEntity);
+
     // PLACING ITEMS
     if (item != null && ITEMS[item]["placeable"] && map.name == "farm" && ((this.x / TILE_SIZE - .5 < tile.x && this.x / TILE_SIZE + .5 > tile.x) || (this.y / TILE_SIZE + 1 -.5 < tile.y && this.y / TILE_SIZE + 1 + .5 > tile.y))) {
       let placeTile = this.getTile(map);
@@ -224,14 +225,11 @@ export default class Player {
       }
     }
 
-    else if (front instanceof BigEntity) { // BIG ENTITIES
-      if (BIG_ENTITIES[front.type]["tools"].includes(item)) {
-        if (stamina.isEmpty()) return;
-        front.hit();
-        stamina.useEnergy(5);
-      } else {;
-        front.interact(this, item);
-      }
+    let bigEntity = front || entity || back;
+
+    if (bigEntity instanceof BigEntity) {
+      console.log("BIG ENTITY INTERACT:", bigEntity.type, item);
+      bigEntity.interact(this, item);
     }
 
     else if (entity != null && (ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all"))) {

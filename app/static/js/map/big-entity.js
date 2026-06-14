@@ -230,44 +230,37 @@ export class PreservedJar extends BigEntity {
 
     this.processing = false;
     this.daysRemaining = 0;
-
+    this.inputItem = null;
     this.outputItem = null;
     this.outputAmount = 0;
   }
 
   interact(player, item) {
-    if (!this.processing) {
-      let recipe = this.data.processing?.[item];
-      if (!recipe) return;
+    console.log("JAR CALLED WITH:", item);
+    if (!item) return;
 
-      if (player.inventory.countItem(item) < recipe.inputAmount) return;
+    let recipe = this.data.processing?.[item];
+    if (!recipe) return;
 
-      player.inventory.removeItem(item, recipe.inputAmount);
+    if (this.processing) return;
 
-      this.processing = true;
-      this.daysRemaining = recipe.days;
+    if (player.inventory.countItem(item) < recipe.inputAmount) return;
 
-      this.outputItem = recipe.output;
-      this.outputAmount = recipe.outputAmount;
-
-      return;
-    }
-
-    else if (this.daysRemaining <= 0) {
-      player.inventory.addItem(this.outputItem, this.outputAmount);
-
-      this.processing = false;
-      this.daysRemaining = 0;
-      this.outputItem = null;
-      this.outputAmount = 0;
-    }
+    player.inventory.removeItem(item, recipe.inputAmount);
+    this.processing = true;
+    this.daysRemaining = recipe.days;
+    this.inputItem = item;
+    this.outputItem = recipe.output.item;
+    this.outputAmount = recipe.output.amount;
   }
 
   nextDay() {
     if (!this.processing) return;
     this.daysRemaining--;
     if (this.daysRemaining <= 0) {
+      this.processing = false;
       this.daysRemaining = 0;
+      player.inventory.addItem(this.outputItem, this.outputAmount);
     }
   }
 }

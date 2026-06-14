@@ -786,7 +786,6 @@
     "buyPrice": 25000,
     "category": "tools"
   },
-
   "furnace": {
     "name": "Furnace",
     "icon": "furnace_hotbar",
@@ -807,7 +806,6 @@
     "placeable" : true,
     "consumable": false
   },
-
   "field_snack": {
     "sellPrice": 20,
     "reaction": "dislike",
@@ -825,5 +823,12 @@
     "effects": {
       "stamina": 75
     }
-  }
+  },
+  "jelly": {
+  "name": "jelly",
+  "category": "food",
+  "consumable": true,
+  "icon": "jelly",
+  "stackable": true
+}
 }
