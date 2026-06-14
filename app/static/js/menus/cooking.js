@@ -173,5 +173,7 @@ export default class CookingMenu {
 
       ctx.restore();
     }
+
+    this.game.player.inventory.renderInventory(ctx, CANVAS_WIDTH / 2 - 208 * 3 / 2, this.startY + 96 * 2, 3);
   }
 }

@@ -1,7 +1,7 @@
 import { Inventory } from '../menus/inventory.js';
 import CraftingMenu from '../menus/crafting.js';
 import { getItemTitle, getNumLines, renderWrappedText } from './text.js';
-import { DESCRIPTIONS, CANVAS_HEIGHT, CANVAS_WIDTH, RECIPES, ITEMS } from '../constants.js';
+import { DESCRIPTIONS, CANVAS_HEIGHT, CANVAS_WIDTH, RECIPES, ITEMS, COOKING_RECIPES } from '../constants.js';
 
 export default class Tooltip {
     constructor(game, player) {
@@ -67,6 +67,21 @@ export default class Tooltip {
             }
             return true;
         }
+        else if (this.game.cookingMenu.hoveredRecipe != null) {
+            let dish = this.game.cookingMenu.hoveredRecipe;
+            console.log(dish)
+            this.title = getItemTitle(dish);
+            this.description = DESCRIPTIONS[this.title.replaceAll(" ", "") + "_Description"];
+            if ("effects" in ITEMS[dish]) {
+                this.components["stamina"] = ITEMS[dish]["effects"]["stamina"];
+            }
+            this.components["recipe"] = COOKING_RECIPES[dish]["ingredients"];
+            if (!this.boxMade) {
+                console.log("a")
+                this.constructBox(ctx);
+            }
+            return true;
+        }
         return false;
     }
 
@@ -76,12 +91,14 @@ export default class Tooltip {
         this.spriteArray = []
         if ("recipe" in this.components) {
             this.components["recipe"].forEach(ingredient => {
-                let category = ITEMS[ingredient["item"]]["category"]
-                let sprite = new Image();
-                // console.log(category, ingredient["item"])
-                sprite.src = `/static/images/items/${category}/${ingredient["item"]}.png`
-                // console.log(sprite)
-                this.spriteArray.push(sprite)
+                if (!("category" in ingredient)) {
+                    let category = ITEMS[ingredient["item"]]["category"]
+                    let sprite = new Image();
+                    // console.log(category, ingredient["item"])
+                    sprite.src = `/static/images/items/${category}/${ingredient["item"]}.png`
+                    // console.log(sprite)
+                    this.spriteArray.push(sprite)
+                }
             });
         }
 
@@ -245,18 +262,25 @@ export default class Tooltip {
             filledSpace += 10;
             // console.log(this.spriteArray)
             this.components["recipe"].forEach((ingredient, index) => {
-                ctx.drawImage(this.spriteArray[index],
-                    xStart + (3 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8) * scaleFactor,
-                    8 * scaleFactor, 8 * scaleFactor
-                )
-
                 ctx.fillStyle = "black";
-                // if (this.player.inventory.countItem(ingredient["item"]) < ingredient["amount"]) {
-                //     ctx.fillStyle = "red";
-                // }
-                ctx.fillText(getItemTitle(ingredient["item"]) + "(" + ingredient["amount"] + ")",
-                    xStart + (3 + 2 + 8 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8 + 6) * scaleFactor 
-                )
+                if ("category" in ingredient) {
+                    ctx.fillText("Any " + ingredient["category"] + " (" + ingredient["amount"] + ")",
+                        xStart + (3 + 4) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8 + 6) * scaleFactor 
+                    )
+                }
+                else {
+                    ctx.drawImage(this.spriteArray[index],
+                        xStart + (3 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8) * scaleFactor,
+                        8 * scaleFactor, 8 * scaleFactor
+                    )
+
+                    // if (this.player.inventory.countItem(ingredient["item"]) < ingredient["amount"]) {
+                    //     ctx.fillStyle = "red";
+                    // }
+                    ctx.fillText(getItemTitle(ingredient["item"]) + " (" + ingredient["amount"] + ")",
+                        xStart + (3 + 2 + 8 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8 + 6) * scaleFactor 
+                    )
+                }
                 filledSpace += 8;
             });
             filledSpace += 2;
