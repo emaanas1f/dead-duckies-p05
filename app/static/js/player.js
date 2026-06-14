@@ -145,14 +145,7 @@ export default class Player {
       stamina.useEnergy(10);
     }
 
-    else if (item != null && ITEMS[item]["consumable"]) {
-      stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
-      // need to add a check to see how many ticks before it's reversed
-      MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
-      this.inventory.removeItem(item, 1);
-    }
-
-    if (entity instanceof NPC) { // NPC INTERACTIONS
+    else if (entity instanceof NPC) { // NPC INTERACTIONS
       console.log("npc")
       if (entity.talk(this.name)) {
         this.game.menu = "dialogue";
@@ -255,6 +248,13 @@ export default class Player {
         }
       }
       stamina.useEnergy(5);
+    }
+
+    else if (item != null && ITEMS[item]["consumable"]) { // EATING
+      stamina.restoreEnergy(ITEMS[item]["effects"]["stamina"]);
+      // need to add a check to see how many ticks before it's reversed
+      MOVEMENT_SPEED += ITEMS[item]["effects"]["movement_speed"];
+      this.inventory.removeItem(item, 1);
     }
   }
 
