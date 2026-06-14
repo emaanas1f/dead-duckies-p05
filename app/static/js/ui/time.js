@@ -52,18 +52,17 @@ export default class Time {
       }
     });
     //handling sleep/knockout
-    if (!game.stamina.isEmpty()) {
+    if (game.stamina.isEmpty()) {  
+      game.stamina.restoreEnergy(game.stamina.max * 0.5);  
+    }
+    else {                           
       if (this.currTime < 1080) {
-        game.stamina.restoreFull();
-      }
-      else {
+        game.stamina.restoreFull();  
+      } else {
         let timePastMidnight = Math.min(1, (this.currTime - 1080) / (1200 - 1080));
         let restorePercent = 1 - timePastMidnight * 0.8;
         game.stamina.restoreEnergy(Math.floor(game.stamina.max * restorePercent));
       }
-    }
-    else {
-      game.stamina.restoreEnergy(game.stamina.max * 0.5);
     }
     
     for (const map of Object.values(game.maps)) {
