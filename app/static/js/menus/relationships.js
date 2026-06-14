@@ -34,7 +34,6 @@ export default class RelationshipsMenu {
       208 * overlayScale, 128 * overlayScale
     );
 
-    // console.log(this.npcs)
     for (let i = 0; i < 4; i++) {
       let xRow = xStart + 5 * overlayScale;
       let yRow = yStart + 5 * overlayScale + 30 * overlayScale * i;

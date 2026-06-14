@@ -75,7 +75,15 @@
     "drops": {
       "preserves_jar": 1
     },
-    "processing": {},
+    "processing": {
+      "jelly": {
+        "input": "blueberry",
+        "inputAmount": 3,
+        "output": "jelly",
+        "outputAmount": 1,
+        "days": 3
+      }
+    },
     "passable": false
   }
 }

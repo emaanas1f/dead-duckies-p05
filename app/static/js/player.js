@@ -109,8 +109,7 @@ export default class Player {
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
-    console.log("FRONT:", front);
-    console.log("IS BIG ENTITY?", front instanceof BigEntity);
+    // console.log(tile.x, tile.y)
 
     // PLACING ITEMS
     if (item != null && ITEMS[item]["placeable"] && map.name == "farm" && ((this.x / TILE_SIZE - .5 < tile.x && this.x / TILE_SIZE + .5 > tile.x) || (this.y / TILE_SIZE + 1 -.5 < tile.y && this.y / TILE_SIZE + 1 + .5 > tile.y))) {
@@ -147,7 +146,6 @@ export default class Player {
     }
 
     else if (entity instanceof NPC) { // NPC INTERACTIONS
-      console.log("npc")
       if (entity.talk(this.name)) {
         this.game.menu = "dialogue";
         this.game.currentNpc = entity;

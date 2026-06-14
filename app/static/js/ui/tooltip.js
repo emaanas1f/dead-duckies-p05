@@ -126,6 +126,8 @@ export default class Tooltip {
             return false;
         }
 
+        if ("recipe" in this.components && this.components["recipe"].length != this.spriteArray.length) return false;
+
         ctx.font = `${12 * scaleFactor}px thin`;
 
         let xStart = this.game.mouse.mouseX + 5 * scaleFactor;
@@ -260,7 +262,7 @@ export default class Tooltip {
                 (this.width - 8) * scaleFactor, 1
             );
             filledSpace += 10;
-            // console.log(this.spriteArray)
+          
             this.components["recipe"].forEach((ingredient, index) => {
                 ctx.fillStyle = "black";
                 if ("category" in ingredient) {

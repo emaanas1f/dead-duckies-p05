@@ -1,5 +1,6 @@
 // Multi-tile objects; e.g. trees
 import { BIG_ENTITIES, TILE_SIZE, getTileImage, SCALE_FACTOR, FRAME_RATE, /*FURNACE_RECIPES*/ } from "../constants.js";
+import { Inventory } from "../menus/inventory.js";
 
 export default class BigEntity {
   constructor(x, y, type, map) {
@@ -65,6 +66,13 @@ export default class BigEntity {
       this.frame %= FRAME_RATE * 2;
     } else {
       if (this.durability <= 0) {
+        if (this instanceof Chest) {
+          for (let slot of this.inventory.slots) {
+            if (slot.itemID != null) {
+              player.inventory.addItem(slot.itemID, slot.count);
+            }
+          }
+        }
         for (const [key, value] of Object.entries(BIG_ENTITIES[this.type]["drops"])) {
           player.inventory.addItem(key, value);
         }
@@ -131,96 +139,20 @@ export class Furnace extends BigEntity {
 
   nextDay() {
     if (!this.processing) return;
-
     this.daysRemaining--;
-
-    // if (this.daysRemaining <= 0) {
-    //   player.inventory.addItem(this.outputItem, this.outputAmount);
-
-    //   this.processing = false;
-    //   this.outputItem = null;
-    //   this.outputAmount = 0;
-    // }
   }
 }
 
 export class Chest extends BigEntity {
   constructor(x, y, type, map) {
     super(x, y, type, map);
-
-    this.inventory = [];
-    this.size = 24;
-
-    for (let i = 0; i < this.size; i++) {
-      this.inventory.push({
-        itemID: null,
-        count: 0
-      });
-    }
+    this.inventory = new Inventory();
   }
 
   interact(player, item) {
-  player.openChest = this;
-  player.inventory.open = true;
-
-  player.game.menu = "chest";
-}
-
-  addItem(itemID, amount) {
-    let remaining = amount;
-
-    for (let slot of this.inventory) {
-      if (slot.itemID === itemID) {
-        let space = 99 - slot.count;
-        let add = Math.min(space, remaining);
-
-        slot.count += add;
-        remaining -= add;
-
-        if (remaining <= 0) {
-          return 0;
-        }
-      }
-    }
-
-    for (let slot of this.inventory) {
-      if (slot.itemID === null) {
-        let add = Math.min(99, remaining);
-
-        slot.itemID = itemID;
-        slot.count = add;
-
-        remaining -= add;
-
-        if (remaining <= 0) {
-          return 0;
-        }
-      }
-    }
-
-    return remaining;
-  }
-
-  removeItem(itemID, amount) {
-    let remaining = amount;
-
-    for (let i = 0; i < this.inventory.length; i++) {
-      let slot = this.inventory[i];
-      if (slot.itemID !== itemID) continue;
-
-      let remove = Math.min(slot.count, remaining);
-      slot.count -= remove;
-      remaining -= remove;
-
-          if (slot.count <= 0) {
-      slot.itemID = null;
-      slot.count = 0;
-    }
-
-      if (remaining <= 0) break;
-    }
-
-    return remaining === 0;
+    player.openChest = this;
+    player.inventory.open = true;
+    player.game.menu = "chest";
   }
 }
 

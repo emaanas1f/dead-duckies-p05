@@ -60,7 +60,7 @@ class StardewValley {
 
     this.player.inventory.addItem("axe", 1);
     this.player.inventory.addItem("hoe", 1);
-    this.player.inventory.addItem("scythe", 1);
+    this.player.inventory.addItem("chest", 1);
     this.player.inventory.addItem("pickaxe", 1);
     this.player.inventory.addItem("watering_can", 1);
     this.player.inventory.addItem("bamboo_pole", 1);
@@ -182,14 +182,6 @@ class StardewValley {
         this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
         this.player.currentShop.render(this.overlayCtx, this.player);
-        // if (this.mouse.isDown && !this.mouseToggled) {
-        //   this.player.currentShop.mouseInput(this, this.mouse.mouseX, this.mouse.mouseY);
-        //   this.mouseToggled = true;
-        // }
-        //
-        // if (!this.mouse.isDown && this.mouseToggled) {
-        //   this.mouseToggled = false;
-        // }
         break;
       case "cooking":
         this.map.follow(this.player);
@@ -249,22 +241,25 @@ class StardewValley {
         this.player.fish.renderResult(this.overlayCtx, 4);
         break;
       case "chest":
-      {
-        this.map.follow(this.player);
-        this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        this.map.render(this.ctx, this.player);
-        this.player.render(this.ctx, this.map);
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-        this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        // this.map.follow(this.player);
+        // this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        // this.map.render(this.ctx, this.player);
+        // this.player.render(this.ctx, this.map);
+        // this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        // this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        
         let chest = this.player.openChest;
-        if (chest) {
-          this.player.inventory.renderChest(this.overlayCtx, chest, TILE_SIZE * UI_FACTOR * 2 + 64, (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
-          this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
-        }
+        let cinv = chest.inventory;
+
+        cinv.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, 
+          (CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2 - 94 , UI_FACTOR);
+        this.player.inventory.renderInventory(this.overlayCtx, TILE_SIZE * UI_FACTOR * 2 + 64, 
+          ((CANVAS_WIDTH - (TILE_SIZE * UI_FACTOR * 13)) / 2) + 94, UI_FACTOR);
+          
+        cinv.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
         this.player.inventory.renderDraggedItem(this.overlayCtx, this.mouse.mouseX, this.mouse.mouseY);
-      }
-      break;
+        break;
     }
     
     this.player.inventory.renderHotbar(this.hotbarCtx);
