@@ -34,5 +34,22 @@
       "item": "sashimi",
       "amount": 1
     }
+  },
+  "jam": {
+    "ingredients": [
+      {
+        "category": "fruit",
+        "amount": 3
+      },
+      {
+        "item": "preserved_jar",
+        "amount": 1,
+        "consumed": false
+      }
+    ],
+    "output": {
+      "item": "jam",
+      "amount": 1
+    }
   }
 }
