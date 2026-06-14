@@ -3,7 +3,7 @@
     "ingredients": [
       {
         "item": "wood",
-        "amount": 50
+        "amount": 15
       }
     ],
     "output": {
@@ -16,11 +16,11 @@
     "ingredients": [
       {
         "item": "stone",
-        "amount": 25
+        "amount": 15
       },
       {
         "item": "copper_ore",
-        "amount": 20
+        "amount": 5
       }
     ],
     "output": {
@@ -33,15 +33,15 @@
     "ingredients": [
       {
         "item": "wood",
-        "amount": 50
+        "amount": 15
       },
       {
         "item": "stone",
-        "amount": 40
+        "amount": 4
       },
       {
         "item": "coal",
-        "amount": 8
+        "amount": 3
       }
     ],
     "output": {

@@ -91,12 +91,12 @@ export class Furnace extends BigEntity {
 
   }
 
-  renderFurnace(ctx, map, player) {
+  render(ctx, map, player) {
     const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
     const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
 
     const w = TILE_SIZE * SCALE_FACTOR;
-    const h = TILE_SIZE * SCALE_FACTOR; 
+    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
 
     ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
   }
@@ -139,6 +139,129 @@ export class Furnace extends BigEntity {
       player.inventory.addItem(this.outputItem, this.outputAmount);
 
       this.processing = false;
+      this.outputItem = null;
+      this.outputAmount = 0;
+    }
+  }
+}
+
+export class Chest extends BigEntity {
+  constructor(x, y, type, map) {
+    super(x, y, type, map);
+
+    this.inventory = [];
+    this.size = 24;
+  }
+
+  render(ctx, map, player) {
+    const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
+    const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
+
+    const w = TILE_SIZE * SCALE_FACTOR;
+    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
+
+    ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
+  }
+
+  interact(player, item) {
+    player.openChest = this;
+  }
+
+  addItem(itemID, amount) {
+    let remaining = amount;
+
+    for (let slot of this.inventory) {
+      if (slot.itemID === itemID) {
+        let space = 99 - slot.count;
+        let add = Math.min(space, remaining);
+        slot.count += add;
+        remaining -= add;
+        if (remaining <= 0) return 0;
+      }
+    }
+
+    while (remaining > 0 && this.inventory.length < this.size) {
+      let add = Math.min(99, remaining);
+      this.inventory.push({ itemID, count: add });
+      remaining -= add;
+    }
+
+    return remaining;
+  }
+
+  removeItem(itemID, amount) {
+    let remaining = amount;
+
+    for (let i = 0; i < this.inventory.length; i++) {
+      let slot = this.inventory[i];
+      if (slot.itemID !== itemID) continue;
+
+      let remove = Math.min(slot.count, remaining);
+      slot.count -= remove;
+      remaining -= remove;
+
+      if (slot.count <= 0) {
+        this.inventory.splice(i, 1);
+        i--;
+      }
+
+      if (remaining <= 0) break;
+    }
+
+    return remaining === 0;
+  }
+}
+
+export class PreservedJar extends BigEntity {
+  constructor(x, y, type, map) {
+    super(x, y, type, map);
+
+    this.processing = false;
+    this.daysRemaining = 0;
+
+    this.inputItem = null;
+    this.outputItem = null;
+    this.outputAmount = 0;
+  }
+
+  render(ctx, map, player) {
+    const x = (this.x - this.image_x) * TILE_SIZE * SCALE_FACTOR;
+    const y = (this.y - this.image_y) * TILE_SIZE * SCALE_FACTOR;
+
+    const w = TILE_SIZE * SCALE_FACTOR;
+    const h = 2 * TILE_SIZE * SCALE_FACTOR; 
+
+    ctx.drawImage(this.image, x - map.x * SCALE_FACTOR, y - map.y * SCALE_FACTOR, w, h);
+  }
+
+  interact(player, item) {
+    if (!this.processing) {
+      let recipe = this.data.processing?.[item];
+      if (!recipe) return;
+
+      if (player.inventory.countItem(item) < recipe.inputAmount) return;
+
+      player.inventory.removeItem(item, recipe.inputAmount);
+
+      this.processing = true;
+      this.daysRemaining = recipe.days;
+
+      this.inputItem = item;
+      this.outputItem = recipe.output;
+      this.outputAmount = recipe.outputAmount;
+    }
+  }
+
+  nextDay(player) {
+    if (!this.processing) return;
+
+    this.daysRemaining--;
+
+    if (this.daysRemaining <= 0) {
+      player.inventory.addItem(this.outputItem, this.outputAmount);
+
+      this.processing = false;
+      this.inputItem = null;
       this.outputItem = null;
       this.outputAmount = 0;
     }
