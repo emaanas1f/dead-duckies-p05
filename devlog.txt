@@ -541,3 +541,6 @@ emaanA -- 2026-06-13 1:30
 kiranS -- 2026-06-13 17:50
 - json for item descriptions
 - added item hover tooltips displaying name and description (no crafting/food tooltips yet)
+
+emaanA -- 2026-06-14 00:26 
+- crafting working 

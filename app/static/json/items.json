@@ -556,9 +556,22 @@
     "category": "tools"
   },
   "furnace": {
-  "name": "Furnace",
-  "icon": "furnace_hotbar",
-  "category": "crafting",
-  "maxStack": 1
-}
+    "name": "Furnace",
+    "icon": "furnace_hotbar",
+    "category": "crafting",
+    "maxStack": 1
+  },
+  "chest": {
+    "name": "chest",
+    "category": "crafting",
+    "maxStack": 1,
+    "placable" : true
+  },
+  "preserved_jar": {
+    "name": "preserved_jar",
+    "category": "crafting",
+    "maxStack": 1,
+    "placable" : true,
+    "consumable": false
+  }
 }

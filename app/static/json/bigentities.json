@@ -49,6 +49,28 @@
         "outputAmount": 1,
         "days": 3
       }
-    }
+    },
+    "passable": false
+  },
+  "chest": {
+    "x": 0,
+    "y": 0,
+    "destructionTime": 50,
+    "tools": ["axe"],
+    "drops": {
+      "chest": 1
+    },
+    "passable": false
+  },
+  "preserved_jar": {
+    "x": 0,
+    "y": 0,
+    "destructionTime": 50,
+    "tools": ["axe"],
+    "drops": {
+      "preserved_jar": 1
+    },
+    "processing": {},
+    "passable": false
   }
 }

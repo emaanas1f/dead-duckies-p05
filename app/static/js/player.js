@@ -119,6 +119,28 @@ export default class Player {
       }
     }
 
+    if (item == "chest") {
+      console.log("placing chest"); 
+      let placeTile = this.getTile(map);
+      if (placeTile &&
+          placeTile.layers["middle"] == null &&
+          placeTile.layers["front"] == null) {
+        map.addBigEntity(placeTile.x, placeTile.y, "chest");
+        this.inventory.removeItem("chest", 1);
+      }
+    }
+
+    if (item == "preserved_jar") { 
+      console.log("placing preserved jar");
+      let placeTile = this.getTile(map);
+      if (placeTile &&
+          placeTile.layers["middle"] == null &&
+          placeTile.layers["front"] == null) {
+        map.addBigEntity(placeTile.x, placeTile.y, "preserved_jar");
+        this.inventory.removeItem("preserved_jar", 1);
+      }
+    }
+    
     else if (["training_rod", "bamboo_pole", "fiberglass_rod", "iridium_rod", "advanced_iridium_rod"].includes(item) && tile.water) {
       if (stamina.isEmpty()) return;
       let location = ""
