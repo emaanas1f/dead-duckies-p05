@@ -94,7 +94,7 @@ export default class CraftingMenu {
   }
 
   getSlot(i) {
-    return {x: this.startX + this.GAP * i, y: this.startY, w: this.SLOT_W, h: this.SLOT_H};
+    return {x: this.startX + 15 * 2 + this.GAP * i, y: this.startY, w: this.SLOT_W, h: this.SLOT_H};
   }
 
   update(mx, my) {
@@ -157,7 +157,7 @@ export default class CraftingMenu {
       let itemID = r.output.item;
       let img = this.getImage(itemID);
 
-      this.safeDraw(ctx, img, slot.x + 20, slot.y + 10, this.SLOT_W * 0.8, this.SLOT_H * 0.8);
+      this.safeDraw(ctx, img, slot.x - 16, slot.y + 10, this.SLOT_W * 1.6, this.SLOT_H * 0.8);
 
       ctx.restore();
     }

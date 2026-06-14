@@ -71,7 +71,6 @@ export default class RelationshipsMenu {
       }
       else if (npc.datingDialogue != null) {
         ctx.font = `${fontSize - 4 * overlayScale}px thin`;
-        console.log(ctx.font)
         ctx.fillText("(single)",
           xRow + 39 * overlayScale, yRow + 24 * overlayScale
         ) 

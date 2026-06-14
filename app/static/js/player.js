@@ -110,9 +110,9 @@ export default class Player {
     let front = tile.layers["front"];
 
     console.log(tile.x, tile.y)
-
+    console.log(this.x / TILE_SIZE, this.y / TILE_SIZE)
     // PLACING ITEMS
-    if (item != null && ITEMS[item]["placeable"] && map.name == "farm") {
+    if (item != null && ITEMS[item]["placeable"] && map.name == "farm" && ((this.x / TILE_SIZE - .5 < tile.x && this.x / TILE_SIZE + .5 > tile.x) || (this.y / TILE_SIZE + 1 -.5 < tile.y && this.y / TILE_SIZE + 1 + .5 > tile.y))) {
       let placeTile = this.getTile(map);
       if (map.addBigEntity(placeTile.x, placeTile.y, item)) {
         this.inventory.removeItem(item, 1);
