@@ -3,7 +3,6 @@
     "buyPrice": 200,
     "sellPrice": 5,
     "category": "miscellaneous",
-    "shops": ["pierre"]
   },
 
   "wood": {
@@ -11,14 +10,12 @@
     "sellPrice": 5,
     "reaction": "dislike",
     "category": "resources",
-    "shops": ["pierre"]
   },
   "stone": {
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
     "category": "resources",
-    "shops": ["pierre"]
   },
 
   "daffodil": {
@@ -26,7 +23,6 @@
     "sellPrice": 30,
     "reaction": "like",
     "category": "forageables",
-    "shops": ["pierre"]
   },
   "dandelion": {
     "buyPrice": null,
@@ -35,11 +31,8 @@
     "category": "forageables",
     "consumable": true,
     "effects": {
-      "stamina": 15,
-      "movement_speed": 0,
-      "speed_duration": 0
-    },
-    "shops": ["pierre"]
+      "stamina": 25
+    }
   },
   "horse_radish": {
     "buyPrice": null,
@@ -48,17 +41,18 @@
     "category": "forageables",
     "consumable": true,
     "effects": {
-      "stamina": 15,
-      "movement_speed": 0,
-      "speed_duration": 0
-    },
-    "shops": ["pierre"]
+      "stamina": 13
+    }
   },
   "leek": {
     "buyPrice": null,
     "sellPrice": 60,
     "reaction": "dislike",
-    "category": "forageables"
+    "category": "forageables",
+    "consumable": true,
+    "effects": {
+      "stamina": 40
+    }
   },
   "cockle": {
     "buyPrice": null,
@@ -179,57 +173,102 @@
   "green_bean": {
     "sellPrice": 40,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "blueberry": {
     "sellPrice": 50,
     "reaction": "neutral",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "bok_choy": {
     "sellPrice": 80,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "cauliflower": {
     "sellPrice": 175,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 75
+    }
   },
   "corn": {
     "sellPrice": 50,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",,
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "eggplant": {
     "sellPrice": 60,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 20
+    }
   },
   "kale": {
     "sellPrice": 110,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 50
+    }
+
   },
   "melon": {
     "sellPrice": 250,
     "reaction": "neutral",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 113
+    }
   },
   "parsnip": {
     "sellPrice": 35,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "hot_pepper": {
     "sellPrice": 40,
     "reaction": "neutral",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "potato": {
     "sellPrice": 60,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "pumpkin": {
     "sellPrice": 320,
@@ -239,17 +278,29 @@
   "radish": {
     "sellPrice": 90,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 45
+    }
   },
   "tomato": {
     "sellPrice": 60,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 20
+    }
   },
   "yam": {
     "sellPrice": 160,
     "reaction": "like",
-    "category": "crops"
+    "category": "crops",
+    "consumable": true,
+    "effects": {
+      "stamina": 45
+    }
   },
 
   "coal": {
@@ -313,92 +364,164 @@
   "pufferfish": {
     "sellPrice": 200,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": -100
+    }
   },
   "anchovy": {
     "sellPrice": 30,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "tuna": {
     "sellPrice": 100,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "sardine": {
     "sellPrice": 40,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "bream": {
     "sellPrice": 45,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "largemouth_bass": {
     "sellPrice": 100,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "smallmouth_bass": {
     "sellPrice": 50,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "rainbow_trout": {
     "sellPrice": 65,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "salmon": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "walleye": {
     "sellPrice": 105,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 30
+    }
   },
   "perch": {
     "sellPrice": 55,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "carp": {
     "sellPrice": 30,
     "reaction": "hate",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "catfish": {
     "sellPrice": 200,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 50
+    }
   },
   "pike": {
     "sellPrice": 100,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "sunfish": {
     "sellPrice": 30,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "red_mullet": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "herring": {
     "sellPrice": 30,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 13
+    }
   },
   "eel": {
     "sellPrice": 85,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 30
+    }
   },
   "octopus": {
     "sellPrice": 150,
@@ -408,117 +531,209 @@
   "red_snapper": {
     "sellPrice": 50,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "squid": {
     "sellPrice": 80,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "sea_cucumber": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": -25
+    }
   },
   "super_cucumber": {
     "sellPrice": 250,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 125
+    }
   },
   "flounder": {
     "sellPrice": 100,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "midnight_carp": {
     "sellPrice": 150,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 50
+    }
   },
   "sturgeon": {
     "sellPrice": 200,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "tiger_trout": {
     "sellPrice": 150,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "bullhead": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "tilapia": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "chub": {
     "sellPrice": 50,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "dorado": {
     "sellPrice": 100,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "albacore": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "shad": {
     "sellPrice": 60,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "lingcod": {
     "sellPrice": 120,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "halibut": {
     "sellPrice": 80,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "woodskip": {
     "sellPrice": 75,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "midnight_squid": {
     "sellPrice": 200,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "spook_fish": {
     "sellPrice": 400,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "blobfish": {
     "sellPrice": 600,
     "reaction": "love",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "crimsonfish": {
     "sellPrice": 1500,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 38
+    }
   },
   "angler": {
     "sellPrice": 1000,
     "reaction": "dislike",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 25
+    }
   },
   "legend": {
     "sellPrice": 5000,
     "reaction": "love",
-    "category": "fish"
+    "category": "fish",
+    "consumable": true,
+    "effects": {
+      "stamina": 500
+    }
   },
 
   "axe": {
@@ -591,5 +806,24 @@
     "maxStack": 1,
     "placeable" : true,
     "consumable": false
+  },
+
+  "field_snack": {
+    "sellPrice": 20,
+    "reaction": "dislike",
+    "category": "food",
+    "consumable": true,
+    "effects": {
+      "stamina": 45
+    }
+  },  
+  "sashimi": {
+    "sellPrice": 75,
+    "reaction": "like",
+    "category": "food",
+    "consumable": true,
+    "effects": {
+      "stamina": 75
+    }
   }
 }
