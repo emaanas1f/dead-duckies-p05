@@ -225,9 +225,6 @@ export function initializeMine(map, player) {
   if (!spawnedLadder) {
     tile.add("ladder", "back");
   }
-  let mine = MINES[parseInt(map.name.split("/")[1]) - 1]
-  let playerTile = map.getTile(mine["spawnX"], mine["spawnY"]);
-  playerTile.remove("middle");
 }
 
 export function initializeForest(map, player) {
@@ -249,14 +246,8 @@ export function initializeForest(map, player) {
     }
   }
   map.respawnForageables(map.name);
-  let playerTile = map.getTile(player.x, player.y + 23);
-  playerTile.remove("middle");
-  map.removeBigEntity(playerTile.x, playerTile.y);
 }
 
 export function initializeBeach(map, player) {
   map.respawnForageables(map.name);
-  let playerTile = map.getTile(player.x, player.y + 23);
-  playerTile.remove("middle");
-  map.removeBigEntity(playerTile.x, playerTile.y);
 }

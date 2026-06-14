@@ -81,16 +81,24 @@ class StardewValley {
       this.loop();
     });
   }
+  
 
   checkTeleport() {
-    const tile = this.map.getTile(this.player.x, this.player.y + 23);
+    let tile = this.map.getTile(this.player.x, this.player.y + 23);
     if (tile && tile.teleporter && tile.destination) {
       if (!this.justTeleported) {
         const teleport = () => {
           this.justTeleported = true;
           this.map = this.maps[tile.destination.map];
+
           this.player.x = tile.destination.x * TILE_SIZE;
           this.player.y = tile.destination.y * TILE_SIZE;
+
+          tile = this.map.getTile(this.player.x, this.player.y + 23);
+          if (tile != null) {
+            tile.remove("middle");
+            this.map.removeBigEntity(tile.x, tile.y);
+          }
         }
 
         if (!Object.hasOwn(this.maps, tile.destination.map)) {
@@ -127,8 +135,8 @@ class StardewValley {
   loop() {
     switch (this.menu) {
       case null:
+        this.player.move(this.input.keys, this.map, this.stamina);
         this.checkTeleport();
-
         this.map.follow(this.player);
 
         this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -241,11 +249,9 @@ class StardewValley {
         this.player.fish.renderResult(this.overlayCtx, 4);
         break;
     }
-
+    
     this.player.inventory.renderHotbar(this.hotbarCtx);
     this.player.tooltip.render(this.overlayCtx, 3);
-    this.player.move(this.input.keys, this.map, this.stamina);
-    this.checkTeleport();
 
     requestAnimationFrame(() => this.loop());
   };
