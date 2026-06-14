@@ -569,8 +569,8 @@
     "maxStack": 1,
     "placeable" : true
   },
-  "preserved_jar": {
-    "name": "preserved_jar",
+  "preserves_jar": {
+    "name": "preserves_jar",
     "category": "crafting",
     "maxStack": 1,
     "placeable" : true,

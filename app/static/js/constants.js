@@ -79,7 +79,7 @@ export function getTileImage(layer, name) {
 }
 
 // Base Tile in Image File
-export const BIG_ENTITIES = await getJson("bigentities.json");
+export const BIG_ENTITIES = await getJson("big_entities.json");
 
 // export const STAMINA_COSTS = {
 //   axe: 5,

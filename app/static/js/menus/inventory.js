@@ -108,10 +108,10 @@ export class Inventory {
 
   countItem(item) {
     let total = 0;
-    for (let slot of this.inventory) {
+    for (let slot of this.slots) {
       if (!slot) continue;
-      if (slot.item === item) {
-        total += slot.amount;
+      if (slot.itemID === item) {
+        total += slot.count;
       }
     }
     return total;

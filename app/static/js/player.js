@@ -112,12 +112,9 @@ export default class Player {
     // PLACING ITEMS
     if (item != null && ITEMS[item]["placeable"] && map.name == "farm") {
       let placeTile = this.getTile(map);
-      if (placeTile &&
-          placeTile.layers["middle"] == null &&
-          placeTile.layers["front"] == null) {
-        map.addBigEntity(placeTile.x, placeTile.y, item);
+      if (map.addBigEntity(placeTile.x, placeTile.y, item)) {
         this.inventory.removeItem(item, 1);
-      }
+      };
     }
     
     // FISHING
@@ -181,7 +178,7 @@ export default class Player {
     }
 
     //edit coords for both sleeping and cooking when new farm map is up
-   else if (tile && tile.interactable) {
+    else if (tile && tile.interactable) {
       this.game.clearMenus();
       this.game.menu = "cooking";
     }
@@ -204,7 +201,7 @@ export default class Player {
       }
     }
 
-    else if (item == "hoe" && entity == null && tile.tillable) { // TILLING TILES
+    else if (item == "hoe" && entity == null && front == null && tile.tillable) { // TILLING TILES
       if (stamina.isEmpty()) return;
       map.crops.push(new Crop(tile.x, tile.y, map));
       stamina.useEnergy(5);
@@ -231,12 +228,12 @@ export default class Player {
       }
     }
 
-    else if (front instanceof BigEntity) { // CHOPPING TREES
+    else if (front instanceof BigEntity) { // BIG ENTITIES
       if (BIG_ENTITIES[front.type]["tools"].includes(item)) {
         if (stamina.isEmpty()) return;
         front.hit();
         stamina.useEnergy(5);
-      } else {
+      } else {;
         front.interact(this, item);
       }
     }

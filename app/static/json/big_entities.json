@@ -19,10 +19,12 @@
     },
     "passable": false
   },
+
+  
   "furnace": {
     "x": 0,
-    "y": 0,
-    "destructionTime": 50,
+    "y": 1,
+    "destructionTime": 1,
     "tools": ["pickaxe"],
     "drops": {
       "furnace": 1
@@ -55,20 +57,20 @@
   "chest": {
     "x": 0,
     "y": 1,
-    "destructionTime": 50,
+    "destructionTime": 1,
     "tools": ["axe"],
     "drops": {
       "chest": 1
     },
     "passable": false
   },
-  "preserved_jar": {
+  "preserves_jar": {
     "x": 0,
-    "y": 0,
-    "destructionTime": 50,
+    "y": 1,
+    "destructionTime": 1,
     "tools": ["axe"],
     "drops": {
-      "preserved_jar": 1
+      "preserves_jar": 1
     },
     "processing": {},
     "passable": false

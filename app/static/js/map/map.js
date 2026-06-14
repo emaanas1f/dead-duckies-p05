@@ -45,7 +45,8 @@ export default class Map {
 
   // Indices
   addBigEntity(x, y, type) {
-    if (this.tiles[x][y].layers["front"] != null) return;
+    if (this.tiles[x][y].layers["middle"] != null ||
+        this.tiles[x][y].layers["front"] != null) return false;
     
     let bigEnt;
 
@@ -64,8 +65,11 @@ export default class Map {
     else {
       bigEnt = new BigEntity(x, y, type, this);
     }
+
     this.bigEntities.push(bigEnt);
     this.bigEntities.sort((a, b) => a.y - b.y);
+
+    return true;
   }
 
   removeBigEntity(x, y) {
