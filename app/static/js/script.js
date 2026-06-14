@@ -224,7 +224,6 @@ class StardewValley {
         if (this.sleepState === 'fadein') {
           this.sleepAlpha = Math.min(1, this.sleepAlpha + 0.005);
           if (this.sleepAlpha >= 1) {
-            this.player.sleep(this.time, this.stamina); //need to implement
             this.sleepState = 'fadeout';
           }
         } else if (this.sleepState === 'fadeout') {
