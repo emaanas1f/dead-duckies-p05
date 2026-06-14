@@ -11,9 +11,9 @@
 
 | Name | Email | Primary Role | Secondary Role |
 |---|---|---|---|
-|Emaan Asif | emaana3@nycstudents.net| Project Manager| Inventory/Pierre's |
+|Emaan Asif | emaana3@nycstudents.net| Project Manager| Inventory/Crafting |
 |James Lei |jamesl291@nycstudents.net | Devo1 | Entities/Player|
-|Sarah Zou |sarahz40@nycstudents.net | Devo2 | Farm/Town Map|
+|Sarah Zou |sarahz40@nycstudents.net | Devo2 | Farm/Town/Forest Map|
 |Kiran Soemarjdo |kirans14@nycstudents.net | Devo3 | Time/NPC's |
 
 ---
@@ -226,23 +226,23 @@ As a hoarder, I want to increase the amount of items I can store in my inventory
 - Trees
 - Pierre's
 - Teleport/Travel
-- Static NPCs (Willy, Pierre for fish and seed shops)
-- Relationships
-- Stamina System
 ## Week 3 Goals:
+- Static NPCs (Willy, Pierre for fish and seed shops)
+- Stamina System
 - Forest Map/Foraging
 - Mining
+## Week 4 Goals:
+- Relationships
 - Fishing
 - Crafting
 - Eating
-## Week 4 Goals:
+- Cooking/Recipes
 - Static NPCs (Gus, Clint for saloon and blacksmith)
 - Static NPCs (Sebastian, Sam, Penny, Haley)
-- Tool Upgrades
 - Houses
 ## CHOPPING BLOCK:
 - Community Center
-- Cooking/Recipes
+- Tool Upgrades
 - Skill Levels
 - Sound Effects/Music
 ## Internal Deadlines:
@@ -251,19 +251,19 @@ As a hoarder, I want to increase the amount of items I can store in my inventory
 3. Trees (5/13/2026)
 4. Town map (5/13/2026)
 6. Teleport (5/13/2026)
-7. 5. Pierre's (5/15/2026)
+7. Pierre's (5/15/2026)
 8. Static NPCs (Willy, Pierre) (5/16/2026)
 9. Stamina (5/18/2026)
-10. Fishing (5/20/2026)
-11. Mining (5/20/2026)
-12. Eating (5/20/2026)
-13. Relationships (5/23/2026)
-14. Crafting (5/25/2026)
-15. Forest Map/Foraging (5/25/2026)
-16. Static NPCs (Gus, Clint) (5/27/2026)
-17. Houses (5/30/2026)
-18. Tool Upgrades (5/30/2026)
-19. Static NPCs (Sebastian, Sam, Penny, Haley) (5/30/2026)
+10. Forest Map/Foraging (5/25/2026)
+11. Static NPCs (Gus, Clint) (6/01/2026)
+12. Mining (6/01/2026)
+13. Eating (6/14/2026)
+14. Relationships (6/14/2026)
+15. Crafting (6/14/2026)
+16. Fishing (6/14/2026)
+17. Houses (6/14/2026)
+18. Static NPCs (Sebastian, Sam, Penny, Haley) (6/14/2026)
+19. Cooking/Eating (6/14/2026)
 
 # Completion Criteria (_a.k.a._ "Definition of 'Done'")
 Project is considered complete when all of the following are true:
