@@ -556,3 +556,6 @@ kiranS -- 2026-06-14 13:00
 - added sebastian dialogue/entity
 - added warp from top of farm to mountain
 - added energy to tooltips for food items
+
+kiranS -- 2026-06-14 14:50
+- added relationship status display in relationship menu

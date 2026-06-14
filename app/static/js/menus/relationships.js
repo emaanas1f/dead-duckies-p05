@@ -34,16 +34,16 @@ export default class RelationshipsMenu {
       208 * overlayScale, 128 * overlayScale
     );
 
-    let fontSize = 10 * overlayScale
-    ctx.textAlign = "center";
-    ctx.letterSpacing = "1px";
-    ctx.font = `${fontSize}px thin`
-    ctx.fillStyle = "black";
     // console.log(this.npcs)
     for (let i = 0; i < 4; i++) {
       let xRow = xStart + 5 * overlayScale;
       let yRow = yStart + 5 * overlayScale + 30 * overlayScale * i;
 
+      let fontSize = 10 * overlayScale
+      ctx.textAlign = "center";
+      ctx.letterSpacing = "1px";
+      ctx.font = `${fontSize}px thin`
+      ctx.fillStyle = "black";
       if (this.currentNpc + i >= this.npcs.length) {
         ctx.fillText("???",
           xRow + 39 * overlayScale, yRow + 17 * overlayScale
@@ -62,6 +62,20 @@ export default class RelationshipsMenu {
       ctx.fillText(getItemTitle(npc.name),
         xRow + 39 * overlayScale, yRow + 17 * overlayScale
       );
+
+      if (["boyfriend", "girlfriend"].includes(npc.status[player.name])) {
+        ctx.font = `${fontSize - 4 * overlayScale}px thin`;
+        ctx.fillText("(" + npc.status[player.name] + ")",
+          xRow + 39 * overlayScale, yRow + 24 * overlayScale
+        ) 
+      }
+      else if (npc.datingDialogue != null) {
+        ctx.font = `${fontSize - 4 * overlayScale}px thin`;
+        console.log(ctx.font)
+        ctx.fillText("(single)",
+          xRow + 39 * overlayScale, yRow + 24 * overlayScale
+        ) 
+      }
 
       let hearts = Math.floor(npc.points[player.name] / 250);
       for (let heart = 0; heart < hearts; heart++) {
