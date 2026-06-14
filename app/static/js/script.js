@@ -12,9 +12,10 @@ import Gold from "./ui/gold.js";
 
 import Shop from './menus/shop.js';
 import PlayerMenu from './menus/player-menu.js';
+import CookingMenu from './menus/cooking.js';
 
 import MouseHandler from './handlers/mouse.js';
-import InputHandler from './handlers/keyboard.js';
+import InputHandler from './handlers/keyboard.js'
 
 class StardewValley {
   constructor(canvas, hotbarCanvas, overlayCanvas) {
@@ -49,6 +50,7 @@ class StardewValley {
     this.npcList = [];
 
     this.playerMenu = new PlayerMenu(this);
+    this.cookingMenu = new CookingMenu(this);
     this.menu = null;
 
     this.shops = {
@@ -118,6 +120,7 @@ class StardewValley {
     this.hotbarCtx.clearRect(0, 0, HOTBAR_WIDTH * UI_FACTOR, HOTBAR_HEIGHT * UI_FACTOR);
     this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     this.playerMenu.close();
+    this.cookingMenu.open = false;
     this.menu = null;
   }
 
@@ -147,6 +150,15 @@ class StardewValley {
           scaleFactor);
 
         this.stamina.render(this.ctx);
+
+        let startNight = 540; //starts darkening at around 3pm
+        let maxNight = 900; //this is 9pm
+        let nightAlpha = Math.max(0, Math.min(0.6, (this.time.currTime - startNight) / (maxNight - startNight) * 0.6));
+        if (nightAlpha > 0) {
+          this.ctx.fillStyle = `rgba(0, 0, 50, ${nightAlpha})`;
+          this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        }
         break;
       case "playerMenu":
         this.overlayCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -172,9 +184,14 @@ class StardewValley {
         break;
       case "cooking":
         this.map.follow(this.player);
+        this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        this.map.render(this.ctx, this.player);
         this.player.render(this.ctx, this.map);
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
         this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        this.cookingMenu.open = true;
+        this.cookingMenu.update(this.mouse.mouseX, this.mouse.mouseY);
+        this.cookingMenu.render(this.overlayCtx, this.mouse);
         break;
       case "dialogue":
         this.currentNpc.renderDialogue(this.overlayCtx, this.player.name)
