@@ -156,7 +156,7 @@ export class Chest extends BigEntity {
   }
 }
 
-export class PreservedJar extends BigEntity {
+export class PreservesJar extends BigEntity {
   constructor(x, y, type, map) {
     super(x, y, type, map);
 
@@ -168,31 +168,44 @@ export class PreservedJar extends BigEntity {
   }
 
   interact(player, item) {
-    console.log("JAR CALLED WITH:", item);
-    if (!item) return;
+    if (!this.processing) { 
+      let recipe = this.data.processing[item];
 
-    let recipe = this.data.processing?.[item];
-    if (!recipe) return;
+      if (!recipe) return;
 
-    if (this.processing) return;
+      if (player.inventory.countItem(item) < recipe.inputAmount) return;
 
-    if (player.inventory.countItem(item) < recipe.inputAmount) return;
+      for (const [key, value] of Object.entries(this.data.processing["additionalResources"])) {
+        if (player.inventory.countItem(key) < value) return;
+      }
 
-    player.inventory.removeItem(item, recipe.inputAmount);
-    this.processing = true;
-    this.daysRemaining = recipe.days;
-    this.inputItem = item;
-    this.outputItem = recipe.output.item;
-    this.outputAmount = recipe.output.amount;
+      player.inventory.removeItem(item, recipe.inputAmount);
+
+      for (const [key, value] of Object.entries(this.data.processing["additionalResources"])) {
+        player.inventory.removeItem(key, value);
+      }
+
+      this.processing = true;
+      this.daysRemaining = recipe.days;
+
+      this.outputItem = recipe.output;
+      this.outputAmount = recipe.outputAmount;
+
+      return;
+    }
+
+    else if (this.daysRemaining <= 0) {
+      player.inventory.addItem(this.outputItem, this.outputAmount);
+
+      this.processing = false;
+      this.daysRemaining = 0;
+      this.outputItem = null;
+      this.outputAmount = 0;
+    }
   }
 
   nextDay() {
     if (!this.processing) return;
     this.daysRemaining--;
-    if (this.daysRemaining <= 0) {
-      this.processing = false;
-      this.daysRemaining = 0;
-      player.inventory.addItem(this.outputItem, this.outputAmount);
-    }
   }
 }

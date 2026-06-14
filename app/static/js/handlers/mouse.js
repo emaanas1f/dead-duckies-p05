@@ -115,10 +115,6 @@ export default class MouseHandler {
       else if (this.game.menu == "cooking" && !this.isDown) {
         this.game.cookingMenu.click(this.mouseX, this.mouseY);
       }
-
-      else if (this.game.menu == null && !this.isDown) {
-        this.game.player.interact(this.game.map, this.game.stamina)
-      }
       
       else if (inv.draggingItem) {
         let index = inv.getSlotAtPosition(this.mouseX, this.mouseY, 12, 3, UI_FACTOR );

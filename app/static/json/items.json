@@ -809,7 +809,7 @@
   "field_snack": {
     "sellPrice": 20,
     "reaction": "dislike",
-    "category": "food",
+    "category": "cooking",
     "consumable": true,
     "effects": {
       "stamina": 45
@@ -818,17 +818,17 @@
   "sashimi": {
     "sellPrice": 75,
     "reaction": "like",
-    "category": "food",
+    "category": "cooking",
     "consumable": true,
     "effects": {
       "stamina": 75
     }
   },
   "jelly": {
-  "name": "jelly",
-  "category": "food",
-  "consumable": true,
-  "icon": "jelly",
-  "stackable": true
-}
+    "name": "jelly",
+    "category": "cooking",
+    "consumable": true,
+    "icon": "jelly",
+    "stackable": true
+  }
 }

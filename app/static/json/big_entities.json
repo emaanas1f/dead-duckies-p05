@@ -76,7 +76,9 @@
       "preserves_jar": 1
     },
     "processing": {
-      "jelly": {
+      "additionalResources": {
+      },
+      "blueberry": {
         "input": "blueberry",
         "inputAmount": 3,
         "output": "jelly",

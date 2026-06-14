@@ -46,7 +46,6 @@ export default class Tooltip {
                 return false;
             }
             let item = this.inventory.slots[slot];
-            // console.log(item)
             if (item == null || item["itemID"] == null) {
                 return false;
             }
@@ -61,7 +60,6 @@ export default class Tooltip {
                 this.components["stamina"] = ITEMS[item["itemID"]]["effects"]["stamina"];
             }
 
-            // console.log(this.title)
             if (!this.boxMade) {
                 this.constructBox(ctx);
             }
@@ -69,7 +67,6 @@ export default class Tooltip {
         }
         else if (this.game.cookingMenu.hoveredRecipe != null) {
             let dish = this.game.cookingMenu.hoveredRecipe;
-            console.log(dish)
             this.title = getItemTitle(dish);
             this.description = DESCRIPTIONS[this.title.replaceAll(" ", "") + "_Description"];
             if ("effects" in ITEMS[dish]) {
@@ -77,7 +74,6 @@ export default class Tooltip {
             }
             this.components["recipe"] = COOKING_RECIPES[dish]["ingredients"];
             if (!this.boxMade) {
-                console.log("a")
                 this.constructBox(ctx);
             }
             return true;
@@ -94,10 +90,10 @@ export default class Tooltip {
                 if (!("category" in ingredient)) {
                     let category = ITEMS[ingredient["item"]]["category"]
                     let sprite = new Image();
-                    // console.log(category, ingredient["item"])
                     sprite.src = `/static/images/items/${category}/${ingredient["item"]}.png`
-                    // console.log(sprite)
                     this.spriteArray.push(sprite)
+                } else {
+                    this.spriteArray.push("placeholder");
                 }
             });
         }
@@ -126,7 +122,8 @@ export default class Tooltip {
             return false;
         }
 
-        if ("recipe" in this.components && this.components["recipe"].length != this.spriteArray.length) return false;
+        if (this.components["recipe"] != null && 
+            (this.spriteArray.length != this.components["recipe"].length)) return false;
 
         ctx.font = `${12 * scaleFactor}px thin`;
 
@@ -137,7 +134,6 @@ export default class Tooltip {
             xStart = this.game.mouse.mouseX - (5 + this.width) * scaleFactor;
         }
 
-        // console.log(xStart, yStart)
         // L top corner
         ctx.drawImage(this.border,
             0, 0,
@@ -262,7 +258,6 @@ export default class Tooltip {
                 (this.width - 8) * scaleFactor, 1
             );
             filledSpace += 10;
-          
             this.components["recipe"].forEach((ingredient, index) => {
                 ctx.fillStyle = "black";
                 if ("category" in ingredient) {
@@ -276,9 +271,6 @@ export default class Tooltip {
                         8 * scaleFactor, 8 * scaleFactor
                     )
 
-                    // if (this.player.inventory.countItem(ingredient["item"]) < ingredient["amount"]) {
-                    //     ctx.fillStyle = "red";
-                    // }
                     ctx.fillText(getItemTitle(ingredient["item"]) + " (" + ingredient["amount"] + ")",
                         xStart + (3 + 2 + 8 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 7 + 2 + index * 8 + 6) * scaleFactor 
                     )

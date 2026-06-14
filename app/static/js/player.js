@@ -95,28 +95,26 @@ export default class Player {
       this.moving = false;
     }
 
-    // if (this.moving && map.getTile(x, y + TILE_SIZE).passable) {
-      this.x = x;
-      this.y = y;
-    // }
+    this.x = x;
+    this.y = y;
   }
 
-  interact(map, item, stamina) {
-    item = item ?? this.inventory.getSelectedItemID();
+  interact(map, stamina) {
+    let item = this.inventory.getSelectedItemID();
     let tile = this.getTile(map) || map.getTile(this.x, this.y);
 
     let back = tile.layers["back"];
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
-    // console.log(tile.x, tile.y)
-
     // PLACING ITEMS
-    if (item != null && ITEMS[item]["placeable"] && map.name == "farm" && ((this.x / TILE_SIZE - .5 < tile.x && this.x / TILE_SIZE + .5 > tile.x) || (this.y / TILE_SIZE + 1 -.5 < tile.y && this.y / TILE_SIZE + 1 + .5 > tile.y))) {
-      let placeTile = this.getTile(map);
-      if (map.addBigEntity(placeTile.x, placeTile.y, item)) {
-        this.inventory.removeItem(item, 1);
-      };
+    if (item != null && ITEMS[item]["placeable"] && map.name == "farm") {
+      let playerTile = map.getTile(this.x, this.y + 23);
+      if (playerTile.x != tile.x || playerTile.y != this.y) {
+        if (map.addBigEntity(tile.x, tile.y, item)) {
+          this.inventory.removeItem(item, 1);
+        };
+      }
     }
     
     // FISHING
@@ -223,13 +221,15 @@ export default class Player {
       }
     }
 
-    let bigEntity = front || entity || back;
-
-    if (bigEntity instanceof BigEntity) {
-      console.log("BIG ENTITY INTERACT:", bigEntity.type, item);
-      bigEntity.interact(this, item);
+    else if (front instanceof BigEntity) { // BIG ENTITIES
+      if (BIG_ENTITIES[front.type]["tools"].includes(item)) {
+        if (stamina.isEmpty()) return;
+        front.hit();
+        stamina.useEnergy(5);
+      } else {;
+        front.interact(this, item);
+      }
     }
-
     else if (entity != null && (ENTITIES[entity]["tools"].includes(item) || ENTITIES[entity]["tools"].includes("all"))) {
       // CHOPPING EVERYTHING ELSE
       if (stamina.isEmpty()) return;
