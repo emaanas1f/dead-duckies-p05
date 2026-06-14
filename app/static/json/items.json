@@ -272,6 +272,22 @@
     "reaction": "dislike",
     "category": "ore"
   },
+  "copper_bar": {
+    "sellPrice": 60,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+  "iron_bar": {
+    "sellPrice": 120,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+  "gold_bar": {
+    "sellPrice": 250,
+    "reaction": "dislike",
+    "category": "ore"
+  },
+
 
   "emerald": {
     "sellPrice": 250,

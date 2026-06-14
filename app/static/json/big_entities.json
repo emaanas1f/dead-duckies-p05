@@ -30,6 +30,9 @@
       "furnace": 1
     },
     "processing": {
+      "additionalResources": {
+        "coal": 1
+      },
       "copper_ore": {
         "input": "copper_ore",
         "inputAmount": 5,

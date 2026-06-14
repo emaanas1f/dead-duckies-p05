@@ -64,7 +64,7 @@ export default class BigEntity {
       this.frame++;
       this.frame %= FRAME_RATE * 2;
     } else {
-      if (this.durability == 0) {
+      if (this.durability <= 0) {
         for (const [key, value] of Object.entries(BIG_ENTITIES[this.type]["drops"])) {
           player.inventory.addItem(key, value);
         }
@@ -98,9 +98,18 @@ export class Furnace extends BigEntity {
 
       if (player.inventory.countItem(item) < recipe.inputAmount) return;
 
+      for (const [key, value] of Object.entries(this.data.processing["additionalResources"])) {
+        if (player.inventory.countItem(key) < value) return;
+      }
+
       player.inventory.removeItem(item, recipe.inputAmount);
 
+      for (const [key, value] of Object.entries(this.data.processing["additionalResources"])) {
+        player.inventory.removeItem(key, value);
+      }
+
       this.processing = true;
+      this.image = getTileImage("front", "furnace_active");
       this.daysRemaining = recipe.days;
 
       this.outputItem = recipe.output;
@@ -109,14 +118,15 @@ export class Furnace extends BigEntity {
       return;
     }
 
-    /*if (this.processing && this.daysRemaining <= 0) {
+    else if (this.daysRemaining <= 0) {
       player.inventory.addItem(this.outputItem, this.outputAmount);
+      this.image = getTileImage("front", "furnace");
 
       this.processing = false;
       this.daysRemaining = 0;
       this.outputItem = null;
       this.outputAmount = 0;
-    }*/
+    }
   }
 
   nextDay() {
@@ -124,13 +134,13 @@ export class Furnace extends BigEntity {
 
     this.daysRemaining--;
 
-    if (this.daysRemaining <= 0) {
-      player.inventory.addItem(this.outputItem, this.outputAmount);
+    // if (this.daysRemaining <= 0) {
+    //   player.inventory.addItem(this.outputItem, this.outputAmount);
 
-      this.processing = false;
-      this.outputItem = null;
-      this.outputAmount = 0;
-    }
+    //   this.processing = false;
+    //   this.outputItem = null;
+    //   this.outputAmount = 0;
+    // }
   }
 }
 
