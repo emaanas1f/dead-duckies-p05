@@ -551,3 +551,8 @@ kiranS -- 2026-06-14 01:40
 sarahZ -- 2026-06-14 12:51
 - finished cooking and eating menu and mechanics
 - finished turning nighttime animation
+
+kiranS -- 2026-06-14 13:00
+- added sebastian dialogue/entity
+- added warp from top of farm to mountain
+- added energy to tooltips for food items
