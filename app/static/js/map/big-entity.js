@@ -88,7 +88,6 @@ export class Furnace extends BigEntity {
 
     this.outputItem = null;
     this.outputAmount = 0;
-
   }
 
   interact(player, item) {

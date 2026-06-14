@@ -11,6 +11,10 @@ export async function getJson(file_name) {
   return parsed;
 }
 
+Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+
 export const TILE_SIZE = 16;
 export const SCALE_FACTOR = 2;
 export const X_RES = 30;

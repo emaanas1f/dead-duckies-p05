@@ -26,6 +26,10 @@ export default class Crop {
   }
 
   plant(type) {
+    if (type == "mixed") {
+      type = Object.keys(CROPS).random()
+    }
+
     this.type = type;
     if (type in loadedCrops) {
       this.image = loadedCrops[type];
