@@ -59,7 +59,7 @@ export default class Time {
       if (this.currTime < 1080) {
         game.stamina.restoreFull();  
       } else {
-        let timePastMidnight = Math.min(1, (this.currTime - 1080) / (1200 - 1080));
+        let timePastMidnight = Math.max(1, (this.currTime - 1080) / (1200 - 1080));
         let restorePercent = 1 - timePastMidnight * 0.8;
         game.stamina.restoreEnergy(Math.floor(game.stamina.max * restorePercent));
       }
