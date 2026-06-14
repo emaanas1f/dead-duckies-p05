@@ -946,9 +946,13 @@
     },
     {
       "passable": true,
-      "destination": null,
+      "destination": {
+        "map": "farm",
+        "x": 40,
+        "y": 1
+      },
       "tillable": false,
-      "teleporter": false,
+      "teleporter": true,
       "spawnable": false,
       "interactable": false,
       "water": false,
@@ -956,9 +960,13 @@
     },
     {
       "passable": true,
-      "destination": null,
+      "destination": {
+        "map": "farm",
+        "x": 41,
+        "y": 1
+      },
       "tillable": false,
-      "teleporter": false,
+      "teleporter": true,
       "spawnable": false,
       "interactable": false,
       "water": false,

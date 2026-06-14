@@ -2,27 +2,27 @@
   "bouquet": {
     "buyPrice": 200,
     "sellPrice": 5,
-    "category": "miscellaneous",
+    "category": "miscellaneous"
   },
 
   "wood": {
     "buyPrice": 10,
     "sellPrice": 5,
     "reaction": "dislike",
-    "category": "resources",
+    "category": "resources"
   },
   "stone": {
     "buyPrice": 8,
     "sellPrice": 4,
     "reaction": "dislike",
-    "category": "resources",
+    "category": "resources"
   },
 
   "daffodil": {
     "buyPrice": null,
     "sellPrice": 30,
     "reaction": "like",
-    "category": "forageables",
+    "category": "forageables"
   },
   "dandelion": {
     "buyPrice": null,
@@ -209,7 +209,7 @@
   "corn": {
     "sellPrice": 50,
     "reaction": "like",
-    "category": "crops",,
+    "category": "crops",
     "consumable": true,
     "effects": {
       "stamina": 25

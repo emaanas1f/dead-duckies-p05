@@ -1,0 +1,60 @@
+{
+    "dateable": true,
+    "gender": "boy",
+    "normal_dialogue": [
+        "Oh. You just moved in, right? Cool. Out of all the places you could live, you chose Pelican Town?",
+        "Um... need something?",
+        "If I just disappeared would it really matter?",
+        "I was thinking... people are like stones skipping over the water. Eventually we're going to sink.",
+        "Sam's really outgoing, so when we hang out he does most of the talking. That's fine with me! Imagine if Sam was as reserved as I am... we'd hang out and never say a word. Some people are talkers, others are listeners. I'm more of a listener.",
+        "What am I going to do today? Probably nothing.",
+        "Sam is probably my only friend in this town. Well, Abby is nice too, but... Umm.. never mind.",
+        "You and Sam are probably my only friends in this town.",
+        "Could you picture someone like me living on a farm? It seems ridiculous.",
+        "*sigh*... If gas wasn't so expensive I'd ride my motorcycle to the city today.",
+        "What? I didn't hear you... I'm busy thinking about something.",
+        "You know, I should be doing something productive right now. I just lose focus too fast... Maybe I should drink more coffee?",
+        "Hey, @",
+        "I usually stay inside, but I do go to the beach now and then. Pretty much only when it's raining, though. For some reason, staring off into the bleak horizon makes me feel... I dunno. Like it's worthwhile to keep pushing on, I guess.",
+        "What's new? I'll be at the saloon tonight destroying Sam at pool again.",
+        "I was just thinking about you...",
+        "Everyone is so happy in the sun. I don't get it.",
+        "If you're depressed, everything seems stupid. But if you're feeling positive, then even the most mundane things will make you happy. How do you stay positive long term? I have no idea... Maybe I'll figure it out some day.",
+        "Oh, hey. *yawn*... sorry.",
+        "I hope we're not having mushroom casserole tonight... Oh no, is it cave carrot tacos night? *groan*",
+        "You're probably making a lot of money on your farm, huh? I guess I should get a job soon...",
+        "I've been reading a book about a farmer. Reminds me a lot of you, actually. Sorry if that creeps you out.",
+        "I was *this* close to moping in bed the entire day. Kinda wish I had, now.",
+        "Nothing surprises me anymore... nothing makes me laugh. Yeah, I know... I'm being a little dramatic.",
+        "Do you ever think back on your old self with shame and embarrassment? I guess it's just part of growing up.",
+        "Hey... It's hard to think of new things to talk about, sometimes. Even after you know someone... Sorry.",
+        "(Sebastian seems lost in thought...)",
+        "Hey, don't let me stop you from getting your work done. If you aren't busy I don't mind if you stick around.",
+        "I should learn how to cook. That would be useful.",
+        "Um... You're single, right? Just wondering!"
+    ],
+    "bouquet_reaction": "...You want to get more serious? I feel the same way.",
+    "dating_dialogue": [
+        "Why am I grinning? I guess I've been unusually happy lately...",
+        "I'm glad you showed up. I was starting to get bored. Now I feel a lot more energetic, believe it or not.",
+        "You came here to see me?",
+        "Don't make fun of me... but I've never been in a relationship like this before.",
+        "Hey... you look great. I've been thinking about you all day...",
+        "If you ever wanted to go swimming... I guess I'd do it.",
+        "I dunno where I'd be without you... probably in a ditch somewhere"
+    ],
+    "gift_dialogue": {
+        "love": "I really love this. How did you know?",
+        "like": "Thanks, I like this.",
+        "neutral": "...thanks.",
+        "dislike": "...?",
+        "hate": "...I hate this."
+    },
+    "reactions": {
+        "love": ["sashimi"],
+        "like": ["flounder"],
+        "neutral": [],
+        "dislike": ["CATEGORY_forageables"],
+        "hate": []
+    }
+}

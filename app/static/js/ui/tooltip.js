@@ -24,6 +24,9 @@ export default class Tooltip {
         this.divider.src = "/static/images/ui/tooltip_divider.png";
         this.background = new Image();
         this.background.src = "/static/images/ui/tooltip_background.png";
+
+        this.stamina = new Image();
+        this.stamina.src = "/static/images/ui/stamina_icon.png"
     }
 
     checkTriggers(ctx) {
@@ -53,6 +56,10 @@ export default class Tooltip {
             }
             this.title = getItemTitle(item["itemID"]);
             this.description = DESCRIPTIONS[this.title.replaceAll(" ", "") + "_Description"];
+            
+            if ("effects" in ITEMS[item["itemID"]]) {
+                this.components["stamina"] = ITEMS[item["itemID"]]["effects"]["stamina"];
+            }
 
             // console.log(this.title)
             if (!this.boxMade) {
@@ -84,6 +91,9 @@ export default class Tooltip {
         this.bottomHeight = this.descriptionHeight;
         if ("recipe" in this.components) {
             this.bottomHeight += this.components["recipe"].length * 8 + 14
+        }
+        if ("stamina" in this.components) {
+            this.bottomHeight += 9;
         }
         this.boxMade = true;
     }
@@ -260,5 +270,15 @@ export default class Tooltip {
         renderWrappedText(ctx, this.description, xStart + (3 + 2) * scaleFactor, yStart + (yBottom + 1 + 2 + 6 + filledSpace) * scaleFactor, (this.width - 2) * scaleFactor, (6) * scaleFactor);
         filledSpace += this.descriptionHeight;
 
+        if ("stamina" in this.components) {
+            ctx.drawImage(this.stamina,
+                xStart + (3 + 1) * scaleFactor, yStart + (yBottom + filledSpace - 1) * scaleFactor,
+                8 * scaleFactor, 8 * scaleFactor
+            );
+            ctx.fillText(`+${this.components["stamina"]} Energy`,
+                xStart + (3 + 1 + 8 + 1) * scaleFactor, yStart + (yBottom + filledSpace + 5) * scaleFactor
+            );
+            filledSpace += 8;
+        }
     }
 }

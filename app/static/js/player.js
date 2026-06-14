@@ -109,6 +109,8 @@ export default class Player {
     let entity = tile.layers["middle"];
     let front = tile.layers["front"];
 
+    console.log(tile.x, tile.y)
+
     // PLACING ITEMS
     if (item != null && ITEMS[item]["placeable"] && map.name == "farm") {
       let placeTile = this.getTile(map);
@@ -151,6 +153,7 @@ export default class Player {
     }
 
     if (entity instanceof NPC) { // NPC INTERACTIONS
+      console.log("npc")
       if (entity.talk(this.name)) {
         this.game.menu = "dialogue";
         this.game.currentNpc = entity;

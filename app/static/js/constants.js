@@ -54,7 +54,7 @@ Object.keys(ITEMS).forEach(item => {
   }
 });
 
-const addedNpcs = ["pierre", "willy", "sam", "abigail", "penny"];
+const addedNpcs = ["pierre", "willy", "sam", "abigail", "penny", "sebastian"];
 export const NPC_INFO = {};
 
 addedNpcs.forEach(async (npc) => {
